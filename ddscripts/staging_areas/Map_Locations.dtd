@@ -1,0 +1,77 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT dataroot (qry_Map_Locations)+>
+<!ATTLIST dataroot
+  xmlns CDATA #FIXED ''
+  generated NMTOKEN #REQUIRED>
+
+<!ELEMENT qry_Map_Locations (CompanyCode,LocationCode,LocationName,
+                             Contact?,Address?,(City,State)?,Zip?,
+                             Phone?,FAX?,Email?,(Latitude,Longitude)?,
+                             Boom?,Recovery?,Storage?)>
+<!ATTLIST qry_Map_Locations
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT CompanyCode (#PCDATA)>
+<!ATTLIST CompanyCode
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT LocationCode (#PCDATA)>
+<!ATTLIST LocationCode
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT LocationName (#PCDATA)>
+<!ATTLIST LocationName
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Contact (#PCDATA)>
+<!ATTLIST Contact
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Address (#PCDATA)>
+<!ATTLIST Address
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT City (#PCDATA)>
+<!ATTLIST City
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT State (#PCDATA)>
+<!ATTLIST State
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Zip (#PCDATA)>
+<!ATTLIST Zip
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Phone (#PCDATA)>
+<!ATTLIST Phone
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT FAX (#PCDATA)>
+<!ATTLIST FAX
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Email (#PCDATA)>
+<!ATTLIST Email
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Latitude (#PCDATA)>
+<!ATTLIST Latitude
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Longitude (#PCDATA)>
+<!ATTLIST Longitude
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Boom (#PCDATA)>
+<!ATTLIST Boom
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Recovery (#PCDATA)>
+<!ATTLIST Recovery
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Storage (#PCDATA)>
+<!ATTLIST Storage
+  xmlns CDATA #FIXED ''>

@@ -1,0 +1,105 @@
+<h1><%= @client.company_name %></h1>
+
+<br />
+
+<ul id="client_tabs" class="subsection_tabs">  
+  <li class="tab"><a href="#account_tab">Account</a></li>  
+  <li class="tab"><a href="#license_tab">Licenses</a></li>
+  <li class="tab"><a href="#layer_tab">Layers</a></li>  
+  <li class="tab"><a href="#sharing_tab">Sharing</a></li>  
+</ul>
+
+<div id="account_tab">
+
+  <%= form_for(@client) do |f| %>
+     <% @client.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+      <% end %>
+
+     <p>
+       <%= f.check_box :active %><label for="client_Account Active.">Account Active?</label>
+     </p>
+
+     <%= render :partial => 'account',
+               :locals  => {:client => @client, 
+                            :f => f 
+                            }
+     %>
+
+    <p>
+      <%= f.submit 'Update' %>
+    </p>
+  <% end %>
+
+</div>
+
+<div id="license_tab">
+
+  <br />
+ 
+  <div id="licenses">
+    <% if @client.licenses.length() > 0 %>
+      <%= render :partial => 'licenses',
+                 :locals  => {:client => @client, 
+                              :licenses => @client.licenses
+      } %>
+    <% end %>
+  </div>
+  
+  <b>Add a license for this client</b>
+  
+  <p style="color: red"><%= flash[:error] %></p>
+
+  <%= form_for [@client, @license], url:licenses_path do |f| -%>
+      <%= hidden_field_tag('client_id', @client.id) %>
+      Expires: <%= f.date_select :expires %>
+      <%= f.submit 'Add' %>
+  <% end %>  
+
+</div>
+
+<div id="layer_tab">
+
+  Select layers this client will have access to.<br />
+  
+  <%= form_for @client, {
+        :loading => "Element.show('layer_loading')",
+        :complete => "Element.hide('layer_loading')"
+        } do |f| -%>
+    <% @layers.each do |layer| -%>
+      <% field_id = "layer_#{layer.id}" %>
+      <br />
+      <%= check_box_tag "client[layer_ids][]", layer.id, @client.layers.include?(layer), {:id => field_id} %>
+      <%= label_tag field_id, h(layer.title) %>
+    <% end %>
+    <br />
+    <%= hidden_field_tag "layer_checkboxes", 1 %>
+    <%= f.submit 'Update' %>
+  <% end %>
+
+</div>
+
+<div id="sharing_tab">
+
+	Select the clients this client may share assets with.<br />
+
+  <%= form_for @client, {
+        :loading => "Element.show('share_loading')",
+        :complete => "Element.hide('share_loading')"
+        } do |f| -%>
+    <% @clients.each do |client| -%>
+      <% field_id = "client_#{client.id}" %>
+      <br />
+      <%= check_box_tag "client[client_ids][]", client.id, @client.clients.include?(client), {:id => field_id} %>
+      <%= label_tag field_id, h(client.company_name) %>
+    <% end %>
+    <br />
+    <%= hidden_field_tag "sharing_checkboxes", 1 %>
+    <%= f.submit 'Update' %>
+  <% end %>
+
+</div>
+
+<script type="text/javascript">
+  new Control.Tabs('client_tabs');
+</script> 

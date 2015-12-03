@@ -1,0 +1,3 @@
+page[:assets].replace_html :partial => 'clients/devices', 
+                            :locals  => {:devices => @client.devices,
+                                         :client => @client}

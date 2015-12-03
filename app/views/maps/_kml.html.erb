@@ -1,0 +1,11 @@
+<% layer.kmls.each do |kml| %>
+  <% kml.url = "http://dedicatedmaps.com/stored_files/#{kml.stored_file.id}" if kml.stored_file %>
+  <%= check_box_tag "kml_#{kml.id}", 1, false,
+  :onclick   => "(this.checked) ? layer.#{layer.name}.kml_on(#{kml.id},'#{kml.url}') : layer.#{layer.name}.kml_off(#{kml.id})" %>
+  <%= label_tag "kml_#{kml.id}", kml.label %>
+  <br />
+<% end %>
+
+<%= javascript_tag :defer => 'defer' do -%>
+  add_kml( new Kml('<%= layer.name %>') );
+<% end -%>

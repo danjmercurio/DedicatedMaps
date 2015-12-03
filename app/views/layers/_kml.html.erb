@@ -1,0 +1,97 @@
+<style type="text/css">
+form {
+  display:inline;
+}
+input[type="button"]{
+  margin-left:5px;
+}
+input[type="text"]{
+  margin:5px;
+}
+</style>
+
+<table>
+  <tr>
+    <th width="80"><b>Active</b></th>
+    <th width="240"><b>Label</b></th>
+    <th width="240"><b>URL</b></th>
+  </tr>
+</table>
+
+<% for kml in @layer.kmls %>
+  <div id='d<%= kml.id %>'>
+    <table style="display:block">
+      <tr>
+        <td width="80"><%= 'Yes' if kml.active %></td>
+        <td width="240"><%= kml.label %></td>
+        <td width="240"><%= kml.url %></td>
+        <td>
+          <%= button_to_function "Edit", "$('d#{kml.id}').childElements().invoke('toggle')"%>
+          <%= form_for(@kml,
+              :update => 'kmls',
+              :loading => "Element.show('delete_loading#{kml.id}')",
+              :complete => "Element.hide('delete_loading#{kml.id}')",
+              :confirm => 'Are you sure you want to delete this kml entry?',
+              :method => :delete) do |f|
+              %>
+                <%= f.submit 'Delete' %>
+              <% end %>
+        </td>
+      </tr>
+    </table>
+    
+    <div style="display:none">     
+      <%= form_for(@kml,
+                :update => 'kmls',
+                :loading => "Element.show('save_loading#{kml.id}')",
+                :complete => "Element.hide('save_loading#{kml.id}')",
+                :method => :put
+      ) do |f| -%>
+        <table>
+          <tr>
+            <td width="80"><%= f.check_box :active, :checked => (kml.active == 1) %></td>
+            <td width="240"><%= f.text_field :label, :value => kml.label %></td>
+            <td width="240">
+              <% if kml.stored_file %>
+                  <%= kml.url %>
+              <% else %>
+                <%= f.text_field :url, :value => kml.url %>
+              <% end %>
+            </td>
+            <td>
+              <%= button_to_function "Cancel", "$('d#{kml.id}').childElements().invoke('toggle')"%>
+              <%= f.submit 'Save' %>
+            </td>
+          </tr>
+        </table>
+      <% end %> 
+    </div>
+  </div>
+<% end %>
+
+<p style="color: red"><%= flash[:error] %></p>
+  <%= form_for(@kml, :html => { :multipart => true } ) do |f| -%>
+  <table>
+    <tr>
+    
+      <%= hidden_field_tag('layer_id', @layer.id) %>
+    
+      <td width="80">
+        <%= f.check_box :active %>
+      </td>
+      <td width="80">
+        <%= f.text_field :label %>
+      </td>
+      <td id="url_or_file" width="240">
+        <%= f.text_field :url %>
+        <%= f.file_field 'kml_file',
+          :accept => 'application/vnd.google-earth.kmz, application/vnd.google-earth.kml+xml', 
+          :style => 'display:none;' %>
+      </td>
+      <td>
+        <%= f.submit 'Add' %>
+        
+      </td>
+    </tr>
+  </table>
+<% end %>

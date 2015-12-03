@@ -1,0 +1,1700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" generated="2010-01-27T14:44:11">
+<qry_Map_Assets>
+<Ident>1</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>11</AssetTypeCode>
+<MapAsset>000-20 - OSRV MFSA 1   34&apos;</MapAsset>
+<Photo>OSRV Clean Rivers 1.JPG</Photo>
+<Boom_Length>1000</Boom_Length>
+<Recovery>3720</Recovery>
+<Liquid_Storage>24</Liquid_Storage>
+<Description>1 Operator, 1  deckhand</Description>
+<Serial_Number>KV134201I494</Serial_Number>
+<Manufacture>8</Manufacture>
+<Model>(Kvichak) OIL SKIMMING RESPONSE VESSEL</Model>
+<Manufacture_Year>1994</Manufacture_Year>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>2</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>26</LocationCode>
+<AssetTypeCode>11</AssetTypeCode>
+<MapAsset>001-21 - OSRV CLEAN RIVERS 1  34&apos;</MapAsset>
+<Photo>Clean Rivers 1.JPG</Photo>
+<Boom_Length>1000</Boom_Length>
+<Recovery>3720</Recovery>
+<Liquid_Storage>24</Liquid_Storage>
+<Description>1 Operator, 1 deck hand</Description>
+<Serial_Number>KVI34202J494</Serial_Number>
+<Manufacture>8</Manufacture>
+<Model>(Kvichak) OIL SKIMMING RESPONSE VESSEL</Model>
+<Manufacture_Year>1994</Manufacture_Year>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>3</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>24</LocationCode>
+<AssetTypeCode>11</AssetTypeCode>
+<MapAsset>002-22 - OSRV HW Zarling 34&apos;</MapAsset>
+<Photo>OSRV Clean Rivers 1.JPG</Photo>
+<Boom_Length>1000</Boom_Length>
+<Recovery>3720</Recovery>
+<Liquid_Storage>24</Liquid_Storage>
+<Serial_Number>KVI34238B797</Serial_Number>
+<Manufacture>8</Manufacture>
+<Model>(Kvichak) OIL SKIMMING RESPONSE VESSEL</Model>
+<Manufacture_Year>1997</Manufacture_Year>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>4</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>36</LocationCode>
+<AssetTypeCode>11</AssetTypeCode>
+<MapAsset>003-23 - OSRV Hatfield  34&apos;</MapAsset>
+<Photo>OSRV Mark O Hatfield.JPG</Photo>
+<Boom_Length>1000</Boom_Length>
+<Recovery>3720</Recovery>
+<Liquid_Storage>24</Liquid_Storage>
+<Serial_Number>KVI34237B797</Serial_Number>
+<Manufacture>8</Manufacture>
+<Model>(Kvichak) OIL SKIMMING RESPONSE VESSEL</Model>
+<Manufacture_Year>1997</Manufacture_Year>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>5</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>41</LocationCode>
+<AssetTypeCode>12</AssetTypeCode>
+<MapAsset>004-24 - FRV Independence 32&apos;</MapAsset>
+<Photo>FRV Independence.JPG</Photo>
+<Boom_Length>2000</Boom_Length>
+<Description>Boat operator, deckhand</Description>
+<Serial_Number>BMI323316393</Serial_Number>
+<Manufacture>10</Manufacture>
+<Manufacture_Year>1992</Manufacture_Year>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>6</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>13</AssetTypeCode>
+<MapAsset>005-26 - Elizabeth Furse  27&apos;</MapAsset>
+<Photo>Work Boat Liz Fures.JPG</Photo>
+<Serial_Number>194001105728</Serial_Number>
+<Manufacture>14</Manufacture>
+<Manufacture_Year>1988</Manufacture_Year>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>7</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>25</LocationCode>
+<AssetTypeCode>12</AssetTypeCode>
+<MapAsset>006-27 - FRV Columbia Responder  32&apos;</MapAsset>
+<Photo>Responder Responder.jpg</Photo>
+<Boom_Length>1000</Boom_Length>
+<Specification>Lengh 32&apos;6&quot;   Beam 11&apos;6&quot; 5&apos; draft</Specification>
+<Serial_Number>KMI923211110 /KMI-3211-110</Serial_Number>
+<Manufacture>8</Manufacture>
+<Model>(Kvichak) OIL SKIMMING RESPONSE VESSEL</Model>
+<Manufacture_Year>1992</Manufacture_Year>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>8</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>13</AssetTypeCode>
+<MapAsset>007-28 - 17&apos; Workboat  Boston Whaler w/40 hp</MapAsset>
+<Photo>17&apos; WORKBOAT BOSTON WHALER W40HP_tag.jpg</Photo>
+<Serial_Number>674904</Serial_Number>
+<Manufacture>15</Manufacture>
+<Model>Boston Whaler</Model>
+<Manufacture_Year>1967</Manufacture_Year>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>9</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>13</AssetTypeCode>
+<MapAsset>008-28 - 22&apos; Workboat Boston Whaler w/150 hp</MapAsset>
+<Photo>22&apos; Boston Whaler 150hp.JPG</Photo>
+<Serial_Number>BWCC9172M79H</Serial_Number>
+<Manufacture>15</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>10</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>13</AssetTypeCode>
+<MapAsset>009-31 - 20&apos; Alumaweld push boat w/115 hp</MapAsset>
+<Photo>24&apos; ALUMAWELD W115HP_tag.jpg</Photo>
+<Serial_Number>AWB22541i607</Serial_Number>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>11</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>14</AssetTypeCode>
+<MapAsset>010-58 - 14&apos; Skiff Lowe Boats W/15 hp</MapAsset>
+<Photo>14&apos; SKIFF LOWES BOAT W15HP_tag.jpg</Photo>
+<Serial_Number>OMCL4420E394</Serial_Number>
+<Manufacture>36</Manufacture>
+<Model>Lake Jons #L1436</Model>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>12</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>14</AssetTypeCode>
+<MapAsset>011-58 - 14&apos; Skiff Lowes Boats W/15 hp</MapAsset>
+<Photo>14&apos; SKIFF LOWE BOATS W15HP_tag.jpg</Photo>
+<Serial_Number>OMCL2233L293</Serial_Number>
+<Model> Jons#L1436</Model>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>13</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>14</AssetTypeCode>
+<MapAsset>012-58 - 14&apos; Skiff  Lowes Boat W/15 hp</MapAsset>
+<Photo>14&apos; SKIFF LOWES BOATS W15HP_tag.jpg</Photo>
+<Serial_Number>OMCL2231L293</Serial_Number>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>14</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>14</AssetTypeCode>
+<MapAsset>013-58 - 16&apos; Skiff Fisher Boat W/25 hp</MapAsset>
+<Photo>15&apos;11&apos;&apos; SKIFF FISHER BOAT (1)W25HP_tag.jpg</Photo>
+<Serial_Number>BUJ46019L900</Serial_Number>
+<Manufacture>35</Manufacture>
+<Model>FISHER</Model>
+<Manufacture_Year>2000</Manufacture_Year>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>15</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>14</AssetTypeCode>
+<MapAsset>014-58 - 16&apos; Skiff Fisher Boat W/25 hp</MapAsset>
+<Photo>15&apos;11&apos;&apos; SKIFF FISHER BOAT (2)W25HP_tag.jpg</Photo>
+<Serial_Number>BUJ46017L900</Serial_Number>
+<Manufacture>35</Manufacture>
+<Model>Fisher 1648 Jon Boat</Model>
+<Manufacture_Year>2000</Manufacture_Year>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>17</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>19</AssetTypeCode>
+<MapAsset>100-29 - SWRB-Kvichak w/ Lori Skimmer</MapAsset>
+<Photo>100bbl SWB lori skimming system.JPG</Photo>
+<Recovery>2476</Recovery>
+<Liquid_Storage>100</Liquid_Storage>
+<Serial_Number>402</Serial_Number>
+<Manufacture>8</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>18</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>19</AssetTypeCode>
+<MapAsset>101-29 - SWRB-Kvichak w/ Lori Skimmer</MapAsset>
+<Photo>100bbl SWB skimming system.JPG</Photo>
+<Recovery>2476</Recovery>
+<Liquid_Storage>100</Liquid_Storage>
+<Serial_Number>KVI30267E898</Serial_Number>
+<Manufacture>8</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>19</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<AssetTypeCode>19</AssetTypeCode>
+<MapAsset>102-29 - SWRB-Kvichak w/ Lori Skimmer</MapAsset>
+<Photo>Longview 100bbl recovery barge.JPG</Photo>
+<Recovery>2476</Recovery>
+<Liquid_Storage>100</Liquid_Storage>
+<Serial_Number>KVI30258B898</Serial_Number>
+<Manufacture>8</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>20</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<AssetTypeCode>19</AssetTypeCode>
+<MapAsset>103-29 - SWRB-Kvichak w/ Lori Skimmer</MapAsset>
+<Photo>Longview 100bbl recovery barge.JPG</Photo>
+<Recovery>2476</Recovery>
+<Liquid_Storage>100</Liquid_Storage>
+<Serial_Number>KVI80257B898</Serial_Number>
+<Manufacture>8</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>21</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>62</LocationCode>
+<AssetTypeCode>19</AssetTypeCode>
+<MapAsset>104-29 - SWRB-Kvichak w/ Lori Skimmer</MapAsset>
+<Photo>Longview 100bbl recovery barge.JPG</Photo>
+<Recovery>2476</Recovery>
+<Liquid_Storage>100</Liquid_Storage>
+<Serial_Number>KVI30268E898</Serial_Number>
+<Manufacture>8</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>22</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>62</LocationCode>
+<AssetTypeCode>19</AssetTypeCode>
+<MapAsset>105-29 - SWRB-Kvichak w/ Lori Skimmer</MapAsset>
+<Photo>SWRB 100 bbl Vancouver Tesoro (2).JPG</Photo>
+<Recovery>2476</Recovery>
+<Liquid_Storage>100</Liquid_Storage>
+<Serial_Number>AEMBAA007J94</Serial_Number>
+<Manufacture>7</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>23</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>18</AssetTypeCode>
+<MapAsset>106-29 - SWB-American Eagle 100 bbl</MapAsset>
+<Photo>Longview 100bbl storage barge.JPG</Photo>
+<Liquid_Storage>100</Liquid_Storage>
+<Serial_Number>AEMCR3202H94</Serial_Number>
+<Manufacture>7</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>24</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<AssetTypeCode>18</AssetTypeCode>
+<MapAsset>107-29 - SWB-American Eagle 100 bbl</MapAsset>
+<Photo>Longview 100bbl storage barge.JPG</Photo>
+<Liquid_Storage>100</Liquid_Storage>
+<Serial_Number>AEMCR3203H94</Serial_Number>
+<Manufacture>7</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>25</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>18</AssetTypeCode>
+<MapAsset>108-29 - SWB-American Eagle 100 bbl</MapAsset>
+<Photo>Longview 100bbl storage barge.JPG</Photo>
+<Liquid_Storage>100</Liquid_Storage>
+<Serial_Number>AEMCR3204H94</Serial_Number>
+<Manufacture>7</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>26</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>40</LocationCode>
+<AssetTypeCode>18</AssetTypeCode>
+<MapAsset>109-29 - SWB-Kvichak 110 bbl</MapAsset>
+<Photo>Longview 100bbl storage barge.JPG</Photo>
+<Liquid_Storage>100</Liquid_Storage>
+<Serial_Number>30222B696</Serial_Number>
+<Manufacture>8</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>27</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>18</AssetTypeCode>
+<MapAsset>110-29 - SWB-American Eagle 100 bbl</MapAsset>
+<Photo>Longview 100bbl storage barge.JPG</Photo>
+<Liquid_Storage>100</Liquid_Storage>
+<Serial_Number>AEMCR3201H94</Serial_Number>
+<Manufacture>7</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>28</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>37</LocationCode>
+<AssetTypeCode>19</AssetTypeCode>
+<MapAsset>111-29 - Tank Barge (Under Contract) 10k bbl</MapAsset>
+<Liquid_Storage>5000</Liquid_Storage>
+<Serial_Number>TBL#4</Serial_Number>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>29</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>29</LocationCode>
+<AssetTypeCode>19</AssetTypeCode>
+<MapAsset>112-29 - Tank Barge (Under Contract) 5k bbl</MapAsset>
+<Liquid_Storage>10000</Liquid_Storage>
+<Serial_Number>TBL#1728</Serial_Number>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>30</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>15</AssetTypeCode>
+<MapAsset>200-49 - Tractor Kenworth</MapAsset>
+<Photo>Kenworth tractor.JPG</Photo>
+<Serial_Number>1XKWD49X1BS193552</Serial_Number>
+<Manufacture>19</Manufacture>
+<Model>Tractor 1 Axel</Model>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>31</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>64</LocationCode>
+<AssetTypeCode>59</AssetTypeCode>
+<MapAsset>201-50 - Tractor Mack</MapAsset>
+<Photo>TRACTOR MACK_tag.jpg</Photo>
+<Serial_Number>1M1V143YOCM001013</Serial_Number>
+<Manufacture>20</Manufacture>
+<Model>Out of Service</Model>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>32</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>15</AssetTypeCode>
+<MapAsset>202-52 - Tractor International</MapAsset>
+<Photo>TRACTOR INTERNATIONAL_tag.jpg</Photo>
+<Serial_Number>1HSHEAZN4PH528829</Serial_Number>
+<Manufacture>18</Manufacture>
+<Model>Tractor 2 Axel</Model>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>33</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>15</AssetTypeCode>
+<MapAsset>203-48 - Crane  Truck   GMC 5 ton</MapAsset>
+<Photo>CRANE TRUCK GMC 5 TON_tag.jpg</Photo>
+<Serial_Number>T17DFAV604700</Serial_Number>
+<Manufacture>21</Manufacture>
+<Model>Boom Truck</Model>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>34</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>15</AssetTypeCode>
+<MapAsset>204-47 - 2 Ton Wildlife transport  truck</MapAsset>
+<Photo>2 TON TRANSPORTATION UNIT_small.jpg</Photo>
+<Serial_Number>C75FVQ32376</Serial_Number>
+<Manufacture>17</Manufacture>
+<Model>Wildlife Box Van</Model>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>35</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>17</AssetTypeCode>
+<MapAsset>205-51 - 1 ton Service Truck</MapAsset>
+<Photo>99 049.JPG</Photo>
+<Serial_Number>1FTHX25GOLKBO9843</Serial_Number>
+<Model>Service Truck</Model>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>36</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>17</AssetTypeCode>
+<MapAsset>206-54 - 1 ton Ford 350 Truck</MapAsset>
+<Photo>Truck f 350.JPG</Photo>
+<Serial_Number>1FTSX31F63EA05090</Serial_Number>
+<Manufacture>17</Manufacture>
+<Model>F-350 one ton extend cab</Model>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>37</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>17</AssetTypeCode>
+<MapAsset>207-46 - 4x4 96 3/4   ton chevy pick up</MapAsset>
+<Serial_Number>1GCEK14W5TZ234140</Serial_Number>
+<Manufacture>31</Manufacture>
+<Model>Truck 1/2 ton</Model>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>38</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>17</AssetTypeCode>
+<MapAsset>208-60 - 4x4 SUV 2007 Toytoa 4 Runner</MapAsset>
+<Serial_Number>JTEBU14RX70117974</Serial_Number>
+<Manufacture>16</Manufacture>
+<Model>SUV</Model>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>39</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>16</AssetTypeCode>
+<MapAsset>300-38 - Wildlife Response (48&apos;)</MapAsset>
+<Photo>Wildlife trailer.JPG</Photo>
+<Serial_Number>1GRAA96276S033418</Serial_Number>
+<Model>Great Daine</Model>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>40</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>16</AssetTypeCode>
+<MapAsset>301-39 - Command &amp; Coms  (53&apos;)</MapAsset>
+<Serial_Number>3H3V532C4XT028268</Serial_Number>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>41</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>25</AssetTypeCode>
+<MapAsset>302-35 - Boom Trailer  (48&apos;) 4,100&apos;</MapAsset>
+<Photo>Tongue point, Astoria  trailer 3900&apos; of boom.JPG</Photo>
+<Specification>Plate# HU06905</Specification>
+<Serial_Number>1GRAA9627SS072308</Serial_Number>
+<Manufacture>37</Manufacture>
+<Manufacture_Year>1995</Manufacture_Year>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>42</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>25</AssetTypeCode>
+<MapAsset>303-35 - Boom Trailer (48&apos;) 3,800&apos;</MapAsset>
+<Photo>Wauna Mill trailer 3300&apos; of boom.JPG</Photo>
+<Serial_Number>47830</Serial_Number>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>43</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>25</AssetTypeCode>
+<MapAsset>304-35 - Boom Trailer (45&apos;) 5,000&apos;</MapAsset>
+<Photo>Longview trailer 4200&apos; of boom.JPG</Photo>
+<Serial_Number>MEY508401</Serial_Number>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>44</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<AssetTypeCode>25</AssetTypeCode>
+<MapAsset>305-35 - Boom Trailer (48&apos;)Storage</MapAsset>
+<Photo>Longview storage trailer.JPG</Photo>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>44</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<AssetTypeCode>25</AssetTypeCode>
+<MapAsset>305-35 - Boom Trailer (48&apos;)Storage</MapAsset>
+<Photo>Longview trailer 4200&apos; of boom.JPG</Photo>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>45</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>31</LocationCode>
+<AssetTypeCode>25</AssetTypeCode>
+<MapAsset>306-35 - Boom Trailer (28&apos;) 2,500&apos;</MapAsset>
+<Photo>Skamakawa 28&apos; trailer 2500&apos; of boom.JPG</Photo>
+<Specification>Plate #HR00441</Specification>
+<Description>TRACTOR</Description>
+<Serial_Number>1UYVS1286EC203202</Serial_Number>
+<Model>UTIL</Model>
+<Manufacture_Year>1984</Manufacture_Year>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>46</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<AssetTypeCode>16</AssetTypeCode>
+<MapAsset>307-35 - Boom Trailer (28&apos;)</MapAsset>
+<Photo>Longview trailer 4200&apos; of boom.JPG</Photo>
+<Serial_Number>1GRAA9020PB078001</Serial_Number>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>47</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>30</LocationCode>
+<AssetTypeCode>25</AssetTypeCode>
+<MapAsset>308-35 - Boom Trailer (48&apos;)</MapAsset>
+<Photo>St Helens trailer 5100&apos; of boom.JPG</Photo>
+<Serial_Number>1GRAA9022NB075601</Serial_Number>
+<Manufacture_Year>1992</Manufacture_Year>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>48</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<AssetTypeCode>16</AssetTypeCode>
+<MapAsset>309-35 - Storage Trailer (28&apos;)</MapAsset>
+<Photo>Longview storage trailer.JPG</Photo>
+<Serial_Number>1GRAA9621SS055343</Serial_Number>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>49</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>63</LocationCode>
+<AssetTypeCode>25</AssetTypeCode>
+<MapAsset>310-35 - Boom Trailer (42&apos;)</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>50</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>28</LocationCode>
+<AssetTypeCode>25</AssetTypeCode>
+<MapAsset>311-35 - Boom Trailer (45&apos;) 4,500&apos;</MapAsset>
+<Photo>Longview trailer 4200&apos; of boom.JPG</Photo>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>51</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>25</AssetTypeCode>
+<MapAsset>312-35 - Boom Trailer (42&apos;)3,300&apos;</MapAsset>
+<Photo>Skamakawa 28&apos; trailer 2500&apos; of boom.JPG</Photo>
+<Serial_Number>1BK10VA2XBE198938</Serial_Number>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>52</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>29</LocationCode>
+<AssetTypeCode>25</AssetTypeCode>
+<MapAsset>313-35 - Boom Trailer (40&apos;)</MapAsset>
+<Photo>Wauna Mill trailer 3300&apos; of boom.JPG</Photo>
+<Serial_Number>FRP13740</Serial_Number>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>53</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>16</AssetTypeCode>
+<MapAsset>314-35 - Flatbed Trailer(28&apos;)</MapAsset>
+<Photo>Flat bed trailer.JPG</Photo>
+<Serial_Number>H27066</Serial_Number>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>54</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>16</AssetTypeCode>
+<MapAsset>315-40 - Spill Reponse Trailer (30&apos;)</MapAsset>
+<Photo>2K of boom in trailer.JPG</Photo>
+<Boom_Length>2000</Boom_Length>
+<Specification>Plate # U294220</Specification>
+<Serial_Number>WA89152643</Serial_Number>
+<Manufacture_Year>1992</Manufacture_Year>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>54</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>16</AssetTypeCode>
+<MapAsset>315-40 - Spill Reponse Trailer (30&apos;)</MapAsset>
+<Photo>Spill Responce trailer 2.JPG</Photo>
+<Boom_Length>2000</Boom_Length>
+<Specification>Plate # U294220</Specification>
+<Serial_Number>WA89152643</Serial_Number>
+<Manufacture_Year>1992</Manufacture_Year>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>54</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>16</AssetTypeCode>
+<MapAsset>315-40 - Spill Reponse Trailer (30&apos;)</MapAsset>
+<Photo>Spill responce trailer.JPG</Photo>
+<Boom_Length>2000</Boom_Length>
+<Specification>Plate # U294220</Specification>
+<Serial_Number>WA89152643</Serial_Number>
+<Manufacture_Year>1992</Manufacture_Year>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>55</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>16</AssetTypeCode>
+<MapAsset>316-40 - Shoreline Cleanup Trailer (34&apos;)</MapAsset>
+<Photo>Shoreline clean up trailer.JPG</Photo>
+<Serial_Number>1WC200N27T4026706</Serial_Number>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>56</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>16</AssetTypeCode>
+<MapAsset>317-40 - Generator Trailers (25kw)</MapAsset>
+<Serial_Number>184BE2318V2097122</Serial_Number>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>57</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>16</AssetTypeCode>
+<MapAsset>318-40 - Generator Trailers (35kw)</MapAsset>
+<Serial_Number>OR68581</Serial_Number>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>58</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>16</AssetTypeCode>
+<MapAsset>319-40 - Power Washer (3500 psi Hot)</MapAsset>
+<Photo>Presure washer.JPG</Photo>
+<Liquid_Storage>5</Liquid_Storage>
+<Specification>Trailer mounted</Specification>
+<Description>Water</Description>
+<Serial_Number>SSN to Presure washer - P0298-2049</Serial_Number>
+<Manufacture>29</Manufacture>
+<Model>Landa 3500 psi</Model>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>59</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>400-00 - 20&apos; American Marine  - 5000 ft</MapAsset>
+<Boom_Length>5000</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>60</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>401-00 - 20&apos; American Marine - 4100 ft</MapAsset>
+<Boom_Length>4100</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>61</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>402-00 - 20&apos; American Marine - 3800 ft</MapAsset>
+<Boom_Length>3800</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>62</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>34</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>403-00 - 12&quot; American Marine - 1000 ft</MapAsset>
+<Boom_Length>1000</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>63</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>36</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>404-00 - 20&apos; American Marine - 4200 ft</MapAsset>
+<Boom_Length>4200</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>64</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>30</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>405-00 - 20&apos; American Marine - 6300 ft</MapAsset>
+<Boom_Length>6300</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>65</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>406-00 - 20&apos; American Marine - 5300 ft</MapAsset>
+<Boom_Length>5300</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>66</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>41</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>407-00 - 12&apos;American Marine - 2000 ft</MapAsset>
+<Photo>Boom 001.JPG</Photo>
+<Boom_Length>2000</Boom_Length>
+<Manufacture>4</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>67</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>27</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>408-00 - 12&apos;American Marine - 3000 ft</MapAsset>
+<Photo>Boom 001.JPG</Photo>
+<Boom_Length>3000</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>68</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>25</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>409-00 - 12&apos; American Marine - 1000 ft</MapAsset>
+<Photo>Boom 001.JPG</Photo>
+<Boom_Length>600</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>69</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>410-00 - 20&apos; American Marine - 4200 ft</MapAsset>
+<Boom_Length>4200</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>70</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>38</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>411-00 - 20&apos; American Marine - 200 ft</MapAsset>
+<Boom_Length>200</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>71</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>40</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>412-00 - 12&apos;American Marine - 2000 ft</MapAsset>
+<Photo>Boom 001.JPG</Photo>
+<Boom_Length>2000</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>72</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>39</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>413-00 - 20&apos; American Marine - 400 ft</MapAsset>
+<Boom_Length>400</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>73</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>31</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>414-00 - 20&apos; American Marine - 2500 ft</MapAsset>
+<Boom_Length>2500</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>74</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>63</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>415-00 - 20&apos; American Marine - 3100 ft</MapAsset>
+<Boom_Length>3100</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>75</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>29</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>416-00 - 20&apos; American Marine - 3300 ft</MapAsset>
+<Boom_Length>3300</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>76</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>417-00 - 12&quot; American Marine - 2000 ft</MapAsset>
+<Boom_Length>2000</Boom_Length>
+<Model>American Marine 6x6</Model>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>77</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>36</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>418-00 - 20&apos; American Marine - 1000 ft</MapAsset>
+<Boom_Length>1000</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>78</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>24</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>419-00 - 20&apos; American Marine - 1000 ft</MapAsset>
+<Boom_Length>1000</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>79</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>61</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>420-00 - 20&apos; American Marine - 1000 ft</MapAsset>
+<Boom_Length>1000</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>80</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>26</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>421-00 - 20&apos; American Marine - 1000 ft</MapAsset>
+<Boom_Length>1000</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>81</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>422-00 - 12&apos; American Marine - 400 ft</MapAsset>
+<Photo>Boom 031.JPG</Photo>
+<Boom_Length>400</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>82</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>423-00 - 12&quot; American Marine - 400 ft</MapAsset>
+<Photo>Boom 001.JPG</Photo>
+<Boom_Length>400</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>83</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>40</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>424-00 - 12&apos; American Marine - 400 ft</MapAsset>
+<Photo>Boom 001.JPG</Photo>
+<Boom_Length>400</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>84</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>62</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>425-00 - 12&apos; American Marine - 400 ft</MapAsset>
+<Photo>Boom 001.JPG</Photo>
+<Boom_Length>400</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>85</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>426-00 - 12&apos; American Marine - 400 ft</MapAsset>
+<Photo>Boom 001.JPG</Photo>
+<Boom_Length>400</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>86</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>427-00 - 12&apos; American Marine - 400 ft</MapAsset>
+<Photo>Boom 001.JPG</Photo>
+<Boom_Length>400</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>87</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>41</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>428-00 - 30&apos; American Marine - 900 ft</MapAsset>
+<Boom_Length>900</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>88</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>500-56 - API Drum Skimmer</MapAsset>
+<Photo>Drum Skimmer System.JPG</Photo>
+<Serial_Number>YANMAR#29292</Serial_Number>
+<Manufacture>12</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>88</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>500-56 - API Drum Skimmer</MapAsset>
+<Photo>Drum skimmer.JPG</Photo>
+<Serial_Number>YANMAR#29292</Serial_Number>
+<Manufacture>12</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>88</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>500-56 - API Drum Skimmer</MapAsset>
+<Photo>HYD Power pack for API Drum skimmer.JPG</Photo>
+<Serial_Number>YANMAR#29292</Serial_Number>
+<Manufacture>12</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>89</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>501-56 - API Brush Skimmer</MapAsset>
+<Photo>Brush Skimmer System.JPG</Photo>
+<Serial_Number>YANMAR#29293</Serial_Number>
+<Manufacture>12</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>89</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>501-56 - API Brush Skimmer</MapAsset>
+<Photo>Brush Skimmer.JPG</Photo>
+<Serial_Number>YANMAR#29293</Serial_Number>
+<Manufacture>12</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>89</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>501-56 - API Brush Skimmer</MapAsset>
+<Photo>hyd Power Pack for API Skimmer.JPG</Photo>
+<Serial_Number>YANMAR#29293</Serial_Number>
+<Manufacture>12</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>90</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>29</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>502-56 - CounterVac 3315 Skimmer</MapAsset>
+<Photo>Counter Vac.JPG</Photo>
+<Liquid_Storage>50</Liquid_Storage>
+<Manufacture>9</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>90</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>29</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>502-56 - CounterVac 3315 Skimmer</MapAsset>
+<Photo>Dougles 18000.JPG</Photo>
+<Liquid_Storage>50</Liquid_Storage>
+<Manufacture>9</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>90</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>29</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>502-56 - CounterVac 3315 Skimmer</MapAsset>
+<Photo>Duckbill Skimmer.JPG</Photo>
+<Liquid_Storage>50</Liquid_Storage>
+<Manufacture>9</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>91</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>37</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>503-56 - CounterVac 3315 Skimmer</MapAsset>
+<Manufacture>9</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>92</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>504-56 - CounterVac 3315 Skimmer</MapAsset>
+<Serial_Number>816</Serial_Number>
+<Manufacture>9</Manufacture>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>93</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>37</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>505-56 - Douglas 18000 Skimmer</MapAsset>
+<Photo>Dougles Skimm Pack 18000.JPG</Photo>
+<Model>Dougles 18000 Skimmer</Model>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>94</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>37</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>506-56 - Douglas 18000 Skimmer</MapAsset>
+<Photo>Dougles Skimm Pack 18000.JPG</Photo>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>95</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>507-56 - Douglas 18000 Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>96</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>508-56 - Douglas 18000 Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>97</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>509-56 - Douglas 18000 Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>98</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>510-56 - Douglas 18000 Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>99</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>37</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>511-56 - Douglas 18000 Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>100</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>37</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>512-56 - Douglas 18000 Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>101</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>513-56 - Douglas 18000 Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>102</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>514-56 - Douglas 18000 Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>103</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>515-56 - Douglas 18000 Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>104</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>516-56 - Douglas 18000 Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>105</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>517-56 - Douglas 18000 Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>106</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>518-56 - Douglas 18000 Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>107</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>519-56 - Douglas 18000 Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>108</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>520-56 - Douglas 18000 Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>109</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>521-56 - Douglas 18000 Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>110</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>522-56 - Douglas 18000 Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>111</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>523-56 - Douglas 4200 Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>112</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>524-56 - Douglas 4200 Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>113</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>525-56 - Douglas 4200 Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>114</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>526-56 - Douglas 4200 Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>115</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>527-56 - Douglas 4200 Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>116</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>528-56 - Douglas 4200 Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>117</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>529-56 - Desmi Terminator Skimmer</MapAsset>
+<Description>Hydraulic Power Pac</Description>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>118</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>530-56 - Desmi Terminator Skimmer</MapAsset>
+<Description>Hydraulic Power Pac</Description>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>119</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>37</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>531-56 - Slickbar &quot;Duckbill&quot; Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>120</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>532-56 - Slickbar &quot;Duckbill&quot; Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>121</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>533-56 - Slickbar &quot;Duckbill&quot; Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>122</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>534-56 - Slickbar &quot;Duckbill&quot; Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>123</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>535-56 - Slickbar &quot;Duckbill&quot; Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>124</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>536-56 - Lori 2 Brush for SWB Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>125</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>537-56 - Lori 2 Brush for SWB Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>126</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>538-56 - Lori 2 Brush for SWB Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>127</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>539-56 - Lori 2 Brush for SWB Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>128</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>62</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>540-56 - Lori 2 Brush for SWB Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>129</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>541-56 - Lori 2 Brush for SWB Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>130</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>542-56 - Slickbar &quot;Manta Ray&quot; Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>131</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>543-56 - MOP Skimmer</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>132</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>600-57 - 2&quot; Yanmar Diesel Pump</MapAsset>
+<Specification>100 GPM</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>133</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>601-57 - 2&quot; Yanmar Diesel Pump</MapAsset>
+<Specification>100 GPM</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>134</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>602-57 - 2&quot; Yanmar Diesel Pump</MapAsset>
+<Specification>100 GPM</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>135</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>603-57 - 2&quot; Yanmar Diesel Pump</MapAsset>
+<Specification>100 GPM</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>136</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>604-57 - 2&quot; Yanmar Diesel Pump</MapAsset>
+<Specification>100 GPM</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>137</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>605-56 - 2&quot; Yanmar Diesel Pump</MapAsset>
+<Specification>100 GPM</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>138</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>606-57 - 3&quot; Yanmar Diesel Pump</MapAsset>
+<Specification>300 GPM</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>139</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>607-57 - 3&quot; Yanmar Diesel Pump</MapAsset>
+<Specification>300 GPM</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>140</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>608-57 - 3&quot; Yanmar Diesel Pump</MapAsset>
+<Specification>300 GPM</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>141</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>609-57 - 3&quot; Yanmar Diesel Pump</MapAsset>
+<Specification>300 GPM</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>142</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>610-57 - 3&quot; Yanmar Diesel Pump</MapAsset>
+<Specification>300 GPM</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>143</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>611-57 - 3&quot; Yanmar Diesel Pump</MapAsset>
+<Specification>300 GPM</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>144</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>612-57 - 3&quot; Yanmar Diesel Pump</MapAsset>
+<Specification>300 GPM</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>145</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>613-57 - 3&quot; Yanmar Diesel Pump</MapAsset>
+<Specification>300 GPM</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>146</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>614-57 - 3&quot; Yanmar Diesel Pump</MapAsset>
+<Specification>300 GPM</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>147</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>615-57 - 3&quot; Yanmar Diesel Pump</MapAsset>
+<Specification>300 GPM</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>148</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>616-57 - 3&quot; Yanmar Diesel Pump</MapAsset>
+<Specification>300 GPM</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>149</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>617-57 - 3&quot; Yanmar Diesel Pump</MapAsset>
+<Specification>300 GPM</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>150</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>618-57 - Float-O-Pump</MapAsset>
+<Specification>100 GPM</Specification>
+<Serial_Number>11631</Serial_Number>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>151</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>619-57 - Float-O-Pump</MapAsset>
+<Specification>100 GPM</Specification>
+<Serial_Number>11617</Serial_Number>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>152</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>620-57 - DOP 160 Pump</MapAsset>
+<Description>Hydraulic Power Pac</Description>
+<Serial_Number>LPP30-005-03</Serial_Number>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>558</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>57</AssetTypeCode>
+<MapAsset>720-62 - 1000 gal Towable Bladder</MapAsset>
+<Liquid_Storage>60</Liquid_Storage>
+<Specification>American Marine</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>559</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>57</AssetTypeCode>
+<MapAsset>726-62 - 2500 gal. Bladder</MapAsset>
+<Liquid_Storage>60</Liquid_Storage>
+<Specification>American Marine</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>560</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>57</AssetTypeCode>
+<MapAsset>721-62 - 2500 gal. Bladder</MapAsset>
+<Liquid_Storage>60</Liquid_Storage>
+<Specification>American Marine</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>561</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>57</AssetTypeCode>
+<MapAsset>722-62 - 2500 gal. Towable Bladder</MapAsset>
+<Liquid_Storage>60</Liquid_Storage>
+<Specification>American Marine</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>562</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>57</AssetTypeCode>
+<MapAsset>723-62 - 2500 gal. Towable Bladder</MapAsset>
+<Liquid_Storage>60</Liquid_Storage>
+<Specification>American Marine</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>563</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>57</AssetTypeCode>
+<MapAsset>724-62 - 2500 gal. Towable Bladder</MapAsset>
+<Liquid_Storage>60</Liquid_Storage>
+<Specification>American Marine</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>564</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>57</AssetTypeCode>
+<MapAsset>725-62 - 2500 gal. Towable Bladder</MapAsset>
+<Liquid_Storage>60</Liquid_Storage>
+<Specification>American Marine</Specification>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>566</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>34</LocationCode>
+<AssetTypeCode>12</AssetTypeCode>
+<MapAsset>004-25 - FRV Protector  34&apos;</MapAsset>
+<Photo>protector.JPG</Photo>
+<Boom_Length>1000</Boom_Length>
+<Specification>11,000lbs 34x12</Specification>
+<Serial_Number>MUN430PKJ707</Serial_Number>
+<Manufacture>32</Manufacture>
+<Model>Munson</Model>
+<Manufacture_Year>2008</Manufacture_Year>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>568</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>700-56 - Skimmer System 18000-1</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>569</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>701-56 - Skimmer System  18000-2</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>570</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>702-56 - Skimmer System  18000-3</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>571</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>703-56 - Skimmer System  18000-4</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>572</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>706-56 - Skimmer System  18000-5</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>573</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>707-56 - Skimmer System  18000-6</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>574</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>708-56 - Skimmer System  18000-7</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>575</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>709-56 - Skimmer System  18000-8</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>576</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>710-56 - Skimmer System  18000-9</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>577</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>711-56 - Skimmer System  18000-10</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>578</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>712-56 - Skimmer System  18000-11</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>579</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>713-56 - Skimmer System  18000-12</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>581</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>621-57 - DOP 160 Pump</MapAsset>
+<Serial_Number>LPP30-006-03</Serial_Number>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>582</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>20</AssetTypeCode>
+<MapAsset>622-57 - Float-O-Pump</MapAsset>
+<Serial_Number>11629</Serial_Number>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>583</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>714-56 - Skimmer System  4200-13</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>584</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>715-56 - Skimmer System  4200-14</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>585</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>716-56 - Skimmer System  4200-15</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>586</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>717-56 - Skimmer System  4200-16</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>587</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<AssetTypeCode>23</AssetTypeCode>
+<MapAsset>718-56 - Skimmer System  4200-17</MapAsset>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>591</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>28</LocationCode>
+<AssetTypeCode>22</AssetTypeCode>
+<MapAsset>429-00 - 20&apos; American Marine -5,000 ft</MapAsset>
+<Boom_Length>5000</Boom_Length>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>592</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>17</AssetTypeCode>
+<MapAsset>210-62 - 1 Ton Ford 350 Super duty 08</MapAsset>
+<Serial_Number>1FTWW31R48EA13632</Serial_Number>
+<Manufacture>51</Manufacture>
+<Model>F-350 4 DOOR</Model>
+<Manufacture_Year>2008</Manufacture_Year>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>593</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>15</AssetTypeCode>
+<MapAsset>209-61 - Freightliner tractor</MapAsset>
+<Serial_Number>1FUJA6CG71PG51871</Serial_Number>
+<Manufacture>34</Manufacture>
+<Model>Tractor 2 axel</Model>
+<Manufacture_Year>2001</Manufacture_Year>
+</qry_Map_Assets>
+<qry_Map_Assets>
+<Ident>594</Ident>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<AssetTypeCode>60</AssetTypeCode>
+<MapAsset>999-99 - Shop Related Maintainence</MapAsset>
+</qry_Map_Assets>
+</dataroot>

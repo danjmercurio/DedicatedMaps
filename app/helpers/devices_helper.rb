@@ -1,0 +1,4 @@
+module DevicesHelper
+
+
+end

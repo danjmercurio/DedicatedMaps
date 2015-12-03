@@ -1,0 +1,32 @@
+<% @fishing_areas = FishingArea.all %>
+<% @fishing_types = FishingAreaType.all %>
+
+<% @fishing_types.each do |cat| %>
+
+  <%= check_box_tag(cat.id, cat.id, true, :id=>"cat#{cat.id}") %>
+  <%= observe_field("cat#{cat.id}", :function => "
+      if (element.checked) {
+        $('fish#{cat.id}').show();
+        layer.fishing_areas.show_all(#{cat.id}); 
+      } else {
+        $('fish#{cat.id}').hide();
+        layer.fishing_areas.hide_all(#{cat.id}); 
+      }
+      //element.checked ? $('fish#{cat.id}').show() : $('fish#{cat.id}').hide();
+      ")%>
+  <%= cat.name%>
+  
+  <br />
+  
+  <% options = "<option value='0'>Locate...</option>".html_safe %>
+  <% @fishing_areas.find_all{|item| item.fishing_area_type_id == cat.id}.each do |f| %>
+      <% options.concat("<option value=#{f.id}>#{f.name[0..10]}</option>".html_safe) %>
+  <% end %>
+
+  <div id='fish<%=cat.id%>' style='display:none'>
+    <%= select_tag "fishing areas", options, :id=>"locate#{cat.id}" %>
+    <%= observe_field("locate#{cat.id}", :function => 'GEvent.trigger(layer.fishing_areas.list[value], "click")')%>
+    <br /><br />
+  </div>
+  
+<% end %>

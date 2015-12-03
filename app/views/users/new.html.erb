@@ -1,0 +1,39 @@
+<fieldset>
+<legend>New User</legend>
+
+<%= form_for(@user) do |f| %>
+  <% @user.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+      <% end %>
+
+	<% if @clients %>
+		<p>
+			<%= f.label :client %><br />
+			<%= f.collection_select :client_id, @clients, :id, :company_name %>
+      Note: If the layers you select below are not enabled for this client, they'll
+      be ignored for this user. To ensure the user's layers are correct, edit the user's
+      settings after you've created the user here. (This situation only affects super users creating users for another client.)
+    </p>
+  
+	<% end %>
+	
+	<% if @privileges %>
+		<p>
+			<%= f.label :privilege %><br />
+			<%= f.collection_select :privilege_id, @privileges, :id, :name %>
+		</p>
+	<% end %>
+
+  <%= render :partial => 'form' , :locals => {:f => f} %>
+  
+  <div id="layers">
+    <%= render :partial => 'layers' , :locals => {:f => f}%>
+  </div>
+  
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+
+<% end %>
+
+</fieldset>

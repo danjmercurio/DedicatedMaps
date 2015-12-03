@@ -1,0 +1,71 @@
+<h1>Edit Layer</h1>
+
+<br />
+
+<ul id="layer_tabs" class="subsection_tabs">  
+  <li class="tab"><a href="#layer_tab">Layer</a></li>
+  <% if @staging_area_company %>
+    <li class="tab"><a style="width:180px;"href="#staging_area_company_tab">Staging Area Company</a></li>
+  <% end %>
+  <% if @kml %>
+    <li class="tab"><a href="#kmls">KML</a></li>  
+  <% end %>
+</ul>
+
+<div id="layer_tab">
+
+  <%= form_for(@layer) do |f| %>
+
+    <%= render :partial => 'form',
+    :locals  => {:layer => @layer, 
+      :f => f 
+    }
+    %>
+
+    <p>
+      <%= f.submit 'Update' %>
+    </p>
+  
+  <% end %>
+
+</div>
+
+<% if @staging_area_company %>
+
+  <div id="staging_area_company_tab">
+  
+     <%= form_for(@staging_area_company) do |f| %>
+
+        <%= render :partial => 'staging_area_company',
+        :locals  => {:layer => @layer, 
+                     :f => f
+                     }
+        %>
+
+        <p>
+          <%= f.submit 'Update' %>
+        </p>
+
+    <% end %>
+
+  </div>
+  
+<% end %>
+
+<% if @kml %>
+
+  <div id="kmls">
+    
+        <%= render :partial => 'kml',
+        :locals  => {:layer => @layer, 
+                     :kml => @kml
+                     }
+        %>
+
+  </div>
+    
+<% end %>
+
+<script type="text/javascript">
+  new Control.Tabs('layer_tabs');
+</script>

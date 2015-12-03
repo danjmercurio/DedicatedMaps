@@ -1,0 +1,295 @@
+<% id = 99 %>
+<div class="layer" id="incident99" style="background: #fff; border:thin solid grey;">
+   <div style="float:left;">
+       <%= check_box_tag 'incident', 1, true,
+        :onclick => "(this.checked) ? incident.on() : incident.off()" %>
+    Incident Display
+    </div>
+
+    <% plus = "<div id='plus#{id}'><img src='/images/list-add.png' border='0'/></div>" %>
+            <% minus = "<div id='minus#{id}' style='display:none;'><img src='/images/list-remove.png' border='0'/></div>" %>
+            
+            <div style="margin:3px 0 0 178px; height:24px;"> 
+            
+              <%= link_to_function(plus,"$('plus#{id}').toggle(); $('minus#{id}').toggle(); $('sub#{id}').toggle();") %>
+              <%= link_to_function(minus,"$('plus#{id}').toggle(); $('minus#{id}').toggle(); $('sub#{id}').toggle();") %>
+              
+            </div>
+  
+    <div class="sublayer" style="display:none; padding: 4px 0 4px 6px; background: #fff;" id="sub<%= id %>">
+
+       <%= button_to_function "Locate", "
+            map.setCenter(new GLatLng(45.55835497660139, -122.72329079650879), 13);
+            "%>
+         <br />
+
+      <%= check_box_tag(:dontcare, :dontcare, false, :id=>"cb1") %>
+      <%= observe_field("cb1", :function => "
+          if (element.checked) {
+                var img = new GIcon();
+                img.image = '/images/incidents/I_OS.png';
+                img.shadow = '';
+                img.size = new GSize(64,64);
+                img.iconAnchor = new GPoint(32,32);
+                mar0 = new GMarker(new GLatLng(45.55835497660139, -122.72329079650879), { icon:img });
+                map.addOverlay(mar0);
+            } else {
+                map.removeOverlay(mar0);
+            };
+          ")%>
+         Spill
+   <br />
+   
+           <!--
+                 //*
+                 // GPolygon(latlngs:GLatLng[],
+                 // strokeColor?:String,
+                 // strokeWeight?:Number,
+                 // strokeOpacity?:Number,
+                 // fillColor?:Number,
+                 // fillOpacity?:Number,
+                 // opts?:GPolygonOptions)
+                 // */
+           -->
+           
+              <%= check_box_tag(:dontcare, :dontcare, false, :id=>"cb2") %>
+              <%= observe_field("cb2", :function => "   
+                if (element.checked) {                  
+                    poly1 = new GPolygon([
+                    new GLatLng (45.5583850251648, -122.712478637695),
+                    new GLatLng (45.5666177261578, -122.728700637817),
+                    new GLatLng (45.5652957678914, -122.730159759521),
+                    new GLatLng (45.5562815869145, -122.713251113891),
+                    new GLatLng (45.5583850251648, -122.712478637695)
+                 ], '#6595CF', 5, 1, '#6595CF', 0.8);
+					map.addOverlay(poly1);
+                    
+                    var img = new GIcon();
+                    img.image = '/images/incidents/I_A_E.png';
+                    img.shadow = '';
+                    img.iconAnchor = new GPoint(32,32);
+					mar1 = new GMarker(new GLatLng (45.561993026259, -122.719413757324), { icon:img });
+					map.addOverlay(mar1);
+					
+                    } else {
+				      	map.removeOverlay(poly1);map.removeOverlay(mar1);
+					};
+                  ")%>
+                 A East	
+            <br />
+            
+              <%= check_box_tag(:dontcare, :dontcare, false, :id=>"cb3") %>
+              <%= observe_field("cb3", :function => "
+                  if (element.checked) {                  
+                    poly2 = new GPolygon([
+                    new GLatLng (45.5571229716633, -122.714924812316),
+                new GLatLng (45.5545987796227, -122.717156410217),
+                new GLatLng (45.5595569066066, -122.729473114013),
+                new GLatLng (45.5609691415097, -122.729086875915),
+                new GLatLng (45.5652957678914, -122.735266685485),
+                new GLatLng (45.5658666173229, -122.730803489685),
+                new GLatLng (45.5571229716633, -122.714924812316) 
+                        ], '#7B94B9', 5, 1, '#7B94B9', 0.2);
+					map.addOverlay(poly2);
+                    var img = new GIcon();
+                    img.image = '/images/incidents/I_A_W.png';
+                    img.shadow = '';
+					img.iconAnchor = new GPoint(32,32);
+					mar2 = new GMarker(new GLatLng (45.557076165183, -122.724519457135), { icon:img });
+					map.addOverlay(mar2);
+					} else {
+				      	map.removeOverlay(poly2);map.removeOverlay(mar2);
+					};
+                  ")%>
+                 A West
+           <br />
+              <%= check_box_tag(:dontcare, :dontcare, false, :id=>"cb4") %>
+              <%= observe_field("cb4", :function => "
+                  if (element.checked) {                  
+                    poly3 = new GPolygon([
+                 	new GLatLng (45.5667379026394, -122.728786468505),
+                new GLatLng (45.5653859023978, -122.725095748901),
+                new GLatLng (45.5681199136986, -122.720890045166),
+                new GLatLng (45.5609390943282, -122.707629203796),
+                new GLatLng (45.5627418967786, -122.706127166748),
+                new GLatLng (45.5710941265128, -122.722949981689),
+                new GLatLng (45.5702829931824, -122.730631828308),
+                new GLatLng (45.5667379026394, -122.728786468505) 
+                        ], '#66CEB3', 5, 1, '#66CEB3', 0.2);
+					map.addOverlay(poly3);
+                    var img = new GIcon();
+                    img.image = '/images/incidents/I_B_E.png';
+                    img.shadow = '';
+                    img.iconAnchor = new GPoint(32,32);
+					mar3 = new GMarker(new GLatLng (45.568504966522, -122.724362113952), { icon:img });
+					map.addOverlay(mar3);
+					} else {
+				      	map.removeOverlay(poly3);map.removeOverlay(mar3);
+					};
+                  ")%>
+                 B East
+           <br />
+              <%= check_box_tag(:dontcare, :dontcare, false, :id=>"cb5") %>
+              <%= observe_field("cb5", :function => "
+                                    if (element.checked) {                  
+                poly4 = new GPolygon([
+                    	new GLatLng (45.5653258127429, -122.735524177551),
+                new GLatLng (45.5646347770921, -122.737455368041),
+                new GLatLng (45.5679696967523, -122.741103172302),
+                new GLatLng (45.5694718481379, -122.74007320404),
+                new GLatLng (45.5653258127429, -122.735524177551)
+                        ], '#85AF9C', 5, 1, '#85AF9C', 0.2);
+					map.addOverlay(poly4);
+                    var img = new GIcon();
+                    img.image = '/images/incidents/I_B_W.png';
+                    img.shadow = '';
+                    img.iconAnchor = new GPoint(32,32);
+					mar4 = new GMarker(new GLatLng (45.564545589494, -122.744336019897), { icon:img });
+					map.addOverlay(mar4);
+					} else {
+				      	map.removeOverlay(poly4);map.removeOverlay(mar4);
+					};
+                  ")%>
+                 B West
+           <br />
+              <%= check_box_tag(:dontcare, :dontcare, false, :id=>"cb6") %>
+              <%= observe_field("cb6", :function => "
+                  if (element.checked) {                  
+					poly5 = new GPolygon([
+   
+	                new GLatLng (45.57037311968658, -122.73058891296387),
+	                new GLatLng (45.568510475878966, -122.73273468017578),
+	                new GLatLng (45.57710215678873, -122.74706840515137),
+	                new GLatLng (45.578543988413145, -122.7445793151855),
+	                new GLatLng (45.57037311968658, -122.73058891296387)
+                        ], '#C5CC68', 5, 1, '#C5CC68', 0.2);
+					map.addOverlay(poly5);
+                    var img = new GIcon();
+                    img.image = '/images/incidents/I_C_E.png';
+                    img.shadow = '';
+                    img.iconAnchor = new GPoint(32,32);
+					mar5 = new GMarker(new GLatLng (45.573457979162, -122.735302448272), { icon:img });
+					map.addOverlay(mar5);
+					} else {
+				      	map.removeOverlay(poly5);map.removeOverlay(mar5);
+					};
+                  ")%>
+                 C East
+                      <br />
+                               <%= check_box_tag(:dontcare, :dontcare, false, :id=>"cb7") %>
+              <%= observe_field("cb7", :function => "
+                  if (element.checked) {                  
+                       poly6 = new GPolygon([
+                    	new GLatLng (45.5657764835878, -122.730374336242),
+                                                new GLatLng (45.5653258127429, -122.735137939453),
+                        new GLatLng (45.5752998151951, -122.748999595642),
+
+                        new GLatLng (45.5771321953251, -122.746510505676),
+                        new GLatLng (45.5657764835878, -122.730374336242),
+                        ], '#A7AD87', 5, 1, '#A7AD87', 0.2);
+					map.addOverlay(poly6);
+                    var img = new GIcon();
+                    img.image = '/images/incidents/I_C_W.png';
+                    img.shadow = '';
+                    img.iconAnchor = new GPoint(32,32);
+					mar6 = new GMarker(new GLatLng (45.570062158088, -122.745979342651), { icon:img });
+					map.addOverlay(mar6);
+					} else {
+				      	map.removeOverlay(poly6);map.removeOverlay(mar6);
+					};
+                  ")%>
+                 C West
+                      <br />
+                                                <%= check_box_tag(:dontcare, :dontcare, false, :id=>"cb8") %>
+              <%= observe_field("cb8", :function => "
+                  if (element.checked) {                  
+		            poly7 = new GPolygon([
+		            new GLatLng (45.5753899336487, -122.74908542633),
+					new GLatLng (45.5785139506319, -122.745523452758),
+					new GLatLng (45.5805564831504, -122.743914127349),
+					new GLatLng (45.581472594922, -122.752518653869),
+					new GLatLng (45.5859177774961, -122.762582302093),
+					new GLatLng (45.5839655447111, -122.766680717468),
+		            new GLatLng (45.5753899336487, -122.74908542633)
+		                        ], '#45EF49', 5, 1, '#45EF49', 0.2);
+					map.addOverlay(poly7);
+                    var img = new GIcon();
+                    img.image = '/images/incidents/I_D.png';
+                    img.shadow = '';
+                    img.iconAnchor = new GPoint(32,32);
+					mar7 = new GMarker(new GLatLng (45.58096938076, -122.753384113311), { icon:img });
+					map.addOverlay(mar7);
+					} else {
+				      	map.removeOverlay(poly7);map.removeOverlay(mar7);
+					};
+                  ")%>
+                 D
+                 
+                 
+                 	
+<script type="text/javascript">
+
+var active = new GIcon();                    
+active.image = '/images/incidents/I_Active_GRP.png';
+active.shadow = '';
+active.size = new GSize(64,64);
+active.iconAnchor = new GPoint(32,32);
+
+var complete = new GIcon();                    
+complete.image = '/images/incidents/I_Complete_GRP.png';
+complete.shadow = '';
+complete.size = new GSize(64,64);
+complete.iconAnchor = new GPoint(32,32);
+
+var loc = new GLatLng (45.620731535787, -122.802901268005);
+a0 = new GMarker(loc, { icon:active });
+c0 = new GMarker(loc, { icon:complete });
+ 
+loc = new GLatLng (45.6046971134566, -122.77960896492);
+a1 = new GMarker(loc, { icon:active });
+c1 = new GMarker(loc, { icon:complete });    
+
+loc = new GLatLng (45.5880383074263, -122.764384746551);
+a2 = new GMarker(loc, { icon:active });
+c2 = new GMarker(loc, { icon:complete });    
+
+loc = new GLatLng (45.6126861482552, -122.783932685852);
+a3 = new GMarker(loc, { icon:active });
+c3 = new GMarker(loc, { icon:complete });    
+
+loc = new GLatLng (45.6026294590243, -122.77897596362);               
+a4 = new GMarker(loc, { icon:active });
+c4 = new GMarker(loc, { icon:complete });    
+
+loc = new GLatLng (45.6006451930583, -122.77601480484);
+a5 = new GMarker(loc, { icon:active });
+c5 = new GMarker(loc, { icon:complete });    
+
+loc = new GLatLng (45.5880383074263, -122.764384746551);           
+a6 = new GMarker(loc, { icon:active });
+c6 = new GMarker(loc, { icon:complete });    
+
+</script>
+                 
+<table>
+<tr><th></th><th>Active</th><th>Complete</th>
+
+<% 7.times do |n| %>
+    </tr><tr>
+    <td>GRP <%=n%></td>
+    <td>
+        <%= radio_button_tag("r#{n}", :dontcare, false, :onclick=>"
+          map.addOverlay(a#{n});
+          map.removeOverlay(c#{n}); ") %>
+    </td>
+    <td>
+        <%= radio_button_tag("r#{n}", :dontcare, false, :onclick=>"
+            map.removeOverlay(a#{n});
+            map.addOverlay(c#{n}); ") %>
+    </td>
+<% end %>
+
+</tr></table>              
+              
+            </div>
+         </div>

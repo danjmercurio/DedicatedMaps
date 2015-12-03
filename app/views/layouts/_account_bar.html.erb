@@ -1,0 +1,69 @@
+<% if @loggedin_user && !@anonymous_user %>
+
+  <span class='accountinfo'>
+    Welcome <%= @loggedin_user.first_name %> <%= @loggedin_user.last_name %> |
+    <%= link_to "My Map", map_path(@loggedin_user.map) %> |
+    <%= link_to "My Account", edit_user_path(@loggedin_user.id) %> |
+    <% if @loggedin_user.super? || @loggedin_user.admin? %>
+    <%= link_to "Admin", private_path('admin') %> |	
+    <% end %>
+    <%= link_to "Help", private_path('help') %> |
+    <%= link_to "Sign Out", @application_session, :method => :delete %>
+  </span> 
+  
+<% else %>
+
+  <% flash.each do |key, value| %>
+        <div style="text-align:right;color:red;" class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+  <div id="#login">
+  <% logout_user if @anonymous_user && !(controller.controller_name == 'maps' && controller.action_name == 'show') %>
+
+  <%= form_for @session, url: {controller: "sessions", action: "create"}, html: {:class => 'accountinfo'} do |f| %>
+
+    <%= f.text_field :username,
+    :value => 'username',
+    :onBlur => 'clearText(this);',
+    :onFocus => 'clearText(this);',
+    :class => 'accountuser'
+    %>
+
+    <span id='pws'>
+      
+      <%= f.password_field :password,
+      :value => 'password',
+      :onFocus => "$('pws').childElements().invoke('toggle'); $('session_password').focus();",
+      :class => 'accountpass'
+      %>
+
+      
+    </span>
+
+    <%= submit_tag "Log In" %>
+    <!-- (<%= link_to_function("I forgot", 
+    "$(this).up('div').childElements().invoke('toggle');
+    $('username').value = $('session_username').value;"
+    ) %>) -->
+    <a href="#" id="forgot">I forgot</a>
+
+  <% end %>
+  </div>
+
+  <span id="recover" style="display:none;">
+    <%= form_tag({controller: "users", action: "recover"}, :class => "accountinfo", :update => "reset_message", :loading => "Element.show('reset_loading')", :complete => "Element.hide('reset_loading')") do %>
+
+    <%= text_field_tag :username, 'username', 
+    :onBlur => 'clearText(this);',
+    :onFocus => 'clearText(this);',
+    :class => 'accountuser'
+    %>
+
+    <%= submit_tag "Reset Password" %>
+
+    <a href="#" id="cancel">Cancel</a>
+    <span id='reset_loading' style='color:red; display:none'>loading...</span>
+    <span id='reset_message' style='color:red'></span>
+    <% end %>
+  </span>
+
+<% end %>

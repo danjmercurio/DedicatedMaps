@@ -1,0 +1,52 @@
+﻿/*
+	The purpose of this stylesheet is to reset the basic CSS
+	imposed by each browser, so that the baseline is the same.
+	These rules were developed by Eric Myer at:
+
+	http://meyerweb.com/eric/thoughts/2007/04/12/reset-styles/
+*/
+
+html,body,div,span,
+applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,big,cite,code,
+del,dfn,em,font,img,ins,kbd,q,s,samp,
+small,strike,strong,sub,sup,tt,var,
+dd,dl,dt,li,ol,ul,
+fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 100.01%;
+	line-height: 1;
+	font-family: inherit;
+	text-align: left;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+ol,ul {
+	list-style: none;
+}
+q:before,q:after,
+blockquote:before,blockquote:after {
+	content: "";
+}
+a img,:link img,:visited img { border:none }
+
+sup {
+    font-size: smaller;
+    vertical-align: baseline;
+    position: relative;
+    bottom: 0.33em;
+}
+sub {
+    font-size: smaller;
+    vertical-align: baseline;
+    position: relative;
+    bottom: -0.25em;
+}

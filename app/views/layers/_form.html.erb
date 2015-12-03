@@ -1,0 +1,24 @@
+<p>
+  <%= f.label :title %>
+  (user viewable title. e.g. "My Ships")<br />
+  <%= f.text_field :title %>
+</p>
+<p>
+  <%= f.label :name %>
+  (internal name: lower case, no spaces. e.g. "my_ships")<br />
+  <%= f.text_field :name %>
+</p>
+<p>
+  <%= f.label :icon %>
+  (path to icon png file relative to  public/images/markers/. No suffix. e.g. "alphabet/blue_A")
+  
+  <br />
+  <%= f.text_field :icon %><a href='http://174.143.157.90/images.php' target='_blank'>view icons</a>
+  
+</p>
+<p>
+  <%= f.label :description %><br />
+  <%= f.text_area :description %>
+</p>
+
+

@@ -1,0 +1,40 @@
+<%
+  @min_visibility = Visibility.find_by_name("Private")
+   
+  @asset_type_id = AssetType.find_by_name('ship').id 
+ 
+  @my_ships = Asset.find_all_by_client_id_and_asset_type_id(
+    @map.user.client.id,
+    @asset_type_id,
+    :conditions => ["visibility_id >= ?", @min_visibility.id],
+    :include => [:current_location, {:ship => :icon}]
+  )
+  
+  #add fishing vessels
+  @asset_type_id = AssetType.find_by_name('fishing_vessel').id
+  
+  @my_ships = @my_ships | Asset.find_all_by_client_id_and_asset_type_id(
+    @map.user.client.id,
+    @asset_type_id,
+    :conditions => ["visibility_id >= ?", @min_visibility.id],
+    :include => [:current_location, {:fishing_vessel => :icon}]
+  )
+  
+%>
+
+<% if @my_ships.length() == 0 %>
+
+    You currently have no ships registered.
+
+<% else %>
+
+  <% options = "<option value='0'>Locate...</option>".html_safe %>
+
+  <% @my_ships.each do |ship| %>
+    <% options.concat("<option value=#{ship.id}>#{ship.common_name[0..18]}</option>".html_safe) %>
+  <% end %>
+
+  <%= select_tag "Locate My Ships", options, :id=>"my_ship_locate" %>
+  <%= observe_field('my_ship_locate', :function => 'layer.my_ships.list[value].centerOpen()')%>
+
+<% end %>

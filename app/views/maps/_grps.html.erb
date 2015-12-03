@@ -1,0 +1,9 @@
+<% @grps = Grp.all %>
+
+<% options = "<option value='0'>Locate...</option>".html_safe %>
+<% @grps.each do |f| %>
+  <% options.concat("<option value=#{f.id}>#{f.strategy.to_s[0..20]}</option>".html_safe) %>
+<% end %>
+
+<%= select_tag 'grps', options, :id=>"grp_locate"  %>
+<%= observe_field('grp_locate', :function => 'layer.grps.list[value].centerOpen()')%>

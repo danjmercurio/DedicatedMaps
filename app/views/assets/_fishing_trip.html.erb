@@ -1,0 +1,82 @@
+<fieldset>
+
+  <legend>New Fishing Trip</legend>
+
+  <%= form_for @fishing_trip, {
+      :update => "trip_data",
+      :loading => "Element.show('trip_loading')",
+      :complete => "Element.hide('trip_loading')"
+      } do |t| -%>
+
+  <%= fields_for @asset.fishing_vessel do |f| %>
+
+  <div style="float:left; margin-right:20px;">
+      <%= f.hidden_field :id %>
+    <p>    
+      <%= t.label :date_submitted %><br />
+      <%= t.text_field :date_submitted %>
+      <%#= calendar_date_select_tag "fishing_trip[date_submitted]", "", :popup => :force %>
+    </p>  
+
+    <p>    
+      <%= t.label :date_certified %><br />
+      <%= t.text_field :date_certified %>
+      <%#= calendar_date_select_tag "fishing_trip[date_certified]", "", :popup => :force %>
+    </p>  
+    
+    <p>    
+      <%= t.label :confirmation, "Confirmation code" %><br />
+      <%= t.text_field :confirmation%>
+    </p>
+      
+    Intended catch:
+    
+    <% @fish.each do |fish| -%>
+      <% field_id = "fish#{fish.id}" %>
+      <br />
+      <%= check_box_tag "fishing_trip[fish_ids][]", fish.id, false, {:id => field_id} %>
+      <%= label_tag field_id, h(fish.title) %>
+    <% end %>
+    <%= hidden_field_tag "fish_checkboxes", 1 %>
+    
+  </div>
+  
+  <div style="float:left; margin-right:20px;">
+    
+    Gear:
+    
+    <% @fishing_gear.each do |gear| -%>
+      <% field_id = "gear#{gear.id}" %>
+      <br />
+      <%= check_box_tag "fishing_trip[fishing_gear_ids][]", gear.id, false, {:id => field_id} %>
+      <%= label_tag field_id, h(gear.title) %>
+    <% end %>
+    <%= hidden_field_tag "gear_checkboxes", 1 %>
+    
+  </div>
+  
+  <div style="float:left; margin-right:20px;">
+
+    Crew:
+    
+    <% @fishermen.each do |hand| -%>
+      <% field_id = "hand#{hand.id}" %>
+      <br />
+      <%= check_box_tag "fishing_trip[fisherman_ids][]", hand.id, false, {:id => field_id} %>
+      <%= label_tag field_id, hand.first_name + ", " + hand.last_name + " - " + hand.duties %>
+    <% end %>
+    <%= hidden_field_tag "fishermen_checkboxes", 1 %>
+  
+  </div>
+  
+  <p style="clear:both;">
+    <%= t.submit 'Create' %>
+  </p>
+  
+  <% end %>
+
+<% end %>
+
+</fieldset>
+
+<%= render :partial => "fishing_trips/list", :locals => {:fishing_trips => @fishing_trips} %>

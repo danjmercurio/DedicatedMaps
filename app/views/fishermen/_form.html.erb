@@ -1,0 +1,43 @@
+<table style="display:block">
+  <tr>
+    <% if @loggedin_user.super? %><td width="220"><%= fisherman.client.company_name %></td><% end %>
+    <td width="220"><%= fisherman.last_name %></td>
+    <td width="220"><%= fisherman.first_name%></td>
+    <td width="220"><%= fisherman.duties%></td>
+    <td>
+      <%= button_to_function "Edit", "$('d#{fisherman.id}').childElements().invoke('toggle')"%>
+      <%= button_to_remote "Delete", 
+          :url => fisherman_url(fisherman),
+          :update => "d#{@fisherman.id}",
+          :loading => "Element.show('delete_loading#{fisherman.id}')",
+          :complete => "Element.hide('delete_loading#{fisherman.id}')",
+          :confirm => 'Are you sure you want to delete this person from the crew list?',
+          :method => :delete
+          %>
+          <%= loader("delete_loading#{fisherman.id}", 'Deleting...<br />') %>
+    </td>
+  </tr>
+</table>
+
+<div style="display:none">     
+  <% remote_form_for( fisherman, 
+            :url => fisherman_url(fisherman),
+            :update => "d#{fisherman.id}",
+            :loading => "Element.show('save_loading#{fisherman.id}')",
+            :complete => "Element.hide('save_loading#{fisherman.id}')",
+            :method => :put
+  ) do |f| -%>
+    <table>
+      <tr>
+        <% if @loggedin_user.super? %><td width="220"><%= fisherman.client.company_name %></td><% end %>        
+        <td width="220"><%= f.text_field :last_name, :value => fisherman.last_name %></td>
+        <td width="220"><%= f.text_field :first_name, :value => fisherman.first_name %></td>
+        <td width="220"><%= f.text_field :duties, :value => fisherman.duties %></td>
+        <td>
+          <%= button_to_function "Cancel", "$('d#{fisherman.id}').childElements().invoke('toggle')"%>
+          <%= f.submit 'Save' %><%= loader("save_loading#{fisherman.id}", 'Saving...<br />') %>
+        </td>
+      </tr>
+    </table>
+  <% end %> 
+</div>

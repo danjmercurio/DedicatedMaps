@@ -1,0 +1,9 @@
+Select layers this map will display:
+<br />
+<% @layers.each do |layer| -%>
+  <% field_id = "layer_#{layer.id}" %>
+  <br />
+  <%= check_box_tag "user[layer_ids][]", layer.id, @public_map.layers.include?(layer), {:id => field_id} %>
+  <%= label_tag field_id, h(layer.title) %>
+<% end %>
+<%= hidden_field_tag "layer_checkboxes", 1 %>

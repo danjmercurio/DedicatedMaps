@@ -1,0 +1,32 @@
+ <% @icons = AssetType.find_by_name('ship').icons %>
+     
+ <table>
+  <tr>
+    <th>Ship Type</th>
+    <th>Off</th>
+    <th>Dim</th>
+  </tr>
+  
+<% @icons.each do |icon| %>
+  <tr>
+    <td>
+      <%= image_tag("markers/ships/#{icon.suffix}/#{icon.suffix}_50.png", :size=>"16x16") %> 
+      <%= icon.name %>
+    </td>
+    
+    <td>
+        <%= check_box_tag(icon.id, icon.id, false, :id=>"hide_icon#{icon.id}") %>
+        <%= observe_field("hide_icon#{icon.id}", :function => "
+          layer.public_ships.set('#{icon.suffix}', 'hidden', element.checked);
+          ") %>
+    </td>
+  
+    <td>
+        <%= check_box_tag(icon.id, icon.id, false, :id=>"dim_icon#{icon.id}") %>
+        <%= observe_field("dim_icon#{icon.id}", :function => "
+          layer.public_ships.set('#{icon.suffix}', 'dim', element.checked);
+          ") %>
+    </td>
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,74 @@
+<%= button_to_function "Locate", "map.setCenter(new GLatLng(46.13417004624326, -124.0576171875), 6);
+  layer.astoria_marine_map.setOpacity()" %>
+
+  Opacity: <span id="astoria_opacity">100</span>
+  <br />
+  <div id="opacity_slider" style="width:180px; height:6px; border-bottom:thick solid #eee;">
+    <div id="opacity_handle" style="width:16px; height:16px; background:url('/images/slider_handle.png'); cursor:move;"></div>
+  </div>
+  <br />
+
+<%= javascript_tag :defer => 'defer' do -%>
+  layer.astoria_marine_map = {};
+  var me = layer.astoria_marine_map;
+  
+  me.on = function() {
+    layer.map.addOverlay(me.map);
+  }
+  me.off = function() {
+    layer.map.removeOverlay(me.map);
+  }
+  
+  // Initialize Astoria marine chart layer    
+  // http://jord.research.pdx.edu/~bjpd/noaa/dedicated_maps/googlemaps.html
+  me.mapBounds = new GLatLngBounds(new GLatLng(41.743124064, -128.557754858), new GLatLng(49.3515625727, -120.275778944));
+  me.mapMinZoom = 5;
+  me.mapMaxZoom = 14;
+  me.opacity = 1;
+  me.copyCollection = new GCopyrightCollection('Chart');
+  me.copyright = new GCopyright(1, me.mapBounds, 0, "&copy;2015 Dedicated Maps");
+  me.copyCollection.addCopyright(me.copyright);    
+  me.buildOverlay = function(){
+    me.tilelayer = new GTileLayer(GCopyrightCollection(''), me.mapMinZoom, me.mapMaxZoom, {opacity:me.opacity});
+    me.mercator = new GMercatorProjection(me.mapMaxZoom+1);
+    me.tilelayer.getTileUrl = function(tile,zoom) {
+        if ((zoom < me.mapMinZoom) || (zoom > me.mapMaxZoom)) {
+          return "http://www.maptiler.org/img/none.png";
+        } 
+        var ymax = 1 << zoom;
+        var y = ymax - tile.y -1;
+        var tileBounds = new GLatLngBounds(
+          me.mercator.fromPixelToLatLng( new GPoint( (tile.x)*256, (tile.y+1)*256 ) , zoom ),
+          me.mercator.fromPixelToLatLng( new GPoint( (tile.x+1)*256, (tile.y)*256 ) , zoom )
+        );
+        if (me.mapBounds.intersects(tileBounds)) {
+          return "http://jord.research.pdx.edu/~bjpd/noaa/dedicated_maps/" + zoom+"/"+tile.x+"/"+y+".png";
+        } else {
+          return "http://www.maptiler.org/img/none.png";
+        }
+    }
+    me.map = new GTileLayerOverlay( me.tilelayer );
+  }
+  me.buildOverlay();
+  
+  me.setOpacity = function(v) {
+    $('astoria_marine_map').checked = true;    
+    layer.map.removeOverlay(me.map);
+    me.opacity = v;
+    me.buildOverlay();
+    layer.map.addOverlay(me.map);
+  }
+  
+  // Opacity slider    
+  new Control.Slider('opacity_handle', 'opacity_slider', {
+    sliderValue: 1,
+    onSlide: function(v) {
+       $('astoria_opacity').innerHTML = parseInt(v*100);
+    },
+    onChange: function(v) {
+      $('astoria_opacity').innerHTML = parseInt(v*100);
+      me.setOpacity(v);
+    }
+  });
+  
+<% end -%>

@@ -1,0 +1,31 @@
+<fieldset>
+
+  <legend>New Tracking Device</legend>
+  
+<%= collection_select :device, :device_type_id, @device_types, :id, :title, :prompt => "Select Type"%>
+<%= observe_field('device_device_type_id', :function => "
+  $('device_forms').childElements().invoke('hide');
+  $('device_' + value).show();
+")%>
+
+<div id="device_forms">
+
+  <% @device_types.each do |device_type| %>
+
+    <%= form_for @device, {
+          :html => { :id => 'device_' + device_type.id.to_s,
+                     :style => "display:none;" }
+      } do |f| %>
+      <br /><br />  
+      
+      <%= hidden_field_tag("device[device_type_id]", device_type.id) %>
+      <%= render :partial => 'devices/' + device_type.name,
+                 :locals  => {:f => f}
+                 %>
+      <%= f.submit 'Save' %>  
+    <% end %>
+    
+  <% end %>
+</div>
+
+</fieldset>

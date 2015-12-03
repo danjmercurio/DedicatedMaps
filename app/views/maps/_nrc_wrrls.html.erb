@@ -1,0 +1,20 @@
+<% @nrc_wrrl = StagingAreaCompany.find_by_layer_id(layer) %>
+
+<% options = "<option value='0'>Location</option>".html_safe %>
+<% @nrc_wrrl.staging_areas.all(:order => :name).select {|c| c.lat && c.lon}.each do |f| %>
+    <% options.concat("<option value=#{f.id}>#{f.name[0..19]}</option>".html_safe) %>
+<% end %>
+
+<%= select_tag "nrc_wrrl areas", options, :id=>"nrc_wrrl_locate" %>
+<%= observe_field('nrc_wrrl_locate', :function => 'layer.nrc_wrrls.list[value].centerOpen()')%>
+
+<br />
+
+<% options = "<option value='-1'>Equipment</option>".html_safe %>
+<% options += "<option value='0'>-=Clear All=-</option>".html_safe %>
+<% @nrc_wrrl.staging_area_asset_types.all(:order => :name).each do |f| %>
+    <% options.concat("<option value=#{f.id}>#{f.name[0..19]}</option>".html_safe) %>
+<% end %>
+
+<%= select_tag "nrc_wrrl areas", options, :id=>"nrc_wrrl_gear" %>
+<%= observe_field('nrc_wrrl_gear', :function => "layer.nrc_wrrls.search_filter(value)")%>

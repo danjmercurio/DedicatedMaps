@@ -1,0 +1,33 @@
+<% @staging_area_company = StagingAreaCompany.find_by_layer_id(layer) %>
+
+<% options = "<option value='0'>Location</option>".html_safe %>
+<% @staging_area_company.staging_areas.all(:order => :name).select {|c| c.lat && c.lon}.each do |f| %>
+    <% options.concat("<option value=#{f.id}>#{f.name[0..19]}</option>".html_safe) %>
+<% end %>
+
+<%= select_tag  "#{layer.name} areas", options, :id => "#{layer.name}_locate" %>
+<%= observe_field( "#{layer.name}_locate", :function => "
+  var checkbox = $('#{layer.name}');
+  if (!checkbox.checked) {
+    layer.#{layer.name}.load_callback = function() {layer.#{layer.name}.list[value].centerOpen()}
+    layer.#{layer.name}.on();
+    checkbox.checked = true;
+  } else {
+    layer.#{layer.name}.list[value].centerOpen();
+  };
+  ")%>
+
+<% if !@staging_area_company.staging_area_asset_types.empty? %>
+
+  <br />
+
+  <% options = "<option value='-1'>Inventory</option>".html_safe %>
+  <% options += "<option value='0'>-= Reset =-</option>".html_safe %>
+  <% @staging_area_company.staging_area_asset_types.all(:order => :name).each do |f| %>
+      <% options.concat("<option value=#{f.id}>#{f.name[0..19]}</option>".html_safe) %>
+  <% end %>
+
+  <%= select_tag "#{layer.name} areas", options, :id=>"#{layer.name}_gear" %>
+  <%= observe_field("#{layer.name}_gear", :function => "layer.#{layer.name}.search_filter(value, 'staging_areas')")%>
+
+<% end %>

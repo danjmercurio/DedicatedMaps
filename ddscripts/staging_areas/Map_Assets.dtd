@@ -1,0 +1,78 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT dataroot (qry_Map_Assets)+>
+<!ATTLIST dataroot
+  xmlns CDATA #FIXED ''
+  generated NMTOKEN #REQUIRED>
+
+<!ELEMENT qry_Map_Assets (Ident,CompanyCode,LocationCode,AssetTypeCode,
+                          MapAsset,ParentIdent?,Photo?,Boom_Length?,
+                          Recovery?,Liquid_Storage?,Specification?,
+                          Description?,Serial_Number?,Manufacture,
+                          Model?,Manufacture_Year?)>
+<!ATTLIST qry_Map_Assets
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Ident (#PCDATA)>
+<!ATTLIST Ident
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT CompanyCode (#PCDATA)>
+<!ATTLIST CompanyCode
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT LocationCode (#PCDATA)>
+<!ATTLIST LocationCode
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT AssetTypeCode (#PCDATA)>
+<!ATTLIST AssetTypeCode
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT MapAsset (#PCDATA)>
+<!ATTLIST MapAsset
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT ParentIdent (#PCDATA)>
+<!ATTLIST ParentIdent
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Photo (#PCDATA)>
+<!ATTLIST Photo
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Boom_Length (#PCDATA)>
+<!ATTLIST Boom_Length
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Recovery (#PCDATA)>
+<!ATTLIST Recovery
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Liquid_Storage (#PCDATA)>
+<!ATTLIST Liquid_Storage
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Specification (#PCDATA)>
+<!ATTLIST Specification
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Description (#PCDATA)>
+<!ATTLIST Description
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Serial_Number (#PCDATA)>
+<!ATTLIST Serial_Number
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Manufacture (#PCDATA)>
+<!ATTLIST Manufacture
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Model (#PCDATA)>
+<!ATTLIST Model
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Manufacture_Year (#PCDATA)>
+<!ATTLIST Manufacture_Year
+  xmlns CDATA #FIXED ''>

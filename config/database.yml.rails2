@@ -1,0 +1,12 @@
+common: &common
+  adapter: mysql
+  encoding: utf8
+  username: root
+  password: mapapp
+  #socket: /tmp/mysql.sock
+production:
+  <<: *common
+  database: ddmaps
+development:
+  <<: *common
+  database: ddmaps_dev

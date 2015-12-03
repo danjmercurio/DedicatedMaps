@@ -1,0 +1,39 @@
+<fieldset>
+
+<legend>Fishing Trip History</legend>
+  
+  <% if @fishing_trips.nil? %>
+
+    <br />You have no fishing trip history  <% else %>
+
+    <table class="index">
+      <tr>
+        <% if @loggedin_user.super? %><th>Client</th><% end %>
+        <th>Vessel</th>
+        <th>Confirmation</th>
+        <th>Date Submitted</th>
+        <th>Date Confirmed</th>
+        <th>Gear</th>
+        <th>Intended Catch</th>
+        <th>Actual Catch</th>
+        <th>Crew</th>
+      </tr>
+      
+      <% @fishing_trips.each do |trip| %>
+        <tr bgcolor="<%= cycle("#dddddd", "#ffffff") %>">
+          <% if @loggedin_user.super? %><td><%= trip.fishing_vessel.asset.client.company_name %></td><% end %>
+          <td><%= trip.fishing_vessel.asset.common_name %></td>
+          <td><%= trip.confirmation %></td>
+          <td><%= trip.date_submitted %></td>
+          <td><%= trip.date_certified %></td>
+          <td><%= trip.fishing_gear.map {|g| g.title} %></td>
+          <td><%= trip.intended_catches.map {|c| c.fish.title + "<br/>".html_safe} %></td>
+          <td><%= trip.actual_catches.map {|c| c.real_fish.title + " " + c.amount + "<br/>".html_safe} %></td>
+          <td><%= trip.fishermen.map {|f| f.last_name + ", " + f.first_name + "<br/>".html_safe} %></td>
+        </tr>
+      <% end %>
+    </table>
+  
+  <% end %>
+  
+</fieldset>

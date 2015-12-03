@@ -1,0 +1,50 @@
+<ul>
+
+<% if @loggedin_user.super? %>
+  <li>
+    <%= link_to 'Clients', clients_path, :class => :section %>
+  </li>
+  
+  <li>
+    <%= link_to 'Layers', layers_path, :class => :section %>
+  </li>
+  
+  <li>
+    <%= link_to 'Public Maps', public_maps_path, :class => :section %>
+  </li>
+  
+<% end %>
+  
+<% if @loggedin_user.super? || @loggedin_user.admin? %>
+      
+  <li>
+    <%= link_to 'Users', users_path, :class => :section %>
+  </li>
+
+  <li>
+    <%= link_to 'Assets', assets_path, :class => :section %>
+  </li>
+ 
+  <li>
+    <%= link_to 'Tracking Devices', devices_path, :class => :section %>
+  </li>
+  
+  <!-- <% if Asset.find_all_by_client_id(@loggedin_user.client.id).map {|a| a.asset_type.name}.include?("fishing_vessel") %> -->
+    <!-- <li> -->
+      <!-- <%= link_to 'Fishing History', fishing_trips_path, :class => :section %> -->
+    <!-- </li> -->
+  <!-- <% end %> -->
+  
+  <% if Fisherman.find_all_by_client_id(@loggedin_user.client.id).length > 0 %>
+    <li>
+      <%= link_to 'Fishing Crew', fishermen_path, :class => :section %>
+    </li>
+  <% end %>
+  
+  <li>
+    <%#= link_to 'Site Stats', :action => 'stats' %>
+  </li>
+
+<% end %>
+
+</ul>

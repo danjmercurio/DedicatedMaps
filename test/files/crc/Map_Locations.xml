@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" generated="2010-01-27T14:44:12">
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>20</LocationCode>
+<LocationName>Tongue Point</LocationName>
+<Contact>Columbia Security</Contact>
+<Address>3 Hanger Way</Address>
+<City>Astoria</City>
+<State>OR</State>
+<Zip>97103</Zip>
+<Phone>(503) 325-6407</Phone>
+<FAX>(503) 325-4093</FAX>
+<Email>wntp@charterinternet.com</Email>
+<Latitude>46.2097</Latitude>
+<Longitude>-123.77108</Longitude>
+<Boom>14700</Boom>
+<Recovery>8672</Recovery>
+<Storage>404</Storage>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>21</LocationCode>
+<LocationName>Weyerhaeuser Facility</LocationName>
+<Contact>Brian Wood</Contact>
+<Address>3401 Industrial Way</Address>
+<City>Longview</City>
+<State>WA</State>
+<Zip>98632</Zip>
+<Phone>360-414-3360</Phone>
+<FAX>360-636-6470</FAX>
+<Email>brien.kirby@weyerhaeuser.com</Email>
+<Latitude>46.13143397</Latitude>
+<Longitude>-122.99271583</Longitude>
+<Boom>10300</Boom>
+<Recovery>4952</Recovery>
+<Storage>300</Storage>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>22</LocationCode>
+<LocationName>Chevron Dock</LocationName>
+<Contact>Jerry Henderson</Contact>
+<Address>5924  NW Front Avenue</Address>
+<City>Portland</City>
+<State>OR</State>
+<Zip>97210</Zip>
+<Phone>503-221-7714</Phone>
+<FAX>503-222-9766</FAX>
+<Email>hegs@chevron.com</Email>
+<Latitude>45.566347</Latitude>
+<Longitude>-122.739408</Longitude>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>24</LocationCode>
+<LocationName>Freds Marina</LocationName>
+<Contact>Habor master</Contact>
+<Address>12800 NW Marina Way</Address>
+<City>Portland</City>
+<State>OR</State>
+<Zip>97231-2321</Zip>
+<Phone>503-286-5537</Phone>
+<Email>N/A,</Email>
+<Latitude>45.6190325014995</Latitude>
+<Longitude>-122.803625464439</Longitude>
+<Boom>2000</Boom>
+<Recovery>3720</Recovery>
+<Storage>24</Storage>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>25</LocationCode>
+<LocationName>Fowlers Marina</LocationName>
+<Contact>Jack Fowlers</Contact>
+<Address>6703 Willow Grove Rd.</Address>
+<City>Longview</City>
+<State>OR</State>
+<Zip>98632</Zip>
+<Phone>3604254662</Phone>
+<Email>N/A</Email>
+<Latitude>45.619005299</Latitude>
+<Longitude>-122.803652</Longitude>
+<Boom>1600</Boom>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>26</LocationCode>
+<LocationName>Foss Rainer Shipyard</LocationName>
+<Contact>Tony Silva</Contact>
+<Address>611 East &quot;A&quot; Street</Address>
+<City>Rainer</City>
+<State>OR</State>
+<Zip>97048</Zip>
+<Phone>503-556-8332</Phone>
+<FAX>503-556-6713</FAX>
+<Email>tony@foss.com</Email>
+<Latitude>46.08894</Latitude>
+<Longitude>-122.9280424</Longitude>
+<Boom>2000</Boom>
+<Recovery>3720</Recovery>
+<Storage>24</Storage>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>27</LocationCode>
+<LocationName>A-1 Moorage</LocationName>
+<Contact>Dan Galbrandson</Contact>
+<Address>12950 NW Marina Way</Address>
+<City>Portland</City>
+<State>OR</State>
+<Zip>97231</Zip>
+<Phone>503-283-5538</Phone>
+<Email>N/A</Email>
+<Latitude>45.621661</Latitude>
+<Longitude>-122.808845</Longitude>
+<Boom>3000</Boom>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>28</LocationCode>
+<LocationName>Boise Cascade</LocationName>
+<Contact>Securty Office</Contact>
+<Address>1300 Kaster Road</Address>
+<City>St. Helens</City>
+<State>OR</State>
+<Zip>97051</Zip>
+<Phone>503-397-9299</Phone>
+<FAX>503-397-9613</FAX>
+<Latitude>45.863118</Latitude>
+<Longitude>-122.79642105</Longitude>
+<Boom>5000</Boom>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>29</LocationCode>
+<LocationName>Georgia Pacific</LocationName>
+<Contact>Georgia Pacific Corp</Contact>
+<Address>92326 Taylorville Rd</Address>
+<City>Clatskanie</City>
+<State>OR</State>
+<Zip>97016</Zip>
+<Email>N/A</Email>
+<Latitude>46.1650306</Latitude>
+<Longitude>-123.41474533</Longitude>
+<Boom>3300</Boom>
+<Storage>10050</Storage>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>30</LocationCode>
+<LocationName>PGE/Beaver</LocationName>
+<Contact>Scott Bauska</Contact>
+<Address>80997 Kallunki Road</Address>
+<City>Clatskanie</City>
+<State>OR</State>
+<Zip>97016</Zip>
+<Phone>503-728-7211</Phone>
+<FAX>503-728-7216</FAX>
+<Email>scottBauska@pgn.com</Email>
+<Latitude>46.1809892</Latitude>
+<Longitude>-123.17321777</Longitude>
+<Boom>6300</Boom>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>31</LocationCode>
+<LocationName>Skamakawa Vista Park</LocationName>
+<Contact>Park Ranger</Contact>
+<Address>13 Vistia Park</Address>
+<City>Skamakama</City>
+<State>WA</State>
+<Zip>98647</Zip>
+<Phone>360-795-8605</Phone>
+<Email>N/A</Email>
+<Latitude>46.26943553</Latitude>
+<Longitude>-123.45654487</Longitude>
+<Boom>2500</Boom>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>32</LocationCode>
+<LocationName>B/P Arco</LocationName>
+<Contact>Jim Swatman</Contact>
+<Address>9933 NW St. Helens Road</Address>
+<City>Portland</City>
+<State>OR</State>
+<Zip>97231</Zip>
+<Phone>503-286-8257</Phone>
+<FAX>503-286-3961</FAX>
+<Email>jim.swatman@bp.com</Email>
+<Latitude>45.594386</Latitude>
+<Longitude>-122.779169</Longitude>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>33</LocationCode>
+<LocationName>Portland Base</LocationName>
+<Contact>Ernie Quesada</Contact>
+<Address>9420 NW St. Helens Road</Address>
+<City>Portland</City>
+<State>OR</State>
+<Zip>97231</Zip>
+<Phone>503-735-2104</Phone>
+<FAX>503-735-1687</FAX>
+<Email>quesada@pdxmex.com</Email>
+<Latitude>45.592795</Latitude>
+<Longitude>-122.7773237</Longitude>
+<Boom>4000</Boom>
+<Storage>545</Storage>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>34</LocationCode>
+<LocationName>St. Helens Marina</LocationName>
+<Contact>Habor master</Contact>
+<Address>134 N River Street</Address>
+<City>St. Helens</City>
+<State>OR</State>
+<Zip>97231</Zip>
+<Phone>503-397-4162</Phone>
+<Email>N/A</Email>
+<Latitude>45.866509</Latitude>
+<Longitude>-122.79665708</Longitude>
+<Boom>2000</Boom>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>36</LocationCode>
+<LocationName>Elochoman Slough Marina</LocationName>
+<Contact>Jackie Lea (Manager)</Contact>
+<Address>P.O. Box 651</Address>
+<City>Cathlamet</City>
+<State>WA</State>
+<Zip>98612</Zip>
+<Phone>360-795-3501</Phone>
+<FAX>360-430-3110</FAX>
+<Email>www.cathlametmarina.org</Email>
+<Latitude>46.2071312</Latitude>
+<Longitude>-123.38693618</Longitude>
+<Boom>6200</Boom>
+<Recovery>3720</Recovery>
+<Storage>24</Storage>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>37</LocationCode>
+<LocationName>Tidewater Facility</LocationName>
+<Contact>Jim Underwood</Contact>
+<Address>6305 NW Old Lower River Road</Address>
+<City>Vancouver</City>
+<State>WA</State>
+<Zip>98660</Zip>
+<Phone>360-693-1491</Phone>
+<FAX>360-694-8981</FAX>
+<Email>jim@tidewater.com</Email>
+<Latitude>45.649808</Latitude>
+<Longitude>-122.74423599</Longitude>
+<Storage>5000</Storage>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>38</LocationCode>
+<LocationName>Scappoose Fire Department</LocationName>
+<Contact>Chief</Contact>
+<Address>27713 Chapman Road</Address>
+<City>Scappoose</City>
+<State>OR</State>
+<Zip>97056</Zip>
+<Phone>(800) 696-77</Phone>
+<Email>www.srfd.us/prevention.com</Email>
+<Latitude>45.757643</Latitude>
+<Longitude>-122.87641525</Longitude>
+<Boom>200</Boom>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>39</LocationCode>
+<LocationName>St. Helens Fire Department</LocationName>
+<Contact>Chief</Contact>
+<Address>270 Columbia Blvd</Address>
+<City>St. Helens</City>
+<State>OR</State>
+<Zip>97231</Zip>
+<Phone>503-397-4800</Phone>
+<Email>www.shfd.com</Email>
+<Boom>400</Boom>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>40</LocationCode>
+<LocationName>Portland Fire  Station 6</LocationName>
+<Contact>Chief</Contact>
+<City>Portland</City>
+<State>OR</State>
+<Boom>2400</Boom>
+<Storage>100</Storage>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>41</LocationCode>
+<LocationName>West Mooring</LocationName>
+<Contact>Habormaster Office</Contact>
+<Address>352 Industry</Address>
+<City>Astoria</City>
+<State>OR</State>
+<Zip>97102</Zip>
+<Phone>503-325-8279</Phone>
+<FAX>Cell 503-791</FAX>
+<Email>marina@portofastoria.com</Email>
+<Latitude>46.19021463</Latitude>
+<Longitude>-123.85677337</Longitude>
+<Boom>4900</Boom>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>43</LocationCode>
+<LocationName>East Mooring</LocationName>
+<Contact>Habormaster</Contact>
+<Address>Foot of 36th Street</Address>
+<City>Astoria</City>
+<State>OR</State>
+<Zip>97102</Zip>
+<Phone>(503) 325-8279</Phone>
+<Email>marina@portofastoria.com</Email>
+<Latitude>46.19591843</Latitude>
+<Longitude>-123.80336523</Longitude>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>61</LocationCode>
+<LocationName>Sause Bros</LocationName>
+<Contact>Carl Ciaramella</Contact>
+<Address>3710 NW Front Ave.</Address>
+<City>Portland</City>
+<State>OR</State>
+<Zip>97210</Zip>
+<Phone>503-222-1811</Phone>
+<FAX>503-274-5416</FAX>
+<Email>CarlC@Sause.com</Email>
+<Latitude>45.549970799</Latitude>
+<Longitude>-122.70282268</Longitude>
+<Boom>1000</Boom>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>62</LocationCode>
+<LocationName>Tesoro Facility</LocationName>
+<Contact>Mike Alleyn</Contact>
+<Address>2211 St. Francis Lane</Address>
+<City>Vancouver</City>
+<State>WA</State>
+<Zip>98660</Zip>
+<Phone>360-293-1601</Phone>
+<FAX>360-694-9010</FAX>
+<Email>malley@tsocorp.com</Email>
+<Latitude>45.6374771</Latitude>
+<Longitude>-122.6968145</Longitude>
+<Boom>400</Boom>
+<Recovery>4952</Recovery>
+<Storage>200</Storage>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>63</LocationCode>
+<LocationName>Port of Vancouver</LocationName>
+<Contact>Carl J. Loehr</Contact>
+<Address>2985 NW Haborside Drive</Address>
+<City>Vancouver</City>
+<State>WA</State>
+<Zip>98660</Zip>
+<Phone>360-694-9544</Phone>
+<FAX>360-285-8918</FAX>
+<Email>clohr@portvanUSA.com</Email>
+<Latitude>45.6382273</Latitude>
+<Longitude>-122.7100324</Longitude>
+<Boom>3100</Boom>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>1</CompanyCode>
+<LocationCode>64</LocationCode>
+<LocationName>Out of Service</LocationName>
+</qry_Map_Locations>
+</dataroot>

@@ -1,0 +1,2845 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" generated="2010-03-17T17:27:45">
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>1</MemberID>
+<MemberName>Able Clean-up Technologies</MemberName>
+<LocationCode>1</LocationCode>
+<LocationName>Spokane - Western States - ACT</LocationName>
+<Latitude>47.423078</Latitude>
+<Longitude>-117.21021</Longitude>
+<Contact>Kipp Silver</Contact>
+<Phone>509-466-5255</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>3678</Liquid_Storage_bbls>
+<Boom_feet>1320</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>1</MemberID>
+<MemberName>Able Clean-up Technologies</MemberName>
+<LocationCode>2</LocationCode>
+<LocationName>Spokane - Nebraska Ave Shop - ACT</LocationName>
+<Latitude>47.70942</Latitude>
+<Longitude>-117.35076</Longitude>
+<Contact>Kipp Silver</Contact>
+<Phone>509-466-5255</Phone>
+<Recovery_bbls>340</Recovery_bbls>
+<Liquid_Storage_bbls>192</Liquid_Storage_bbls>
+<Boom_feet>0</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>2</MemberID>
+<MemberName>Burrard Clean Operations</MemberName>
+<LocationCode>3</LocationCode>
+<LocationName>Burnaby - BCO</LocationName>
+<Latitude>49.3</Latitude>
+<Longitude>-122.933333</Longitude>
+<Contact>Craig Dougans</Contact>
+<Phone>604-294-6001</Phone>
+<Recovery_bbls>5817</Recovery_bbls>
+<Liquid_Storage_bbls>746</Liquid_Storage_bbls>
+<Boom_feet>30328</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>2</MemberID>
+<MemberName>Burrard Clean Operations</MemberName>
+<LocationCode>4</LocationCode>
+<LocationName>Campbell River - BCO</LocationName>
+<Latitude>50.070551</Latitude>
+<Longitude>-125.2257</Longitude>
+<Contact>Craig Dougans</Contact>
+<Phone>604-294-6001</Phone>
+<Recovery_bbls>543</Recovery_bbls>
+<Liquid_Storage_bbls>89</Liquid_Storage_bbls>
+<Boom_feet>2500</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>2</MemberID>
+<MemberName>Burrard Clean Operations</MemberName>
+<LocationCode>5</LocationCode>
+<LocationName>Duncan - BCO</LocationName>
+<Latitude>48.481922</Latitude>
+<Longitude>-123.4305</Longitude>
+<Contact>Craig Dougans</Contact>
+<Phone>604-294-6001</Phone>
+<Boom_feet>600</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>2</MemberID>
+<MemberName>Burrard Clean Operations</MemberName>
+<LocationCode>7</LocationCode>
+<LocationName>Esquimalt Harbour - BCO</LocationName>
+<Latitude>48.433333</Latitude>
+<Longitude>-123.433333</Longitude>
+<Contact>Craig Dougans</Contact>
+<Phone>604-294-6001</Phone>
+<Recovery_bbls>9058</Recovery_bbls>
+<Liquid_Storage_bbls>14971.5</Liquid_Storage_bbls>
+<Boom_feet>8600</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>2</MemberID>
+<MemberName>Burrard Clean Operations</MemberName>
+<LocationCode>8</LocationCode>
+<LocationName>Ganges - BCO</LocationName>
+<Latitude>48.8</Latitude>
+<Longitude>-123.383333</Longitude>
+<Contact>Craig Dougans</Contact>
+<Phone>604-294-6001</Phone>
+<Liquid_Storage_bbls>48</Liquid_Storage_bbls>
+<Boom_feet>500</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>2</MemberID>
+<MemberName>Burrard Clean Operations</MemberName>
+<LocationCode>9</LocationCode>
+<LocationName>Hatch Point - BCO</LocationName>
+<Latitude>48.433333</Latitude>
+<Longitude>-123.433333</Longitude>
+<Contact>Craig Dougans</Contact>
+<Phone>604-294-6001</Phone>
+<Recovery_bbls>543</Recovery_bbls>
+<Liquid_Storage_bbls>72</Liquid_Storage_bbls>
+<Boom_feet>2000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>2</MemberID>
+<MemberName>Burrard Clean Operations</MemberName>
+<LocationCode>11</LocationCode>
+<LocationName>Kamloops - BCO</LocationName>
+<Latitude>50.7166</Latitude>
+<Longitude>-120.4166</Longitude>
+<Contact>Craig Dougans</Contact>
+<Phone>604-294-6001</Phone>
+<Boom_feet>1000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>2</MemberID>
+<MemberName>Burrard Clean Operations</MemberName>
+<LocationCode>13</LocationCode>
+<LocationName>Nanaimo - BCO</LocationName>
+<Latitude>49.113091</Latitude>
+<Longitude>-123.5702</Longitude>
+<Contact>Craig Dougans</Contact>
+<Phone>604-294-6001</Phone>
+<Recovery_bbls>543</Recovery_bbls>
+<Liquid_Storage_bbls>115</Liquid_Storage_bbls>
+<Boom_feet>3500</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>2</MemberID>
+<MemberName>Burrard Clean Operations</MemberName>
+<LocationCode>14</LocationCode>
+<LocationName>Nanaimo Imperial Oil Yard - BCO</LocationName>
+<Latitude>49.166667</Latitude>
+<Longitude>-123.933333</Longitude>
+<Contact>Craig Dougans</Contact>
+<Phone>604-294-6001</Phone>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>2</MemberID>
+<MemberName>Burrard Clean Operations</MemberName>
+<LocationCode>15</LocationCode>
+<LocationName>Nanaimo Harbour - BCO</LocationName>
+<Latitude>49.100622</Latitude>
+<Longitude>-123.5606</Longitude>
+<Contact>Craig Dougans</Contact>
+<Phone>604-294-6001</Phone>
+<Liquid_Storage_bbls>85</Liquid_Storage_bbls>
+<Boom_feet>1000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>2</MemberID>
+<MemberName>Burrard Clean Operations</MemberName>
+<LocationCode>17</LocationCode>
+<LocationName>Port Alberni - BCO</LocationName>
+<Latitude>49.266667</Latitude>
+<Longitude>-124.766667</Longitude>
+<Contact>Craig Dougans</Contact>
+<Phone>604-294-6001</Phone>
+<Recovery_bbls>543</Recovery_bbls>
+<Liquid_Storage_bbls>125</Liquid_Storage_bbls>
+<Boom_feet>6300</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>2</MemberID>
+<MemberName>Burrard Clean Operations</MemberName>
+<LocationCode>18</LocationCode>
+<LocationName>Port Hardy - BCO</LocationName>
+<Latitude>49.866667</Latitude>
+<Longitude>-124.55</Longitude>
+<Contact>Craig Dougans</Contact>
+<Phone>604-294-6001</Phone>
+<Recovery_bbls>362</Recovery_bbls>
+<Liquid_Storage_bbls>60</Liquid_Storage_bbls>
+<Boom_feet>2529</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>2</MemberID>
+<MemberName>Burrard Clean Operations</MemberName>
+<LocationCode>19</LocationCode>
+<LocationName>Powell River - BCO</LocationName>
+<Latitude>49.866667</Latitude>
+<Longitude>-124.55</Longitude>
+<Contact>Craig Dougans</Contact>
+<Phone>604-294-6001</Phone>
+<Liquid_Storage_bbls>24</Liquid_Storage_bbls>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>2</MemberID>
+<MemberName>Burrard Clean Operations</MemberName>
+<LocationCode>21</LocationCode>
+<LocationName>Prince Rupert - BCO</LocationName>
+<Latitude>54.316666667</Latitude>
+<Longitude>-130.31666667</Longitude>
+<Contact>Craig Dougans</Contact>
+<Phone>604-294-6001</Phone>
+<Recovery_bbls>1751</Recovery_bbls>
+<Liquid_Storage_bbls>479</Liquid_Storage_bbls>
+<Boom_feet>8900</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>2</MemberID>
+<MemberName>Burrard Clean Operations</MemberName>
+<LocationCode>22</LocationCode>
+<LocationName>Queen Charlotte Is. - BCO</LocationName>
+<Latitude>53.2530444852226</Latitude>
+<Longitude>-132.07145690918</Longitude>
+<Contact>Craig Dougans</Contact>
+<Phone>604-294-6001</Phone>
+<Liquid_Storage_bbls>55</Liquid_Storage_bbls>
+<Boom_feet>2000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>2</MemberID>
+<MemberName>Burrard Clean Operations</MemberName>
+<LocationCode>23</LocationCode>
+<LocationName>Sechelt - BCO</LocationName>
+<Latitude>49.5</Latitude>
+<Longitude>-123.766667</Longitude>
+<Contact>Craig Dougans</Contact>
+<Phone>604-294-6001</Phone>
+<Liquid_Storage_bbls>36</Liquid_Storage_bbls>
+<Boom_feet>2000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>2</MemberID>
+<MemberName>Burrard Clean Operations</MemberName>
+<LocationCode>24</LocationCode>
+<LocationName>Shearwater - BCO</LocationName>
+<Latitude>52.366667</Latitude>
+<Longitude>-126.75</Longitude>
+<Contact>Craig Dougans</Contact>
+<Phone>604-294-6001</Phone>
+<Liquid_Storage_bbls>60</Liquid_Storage_bbls>
+<Boom_feet>1500</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>2</MemberID>
+<MemberName>Burrard Clean Operations</MemberName>
+<LocationCode>25</LocationCode>
+<LocationName>Ucluelet - BCO</LocationName>
+<Latitude>48.933333</Latitude>
+<Longitude>-125.533333</Longitude>
+<Contact>Craig Dougans</Contact>
+<Phone>604-294-6001</Phone>
+<Boom_feet>2900</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>2</MemberID>
+<MemberName>Burrard Clean Operations</MemberName>
+<LocationCode>26</LocationCode>
+<LocationName>Van Harbour - BCO</LocationName>
+<Latitude>49.3</Latitude>
+<Longitude>-122.933333</Longitude>
+<Contact>Craig Dougans</Contact>
+<Phone>604-294-6001</Phone>
+<Recovery_bbls>11185</Recovery_bbls>
+<Liquid_Storage_bbls>7549</Liquid_Storage_bbls>
+<Boom_feet>7900</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>3</MemberID>
+<MemberName>Ballard Diving &amp; Salvage</MemberName>
+<LocationCode>27</LocationCode>
+<LocationName>Portland - BDS</LocationName>
+<Latitude>45.36271</Latitude>
+<Longitude>-122.410285</Longitude>
+<Contact>Eric Muller</Contact>
+<Phone>206-782-6750</Phone>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>3</MemberID>
+<MemberName>Ballard Diving &amp; Salvage</MemberName>
+<LocationCode>28</LocationCode>
+<LocationName>Seattle - BDS</LocationName>
+<Latitude>47.3922706</Latitude>
+<Longitude>-122.224594</Longitude>
+<Contact>Eric Muller</Contact>
+<Phone>206-782-6750</Phone>
+<Boom_feet>3500</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>3</MemberID>
+<MemberName>Ballard Diving &amp; Salvage</MemberName>
+<LocationCode>29</LocationCode>
+<LocationName>Vancouver - BDS</LocationName>
+<Latitude>45.362011</Latitude>
+<Longitude>-122.382629</Longitude>
+<Contact>Eric Muller</Contact>
+<Phone>206-782-6750</Phone>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>4</MemberID>
+<MemberName>BP Seattle Terminal</MemberName>
+<LocationCode>30</LocationCode>
+<LocationName>Harbor Island - BPST</LocationName>
+<Latitude>47.57982</Latitude>
+<Longitude>-122.354996</Longitude>
+<Contact>Sammy Makalena</Contact>
+<Phone>206-623-4635</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>3700</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>5</MemberID>
+<MemberName>Big Sky Industrial</MemberName>
+<LocationCode>31</LocationCode>
+<LocationName>Spokane - BSI</LocationName>
+<Latitude>47.685093</Latitude>
+<Longitude>-117.54705</Longitude>
+<Contact>Amy Shulund</Contact>
+<Phone>509-624-4949</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>33849</Liquid_Storage_bbls>
+<Boom_feet>1000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>6</MemberID>
+<MemberName>Clean Cowlitz Sweep</MemberName>
+<LocationCode>32</LocationCode>
+<LocationName>Aberdeen - CCSPNE</LocationName>
+<Latitude>46.97266</Latitude>
+<Longitude>-123.84734</Longitude>
+<Contact>Joe German</Contact>
+<Phone>(888) 423-6316</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>589</Liquid_Storage_bbls>
+<Boom_feet>2600</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>6</MemberID>
+<MemberName>Clean Cowlitz Sweep</MemberName>
+<LocationCode>33</LocationCode>
+<LocationName>Albany - CCSPNE</LocationName>
+<Latitude>44.62013</Latitude>
+<Longitude>-123.05586</Longitude>
+<Contact>Bob Reukauf</Contact>
+<Phone>(888) 423-6316</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>240</Liquid_Storage_bbls>
+<Boom_feet>0</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>6</MemberID>
+<MemberName>Clean Cowlitz Sweep</MemberName>
+<LocationCode>34</LocationCode>
+<LocationName>Astoria - CCSPNE</LocationName>
+<Latitude>44.10909</Latitude>
+<Longitude>-123.853333</Longitude>
+<Contact>Justin Piper</Contact>
+<Phone>(888) 423-6316</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>44.5</Liquid_Storage_bbls>
+<Boom_feet>2900</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>6</MemberID>
+<MemberName>Clean Cowlitz Sweep</MemberName>
+<LocationCode>35</LocationCode>
+<LocationName>Ilwaco - CCSPNE</LocationName>
+<Latitude>46.3056383420045</Latitude>
+<Longitude>-124.044131040573</Longitude>
+<Contact>Justin Piper</Contact>
+<Phone>(888) 423-6316</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>1000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>6</MemberID>
+<MemberName>Clean Cowlitz Sweep</MemberName>
+<LocationCode>36</LocationCode>
+<LocationName>Longview - CCSPNE</LocationName>
+<Latitude>46.116667</Latitude>
+<Longitude>-123.951667</Longitude>
+<Contact>Barney Hoyt</Contact>
+<Phone>(888) 423-6316</Phone>
+<Recovery_bbls>4800</Recovery_bbls>
+<Liquid_Storage_bbls>1607</Liquid_Storage_bbls>
+<Boom_feet>9600</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>6</MemberID>
+<MemberName>Clean Cowlitz Sweep</MemberName>
+<LocationCode>37</LocationCode>
+<LocationName>Longview - CCSPNE</LocationName>
+<Latitude>47.258081</Latitude>
+<Longitude>-122.433438</Longitude>
+<Contact>Allen Swift</Contact>
+<Phone>(888) 423-6316</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>6</MemberID>
+<MemberName>Clean Cowlitz Sweep</MemberName>
+<LocationCode>38</LocationCode>
+<LocationName>Port Angeles - CCSPNE</LocationName>
+<Latitude>48.072641</Latitude>
+<Longitude>-123.265313</Longitude>
+<Contact>Justin Piper</Contact>
+<Phone>(888) 423-6316</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>0</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>6</MemberID>
+<MemberName>Clean Cowlitz Sweep</MemberName>
+<LocationCode>39</LocationCode>
+<LocationName>Port Townsend - CCSPNE</LocationName>
+<Latitude>46.97266</Latitude>
+<Longitude>-123.84734</Longitude>
+<Contact>Rick Gibson</Contact>
+<Phone>(888) 423-6316</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>80</Liquid_Storage_bbls>
+<Boom_feet>0</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>6</MemberID>
+<MemberName>Clean Cowlitz Sweep</MemberName>
+<LocationCode>40</LocationCode>
+<LocationName>Portland - CCSPNE</LocationName>
+<Latitude>45.58944</Latitude>
+<Longitude>-122.77686</Longitude>
+<Contact>Scott Gilifillan</Contact>
+<Phone>(888) 423-6316</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>408.5</Liquid_Storage_bbls>
+<Boom_feet>1400</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>8</MemberID>
+<MemberName>US Navy Region Northwest</MemberName>
+<LocationCode>42</LocationCode>
+<LocationName>Bangor - CNRNW</LocationName>
+<Latitude>47.475</Latitude>
+<Longitude>-122.47</Longitude>
+<Contact>Boucher</Contact>
+<Phone>360-315-5123</Phone>
+<Recovery_bbls>2126</Recovery_bbls>
+<Liquid_Storage_bbls>126</Liquid_Storage_bbls>
+<Boom_feet>25800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>8</MemberID>
+<MemberName>US Navy Region Northwest</MemberName>
+<LocationCode>43</LocationCode>
+<LocationName>Bremerton - CNRNW</LocationName>
+<Latitude>47.556667</Latitude>
+<Longitude>-122.633333</Longitude>
+<Contact>Tammy Brown</Contact>
+<Phone>360-315-5123</Phone>
+<Recovery_bbls>5652</Recovery_bbls>
+<Liquid_Storage_bbls>28164</Liquid_Storage_bbls>
+<Boom_feet>25238</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>8</MemberID>
+<MemberName>US Navy Region Northwest</MemberName>
+<LocationCode>44</LocationCode>
+<LocationName>Everett - CNRNW</LocationName>
+<Latitude>47.9</Latitude>
+<Longitude>-122.216667</Longitude>
+<Contact>Boucher</Contact>
+<Phone>360-315-5123</Phone>
+<Recovery_bbls>3429</Recovery_bbls>
+<Liquid_Storage_bbls>6308</Liquid_Storage_bbls>
+<Boom_feet>14300</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>8</MemberID>
+<MemberName>US Navy Region Northwest</MemberName>
+<LocationCode>45</LocationCode>
+<LocationName>Indian Island - CNRNW</LocationName>
+<Latitude>40.033333</Latitude>
+<Longitude>-122.716667</Longitude>
+<Contact>Tammy Brown</Contact>
+<Phone>360-315-5123</Phone>
+<Recovery_bbls>823</Recovery_bbls>
+<Liquid_Storage_bbls>71</Liquid_Storage_bbls>
+<Boom_feet>22000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>8</MemberID>
+<MemberName>US Navy Region Northwest</MemberName>
+<LocationCode>46</LocationCode>
+<LocationName>Manchester Fuel Dept - CNRNW</LocationName>
+<Latitude>47.616667</Latitude>
+<Longitude>-122.541667</Longitude>
+<Contact>Tammy Brown</Contact>
+<Phone>360-315-5123</Phone>
+<Recovery_bbls>6983</Recovery_bbls>
+<Liquid_Storage_bbls>53254</Liquid_Storage_bbls>
+<Boom_feet>67900</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>8</MemberID>
+<MemberName>US Navy Region Northwest</MemberName>
+<LocationCode>47</LocationCode>
+<LocationName>Whidbey - CNRNW</LocationName>
+<Latitude>40.338333</Latitude>
+<Longitude>-122.666667</Longitude>
+<Contact>Tammy Brown</Contact>
+<Phone>360-315-5123</Phone>
+<Recovery_bbls>1886</Recovery_bbls>
+<Liquid_Storage_bbls>7328</Liquid_Storage_bbls>
+<Boom_feet>12700</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>9</MemberID>
+<MemberName>Conoco Phillips Ferndale</MemberName>
+<LocationCode>236</LocationCode>
+<LocationName>Ferndale - CPFR</LocationName>
+<Latitude>48.83387658166</Latitude>
+<Longitude>-122.6910209655</Longitude>
+<Boom_feet>10000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>11</MemberID>
+<MemberName>Conoco Phillips Pipeline Co.</MemberName>
+<LocationCode>238</LocationCode>
+<LocationName>Renton - CPPC</LocationName>
+<Latitude>47.458333</Latitude>
+<Longitude>-122.220833</Longitude>
+<Contact>Jeff McBride</Contact>
+<Phone>2536273878</Phone>
+<Recovery_bbls>1865</Recovery_bbls>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>11</MemberID>
+<MemberName>Conoco Phillips Pipeline Co.</MemberName>
+<LocationCode>239</LocationCode>
+<LocationName>Spokane - CPPC</LocationName>
+<Latitude>47.668611</Latitude>
+<Longitude>-117.317222</Longitude>
+<Contact>Mike Kuntz</Contact>
+<Phone>509-536-8413</Phone>
+<Recovery_bbls>3260</Recovery_bbls>
+<Liquid_Storage_bbls>24</Liquid_Storage_bbls>
+<Boom_feet>4675</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>11</MemberID>
+<MemberName>Conoco Phillips Pipeline Co.</MemberName>
+<LocationCode>240</LocationCode>
+<LocationName>Tacoma - CPPC</LocationName>
+<Latitude>47.258611</Latitude>
+<Longitude>-122.434444</Longitude>
+<Contact>Jeff McBride</Contact>
+<Phone>253-627-3878</Phone>
+<Recovery_bbls>3730</Recovery_bbls>
+<Boom_feet>1580</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>11</MemberID>
+<MemberName>Conoco Phillips Pipeline Co.</MemberName>
+<LocationCode>237</LocationCode>
+<LocationName>Mose Lake - CPPC</LocationName>
+<Latitude>47.1875</Latitude>
+<Longitude>-119.313889</Longitude>
+<Contact>Bret Devries</Contact>
+<State>WA</State>
+<Phone>509-765-7051</Phone>
+<Recovery_bbls>1220</Recovery_bbls>
+<Boom_feet>650</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>12</MemberID>
+<MemberName>Clean Rivers Cooperative</MemberName>
+<LocationCode>48</LocationCode>
+<LocationName>Astoria - CRC</LocationName>
+<Latitude>46.196136</Latitude>
+<Longitude>-123.803283</Longitude>
+<Contact>Ernie Questada</Contact>
+<Phone>503-220-2040</Phone>
+<Boom_feet>2000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>12</MemberID>
+<MemberName>Clean Rivers Cooperative</MemberName>
+<LocationCode>49</LocationCode>
+<LocationName>Tongue Point - CRC</LocationName>
+<Latitude>46.199094</Latitude>
+<Longitude>-123.763933</Longitude>
+<Contact>Ernie Questada</Contact>
+<Phone>503-220-2040</Phone>
+<Recovery_bbls>9060</Recovery_bbls>
+<Liquid_Storage_bbls>320</Liquid_Storage_bbls>
+<Boom_feet>14800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>12</MemberID>
+<MemberName>Clean Rivers Cooperative</MemberName>
+<LocationCode>50</LocationCode>
+<LocationName>Boardman - CRC</LocationName>
+<Latitude>45.853319</Latitude>
+<Longitude>-119.673167</Longitude>
+<Contact>Ernie Questada</Contact>
+<Phone>503-220-2040</Phone>
+<Boom_feet>2000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>12</MemberID>
+<MemberName>Clean Rivers Cooperative</MemberName>
+<LocationCode>51</LocationCode>
+<LocationName>Cathlamet - CRC</LocationName>
+<Latitude>46.206269</Latitude>
+<Longitude>-123.385731</Longitude>
+<Contact>Ernie Questada</Contact>
+<Phone>503-220-2040</Phone>
+<Recovery_bbls>3720</Recovery_bbls>
+<Liquid_Storage_bbls>24</Liquid_Storage_bbls>
+<Boom_feet>1000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>12</MemberID>
+<MemberName>Clean Rivers Cooperative</MemberName>
+<LocationCode>52</LocationCode>
+<LocationName>Longview - CRC</LocationName>
+<Latitude>46.131328</Latitude>
+<Longitude>-122.993194</Longitude>
+<Contact>Ernie Questada</Contact>
+<Phone>503-220-2040</Phone>
+<Recovery_bbls>11117</Recovery_bbls>
+<Liquid_Storage_bbls>300</Liquid_Storage_bbls>
+<Boom_feet>10300</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>12</MemberID>
+<MemberName>Clean Rivers Cooperative</MemberName>
+<LocationCode>53</LocationCode>
+<LocationName>Port of Vancouver - CRC</LocationName>
+<Latitude>45.638836</Latitude>
+<Longitude>-122.711125</Longitude>
+<Contact>Ernie Questada</Contact>
+<Phone>503-220-2040</Phone>
+<Boom_feet>4100</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>12</MemberID>
+<MemberName>Clean Rivers Cooperative</MemberName>
+<LocationCode>54</LocationCode>
+<LocationName>Port Westward - CRC</LocationName>
+<Latitude>46.18995</Latitude>
+<Longitude>-123.173958</Longitude>
+<Contact>Ernie Questada</Contact>
+<Phone>503-220-2040</Phone>
+<Boom_feet>3300</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>12</MemberID>
+<MemberName>Clean Rivers Cooperative</MemberName>
+<LocationCode>55</LocationCode>
+<LocationName>Portland - CRC</LocationName>
+<Latitude>45.54883</Latitude>
+<Longitude>-122.705183</Longitude>
+<Contact>Ernie Questada</Contact>
+<Phone>503-220-2040</Phone>
+<Recovery_bbls>3720</Recovery_bbls>
+<Liquid_Storage_bbls>24</Liquid_Storage_bbls>
+<Boom_feet>1000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>12</MemberID>
+<MemberName>Clean Rivers Cooperative</MemberName>
+<LocationCode>56</LocationCode>
+<LocationName>Portland - CRC</LocationName>
+<Latitude>45.548883</Latitude>
+<Longitude>-122.705183</Longitude>
+<Contact>Ernie Questada</Contact>
+<Phone>503-220-2040</Phone>
+<Liquid_Storage_bbls>100</Liquid_Storage_bbls>
+<Boom_feet>2000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>12</MemberID>
+<MemberName>Clean Rivers Cooperative</MemberName>
+<LocationCode>57</LocationCode>
+<LocationName>Portland - CRC</LocationName>
+<Latitude>45.592936</Latitude>
+<Longitude>-122.777381</Longitude>
+<Contact>Ernie Questada</Contact>
+<Phone>503-220-2040</Phone>
+<Recovery_bbls>42648</Recovery_bbls>
+<Liquid_Storage_bbls>892</Liquid_Storage_bbls>
+<Boom_feet>2400</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>12</MemberID>
+<MemberName>Clean Rivers Cooperative</MemberName>
+<LocationCode>59</LocationCode>
+<LocationName>Portland - CRC</LocationName>
+<Latitude>45.619775</Latitude>
+<Longitude>-122.805878</Longitude>
+<Contact>Ernie Questada</Contact>
+<Phone>503-220-2040</Phone>
+<Recovery_bbls>3720</Recovery_bbls>
+<Liquid_Storage_bbls>24</Liquid_Storage_bbls>
+<Boom_feet>1000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>12</MemberID>
+<MemberName>Clean Rivers Cooperative</MemberName>
+<LocationCode>60</LocationCode>
+<LocationName>Portland - CRC</LocationName>
+<Latitude>45.621361</Latitude>
+<Longitude>-122.808567</Longitude>
+<Contact>Ernie Questada</Contact>
+<Phone>503-220-2040</Phone>
+<Boom_feet>3000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>12</MemberID>
+<MemberName>Clean Rivers Cooperative</MemberName>
+<LocationCode>61</LocationCode>
+<LocationName>Portland - CRC</LocationName>
+<Latitude>46.189197</Latitude>
+<Longitude>-123.854906</Longitude>
+<Contact>Ernie Questada</Contact>
+<Phone>503-220-2040</Phone>
+<Recovery_bbls>914</Recovery_bbls>
+<Liquid_Storage_bbls>60</Liquid_Storage_bbls>
+<Boom_feet>2200</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>12</MemberID>
+<MemberName>Clean Rivers Cooperative</MemberName>
+<LocationCode>62</LocationCode>
+<LocationName>Rainier - CRC</LocationName>
+<Latitude>46.089014</Latitude>
+<Longitude>-122.928147</Longitude>
+<Contact>Ernie Questada</Contact>
+<Phone>503-220-2040</Phone>
+<Recovery_bbls>3720</Recovery_bbls>
+<Liquid_Storage_bbls>24</Liquid_Storage_bbls>
+<Boom_feet>1000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>12</MemberID>
+<MemberName>Clean Rivers Cooperative</MemberName>
+<LocationCode>63</LocationCode>
+<LocationName>Scappoose - CRC</LocationName>
+<Latitude>45.757722</Latitude>
+<Longitude>-122.876544</Longitude>
+<Contact>Ernie Questada</Contact>
+<Phone>503-220-2040</Phone>
+<Boom_feet>400</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>12</MemberID>
+<MemberName>Clean Rivers Cooperative</MemberName>
+<LocationCode>64</LocationCode>
+<LocationName>Skamokawa - CRC</LocationName>
+<Latitude>46.270272</Latitude>
+<Longitude>-122.876544</Longitude>
+<Contact>Ernie Questada</Contact>
+<Phone>503-220-2040</Phone>
+<Boom_feet>2500</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>12</MemberID>
+<MemberName>Clean Rivers Cooperative</MemberName>
+<LocationCode>65</LocationCode>
+<LocationName>St. Helens - CRC</LocationName>
+<Latitude>45.861539</Latitude>
+<Longitude>-122.795536</Longitude>
+<Contact>Ernie Questada</Contact>
+<Phone>503-220-2040</Phone>
+<Boom_feet>6100</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>12</MemberID>
+<MemberName>Clean Rivers Cooperative</MemberName>
+<LocationCode>66</LocationCode>
+<LocationName>Vancouver - CRC</LocationName>
+<Latitude>45.627856</Latitude>
+<Longitude>-122.686272</Longitude>
+<Contact>Ernie Questada</Contact>
+<Phone>503-220-2040</Phone>
+<Recovery_bbls>2473</Recovery_bbls>
+<Liquid_Storage_bbls>100</Liquid_Storage_bbls>
+<Boom_feet>400</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>12</MemberID>
+<MemberName>Clean Rivers Cooperative</MemberName>
+<LocationCode>68</LocationCode>
+<LocationName>Vancouver - CRC</LocationName>
+<Latitude>45.649256</Latitude>
+<Longitude>-122.745278</Longitude>
+<Contact>Ernie Questada</Contact>
+<Phone>503-220-2040</Phone>
+<Recovery_bbls>20570</Recovery_bbls>
+<Liquid_Storage_bbls>18338</Liquid_Storage_bbls>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>12</MemberID>
+<MemberName>Clean Rivers Cooperative</MemberName>
+<LocationCode>69</LocationCode>
+<LocationName>Wauna - CRC</LocationName>
+<Latitude>46.164569</Latitude>
+<Longitude>-123.414347</Longitude>
+<Contact>Ernie Questada</Contact>
+<Phone>503-220-2040</Phone>
+<Boom_feet>6300</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>14</MemberID>
+<MemberName>Global Diving &amp; Salvage</MemberName>
+<LocationCode>71</LocationCode>
+<LocationName>Anacortes - GDS</LocationName>
+<Latitude>48.306</Latitude>
+<Longitude>-122.3661764</Longitude>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>0</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>14</MemberID>
+<MemberName>Global Diving &amp; Salvage</MemberName>
+<LocationCode>72</LocationCode>
+<LocationName>Pt. Wells - GDS</LocationName>
+<Latitude>47.777</Latitude>
+<Longitude>-122.393192</Longitude>
+<Recovery_bbls>309</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>6500</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>14</MemberID>
+<MemberName>Global Diving &amp; Salvage</MemberName>
+<LocationCode>73</LocationCode>
+<LocationName>Seattle - GDS</LocationName>
+<Latitude>47.341</Latitude>
+<Longitude>-122.21281</Longitude>
+<Recovery_bbls>394</Recovery_bbls>
+<Liquid_Storage_bbls>6</Liquid_Storage_bbls>
+<Boom_feet>5700</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>14</MemberID>
+<MemberName>Global Diving &amp; Salvage</MemberName>
+<LocationCode>74</LocationCode>
+<LocationName>Seattle - Whse 1 - GDS</LocationName>
+<Latitude>47.569</Latitude>
+<Longitude>-122.3533333</Longitude>
+<Recovery_bbls>2101</Recovery_bbls>
+<Liquid_Storage_bbls>60</Liquid_Storage_bbls>
+<Boom_feet>200</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>14</MemberID>
+<MemberName>Global Diving &amp; Salvage</MemberName>
+<LocationCode>75</LocationCode>
+<LocationName>Harbor Island Marina - GDS</LocationName>
+<Latitude>47.575</Latitude>
+<Longitude>-122.347494</Longitude>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>4000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>14</MemberID>
+<MemberName>Global Diving &amp; Salvage</MemberName>
+<LocationCode>76</LocationCode>
+<LocationName>Seattle Rainier Petroleum - GDS</LocationName>
+<Latitude>47.586</Latitude>
+<Longitude>-122.352402</Longitude>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>0</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>14</MemberID>
+<MemberName>Global Diving &amp; Salvage</MemberName>
+<LocationCode>77</LocationCode>
+<LocationName>Paramount - GDS</LocationName>
+<Latitude>47.777</Latitude>
+<Longitude>-122.393192</Longitude>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>0</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>14</MemberID>
+<MemberName>Global Diving &amp; Salvage</MemberName>
+<LocationCode>78</LocationCode>
+<LocationName>Tacoma - GDS</LocationName>
+<Latitude>47.282</Latitude>
+<Longitude>-122.401951</Longitude>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>0</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>15</MemberID>
+<MemberName>Islands&apos; Oil Spill Associ</MemberName>
+<LocationCode>79</LocationCode>
+<LocationName>Friday Harbor - IOSA</LocationName>
+<Latitude>48.4451</Latitude>
+<Longitude>-122.8616</Longitude>
+<Liquid_Storage_bbls>135</Liquid_Storage_bbls>
+<Boom_feet>1100</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>15</MemberID>
+<MemberName>Islands&apos; Oil Spill Associ</MemberName>
+<LocationCode>80</LocationCode>
+<LocationName>Lopez Island - IOSA</LocationName>
+<Latitude>48.4451</Latitude>
+<Longitude>-122.8616</Longitude>
+<Contact>IOSA office</Contact>
+<Phone>360-378-5322</Phone>
+<Boom_feet>5600</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>15</MemberID>
+<MemberName>Islands&apos; Oil Spill Associ</MemberName>
+<LocationCode>81</LocationCode>
+<LocationName>Orcas Island - IOSA</LocationName>
+<Latitude>48.5558</Latitude>
+<Longitude>-122.8726</Longitude>
+<Contact>IOSA Office</Contact>
+<Phone>360-378-5322</Phone>
+<Boom_feet>6800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>15</MemberID>
+<MemberName>Islands&apos; Oil Spill Associ</MemberName>
+<LocationCode>82</LocationCode>
+<LocationName>Shoal Bay on Lopez Island - IOSA</LocationName>
+<Latitude>48.5213</Latitude>
+<Longitude>-123.0229</Longitude>
+<Contact>IOSA Office</Contact>
+<Phone>360-378-5322</Phone>
+<Boom_feet>1000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>15</MemberID>
+<MemberName>Islands&apos; Oil Spill Associ</MemberName>
+<LocationCode>83</LocationCode>
+<LocationName>Sucia Island - IOSA</LocationName>
+<Latitude>48.744444</Latitude>
+<Longitude>-122.900278</Longitude>
+<Contact>IOSA office</Contact>
+<Phone>360-378-5322</Phone>
+<Boom_feet>2200</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>16</MemberID>
+<MemberName>Kinder Morgan Harbor Island</MemberName>
+<LocationCode>84</LocationCode>
+<LocationName>T-18 Berth 1 - KMHI</LocationName>
+<Latitude>47.581111</Latitude>
+<Longitude>-122.349444</Longitude>
+<Contact>Andrew Holbrook</Contact>
+<Phone>206-682-4706</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>3000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>18</MemberID>
+<MemberName>Lummi Nation</MemberName>
+<LocationCode>86</LocationCode>
+<LocationName>Lummi Reservation - LUMMI</LocationName>
+<Latitude>48.794959</Latitude>
+<Longitude>-122.623697</Longitude>
+<Contact>Merle Jefferson</Contact>
+<Phone>(360) 410-1706</Phone>
+<Boom_feet>1500</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>20</MemberID>
+<MemberName>Marine Spill Response Cor</MemberName>
+<LocationCode>88</LocationCode>
+<LocationName>Anacortes - MSRC</LocationName>
+<Latitude>48.51666667</Latitude>
+<Longitude>-122.605</Longitude>
+<Contact>PACNW Response Manager</Contact>
+<Phone>425-252-1300</Phone>
+<Recovery_bbls>17669</Recovery_bbls>
+<Liquid_Storage_bbls>963</Liquid_Storage_bbls>
+<Boom_feet>21120</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>20</MemberID>
+<MemberName>Marine Spill Response Cor</MemberName>
+<LocationCode>89</LocationCode>
+<LocationName>Astoria - MSRC</LocationName>
+<Latitude>45.606667</Latitude>
+<Longitude>-122.688333</Longitude>
+<Contact>Michael Miller</Contact>
+<Phone>425-252-1300</Phone>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>20</MemberID>
+<MemberName>Marine Spill Response Cor</MemberName>
+<LocationCode>90</LocationCode>
+<LocationName>Astoria - MSRC</LocationName>
+<Latitude>46.18877373398</Latitude>
+<Longitude>-123.861708641052</Longitude>
+<Contact>PACNW Response Manager</Contact>
+<Phone>425-252-1300</Phone>
+<Recovery_bbls>49343</Recovery_bbls>
+<Liquid_Storage_bbls>44400</Liquid_Storage_bbls>
+<Boom_feet>17116</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>20</MemberID>
+<MemberName>Marine Spill Response Cor</MemberName>
+<LocationCode>91</LocationCode>
+<LocationName>Bellingham - MSRC</LocationName>
+<Latitude>48</Latitude>
+<Longitude>-122.2166667</Longitude>
+<Contact>PACNW Response Manager</Contact>
+<Recovery_bbls>1659</Recovery_bbls>
+<Liquid_Storage_bbls>400</Liquid_Storage_bbls>
+<Boom_feet>60</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>20</MemberID>
+<MemberName>Marine Spill Response Cor</MemberName>
+<LocationCode>92</LocationCode>
+<LocationName>Bellingham - MSRC</LocationName>
+<Latitude>48.755</Latitude>
+<Longitude>-122.5133333</Longitude>
+<Contact>PACNW Response Manager</Contact>
+<Phone>425-252-1300</Phone>
+<Recovery_bbls>9794</Recovery_bbls>
+<Liquid_Storage_bbls>12223</Liquid_Storage_bbls>
+<Boom_feet>6000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>20</MemberID>
+<MemberName>Marine Spill Response Cor</MemberName>
+<LocationCode>93</LocationCode>
+<LocationName>Blaine - MSRC</LocationName>
+<Latitude>48.86833333</Latitude>
+<Longitude>-122.7508333</Longitude>
+<Contact>PACNW Response Manager</Contact>
+<Phone>425-252-1300</Phone>
+<Boom_feet>7200</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>20</MemberID>
+<MemberName>Marine Spill Response Cor</MemberName>
+<LocationCode>94</LocationCode>
+<LocationName>Coos Bay - MSRC</LocationName>
+<Latitude>43.366667</Latitude>
+<Longitude>-124.1783333</Longitude>
+<Contact>PACNW Response Manager</Contact>
+<Phone>425-252-1300</Phone>
+<Recovery_bbls>17211</Recovery_bbls>
+<Liquid_Storage_bbls>400</Liquid_Storage_bbls>
+<Boom_feet>60</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>20</MemberID>
+<MemberName>Marine Spill Response Cor</MemberName>
+<LocationCode>95</LocationCode>
+<LocationName>Everett - MSRC</LocationName>
+<Latitude>48</Latitude>
+<Longitude>-122.216667</Longitude>
+<Contact>PACNW Response Manager</Contact>
+<Phone>425-252-1300</Phone>
+<Recovery_bbls>44656</Recovery_bbls>
+<Liquid_Storage_bbls>2161</Liquid_Storage_bbls>
+<Boom_feet>19366</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>20</MemberID>
+<MemberName>Marine Spill Response Cor</MemberName>
+<LocationCode>96</LocationCode>
+<LocationName>Ferndale - MSRC</LocationName>
+<Latitude>48.82666667</Latitude>
+<Longitude>-122.7083333</Longitude>
+<Contact>PACNW Response Manager</Contact>
+<Phone>425-252-1300</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>6000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>20</MemberID>
+<MemberName>Marine Spill Response Cor</MemberName>
+<LocationCode>98</LocationCode>
+<LocationName>Neah Bay - MSRC</LocationName>
+<Latitude>48.366</Latitude>
+<Longitude>-124.6125</Longitude>
+<Contact>PACNW Response Manager</Contact>
+<Phone>425-252-1300</Phone>
+<Recovery_bbls>21840</Recovery_bbls>
+<Liquid_Storage_bbls>276</Liquid_Storage_bbls>
+<Boom_feet>9000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>20</MemberID>
+<MemberName>Marine Spill Response Cor</MemberName>
+<LocationCode>99</LocationCode>
+<LocationName>Port Angeles - MSRC</LocationName>
+<Latitude>48.125</Latitude>
+<Longitude>-123.440833</Longitude>
+<Contact>PACNW Response Manager</Contact>
+<Phone>425-252-1300</Phone>
+<Recovery_bbls>36255</Recovery_bbls>
+<Liquid_Storage_bbls>67187</Liquid_Storage_bbls>
+<Boom_feet>23060</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>20</MemberID>
+<MemberName>Marine Spill Response Cor</MemberName>
+<LocationCode>100</LocationCode>
+<LocationName>Portland - MSRC</LocationName>
+<Latitude>45.6066667</Latitude>
+<Longitude>-122.688333</Longitude>
+<Contact>PaCNW Response Manager</Contact>
+<Phone>425-252-1300</Phone>
+<Recovery_bbls>4493</Recovery_bbls>
+<Liquid_Storage_bbls>403</Liquid_Storage_bbls>
+<Boom_feet>2060</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>20</MemberID>
+<MemberName>Marine Spill Response Cor</MemberName>
+<LocationCode>101</LocationCode>
+<LocationName>Richmond Beach - MSRC</LocationName>
+<Latitude>47.78</Latitude>
+<Longitude>-122.395</Longitude>
+<Contact>PACNW Response Manager</Contact>
+<Phone>425-252-1300</Phone>
+<Boom_feet>6640</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>20</MemberID>
+<MemberName>Marine Spill Response Cor</MemberName>
+<LocationCode>102</LocationCode>
+<LocationName>Seattle - MSRC</LocationName>
+<Latitude>47.57</Latitude>
+<Longitude>-122.3466667</Longitude>
+<Contact>PACNW Response Manager</Contact>
+<Phone>425-252-1300</Phone>
+<Boom_feet>3500</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>20</MemberID>
+<MemberName>Marine Spill Response Cor</MemberName>
+<LocationCode>103</LocationCode>
+<LocationName>Seattle - MSRC</LocationName>
+<Latitude>47.68333333</Latitude>
+<Longitude>-122.4083333</Longitude>
+<Contact>PACNW Response Manager</Contact>
+<Phone>425-252-1300</Phone>
+<Recovery_bbls>25128</Recovery_bbls>
+<Liquid_Storage_bbls>120</Liquid_Storage_bbls>
+<Boom_feet>2100</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>20</MemberID>
+<MemberName>Marine Spill Response Cor</MemberName>
+<LocationCode>104</LocationCode>
+<LocationName>Spokane - MSRC</LocationName>
+<Latitude>48</Latitude>
+<Longitude>-122.2166667</Longitude>
+<Contact>PACNW Response Manager</Contact>
+<Phone>425-252-1300</Phone>
+<Recovery_bbls>110</Recovery_bbls>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>20</MemberID>
+<MemberName>Marine Spill Response Cor</MemberName>
+<LocationCode>105</LocationCode>
+<LocationName>Tacoma - MSRC</LocationName>
+<Latitude>47.275</Latitude>
+<Longitude>-122.4083333</Longitude>
+<Contact>PACNW Response Manager</Contact>
+<Phone>425-252-1300</Phone>
+<Recovery_bbls>27329</Recovery_bbls>
+<Liquid_Storage_bbls>21995.5</Liquid_Storage_bbls>
+<Boom_feet>11560</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>106</LocationCode>
+<LocationName>Aberdeen - NRCES</LocationName>
+<Latitude>46.96656</Latitude>
+<Longitude>-123.8564</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>3019</Recovery_bbls>
+<Liquid_Storage_bbls>8</Liquid_Storage_bbls>
+<Boom_feet>5900</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>107</LocationCode>
+<LocationName>Alameda - NRCES</LocationName>
+<Latitude>37.77562</Latitude>
+<Longitude>-122.29933</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>52345</Recovery_bbls>
+<Liquid_Storage_bbls>3073</Liquid_Storage_bbls>
+<Boom_feet>37100</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>108</LocationCode>
+<LocationName>Anacortes - NRCES</LocationName>
+<Latitude>48.51177</Latitude>
+<Longitude>-122.60746</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>178</Recovery_bbls>
+<Liquid_Storage_bbls>100</Liquid_Storage_bbls>
+<Boom_feet>2000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>109</LocationCode>
+<LocationName>Astoria - NRCES</LocationName>
+<Latitude>46.20149</Latitude>
+<Longitude>-123.76448</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>7300</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>110</LocationCode>
+<LocationName>Bellingham - NRCES</LocationName>
+<Latitude>48.75709</Latitude>
+<Longitude>-122.50065</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>686</Recovery_bbls>
+<Liquid_Storage_bbls>100</Liquid_Storage_bbls>
+<Boom_feet>4000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>111</LocationCode>
+<LocationName>Benicia - NRCES</LocationName>
+<Latitude>38.07416</Latitude>
+<Longitude>-122.14537</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>19771</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>7500</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>112</LocationCode>
+<LocationName>Eureka - NRCES</LocationName>
+<Latitude>40.79607</Latitude>
+<Longitude>-124.18339</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>21768</Recovery_bbls>
+<Liquid_Storage_bbls>300</Liquid_Storage_bbls>
+<Boom_feet>11250</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>113</LocationCode>
+<LocationName>Everett - NRCES</LocationName>
+<Latitude>48.52172</Latitude>
+<Longitude>-122.61287</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>1000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>114</LocationCode>
+<LocationName>Ferndale - NRCES</LocationName>
+<Latitude>48.83602</Latitude>
+<Longitude>-122.74338</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>4526</Recovery_bbls>
+<Liquid_Storage_bbls>625</Liquid_Storage_bbls>
+<Boom_feet>0</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>115</LocationCode>
+<LocationName>Honolulu - NRCES</LocationName>
+<Latitude>21.31722222</Latitude>
+<Longitude>-157.8041667</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>6904</Recovery_bbls>
+<Liquid_Storage_bbls>200</Liquid_Storage_bbls>
+<Boom_feet>22000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>116</LocationCode>
+<LocationName>Long Beach - NRCES</LocationName>
+<Latitude>33.76963</Latitude>
+<Longitude>-118.20949</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>100</Liquid_Storage_bbls>
+<Boom_feet>0</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>117</LocationCode>
+<LocationName>Martinez - NRCES</LocationName>
+<Latitude>38.02593</Latitude>
+<Longitude>-122.13683</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>4114</Recovery_bbls>
+<Liquid_Storage_bbls>338</Liquid_Storage_bbls>
+<Boom_feet>3700</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>118</LocationCode>
+<LocationName>Milton - NRCES</LocationName>
+<Latitude>47.25666</Latitude>
+<Longitude>-122.33281</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>0</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>119</LocationCode>
+<LocationName>Neah Bay - NRCES</LocationName>
+<Latitude>48.37093</Latitude>
+<Longitude>-124.62573</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>3558</Recovery_bbls>
+<Liquid_Storage_bbls>2562</Liquid_Storage_bbls>
+<Boom_feet>7400</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>120</LocationCode>
+<LocationName>Olympia - NRCES</LocationName>
+<Latitude>47.05223</Latitude>
+<Longitude>-122.9054</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>1000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>121</LocationCode>
+<LocationName>Pasco - NRCES</LocationName>
+<Latitude>46.24012</Latitude>
+<Longitude>-119.08149</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>686</Recovery_bbls>
+<Liquid_Storage_bbls>70</Liquid_Storage_bbls>
+<Boom_feet>0</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>122</LocationCode>
+<LocationName>Port Angeles - NRCES</LocationName>
+<Latitude>48.1268</Latitude>
+<Longitude>-123.4565</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>3703</Recovery_bbls>
+<Liquid_Storage_bbls>238</Liquid_Storage_bbls>
+<Boom_feet>5000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>123</LocationCode>
+<LocationName>Port Hueneme - NRCES</LocationName>
+<Latitude>34.14788</Latitude>
+<Longitude>-119.19459</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>100</Liquid_Storage_bbls>
+<Boom_feet>0</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>124</LocationCode>
+<LocationName>Port Townsend - NRCES</LocationName>
+<Latitude>48.0939</Latitude>
+<Longitude>122.79565</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>360</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>1000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>125</LocationCode>
+<LocationName>Portland - NRCES</LocationName>
+<Latitude>45.56903</Latitude>
+<Longitude>-122.71744</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>26074</Recovery_bbls>
+<Liquid_Storage_bbls>973</Liquid_Storage_bbls>
+<Boom_feet>16900</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>126</LocationCode>
+<LocationName>Portland - NRCES</LocationName>
+<Latitude>46.08978</Latitude>
+<Longitude>-122.93274</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>662</Recovery_bbls>
+<Liquid_Storage_bbls>50</Liquid_Storage_bbls>
+<Boom_feet>2900</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>127</LocationCode>
+<LocationName>Richmond - NRCES</LocationName>
+<Latitude>37.9</Latitude>
+<Longitude>-122.34</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>40493</Recovery_bbls>
+<Liquid_Storage_bbls>238</Liquid_Storage_bbls>
+<Boom_feet>9400</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>128</LocationCode>
+<LocationName>Sacramento - NRCES</LocationName>
+<Latitude>38.56766</Latitude>
+<Longitude>-121.54677</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>2000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>129</LocationCode>
+<LocationName>Seattle, Eagle Harbor - NRCES</LocationName>
+<Latitude>47.62167</Latitude>
+<Longitude>-122.5149</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>700</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>130</LocationCode>
+<LocationName>Seattle, Ewing ST. - NRCES</LocationName>
+<Latitude>47.65426</Latitude>
+<Longitude>-122.3668</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>840</Recovery_bbls>
+<Liquid_Storage_bbls>117</Liquid_Storage_bbls>
+<Boom_feet>3000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>131</LocationCode>
+<LocationName>Seattle, South Park - NRCES</LocationName>
+<Latitude>47.517518</Latitude>
+<Longitude>-122.32074</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>9669</Recovery_bbls>
+<Liquid_Storage_bbls>242</Liquid_Storage_bbls>
+<Boom_feet>5200</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>132</LocationCode>
+<LocationName>Selby - NRCES</LocationName>
+<Latitude>38.0531</Latitude>
+<Longitude>-122.23865</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>10011</Recovery_bbls>
+<Liquid_Storage_bbls>100</Liquid_Storage_bbls>
+<Boom_feet>2500</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>133</LocationCode>
+<LocationName>Spokane - NRCES</LocationName>
+<Latitude>46.24012</Latitude>
+<Longitude>-119.08149</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>2000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>134</LocationCode>
+<LocationName>St Helens - NRCES</LocationName>
+<Latitude>45.86593</Latitude>
+<Longitude>-122.79859</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>3588</Recovery_bbls>
+<Liquid_Storage_bbls>43</Liquid_Storage_bbls>
+<Boom_feet>1000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>135</LocationCode>
+<LocationName>Stockton - NRCES</LocationName>
+<Latitude>37.96</Latitude>
+<Longitude>-121.29</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>2200</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>136</LocationCode>
+<LocationName>Tacoma, TFW - NRCES</LocationName>
+<Latitude>47.25349</Latitude>
+<Longitude>-122.43447</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>864</Recovery_bbls>
+<Liquid_Storage_bbls>100</Liquid_Storage_bbls>
+<Boom_feet>3600</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>21</MemberID>
+<MemberName>NRC Environmental Service</MemberName>
+<LocationCode>137</LocationCode>
+<LocationName>Westport - NRCES</LocationName>
+<Latitude>46.90463</Latitude>
+<Longitude>-124.10551</Longitude>
+<Contact>Marine Operations Mgr</Contact>
+<Phone>1-800-33-SPILL</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>1000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>22</MemberID>
+<MemberName>NWFF Environmental</MemberName>
+<LocationCode>138</LocationCode>
+<LocationName>Philomath - NWFFE</LocationName>
+<Latitude>44.539722</Latitude>
+<Longitude>-123.371111</Longitude>
+<Contact>Roman Geigle</Contact>
+<Phone>1-800-462-4614</Phone>
+<Recovery_bbls>55103</Recovery_bbls>
+<Liquid_Storage_bbls>6402</Liquid_Storage_bbls>
+<Boom_feet>10650</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>22</MemberID>
+<MemberName>NWFF Environmental</MemberName>
+<LocationCode>139</LocationCode>
+<LocationName>Portland - NWFFE</LocationName>
+<Latitude>45.55705</Latitude>
+<Longitude>-122.729972</Longitude>
+<Contact>Roman Geigle</Contact>
+<Phone>1-800-942-4614</Phone>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>24</MemberID>
+<MemberName>Paramount Petroleum</MemberName>
+<LocationCode>140</LocationCode>
+<LocationName>Point Wells - PPC</LocationName>
+<Latitude>47.777</Latitude>
+<Longitude>-122.393192</Longitude>
+<Contact>Brian Wuellner</Contact>
+<Phone>206-546-0503</Phone>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>25</MemberID>
+<MemberName>SEAPRO</MemberName>
+<LocationCode>141</LocationCode>
+<LocationName>Juneau - SEAPRO</LocationName>
+<Latitude>58.286667</Latitude>
+<Longitude>-134.429111</Longitude>
+<Contact>George Mahoney</Contact>
+<Phone>(907) 225-7002</Phone>
+<Recovery_bbls>4954</Recovery_bbls>
+<Liquid_Storage_bbls>55</Liquid_Storage_bbls>
+<Boom_feet>50</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>25</MemberID>
+<MemberName>SEAPRO</MemberName>
+<LocationCode>143</LocationCode>
+<LocationName>Sitka - SEAPRO</LocationName>
+<Latitude>57.0481070043438</Latitude>
+<Longitude>-135.343236923218</Longitude>
+<Contact>George Mahoney</Contact>
+<Phone>(907) 225-7002</Phone>
+<Recovery_bbls>4656</Recovery_bbls>
+<Liquid_Storage_bbls>7070</Liquid_Storage_bbls>
+<Boom_feet>8120</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>25</MemberID>
+<MemberName>SEAPRO</MemberName>
+<LocationCode>144</LocationCode>
+<LocationName>Pelican - SEAPRO</LocationName>
+<Latitude>58.07611</Latitude>
+<Longitude>-136.38805</Longitude>
+<Contact>George Mahoney</Contact>
+<Phone>(907) 225-7002</Phone>
+<Recovery_bbls>120</Recovery_bbls>
+<Liquid_Storage_bbls>126</Liquid_Storage_bbls>
+<Boom_feet>1000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>26</MemberID>
+<MemberName>Shell Puget Sound Refinery</MemberName>
+<LocationCode>145</LocationCode>
+<LocationName>Anacortes - SPSR</LocationName>
+<Latitude>48.47115</Latitude>
+<Longitude>-122.55833</Longitude>
+<Contact>Doug Thompson or HSSE Rep</Contact>
+<Phone>360-293-1701</Phone>
+<Boom_feet>8000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>26</MemberID>
+<MemberName>Shell Puget Sound Refinery</MemberName>
+<LocationCode>146</LocationCode>
+<LocationName>Anacortes - SPSR</LocationName>
+<Latitude>48.51521</Latitude>
+<Longitude>-122.60085</Longitude>
+<Contact>Doug Thompson or HSSE Rep</Contact>
+<Phone>360-293-1701</Phone>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>27</MemberID>
+<MemberName>US Navy SUPSALV</MemberName>
+<LocationCode>147</LocationCode>
+<LocationName>Anchorage - SUPSLV</LocationName>
+<Latitude>61.12</Latitude>
+<Longitude>-150.02</Longitude>
+<Contact>Tammy Brown</Contact>
+<Phone>360-315-5123</Phone>
+<Recovery_bbls>6592</Recovery_bbls>
+<Liquid_Storage_bbls>478107</Liquid_Storage_bbls>
+<Boom_feet>4560</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>27</MemberID>
+<MemberName>US Navy SUPSALV</MemberName>
+<LocationCode>148</LocationCode>
+<LocationName>Port Hueneme - SUPSLV</LocationName>
+<Latitude>34.1</Latitude>
+<Longitude>-119.12</Longitude>
+<Contact>Tammy Brown</Contact>
+<Phone>360-315-5123</Phone>
+<Recovery_bbls>11521</Recovery_bbls>
+<Liquid_Storage_bbls>1032300</Liquid_Storage_bbls>
+<Boom_feet>23870</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>28</MemberID>
+<MemberName>Tidewater Barge Lines</MemberName>
+<LocationCode>149</LocationCode>
+<LocationName>Boardman - TBL</LocationName>
+<Latitude>45.85307</Latitude>
+<Longitude>-119.67135</Longitude>
+<Recovery_bbls>480</Recovery_bbls>
+<Liquid_Storage_bbls>29</Liquid_Storage_bbls>
+<Boom_feet>600</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>28</MemberID>
+<MemberName>Tidewater Barge Lines</MemberName>
+<LocationCode>150</LocationCode>
+<LocationName>Clarkston - TBL</LocationName>
+<Latitude>46.369167</Latitude>
+<Longitude>-117.114444</Longitude>
+<Recovery_bbls>8647</Recovery_bbls>
+<Liquid_Storage_bbls>16036</Liquid_Storage_bbls>
+<Boom_feet>7000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>28</MemberID>
+<MemberName>Tidewater Barge Lines</MemberName>
+<LocationCode>151</LocationCode>
+<LocationName>Hood River - TBL</LocationName>
+<Latitude>45.71637</Latitude>
+<Longitude>-121.51727</Longitude>
+<Recovery_bbls>480</Recovery_bbls>
+<Liquid_Storage_bbls>29</Liquid_Storage_bbls>
+<Boom_feet>600</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>28</MemberID>
+<MemberName>Tidewater Barge Lines</MemberName>
+<LocationCode>152</LocationCode>
+<LocationName>Little Goose Dam - TBL</LocationName>
+<Latitude>46.58534</Latitude>
+<Longitude>-118.02592</Longitude>
+<Recovery_bbls>480</Recovery_bbls>
+<Liquid_Storage_bbls>29</Liquid_Storage_bbls>
+<Boom_feet>600</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>28</MemberID>
+<MemberName>Tidewater Barge Lines</MemberName>
+<LocationCode>153</LocationCode>
+<LocationName>Pasco - TBL</LocationName>
+<Latitude>46.224722</Latitude>
+<Longitude>-119.016667</Longitude>
+<Recovery_bbls>27198</Recovery_bbls>
+<Liquid_Storage_bbls>25112</Liquid_Storage_bbls>
+<Boom_feet>1800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>28</MemberID>
+<MemberName>Tidewater Barge Lines</MemberName>
+<LocationCode>154</LocationCode>
+<LocationName>Rainier - TBL</LocationName>
+<Latitude>46.08956</Latitude>
+<Longitude>-122.93533</Longitude>
+<Recovery_bbls>480</Recovery_bbls>
+<Liquid_Storage_bbls>29</Liquid_Storage_bbls>
+<Boom_feet>600</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>28</MemberID>
+<MemberName>Tidewater Barge Lines</MemberName>
+<LocationCode>155</LocationCode>
+<LocationName>Umatilla - TBL</LocationName>
+<Latitude>45.930556</Latitude>
+<Longitude>-119.274167</Longitude>
+<Recovery_bbls>3258</Recovery_bbls>
+<Liquid_Storage_bbls>29</Liquid_Storage_bbls>
+<Boom_feet>1800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>28</MemberID>
+<MemberName>Tidewater Barge Lines</MemberName>
+<LocationCode>156</LocationCode>
+<LocationName>Vancouver - TBL</LocationName>
+<Latitude>45.625</Latitude>
+<Longitude>-122.625</Longitude>
+<Recovery_bbls>15144</Recovery_bbls>
+<Liquid_Storage_bbls>18514</Liquid_Storage_bbls>
+<Boom_feet>15300</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>29</MemberID>
+<MemberName>USCG District 13</MemberName>
+<LocationCode>157</LocationCode>
+<LocationName>Charleston - USCG13</LocationName>
+<Latitude>43.40767</Latitude>
+<Longitude>-124.22044</Longitude>
+<Contact>Scott Knutson</Contact>
+<Phone>2062207001</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>900</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>29</MemberID>
+<MemberName>USCG District 13</MemberName>
+<LocationCode>158</LocationCode>
+<LocationName>Garibaldi - USCG13</LocationName>
+<Latitude>45.554777</Latitude>
+<Longitude>-123.916871</Longitude>
+<Contact>Scott Knutson</Contact>
+<Phone>2062207001</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>600</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>29</MemberID>
+<MemberName>USCG District 13</MemberName>
+<LocationCode>159</LocationCode>
+<LocationName>Manchester - USCG13</LocationName>
+<Latitude>47.56131</Latitude>
+<Longitude>-122.54322</Longitude>
+<Contact>Scott Knutson</Contact>
+<Phone>2062207001</Phone>
+<Recovery_bbls>3400</Recovery_bbls>
+<Liquid_Storage_bbls>1238</Liquid_Storage_bbls>
+<Boom_feet>124</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>29</MemberID>
+<MemberName>USCG District 13</MemberName>
+<LocationCode>160</LocationCode>
+<LocationName>Port Hadlock - USCG13</LocationName>
+<Latitude>48.05514</Latitude>
+<Longitude>-122.73812</Longitude>
+<Contact>Scott Knutson</Contact>
+<Phone>2062207001</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>5000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>29</MemberID>
+<MemberName>USCG District 13</MemberName>
+<LocationCode>161</LocationCode>
+<LocationName>Portland - USCG13</LocationName>
+<Latitude>45.57119</Latitude>
+<Longitude>-122.7209</Longitude>
+<Contact>Scott Knutson</Contact>
+<Phone>2062207001</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>0</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>29</MemberID>
+<MemberName>USCG District 13</MemberName>
+<LocationCode>162</LocationCode>
+<LocationName>Seattle, Pier 36 - USCG13</LocationName>
+<Latitude>47.58199</Latitude>
+<Longitude>-122.3425</Longitude>
+<Contact>Scott Knutson</Contact>
+<Phone>2062207001</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>500</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>31</MemberID>
+<MemberName>Washington Dept. of Fish </MemberName>
+<LocationCode>163</LocationCode>
+<LocationName>Olympia - WDFW</LocationName>
+<Latitude>46.97333</Latitude>
+<Longitude>-122.90333</Longitude>
+<Contact>OST Responder</Contact>
+<Phone>(360) 534-8233</Phone>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>31</MemberID>
+<MemberName>Washington Dept. of Fish </MemberName>
+<LocationCode>164</LocationCode>
+<LocationName>Olympia - WDFW</LocationName>
+<Latitude>47.04826</Latitude>
+<Longitude>-122.90096</Longitude>
+<Contact>OST Responder</Contact>
+<Phone>(360) 534-8233</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>0</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>31</MemberID>
+<MemberName>Washington Dept. of Fish </MemberName>
+<LocationCode>165</LocationCode>
+<LocationName>Olympia - WDFW</LocationName>
+<Latitude>47.24833</Latitude>
+<Longitude>-122.31167</Longitude>
+<Contact>OST Responder</Contact>
+<Phone>(360) 534-8233</Phone>
+<Recovery_bbls>0</Recovery_bbls>
+<Liquid_Storage_bbls>0</Liquid_Storage_bbls>
+<Boom_feet>0</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>166</LocationCode>
+<LocationName>Anacortes - WDOE</LocationName>
+<Latitude>48.5001913888889</Latitude>
+<Longitude>-122.600168055556</Longitude>
+<Contact>Port of Anacortes, Dale F</Contact>
+<Phone>(360) 293-0694</Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>167</LocationCode>
+<LocationName>Anderson Is. - WDOE</LocationName>
+<Latitude>47.1502675</Latitude>
+<Longitude>-122.700025</Longitude>
+<Contact>Anderson Island, FD Chief</Contact>
+<Phone>(253) 884-4040 </Phone>
+<Boom_feet>1200</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>168</LocationCode>
+<LocationName>Bainbridge Is, - WDOE</LocationName>
+<Latitude>47.6335236111111</Latitude>
+<Longitude>-122.516739722222</Longitude>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>169</LocationCode>
+<LocationName>Bellingham - WDOE</LocationName>
+<Latitude>48.7203416666667</Latitude>
+<Longitude>-122.512705555556</Longitude>
+<Contact>Port of Bellingham Dave W</Contact>
+<Phone>(360) 676-2500 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>170</LocationCode>
+<LocationName>Bingen - WDOE</LocationName>
+<Latitude>45.700255</Latitude>
+<Longitude>-121.466677222222</Longitude>
+<Contact>Chief David Spratt</Contact>
+<Phone>(509) 493-2122</Phone>
+<Boom_feet>600</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>171</LocationCode>
+<LocationName>Blaine - WDOE</LocationName>
+<Latitude>48.9835261111111</Latitude>
+<Longitude>-122.750141388889</Longitude>
+<Contact>Port of Bellingham - Pam </Contact>
+<Phone>(360) 676-2500 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>172</LocationCode>
+<LocationName>Cathlamet - WDOE</LocationName>
+<Latitude>46.2033333</Latitude>
+<Longitude>-123.3866667</Longitude>
+<Contact>Wahkiakum Port District 1</Contact>
+<Phone>(360) 795-3501 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>173</LocationCode>
+<LocationName>Chelan - WDOE</LocationName>
+<Latitude>47.8334191666667</Latitude>
+<Longitude>-122.000258916667</Longitude>
+<Contact>Rusty Stunts</Contact>
+<Phone>(509) 682-4476 </Phone>
+<Boom_feet>500</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>174</LocationCode>
+<LocationName>Chinook - WDOE</LocationName>
+<Latitude>46.271125</Latitude>
+<Longitude>-123.9464778</Longitude>
+<Contact>Port of Chinook (Daniel T</Contact>
+<Phone>(360) 777-8797</Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>175</LocationCode>
+<LocationName>Clarkston - WDOE</LocationName>
+<Latitude>46.3835419444444</Latitude>
+<Longitude>-117.083336111111</Longitude>
+<Contact>Noel Hardin</Contact>
+<Phone>(509) 758-5181 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>176</LocationCode>
+<LocationName>Davenport - WDOE</LocationName>
+<Latitude>47.9001152777778</Latitude>
+<Longitude>-118.300123333333</Longitude>
+<Contact>Adam kslee or Chris Rugel</Contact>
+<Phone>(509) 725-3501</Phone>
+<Boom_feet>500</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>177</LocationCode>
+<LocationName>Des Moines  - WDOE</LocationName>
+<Latitude>47.4036111111111</Latitude>
+<Longitude>-122.316873888889</Longitude>
+<Contact>George Mahoney</Contact>
+<Phone>(907) 225-7002</Phone>
+<Recovery_bbls>4954</Recovery_bbls>
+<Liquid_Storage_bbls>55</Liquid_Storage_bbls>
+<Boom_feet>1450</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>178</LocationCode>
+<LocationName>Everett - WDOE</LocationName>
+<Latitude>47.9668830555556</Latitude>
+<Longitude>-122.216701388889</Longitude>
+<Contact>Brandon Whitaker or Ed Ma</Contact>
+<Phone>(425) 259-3164 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>179</LocationCode>
+<LocationName>Everett - WDOE</LocationName>
+<Latitude>47.9836027777778</Latitude>
+<Longitude>-122.216769722222</Longitude>
+<Contact>Brandon Whitaker or Ed Ma</Contact>
+<Phone>(425) 259-3164 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>180</LocationCode>
+<LocationName>Forks - WDOE</LocationName>
+<Latitude>47.7334536111111</Latitude>
+<Longitude>-124.400210833333</Longitude>
+<Contact>Hoh River Tribe Warren Sc</Contact>
+<Phone>(360) 374-8616 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>181</LocationCode>
+<LocationName>Gig Harbor - WDOE</LocationName>
+<Latitude>47.353976</Latitude>
+<Longitude>-122.578436</Longitude>
+<Contact>City of Gig Harbor Dick B</Contact>
+<Phone>(253) 851-6170 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>182</LocationCode>
+<LocationName>Illwaco - WDOE</LocationName>
+<Latitude>46.306135</Latitude>
+<Longitude>-122.302330833333</Longitude>
+<Contact>Port of Illwaco </Contact>
+<Phone>(360) 642-3143 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>183</LocationCode>
+<LocationName>Ione - WDOE</LocationName>
+<Latitude>48.683906</Latitude>
+<Longitude>-117.404899</Longitude>
+<Contact>Pend Orielle FD2 - Chief </Contact>
+<Phone>(509) 446-2240 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>184</LocationCode>
+<LocationName>Issaquah - WDOE</LocationName>
+<Latitude>47.5169191666667</Latitude>
+<Longitude>-122.033492222222</Longitude>
+<Contact>Chief Griffin</Contact>
+<Phone>(425) 313-3203</Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>185</LocationCode>
+<LocationName>Kennewick - WDOE</LocationName>
+<Latitude>46.2166745555556</Latitude>
+<Longitude>-119.100198583333</Longitude>
+<Boom_feet>400</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>186</LocationCode>
+<LocationName>Kingston - WDOE</LocationName>
+<Latitude>47.7835552777778</Latitude>
+<Longitude>-122.483587222222</Longitude>
+<Contact>N. Kitsap FD Asst Chief W</Contact>
+<Phone>(360) 279-3619 </Phone>
+<Boom_feet>1600</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>187</LocationCode>
+<LocationName>Lacey - WDOE</LocationName>
+<Latitude>47.00245</Latitude>
+<Longitude>-122.6722167</Longitude>
+<Contact>Nisqually Tribe Dennis Lu</Contact>
+<Phone>(360) 455-5099 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>188</LocationCode>
+<LocationName>Laconner - WDOE</LocationName>
+<Latitude>48.3835086111111</Latitude>
+<Longitude>-122.500009166667</Longitude>
+<Contact>Swinomish Tribal PD  Jim </Contact>
+<Phone>(360) 466-7237 </Phone>
+<Boom_feet>1200</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>189</LocationCode>
+<LocationName>LaPush - WDOE</LocationName>
+<Latitude>47.9002238888889</Latitude>
+<Longitude>-124.633377777778</Longitude>
+<Contact>Quileute Tribe Kris North</Contact>
+<Phone>(360) 374-6074</Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>190</LocationCode>
+<LocationName>Lopez Island - WDOE</LocationName>
+<Latitude>48.5002347222222</Latitude>
+<Longitude>-122.900216944444</Longitude>
+<Contact>Port of Lopez Island -  H</Contact>
+<Phone>Helen 360-468-4</Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>191</LocationCode>
+<LocationName>Lopez Island - WDOE</LocationName>
+<Latitude>48.5501088888889</Latitude>
+<Longitude>-122.8667525</Longitude>
+<Contact>IOSA (for San Juan DEM)</Contact>
+<Phone>see IOSA resour</Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>192</LocationCode>
+<LocationName>Marysville - WDOE</LocationName>
+<Latitude>48.0502763888889</Latitude>
+<Longitude>-122.266824722222</Longitude>
+<Contact>Robert Myers</Contact>
+<Phone>(425) 508-1565</Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>193</LocationCode>
+<LocationName>Mattawa - WDOE</LocationName>
+<Latitude>46.8334244444444</Latitude>
+<Longitude>-119.916918888889</Longitude>
+<Contact>Cody Brown</Contact>
+<Phone>(509) 754-5088 </Phone>
+<Boom_feet>1000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>194</LocationCode>
+<LocationName>Moses Lake - WDOE</LocationName>
+<Latitude>47.1333408333333</Latitude>
+<Longitude>-119.266706666667</Longitude>
+<Contact>Moses Lake FD HQ, Chief T</Contact>
+<Phone>(509) 765-2204 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>195</LocationCode>
+<LocationName>Neah Bay - WDOE</LocationName>
+<Latitude>48.3502775</Latitude>
+<Longitude>-124.600169722222</Longitude>
+<Contact>Makah Tribe   Bill Parken</Contact>
+<Phone>(360) 645-2701 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>196</LocationCode>
+<LocationName>Newport - WDOE</LocationName>
+<Latitude>48.1668277777778</Latitude>
+<Longitude>-117.302566666667</Longitude>
+<Contact>Pend Orielle FD4    Chief</Contact>
+<Phone>(509) 447-5305</Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>197</LocationCode>
+<LocationName>Oak Harbor - WDOE</LocationName>
+<Latitude>48.2835838888889</Latitude>
+<Longitude>-122.633572777778</Longitude>
+<Contact>Chief Mark Sopitch</Contact>
+<Phone>(360) 279-4700</Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>198</LocationCode>
+<LocationName>Oak Harbor - WDOE</LocationName>
+<Latitude>48.3001316666667</Latitude>
+<Longitude>-122.666785833333</Longitude>
+<Contact>Chief Marvin Koorn</Contact>
+<Phone>(360) 675-1131</Phone>
+<Boom_feet>400</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>199</LocationCode>
+<LocationName>Ocean Park - WDOE</LocationName>
+<Latitude>46.5000194444444</Latitude>
+<Longitude>-124.0169075</Longitude>
+<Contact>Port of Peninsula Mary De</Contact>
+<Phone>(360) 665-4547 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>200</LocationCode>
+<LocationName>Ocean Shores - WDOE</LocationName>
+<Latitude>46.9335811111111</Latitude>
+<Longitude>-124.116908055556</Longitude>
+<Contact>Quinault Indian Nation  -</Contact>
+<Phone>(360) 276-8215 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>201</LocationCode>
+<LocationName>Okanogan - WDOE</LocationName>
+<Latitude>48.083585</Latitude>
+<Longitude>-119.766926388889</Longitude>
+<Contact>Okanagon DEM Scott Miller</Contact>
+<Phone>509-422-7207</Phone>
+<Boom_feet>400</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>202</LocationCode>
+<LocationName>Olympia - WDOE</LocationName>
+<Latitude>47.1833333333333</Latitude>
+<Longitude>-122.014697222222</Longitude>
+<Contact>North Olympia FD</Contact>
+<Phone>360-705-0234</Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>203</LocationCode>
+<LocationName>Olympia - WDOE</LocationName>
+<Latitude>47.7002180555556</Latitude>
+<Longitude>-122.800212777778</Longitude>
+<Contact>Department of Ecology Dav</Contact>
+<Phone>(800) 258-5990 </Phone>
+<Boom_feet>1200</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>204</LocationCode>
+<LocationName>Orcas Island - WDOE</LocationName>
+<Latitude>47.6167663888889</Latitude>
+<Longitude>-123.000043611111</Longitude>
+<Contact>IOSA (for San Juan DEM)</Contact>
+<Phone>see IOSA resour</Phone>
+<Boom_feet>1600</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>206</LocationCode>
+<LocationName>Port Angeles - WDOE</LocationName>
+<Latitude>48.0985</Latitude>
+<Longitude>-123.3905</Longitude>
+<Contact>Port of Port Angeles - Je</Contact>
+<Phone>(360) 457-1138</Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>207</LocationCode>
+<LocationName>Port of Olympia - WDOE</LocationName>
+<Latitude>47.0500894444444</Latitude>
+<Longitude>-122.883583333333</Longitude>
+<Contact>Port of Olympia Cheryl Ma</Contact>
+<Phone>(360) 528-8043 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>208</LocationCode>
+<LocationName>Port Orchard - WDOE</LocationName>
+<Latitude>47.4835116666667</Latitude>
+<Longitude>-122.766710833333</Longitude>
+<Contact>Port of Bremerton - Brian</Contact>
+<Phone>(360) 876-5535 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>209</LocationCode>
+<LocationName>Port Townsend - WDOE</LocationName>
+<Latitude>48.1078938888889</Latitude>
+<Longitude>-122.774268055556</Longitude>
+<Contact>Port of Port Townsend - T</Contact>
+<Phone>(360) 385-6211</Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>210</LocationCode>
+<LocationName>Poulsbo - WDOE</LocationName>
+<Latitude>47.7333436111111</Latitude>
+<Longitude>-122.633545555556</Longitude>
+<Contact>Kirk Stickles, mgr</Contact>
+<Phone>(360) 779-9905</Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>211</LocationCode>
+<LocationName>Pt. Roberts - WDOE</LocationName>
+<Latitude>48.9668538888889</Latitude>
+<Longitude>-123.0502225</Longitude>
+<Contact>Pt. Roberts FD - Chief Bi</Contact>
+<Phone>(360) 945-2526 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>212</LocationCode>
+<LocationName>Raymond - WDOE</LocationName>
+<Latitude>46.66691</Latitude>
+<Longitude>-123.750140833333</Longitude>
+<Contact>Port of Willipa - Rebecca</Contact>
+<Phone>(360) 942-3422</Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>213</LocationCode>
+<LocationName>Richland - WDOE</LocationName>
+<Latitude>46.2668911111111</Latitude>
+<Longitude>-119.2667675</Longitude>
+<Contact>Chief Ted Ricci</Contact>
+<Phone>(509) 551-4855 </Phone>
+<Boom_feet>1600</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>214</LocationCode>
+<LocationName>Rock Island - WDOE</LocationName>
+<Latitude>47.3335858333333</Latitude>
+<Longitude>-120.09585</Longitude>
+<Contact>Chelan PUD Jennifer Burns</Contact>
+<Phone>(509) 661-4474 </Phone>
+<Boom_feet>400</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>215</LocationCode>
+<LocationName>San Juan Island - WDOE</LocationName>
+<Latitude>48.5333933333333</Latitude>
+<Longitude>-123.016695</Longitude>
+<Contact>Port of Friday Harbor (Bo</Contact>
+<Phone>(360) 378-4072 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>216</LocationCode>
+<LocationName>Seattle - WDOE</LocationName>
+<Latitude>47.5706780555556</Latitude>
+<Longitude>-122.362036111111</Longitude>
+<Contact>Seattle FD # 36 </Contact>
+<Phone>(206) 386-1435 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>217</LocationCode>
+<LocationName>Seattle - WDOE</LocationName>
+<Latitude>47.6000613888889</Latitude>
+<Longitude>-122.333431666667</Longitude>
+<Contact>BC Michael Walsh</Contact>
+<Phone>206-386-1487</Phone>
+<Boom_feet>600</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>218</LocationCode>
+<LocationName>Seattle - WDOE</LocationName>
+<Latitude>47.6501305555556</Latitude>
+<Longitude>-122.366930555556</Longitude>
+<Contact>BC Michael Walsh</Contact>
+<Phone>206-386-1487</Phone>
+<Boom_feet>1800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>219</LocationCode>
+<LocationName>Seattle - WDOE</LocationName>
+<Latitude>47.6668380555556</Latitude>
+<Longitude>-122.400123611111</Longitude>
+<Contact>Port of Seattle - Michael</Contact>
+<Phone>(206) 728-3344</Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>220</LocationCode>
+<LocationName>Seattle - WDOE</LocationName>
+<Latitude>47.9501184166667</Latitude>
+<Longitude>-122.341109444444</Longitude>
+<Contact>Port of Seattle - Peter R</Contact>
+<Phone>(360) 728-3763</Phone>
+<Boom_feet>200</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>221</LocationCode>
+<LocationName>Sequim - WDOE</LocationName>
+<Latitude>48.0168158333333</Latitude>
+<Longitude>-122.983543611111</Longitude>
+<Contact>Jamestown S&apos;kallam Tribe </Contact>
+<Phone>(360) 681-4630 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>222</LocationCode>
+<LocationName>Spokane - WDOE</LocationName>
+<Latitude>47.6633333333333</Latitude>
+<Longitude>-117.400201388889</Longitude>
+<Contact>Spokane FD - Dave Leavenw</Contact>
+<Phone>(509) 625-7003</Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>223</LocationCode>
+<LocationName>Tacoma - WDOE</LocationName>
+<Latitude>47.2500561111111</Latitude>
+<Longitude>-122.383586666667</Longitude>
+<Contact>City of Tacoma (Capt. Jef</Contact>
+<Phone>(253) 591-5737 </Phone>
+<Boom_feet>1600</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>224</LocationCode>
+<LocationName>Toppenish - WDOE</LocationName>
+<Latitude>46.3667094444444</Latitude>
+<Longitude>-120.316714722222</Longitude>
+<Contact>James Thomas </Contact>
+<Phone>(509) 865-5121 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>225</LocationCode>
+<LocationName>Washougal - WDOE</LocationName>
+<Latitude>45.5794444444444</Latitude>
+<Longitude>-122.381388888889</Longitude>
+<Contact>Port of Camas/Washougal</Contact>
+<Phone>360-835-2196 x1</Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>226</LocationCode>
+<LocationName>Wells Dam (Pateros) - WDOE</LocationName>
+<Latitude>47.1167955555556</Latitude>
+<Longitude>-120.011266666667</Longitude>
+<Contact>Dub Simmons </Contact>
+<Phone>(509) 881-2465 </Phone>
+<Boom_feet>1000</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>227</LocationCode>
+<LocationName>Wenatchee - WDOE</LocationName>
+<Latitude>47.4167425</Latitude>
+<Longitude>-120.300216111111</Longitude>
+<Contact>Chief Stan Smoke</Contact>
+<Phone>(509) 664-3950</Phone>
+<Boom_feet>1400</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>228</LocationCode>
+<LocationName>Wenatchee - WDOE</LocationName>
+<Latitude>47.516885</Latitude>
+<Longitude>-120.283607777778</Longitude>
+<Contact>Chelan PUD Jennifer Burns</Contact>
+<Phone>(509) 661-4474 </Phone>
+<Boom_feet>400</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>32</MemberID>
+<MemberName>Washington Dept. of Ecolo</MemberName>
+<LocationCode>229</LocationCode>
+<LocationName>Westport - WDOE</LocationName>
+<Latitude>46.9001152777778</Latitude>
+<Longitude>-124.100182222222</Longitude>
+<Contact>Port of Grays Harbor Robi</Contact>
+<Phone>(360) 268-9665 </Phone>
+<Boom_feet>800</Boom_feet>
+</qry_Map_Locations>
+<qry_Map_Locations>
+<CompanyCode>13</CompanyCode>
+<MemberID>33</MemberID>
+<MemberName>WorldWind Helicopters</MemberName>
+<LocationCode>230</LocationCode>
+<LocationName>Renton - WWHELI</LocationName>
+<Latitude>47.486987</Latitude>
+<Longitude>-122.221679</Longitude>
+<Contact>Vince Lopardo</Contact>
+<Phone>(425) 271-8441</Phone>
+</qry_Map_Locations>
+</dataroot>

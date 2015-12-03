@@ -1,0 +1,46 @@
+<fieldset>
+  <%= csrf_meta_tags %>
+  <legend>Tracking Devices</legend>
+
+  <%= link_to 'Add new tracking device', new_device_path %><br /><br />
+
+  <% if @devices.nil? %>
+
+    <br />You have no tracking devices configured.
+
+  <% else %>
+
+    <table class="index">
+
+      <tr>
+       <% if @loggedin_user.super? %>
+          <th>Client</th>
+        <% end %>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Serial Number</th>
+        <th>Key</th>
+      </tr>
+
+    <% @devices.each do |device| %>
+
+        <tr bgcolor="<%= cycle("#dddddd", "ffffff") %>">
+          <% if @loggedin_user.super? %>
+            <td><%= device.client.company_name %></td>
+          <% end %>
+          <td><%=h device.device_type.title %></td>
+          <td><%=h device.common_name %></td>
+          <%=  %>
+          <td><%=h device.serial_number %></td>
+          <td><%=h device.request_key %></td>
+          <td><%= link_to 'Edit', edit_device_path(device) %></td>
+          <td><%= link_to 'Delete', device, :confirm => 'Are you sure you want to delete this tracking device?', 
+          :method => :delete %></td>
+        </tr>
+      <% end %>
+
+    </table>
+
+  <% end %>
+
+</fieldset>

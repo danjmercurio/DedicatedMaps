@@ -1,0 +1,22 @@
+<fieldset>
+  <legend>New Layer</legend>
+
+  <%= form_for(@layer) do |f| %>
+
+    <%= render :partial => 'form',
+           :locals  => {:layer => @layer, 
+                        :f => f 
+                        }
+     %>
+    
+     <p>
+       <%= f.label :category , 'Type' %><br />
+       <%= select_tag :category, options_for_select(Layer.categories, @layer.category.to_s), :name => 'layer[category]' %>
+     </p>
+    
+    <p>
+      <%= f.submit 'Create' %>
+    </p>
+  <% end %>
+
+</fieldset>

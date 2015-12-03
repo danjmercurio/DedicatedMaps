@@ -1,0 +1,24 @@
+Fixed bug where multiple duplicate tabs were being added
+Added copy to clipboard feature
+
+TODO:
+minify jquery.js and infobubble.js in production - asset pipeline
+configure production server to receive git pushes
+scrub passwords from logs in production
+exception notification in production
+asset custom fields
+devices#delete logs user out?
+no devices#show
+linting and html validation
+HTTPS!
+yum updates
+move to the latest version of jquery and use a CDN
+clean up layer.js, move some definitions into their own functions
+obscure password field
+ssh security
+HIDE PASSWORD IN PASSWORD FIELDS
+move .itemprop to stylesheet, really clean up tab HTML
+move string prototype methods to an external file...if we still ened them
+
+ship presentation:
+http://dedicatedmaps.com/assets/285957.json

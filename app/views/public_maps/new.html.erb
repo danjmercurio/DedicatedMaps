@@ -1,0 +1,14 @@
+<fieldset>
+<legend>New Public Map</legend>
+
+<%= form_for(@public_map, :url => { :controller => "public_maps", :action => "create" } ) do |f| %>
+	
+  <%= render :partial => 'form' , :locals => {:f => f} %>
+
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+
+<% end %>
+
+</fieldset>

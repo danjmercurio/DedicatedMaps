@@ -1,0 +1,20 @@
+ Please enter your Spot unit serial number (example: 009009230) and the 
+ request key (example: 0E7i9Dh561CkuhBHp9OufARgLcAzXrPVy) used to retrieve current location data.
+ <br /><br />
+ The name field is optional if you have a common name
+ for the device, e.g. "SPOT #5"
+
+<p>
+  <%= f.label "Name" %><br />
+  <%= f.text_field :common_name %>
+</p>
+
+<p>
+  <%= f.label "Serial number" %><br />
+  <%= f.text_field :serial_number %>
+</p>
+
+<p>
+  <%= f.label "Request key" %><br />
+  <%= f.text_field :request_key %>
+</p>

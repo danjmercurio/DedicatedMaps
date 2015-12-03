@@ -1,0 +1,43 @@
+/*
+	These are the common styles for map and admin pages.
+*/
+
+body{line-height:1.5em; color:#666666; font-family:calibri, helvetica, tahoma, trebuchet ms, geneva, arial sans-serif;}
+
+b{font-size:110%;}
+em{color:red;}
+strong {font-weight:bolder; font-size:110%;}
+p {margin:0.5em 0;}
+h1 {font-weight:bolder; font-size:120%;}
+a{color:#494646; text-decoration:none;}
+a:hover{color:#494646; text-decoration:underline;}
+
+/* Two column layout */
+#contentwrapper{float:left; width:100%;}
+
+#contentcolumn{margin-left:200px;} /* Set left margin to Left Column Width */
+
+#leftcolumn{float:left;	margin-left:-100%; padding-left:2px;	font-size:0.8em;
+	width: 198px; /*Width of left column (minus padding)*/
+}
+
+#refresh {height:20px; margin: 0 5px 0 6px; color:#999999; text-align:right;}
+
+#layer a {border-style:none;}
+#layer_panel {float:left; width:200px;}
+
+#footer{clear:both;	width:100%;	background:white; color:black; text-align:right; padding:4px 0;}
+
+.innertube{margin-top:0; margin:0;}
+
+/* Styles */
+.client{margin-right:100px; font-size:1.1em; font-weight:bold;}
+.header{text-align:right;margin:10px 10px;}
+.logo{float:left;}
+.accountinfo{display:inline;}
+
+.layer{background:#fff; border:thin solid grey; border-bottom-style:hidden;}
+.layer_checkbox{float:left;}
+.layer_checkbox img{height:10px; width:auto;}
+.layer_expand{margin:3px 0 0 178px; height:24px;}
+.sublayer{padding:4px 0 4px 6px;}

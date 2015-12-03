@@ -1,0 +1,66 @@
+This information is optional. Providing the distance from your GPS unit to the edges of your ship will locate it more accurately on the map. Draught will displayed if set. The ship type will determine the icon used for the ship.
+
+<% remote_form_for @asset.ship, {
+      :loading => "Element.show('ship_loading')",
+      :complete => "Element.hide('ship_loading')"
+      } do |f| -%>
+
+  <%= f.error_messages %>
+
+  <p>    
+    <%= f.label :Ship_Type %><br />
+    <%= f.collection_select :icon_id, @icons, :id, :name %>
+  </p>
+
+  <p>
+  <%= f.label :draught %><br />
+  <%= f.text_field :draught%>
+  </p>
+
+<div id="dims">
+  <div>
+  
+    <p>
+    <%= f.label :Distance_To_Bow%><br />
+    <%= f.text_field :dim_bow %>
+    <%= link_to_function ("Don't know position of tracking device?", "$('dims').childElements().invoke('toggle')") %>
+    </p>
+
+    <p>
+    <%= f.label :Distance_To_Stern%><br />
+    <%= f.text_field :dim_stern %>
+    </p>
+
+    <p>
+    <%= f.label :Distance_to_Starboard%><br />
+    <%= f.text_field :dim_starboard %>
+    </p>
+
+    <p>
+    <%= f.label :Distance_to_port%><br />
+    <%= f.text_field :dim_port %>
+    </p>
+
+  </div>
+
+  <div id="2dims" style="display:none;">
+
+    <p>
+    <%= f.label :Ship_Length%><br />
+    <%= f.text_field :length %>
+    <%= link_to_function ("Set device distance to ship edges.", "$('dims').childElements().invoke('toggle')") %>
+    </p>
+
+    <p>
+    <%= f.label :Ship_Width%><br />
+    <%= f.text_field :width %>
+    </p>
+
+  </div>
+</div>
+
+<p>
+  <%= f.submit 'Update' %><%= loader('ship_loading', 'Updating...') %>
+</p>
+
+<% end %>

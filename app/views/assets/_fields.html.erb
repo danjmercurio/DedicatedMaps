@@ -1,0 +1,73 @@
+If you would like to display extra data for this asset, enter it here.
+
+<br /><br />
+
+<table>
+  <tr>
+    <th width="240"><b>Name</b></th>
+    <th width="240"><b>Value</b></th>
+  </tr>
+</table>
+  
+<% for field in @asset.custom_fields %>
+  <%= form_for(field, :method => :put) do |f| -%>
+  <div id='d<%= field.id %>'>
+    <table style="display:block">
+      <tr>
+        <td width="240"><%= field.name %></td>
+        <td width="240"><%= field.value %></td>
+        <td>
+          <%= button_to_function "Edit", "$('d#{field.id}').childElements().invoke('toggle')"%>
+          
+        </td>
+      </tr>
+    </table>
+    
+    <div style="display:none">     
+      
+        
+          <% field.id %>
+        <table>
+          <tr>
+            <td width="240"><%= f.text_field :name, :value => field.name %></td>
+            <td width="240"><%= f.text_field :value, :value => field.value %></td>
+        
+            <td>
+              <%= button_to_function "Cancel", "$('d#{field.id}').childElements().invoke('toggle')"%>
+              <%= f.submit 'Save' %>
+               <% end %>
+            </td>
+            <td>
+            <%= form_for(field, :method => :delete) do |f| %>
+              <% field.id %>
+              <%= f.submit 'Delete' %>
+            <% end %>
+
+            </td>
+          </tr>
+        </table>
+     
+    </div>
+  </div>
+<% end %>
+
+<p style="color: red"><%= flash[:error] %></p>  
+
+      <%= form_for(@custom_field) do |f| -%>
+        <%= fields_for @asset do |c| %>
+          <%= c.hidden_field('id', :value => @asset.id) %>
+        <% end %>
+  <table>
+    <tr>
+      <td width="240">
+        <%= f.text_field :name %>
+      </td>
+      <td width="240">
+        <%= f.text_field :value %>
+      </td>
+      <td>
+        <%= f.submit 'Add' %>
+      </td>
+    </tr>
+  </table>
+<% end %> 

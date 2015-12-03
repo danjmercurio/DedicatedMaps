@@ -1,0 +1,51 @@
+<script type="text/javascript">
+
+layer.cannery_catch = {};
+
+document.observe('dom:loaded',function(){
+
+ //styled examples use the window factory for a shared set of behavior  
+ var window_factory = function(container,options){  
+     var window_header = new Element('div',{  
+         className: 'window_header'  
+     });  
+     var window_title = new Element('div',{  
+         className: 'window_title'  
+     });  
+     var window_close = new Element('div',{  
+         className: 'window_close'  
+     });  
+     var window_contents = new Element('div',{  
+         className: 'window_contents'  
+     });  
+     var w = new Control.Window(container,Object.extend({  
+         className: 'window',  
+         closeOnClick: window_close,  
+         draggable: window_header,  
+         insertRemoteContentAt: window_contents,
+         afterOpen: function(){  
+             window_title.update(container.readAttribute('title'))  
+         }  
+     },options || {}));  
+     w.container.insert(window_header);  
+     window_header.insert(window_title);  
+     //window_header.insert(window_close);  
+     w.container.insert(window_contents);  
+     return w;  
+ };  
+ 
+ var styled_window_one = window_factory($('styled_window_one'));  
+ 
+ layer.cannery_catch.on = function() {styled_window_one.open()};
+ layer.cannery_catch.off = function() {styled_window_one.close()};
+
+});
+</script>
+
+<a title="Daily Catch" id="styled_window_one" href="http://www.dedicatedmaps.com/images/DailyCatch.GIF" style="display:none;">View Report</a>
+
+<%= check_box_tag(1,1,true) %>My Ships
+<br />
+<%= check_box_tag(2,2,true) %>Shared Ships
+<br />
+<%= check_box_tag(3,3,true) %>Public Ships

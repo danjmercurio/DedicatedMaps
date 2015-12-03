@@ -1,0 +1,30 @@
+<fieldset>
+  <legend>New Asset</legend>
+
+  <%= form_for(@asset) do |f| %>
+    
+    
+    <% if @clients #super users only%>
+      <p>
+        <%= f.label :client %><br />
+        <%= f.collection_select :client_id, @clients, :id, :company_name %>
+      </p>
+    <% end %>
+    
+    <p>
+      <%= f.label :asset_name %><br />
+      <%= f.text_field :common_name %>
+    </p>
+    
+    <p>
+      <%= f.label :asset_type %><br />
+      <%= f.collection_select :asset_type_id, @asset_types, :id, :title %>
+    </p>
+
+    <p>
+      <%= f.submit 'Create' %>
+    </p>
+    
+  <% end %>
+
+</fieldset>

@@ -1,0 +1,22 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT dataroot (qry_Map_Asset_Types)+>
+<!ATTLIST dataroot
+  xmlns CDATA #FIXED ''
+  generated NMTOKEN #REQUIRED>
+
+<!ELEMENT qry_Map_Asset_Types (CompanyCode,AssetTypeCode,AssetTypeName)>
+<!ATTLIST qry_Map_Asset_Types
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT CompanyCode (#PCDATA)>
+<!ATTLIST CompanyCode
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT AssetTypeCode (#PCDATA)>
+<!ATTLIST AssetTypeCode
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT AssetTypeName (#PCDATA)>
+<!ATTLIST AssetTypeName
+  xmlns CDATA #FIXED ''>

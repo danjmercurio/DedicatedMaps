@@ -1,0 +1,118 @@
+[31m[1mOld router API[0m
+[37mThe router API has totally changed.
+[1mMore information:[0m [36mhttp://yehudakatz.com/2009/12/26/the-rails-3-router-rack-it-up/
+
+[37mThe culprits: 
+[33m	- config/routes.rb
+[0m
+[31m[1mDeprecated ActionMailer API[0m
+[37mYou're using the old ActionMailer API to send e-mails in a controller, model, or observer.
+[1mMore information:[0m [36mhttp://lindsaar.net/2010/1/26/new-actionmailer-api-in-rails-3
+
+[37mThe culprits: 
+[33m	- app/controllers/users_controller.rb
+[0m
+[31m[1mOld ActionMailer class API[0m
+[37mYou're using the old API in a mailer class.
+[1mMore information:[0m [36mhttp://lindsaar.net/2010/1/26/new-actionmailer-api-in-rails-3
+
+[37mThe culprits: 
+[33m	- app/models/mailer.rb
+[33m	- app/models/mailer.rb
+[0m
+[31m[1mDeprecated test_help path[0m
+[37mYou now must require 'rails/test_help' not just 'test_help'.
+[1mMore information:[0m [36mhttp://weblog.rubyonrails.org/2009/9/1/gem-packaging-best-practices
+
+[37mThe culprits: 
+[33m	- test/test_helper.rb
+[0m
+[31m[1mDeprecated session secret setting[0m
+[37mPreviously, session secret was set directly on ActionController::Base; it's now config.secret_token.
+[1mMore information:[0m [36mhttp://lindsaar.net/2010/4/7/rails_3_session_secret_and_session_store
+
+[37mThe culprits: 
+[33m	- config/initializers/session_store.rb
+[0m
+[31m[1mDeprecated ERb helper calls[0m
+[37mBlock helpers that use concat (e.g., form_for) should use <%= instead of <%.  The current form will continue to work for now, but you will get deprecation warnings since this form will go away in the future.
+[1mMore information:[0m [36mhttp://weblog.rubyonrails.org/
+
+[37mThe culprits: 
+[33m	- app/views/layouts/maps.html.erb
+[33m	- app/views/maps/_astoria_marine_map.html.erb
+[33m	- app/views/maps/_kml.html.erb
+[33m	- app/views/maps/_pinpoint.html.erb
+[33m	- app/views/assets/edit.html.erb
+[33m	- app/views/assets/new.html.erb
+[33m	- app/views/clients/edit.html.erb
+[33m	- app/views/clients/new.html.erb
+[33m	- app/views/fishermen/index.html.erb
+[33m	- app/views/layers/_kml.html.erb
+[33m	- app/views/layers/edit.html.erb
+[33m	- app/views/layers/new.html.erb
+[33m	- app/views/layouts/_account_bar.html.erb
+[33m	- app/views/public_maps/new.html.erb
+[33m	- app/views/users/edit.html.erb
+[33m	- app/views/users/new.html.erb
+[0m
+[31m[1mNew file needed: config/application.rb[0m
+[37mYou need to add a config/application.rb.
+[1mMore information:[0m [36mhttp://omgbloglol.com/post/353978923/the-path-to-rails-3-approaching-the-upgrade
+
+[37mThe culprits: 
+[33m	- config/application.rb
+[0m
+[31m[1mDeprecated AJAX helper calls[0m
+[37mAJAX javascript helpers have been switched to be unobtrusive and use :remote => true instead of having a seperate function to handle remote requests.
+[1mMore information:[0m [36mhttp://blog.jordanwest.me/modest-rubyist-archive/rails-3-ujs-and-csrf-meta-tags
+
+[37mThe culprits: 
+[33m	- app/views/assets/_devices.html.erb
+[33m	- app/views/assets/_fields.html.erb
+[33m	- app/views/assets/_fishing_trip.html.erb
+[33m	- app/views/assets/_fishing_vessel.html.erb
+[33m	- app/views/assets/_ship.html.erb
+[33m	- app/views/assets/edit.html.erb
+[33m	- app/views/clients/edit.html.erb
+[33m	- app/views/devices/edit.html.erb
+[33m	- app/views/fishermen/_form.html.erb
+[33m	- app/views/layers/_kml.html.erb
+[33m	- app/views/users/edit.html.erb
+[0m
+[31m[1mDeprecated constant(s)[0m
+[37mConstants like RAILS_ENV, RAILS_ROOT, and RAILS_DEFAULT_LOGGER are now deprecated.
+[1mMore information:[0m [36mhttp://litanyagainstfear.com/blog/2010/02/03/the-rails-module/
+
+[37mThe culprits: 
+[33m	- app/models/staging_area.rb
+[0m
+[31m[1mSoon-to-be-deprecated ActiveRecord calls[0m
+[37mMethods such as find(:all), find(:first), finds with conditions, and the :joins option will soon be deprecated.
+[1mMore information:[0m [36mhttp://m.onkey.org/2010/1/22/active-record-query-interface
+
+[37mThe culprits: 
+[33m	- app/models/user.rb
+[33m	- app/controllers/assets_controller.rb
+[33m	- app/controllers/users_controller.rb
+[33m	- app/controllers/fishing_trips_controller.rb
+[33m	- app/controllers/devices_controller.rb
+[33m	- app/controllers/fishermen_controller.rb
+[33m	- app/models/user.rb
+[33m	- app/controllers/assets_controller.rb
+[33m	- app/controllers/users_controller.rb
+[33m	- app/controllers/devices_controller.rb
+[33m	- app/controllers/sessions_controller.rb
+[33m	- app/controllers/fishermen_controller.rb
+[33m	- app/controllers/fishing_trips_controller.rb
+[33m	- app/controllers/ships_controller.rb
+[33m	- app/controllers/others_controller.rb
+[33m	- app/views/maps/_shared_ships.html.erb
+[0m
+[31m[1mDeprecated filter_parameter_logging calls[0m
+[37mThe list of filtered parameters are now stored in /config/application.rb. For example: config.filter_parameters += [:password]
+[1mMore information:[0m [36mhttp://asciicasts.com/episodes/224-controllers-in-rails-3
+
+[37mThe culprits: 
+[33m	- app/controllers/application_controller.rb
+[0m

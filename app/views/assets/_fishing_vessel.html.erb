@@ -1,0 +1,70 @@
+<% form_for @asset.fishing_vessel, {
+      :loading => "Element.show('ship_loading')",
+      :complete => "Element.hide('ship_loading')"
+      } do |f| -%>
+
+  
+
+  <div style="float:left; margin-right:20px;">
+  
+    <p>    
+      <%= f.label :icon_id, "Vessel type" %><br />
+      <%= f.collection_select :icon_id, @icons, :id, :name %>
+    </p>
+    
+    <p>
+      <%= f.label :draught %><br />
+      <%= f.text_field :draught%>
+    </p>
+
+    <p>
+      <%= f.label :length, "Ship length"%><br />
+      <%= f.text_field :length %>
+    </p>
+
+    <p>
+      <%= f.label :width, "Ship width"%><br />
+      <%= f.text_field :width %>
+    </p>
+    
+    <p>
+      <%= f.label :vms_number, "VMS number" %><br />
+      <%= f.text_field :vms_number%>
+    </p>
+    
+    <p>
+      <%= f.label :vms_passcode, "VMS passcode" %><br />
+      <%= f.text_field :vms_passcode%>
+    </p>
+    
+    <p>
+      <%= f.label :vms_email, "VMS email" %><br />
+      <%= f.text_field :vms_email%>
+    </p>    
+    
+  </div>
+  
+  <div>
+  
+    <p>
+      <%= f.label :call_sign %><br />
+      <%= f.text_field :call_sign%>
+    </p>
+    
+    <p>
+      <%= f.label :phone_number %><br />
+      <%= f.text_field :phone%>
+    </p>
+    
+    <p>
+      <%= f.label :home_port %><br />
+      <%= f.text_field :port%>
+    </p>
+    
+  </div>
+  
+  <p style="clear:both;">
+    <%= f.submit 'Update' %>
+  </p>
+  
+<% end %>

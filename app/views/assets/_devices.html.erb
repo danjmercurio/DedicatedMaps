@@ -1,0 +1,59 @@
+<% if @client.devices.length() == 0 %>
+
+  <br />You have no tracking devices configured.
+
+<% else %>
+
+  Select a device to track this asset.
+  <br /><br />
+  
+  <%= form_for @asset, {
+            :loading => "Element.show('device_loading')",
+            :complete => "Element.hide('device_loading')"
+        } do |f| %>
+    <% for device in @client.devices %>
+      <% field_id = "d_#{device.id}" %>
+      <%= check_box_tag "asset[device_ids][]", device.id, @asset.devices.include?(device), :id => field_id %>
+      <%= label_tag field_id, h(device.common_name.to_s  + ' ' + device.device_type.title.to_s + ' ' + device.serial_number.to_s) %>
+      <br/>
+    <% end %>
+    <%= hidden_field_tag "device_checkboxes", 1 %>
+    <%= f.submit 'Update' %>
+  <% end %>
+
+<% end %>
+ 
+<hr />
+
+<p style="color: red"><%= flash[:error] %></p>
+
+Add new device:
+
+  <%= collection_select :device, :device_type_id, @device_types, :id, :title, :prompt => "Select Type"%>
+  <%= observe_field('device_device_type_id', :function => "
+    $('device_forms').childElements().invoke('hide');
+    $('device_' + value).show();
+  ")%>
+  
+  <div id="device_forms">
+  
+    <% @device_types.each do |device_type| %>
+
+      <%= form_for @device, {
+            :update => 'devices',
+            :loading => "Element.show('device_saving')",
+            :complete => "Element.hide('device_saving')",
+            :html => { :id => 'device_' + device_type.id.to_s,
+                       :style => "display:none;" }
+        } do |f| %>
+        <br /><br />  
+        <%= hidden_field_tag("device[device_type_id]", device_type.id) %>
+        <%= hidden_field_tag("device[asset_ids]", @asset.id) %>
+        <%= render :partial => 'devices/' + device_type.name,
+                   :locals  => {:f => f}
+                   %>
+        <%= f.submit 'Save' %><%= loader('device_saving', 'Saving...') %>
+      <% end %>
+      
+    <% end %>
+  </div>

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<html>
+<head>
+  <title>Dedicated Maps</title>
+	<%= javascript_include_tag :defaults %>  
+    <%= stylesheet_link_tag "reset" %>
+    <%= stylesheet_link_tag "public" %>
+  </head>
+  <!--//onload="initialize()"-->
+  <script type="text/javascript">
+jQuery(document).ready(function() {
+  jQuery('#forgot').click(function (){
+    jQuery('form#new_session').hide();
+    jQuery('#recover').show();
+  });
+  jQuery('#cancel').click(function() {
+    jQuery('#recover').hide();
+    jQuery('form#new_session').show();
+  });
+});
+
+</script>
+<body>
+
+<div class="wrapper">
+ <div class="header">
+    <%= render :partial=>"layouts/account_bar" %>
+  </div>
+</div>
+
+<% # prototype for a menu helper. this data should go in the controller -- eric
+menu = [
+    { 'action' => 'index', 'text' => 'Home' },
+    { 'action' => 'products', 'text' => 'Products' },
+    { 'action' => 'services', 'text' => 'Services' },
+    { 'action' => 'about', 'text' => 'About Us' },
+    { 'action' => 'contact', 'text' => 'Contact Us' },
+]
+menu.each do |item|
+    item['class'] = item['action'] + ( controller.action_name == item['action']? 'selected' : '')
+end 
+%>
+
+<div class="subheader">
+    <div class="topnav">
+        <ul class="menu">
+            <li><img src="/images/theme/nav_bar_button_divider.gif"/></li>
+            <% menu.each do |item| %>
+                <li class="<%= item['class'] %>"><%= link_to item['text'], url_for(:controller => 'public', :action => item['action']) %></li>
+                <li><img src="/images/theme/nav_bar_button_divider.gif"/></li>
+            <% end %>
+        </ul>
+    </div>
+</div>
+
+<br class="brclear" />
+
+<div class="content">
+    <%= yield %>
+</div>
+<div class="messages" style="text-align:right">
+      <span style='color:red;'>
+      	<% flash[:notice] %>
+      </span>
+    </div>
+<br class="brclear" />
+<div class="footer">
+    <div class="footerleft">
+        
+    </div>
+    <div class="footerright">
+        &#169;<%= Date.today.year %> Dedicated Maps, Inc. All rights reserved.
+    </div>
+</div>
+
+</body>
+</html>

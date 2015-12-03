@@ -1,0 +1,17 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: ddmaps_dev
+  username: root
+  password: mapapp
+  host: localhost
+  #socket: /var/run/mysqld/mysqld.sock
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: ddmaps
+  username: root
+  password: mapapp
+  host: localhost
+  #socket: /var/run/mysqld/mysqld.sock

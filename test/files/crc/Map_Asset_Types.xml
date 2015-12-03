@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" generated="2010-01-27T14:44:12">
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>10</AssetTypeCode>
+<AssetTypeName>Fast Tanks</AssetTypeName>
+</qry_Map_Asset_Types>
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>11</AssetTypeCode>
+<AssetTypeName>OSRV</AssetTypeName>
+</qry_Map_Asset_Types>
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>12</AssetTypeCode>
+<AssetTypeName>FRV</AssetTypeName>
+</qry_Map_Asset_Types>
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>13</AssetTypeCode>
+<AssetTypeName>WorkBoats</AssetTypeName>
+</qry_Map_Asset_Types>
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>14</AssetTypeCode>
+<AssetTypeName>Skiffs</AssetTypeName>
+</qry_Map_Asset_Types>
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>15</AssetTypeCode>
+<AssetTypeName>Tractors</AssetTypeName>
+</qry_Map_Asset_Types>
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>16</AssetTypeCode>
+<AssetTypeName>Trailers</AssetTypeName>
+</qry_Map_Asset_Types>
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>17</AssetTypeCode>
+<AssetTypeName>Trucks/SUVs</AssetTypeName>
+</qry_Map_Asset_Types>
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>18</AssetTypeCode>
+<AssetTypeName>Storage Barges</AssetTypeName>
+</qry_Map_Asset_Types>
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>19</AssetTypeCode>
+<AssetTypeName>Recovery Barges</AssetTypeName>
+</qry_Map_Asset_Types>
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>20</AssetTypeCode>
+<AssetTypeName>Pumps/Hoses</AssetTypeName>
+</qry_Map_Asset_Types>
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>21</AssetTypeCode>
+<AssetTypeName>Power Units</AssetTypeName>
+</qry_Map_Asset_Types>
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>22</AssetTypeCode>
+<AssetTypeName>Boom</AssetTypeName>
+</qry_Map_Asset_Types>
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>23</AssetTypeCode>
+<AssetTypeName>Skimmers</AssetTypeName>
+</qry_Map_Asset_Types>
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>24</AssetTypeCode>
+<AssetTypeName>Communications-Gear</AssetTypeName>
+</qry_Map_Asset_Types>
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>25</AssetTypeCode>
+<AssetTypeName>Boom Trailers</AssetTypeName>
+</qry_Map_Asset_Types>
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>26</AssetTypeCode>
+<AssetTypeName>Boat/Barge Trailers</AssetTypeName>
+</qry_Map_Asset_Types>
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>27</AssetTypeCode>
+<AssetTypeName>Foam Trailer</AssetTypeName>
+</qry_Map_Asset_Types>
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>28</AssetTypeCode>
+<AssetTypeName>Miscellaneous Trailers</AssetTypeName>
+</qry_Map_Asset_Types>
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>57</AssetTypeCode>
+<AssetTypeName>Bladder/Storage</AssetTypeName>
+</qry_Map_Asset_Types>
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>58</AssetTypeCode>
+<AssetTypeName>Tent for wild life</AssetTypeName>
+</qry_Map_Asset_Types>
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>59</AssetTypeCode>
+<AssetTypeName>Out of Service</AssetTypeName>
+</qry_Map_Asset_Types>
+<qry_Map_Asset_Types>
+<CompanyCode>1</CompanyCode>
+<AssetTypeCode>60</AssetTypeCode>
+<AssetTypeName>Shop</AssetTypeName>
+</qry_Map_Asset_Types>
+</dataroot>

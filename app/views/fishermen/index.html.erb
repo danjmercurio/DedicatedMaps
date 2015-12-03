@@ -1,0 +1,57 @@
+<fieldset>
+
+<legend>Fishing Crew</legend>
+  
+  <div id="add">
+    
+    <%= link_to_function "Add new crew member", "$('add').childElements().invoke('toggle');"%>
+  
+    <div style="display:none;">
+      <% form_for(@fisherman) do |f| -%>
+    
+        <% if @loggedin_user.super? %>
+          <p>
+            <%= f.label :client %><br />
+            <%= f.collection_select :client_id, @clients, :id, :company_name %>
+          </p>
+        <% end %>
+  
+        <p>
+          <%= label_tag :first_name %><br/>
+          <%= f.text_field :first_name %>
+        </p>
+        
+        <p>
+          <%= label_tag :last_name %><br/>
+          <%= f.text_field :last_name %>
+        </p>
+        
+        <p>
+          <%= label_tag :duties %><br/>
+          <%= f.text_field :duties %>
+        </p>
+     
+        <%= f.submit 'Add' %><%= loader('add_loading', 'Adding...') %>
+        <%= link_to_function "Cancel", "$('add').childElements().invoke('toggle');"%>    
+      <% end %>
+
+    </div>
+    
+  </div>
+  
+  <br /><br />
+  
+  <% if @fishermen.length() == 0 %>
+
+    You have no fishermen to show.
+
+  <% else %>
+
+    <% @fishermen.each do |fisherman| %>
+      <div id="d<%=fisherman.id%>">    
+        <%= render :partial => 'form', :locals  => {:fisherman => fisherman} %>
+      </div>
+    <% end %>
+  <% end %>
+
+</fieldset>

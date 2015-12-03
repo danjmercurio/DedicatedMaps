@@ -1,0 +1,31 @@
+<table class="index">
+  <tr>
+    <th>Expires</th>
+    <th>Created By</th>
+    <th>Active</th>
+  </tr>
+      
+  <% for license in client.licenses %>
+  
+  <tr bgcolor="<%= cycle("#dddddd", "#ffffff") %>">
+    <td width="100"><%= license.expires.strftime('%b %d %Y') %></td>
+    <td><%= license.user.first_name + ' ' + license.user.last_name%></td>
+      <td width="200" align="right">      
+        
+        <% if license.deactivated %>
+          <span id="msg_<%= license.id %>">no</span>
+        <% else %>
+          <span id="msg_<%= license.id %>">yes</span>
+        <% end %>
+        
+        <%= button_to_remote "Dis/enable", 
+              :url => { :controller => "licenses", :action => "activate", :id => license.id },
+              :update => 'msg_' + license.id.to_s,
+              :loading => "Element.show('load_" + license.id.to_s + "')",
+              :complete => "Element.hide('load_" + license.id.to_s + "')"
+              %>              
+      </td>
+    </tr>
+  <% end %>
+</table>
+<br /><br />

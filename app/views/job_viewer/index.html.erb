@@ -1,0 +1,12 @@
+<h1>Pending Jobs</h1>
+<p>There are currently <strong><%= @job_count %></strong> pending jobs.</p>
+<h2>Error log</h2>
+<% if @errors.empty? %>
+  <p>There are no errors</p>
+<% else %>
+  <ol>
+  <% @errors.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ol>
+<% end %>

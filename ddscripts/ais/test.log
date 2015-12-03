@@ -1,0 +1,2184 @@
+We made it!
+msgid = 6
+msgid = 5
+eta: 750144
+msgid    : 5
+mmsi       : 366934280
+callsign   : WTS3171
+name       : DANIEL FOSS
+destination: COLUMBIA RIVER
+eta: 2010-11-14 09:00:00
+type: 31
+('draught', <type 'int'>)
+('eta', <type 'datetime.datetime'>)
+('name', <type 'str'>)
+('stern', <type 'int'>)
+('dest', <type 'str'>)
+('starboard', <type 'str'>)
+('mmsi', <type 'int'>)
+('type', <type 'int'>)
+('port', <type 'int'>)
+('bow', <type 'int'>)
+{'draught': 130, 'eta': datetime.datetime(2010, 11, 14, 9, 0), 'name': 'DANIEL FOSS', 'stern': 12, 'dest': 'COLUMBIA RIVER', 'starboard': 5, 'mmsi': 366934280, 'type': 31, 'port': 6, 'bow': 20}
+msgid = 1
+msgid    : 1
+mmsi     : 366986380
+latitude : 46.094107
+longitude: -122.918287
+raw_latitude : 27656464.000000
+raw_longitude: -73750972.000000
+cog: 329
+nav_status: 3
+(366986380, 46.094106666666669, -122.91828666666666, 329, 7, 3)
+DUPLICATE!
+{'status': 3, 'mmsi': 366986380, 'long': -122.91828666666666, 'cog': 329, 'lat': 46.094106666666669, 'speed': 7}
+msgid = 1
+msgid    : 1
+mmsi     : 367101660
+latitude : 46.169517
+longitude: -123.913700
+raw_latitude : 27701710.000000
+raw_longitude: -74348220.000000
+cog: 236
+nav_status: 0
+(367101660, 46.169516666666667, -123.91370000000001, 236, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367101660, 'long': -123.91370000000001, 'cog': 236, 'lat': 46.169516666666667, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 366986380
+latitude : 46.094107
+longitude: -122.918287
+raw_latitude : 27656464.000000
+raw_longitude: -73750972.000000
+cog: 329
+nav_status: 3
+(366986380, 46.094106666666669, -122.91828666666666, 329, 7, 3)
+DUPLICATE!
+{'status': 3, 'mmsi': 366986380, 'long': -122.91828666666666, 'cog': 329, 'lat': 46.094106666666669, 'speed': 7}
+msgid = 1
+msgid    : 1
+mmsi     : 367101660
+latitude : 46.169517
+longitude: -123.913700
+raw_latitude : 27701710.000000
+raw_longitude: -74348220.000000
+cog: 236
+nav_status: 0
+(367101660, 46.169516666666667, -123.91370000000001, 236, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367101660, 'long': -123.91370000000001, 'cog': 236, 'lat': 46.169516666666667, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367101660
+latitude : 46.169517
+longitude: -123.913700
+raw_latitude : 27701710.000000
+raw_longitude: -74348220.000000
+cog: 236
+nav_status: 0
+(367101660, 46.169516666666667, -123.91370000000001, 236, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367101660, 'long': -123.91370000000001, 'cog': 236, 'lat': 46.169516666666667, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367101660
+latitude : 46.169517
+longitude: -123.913700
+raw_latitude : 27701710.000000
+raw_longitude: -74348220.000000
+cog: 236
+nav_status: 0
+(367101660, 46.169516666666667, -123.91370000000001, 236, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367101660, 'long': -123.91370000000001, 'cog': 236, 'lat': 46.169516666666667, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367321210
+latitude : 46.907717
+longitude: -124.107950
+raw_latitude : 28144630.000000
+raw_longitude: -74464770.000000
+cog: 283
+nav_status: 0
+(367321210, 46.907716666666666, -124.10795, 283, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367321210, 'long': -124.10795, 'cog': 283, 'lat': 46.907716666666666, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367315830
+latitude : 45.643892
+longitude: -122.774170
+raw_latitude : 27386335.000000
+raw_longitude: -73664502.000000
+cog: 54
+nav_status: 0
+(367315830, 45.643891666666669, -122.77417, 54, 88, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367315830, 'long': -122.77417, 'cog': 54, 'lat': 45.643891666666669, 'speed': 88}
+msgid = 1
+msgid    : 1
+mmsi     : 367315830
+latitude : 45.643892
+longitude: -122.774170
+raw_latitude : 27386335.000000
+raw_longitude: -73664502.000000
+cog: 54
+nav_status: 0
+(367315830, 45.643891666666669, -122.77417, 54, 88, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367315830, 'long': -122.77417, 'cog': 54, 'lat': 45.643891666666669, 'speed': 88}
+msgid = 1
+msgid    : 1
+mmsi     : 366982310
+latitude : 45.655017
+longitude: -122.754450
+raw_latitude : 27393010.000000
+raw_longitude: -73652670.000000
+cog: 161
+nav_status: 0
+(366982310, 45.655016666666668, -122.75445000000001, 161, 1, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 366982310, 'long': -122.75445000000001, 'cog': 161, 'lat': 45.655016666666668, 'speed': 1}
+msgid = 1
+msgid    : 1
+mmsi     : 367001830
+latitude : 46.201482
+longitude: -123.387155
+raw_latitude : 27720889.000000
+raw_longitude: -74032293.000000
+cog: 0
+nav_status: 0
+(367001830, 46.201481666666666, -123.38715500000001, 0, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367001830, 'long': -123.38715500000001, 'cog': 0, 'lat': 46.201481666666666, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 366982310
+latitude : 45.655017
+longitude: -122.754450
+raw_latitude : 27393010.000000
+raw_longitude: -73652670.000000
+cog: 161
+nav_status: 0
+(366982310, 45.655016666666668, -122.75445000000001, 161, 1, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 366982310, 'long': -122.75445000000001, 'cog': 161, 'lat': 45.655016666666668, 'speed': 1}
+msgid = 1
+msgid    : 1
+mmsi     : 367001830
+latitude : 46.201482
+longitude: -123.387155
+raw_latitude : 27720889.000000
+raw_longitude: -74032293.000000
+cog: 0
+nav_status: 0
+(367001830, 46.201481666666666, -123.38715500000001, 0, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367001830, 'long': -123.38715500000001, 'cog': 0, 'lat': 46.201481666666666, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367001830
+latitude : 46.201482
+longitude: -123.387155
+raw_latitude : 27720889.000000
+raw_longitude: -74032293.000000
+cog: 0
+nav_status: 0
+(367001830, 46.201481666666666, -123.38715500000001, 0, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367001830, 'long': -123.38715500000001, 'cog': 0, 'lat': 46.201481666666666, 'speed': 0}
+msgid = 4
+msgid    : 4
+mmsi     : 0
+latitude : 0
+longitude: 0
+msgid = 1
+msgid    : 1
+mmsi     : 368572000
+latitude : 46.197172
+longitude: -123.800667
+raw_latitude : 27718303.000000
+raw_longitude: -74280400.000000
+cog: 300
+nav_status: 15
+(368572000, 46.197171666666669, -123.80066666666667, 300, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 368572000, 'long': -123.80066666666667, 'cog': 300, 'lat': 46.197171666666669, 'speed': 0}
+msgid = 24
+msgid    : 24
+mmsi       : 367370560
+callsign   : 
+name       : BLUE ECSTASY@@@@@@@@
+msgid = 1
+msgid    : 1
+mmsi     : 33809608
+latitude : 46.905155
+longitude: -124.104968
+raw_latitude : 28143093.000000
+raw_longitude: -74462981.000000
+cog: 328
+nav_status: 0
+(33809608, 46.905155000000001, -124.10496833333333, 328, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 33809608, 'long': -124.10496833333333, 'cog': 328, 'lat': 46.905155000000001, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367331730
+latitude : 46.204540
+longitude: -123.950147
+raw_latitude : 27722724.000000
+raw_longitude: -74370088.000000
+cog: 112
+nav_status: 0
+(367331730, 46.204540000000001, -123.95014666666667, 112, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367331730, 'long': -123.95014666666667, 'cog': 112, 'lat': 46.204540000000001, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 368572000
+latitude : 46.197172
+longitude: -123.800667
+raw_latitude : 27718303.000000
+raw_longitude: -74280400.000000
+cog: 300
+nav_status: 15
+(368572000, 46.197171666666669, -123.80066666666667, 300, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 368572000, 'long': -123.80066666666667, 'cog': 300, 'lat': 46.197171666666669, 'speed': 0}
+msgid = 24
+msgid    : 24
+mmsi       : 367370560
+callsign   : 
+name       : BLUE ECSTASY@@@@@@@@
+msgid = 4
+msgid    : 4
+mmsi     : 3669102
+latitude : 27757533
+longitude: -74332250
+msgid = 4
+msgid    : 4
+mmsi     : 3699101
+latitude : 27609709
+longitude: -73665358
+msgid = 1
+msgid    : 1
+mmsi     : 367331730
+latitude : 46.204540
+longitude: -123.950147
+raw_latitude : 27722724.000000
+raw_longitude: -74370088.000000
+cog: 112
+nav_status: 0
+(367331730, 46.204540000000001, -123.95014666666667, 112, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367331730, 'long': -123.95014666666667, 'cog': 112, 'lat': 46.204540000000001, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367310529
+latitude : 45.837500
+longitude: -122.789333
+raw_latitude : 27502500.000000
+raw_longitude: -73673600.000000
+cog: 116
+nav_status: 15
+(367310529, 45.837499999999999, -122.78933333333333, 116, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 367310529, 'long': -122.78933333333333, 'cog': 116, 'lat': 45.837499999999999, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 235658000
+latitude : 46.649000
+longitude: -125.478000
+raw_latitude : 27989400.000000
+raw_longitude: -75286800.000000
+cog: 4
+nav_status: 0
+(235658000, 46.649000000000001, -125.47799999999999, 4, 126, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 235658000, 'long': -125.47799999999999, 'cog': 4, 'lat': 46.649000000000001, 'speed': 126}
+msgid = 1
+msgid    : 1
+mmsi     : 367039250
+latitude : 45.586947
+longitude: -122.769695
+raw_latitude : 27352168.000000
+raw_longitude: -73661817.000000
+cog: 174
+nav_status: 0
+(367039250, 45.58694666666667, -122.769695, 174, 1, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367039250, 'long': -122.769695, 'cog': 174, 'lat': 45.58694666666667, 'speed': 1}
+msgid = 1
+msgid    : 1
+mmsi     : 367310529
+latitude : 45.837500
+longitude: -122.789333
+raw_latitude : 27502500.000000
+raw_longitude: -73673600.000000
+cog: 116
+nav_status: 15
+(367310529, 45.837499999999999, -122.78933333333333, 116, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 367310529, 'long': -122.78933333333333, 'cog': 116, 'lat': 45.837499999999999, 'speed': 0}
+msgid = 24
+msgid    : 24
+mmsi       : 367370560
+callsign   : WDE5708
+name       : 
+msgid = 1
+msgid    : 1
+mmsi     : 366951180
+latitude : 46.204333
+longitude: -123.950217
+raw_latitude : 27722600.000000
+raw_longitude: -74370130.000000
+cog: 345
+nav_status: 15
+(366951180, 46.204333333333331, -123.95021666666666, 345, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 366951180, 'long': -123.95021666666666, 'cog': 345, 'lat': 46.204333333333331, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 366951180
+latitude : 46.204333
+longitude: -123.950217
+raw_latitude : 27722600.000000
+raw_longitude: -74370130.000000
+cog: 345
+nav_status: 15
+(366951180, 46.204333333333331, -123.95021666666666, 345, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 366951180, 'long': -123.95021666666666, 'cog': 345, 'lat': 46.204333333333331, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 371048000
+latitude : 46.230483
+longitude: -123.426850
+raw_latitude : 27738290.000000
+raw_longitude: -74056110.000000
+cog: 164
+nav_status: 1
+(371048000, 46.230483333333332, -123.42685, 164, 121, 1)
+DUPLICATE!
+{'status': 1, 'mmsi': 371048000, 'long': -123.42685, 'cog': 164, 'lat': 46.230483333333332, 'speed': 121}
+msgid = 1
+msgid    : 1
+mmsi     : 366763770
+latitude : 45.636947
+longitude: -122.783780
+raw_latitude : 27382168.000000
+raw_longitude: -73670268.000000
+cog: 43
+nav_status: 0
+(366763770, 45.636946666666667, -122.78377999999999, 43, 71, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 366763770, 'long': -122.78377999999999, 'cog': 43, 'lat': 45.636946666666667, 'speed': 71}
+msgid = 1
+msgid    : 1
+mmsi     : 366951180
+latitude : 46.204333
+longitude: -123.950217
+raw_latitude : 27722600.000000
+raw_longitude: -74370130.000000
+cog: 345
+nav_status: 15
+(366951180, 46.204333333333331, -123.95021666666666, 345, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 366951180, 'long': -123.95021666666666, 'cog': 345, 'lat': 46.204333333333331, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 371048000
+latitude : 46.230483
+longitude: -123.426850
+raw_latitude : 27738290.000000
+raw_longitude: -74056110.000000
+cog: 164
+nav_status: 1
+(371048000, 46.230483333333332, -123.42685, 164, 121, 1)
+DUPLICATE!
+{'status': 1, 'mmsi': 371048000, 'long': -123.42685, 'cog': 164, 'lat': 46.230483333333332, 'speed': 121}
+msgid = 1
+msgid    : 1
+mmsi     : 366763770
+latitude : 45.636947
+longitude: -122.783780
+raw_latitude : 27382168.000000
+raw_longitude: -73670268.000000
+cog: 43
+nav_status: 0
+(366763770, 45.636946666666667, -122.78377999999999, 43, 71, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 366763770, 'long': -122.78377999999999, 'cog': 43, 'lat': 45.636946666666667, 'speed': 71}
+msgid = 3
+msgid    : 3
+mmsi     : 210649000
+latitude : 27824318
+longitude: -74793974
+msgid = 1
+msgid    : 1
+mmsi     : 366951180
+latitude : 46.204333
+longitude: -123.950217
+raw_latitude : 27722600.000000
+raw_longitude: -74370130.000000
+cog: 345
+nav_status: 15
+(366951180, 46.204333333333331, -123.95021666666666, 345, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 366951180, 'long': -123.95021666666666, 'cog': 345, 'lat': 46.204333333333331, 'speed': 0}
+msgid = 3
+msgid    : 3
+mmsi     : 210649000
+latitude : 27824318
+longitude: -74793974
+msgid = 1
+msgid    : 1
+mmsi     : 367002190
+latitude : 46.201215
+longitude: -123.387192
+raw_latitude : 27720729.000000
+raw_longitude: -74032315.000000
+cog: 0
+nav_status: 0
+(367002190, 46.201214999999998, -123.38719166666667, 0, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367002190, 'long': -123.38719166666667, 'cog': 0, 'lat': 46.201214999999998, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 366999840
+latitude : 45.610195
+longitude: -122.786492
+raw_latitude : 27366117.000000
+raw_longitude: -73671895.000000
+cog: 337
+nav_status: 0
+(366999840, 45.610194999999997, -122.78649166666666, 337, 88, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 366999840, 'long': -122.78649166666666, 'cog': 337, 'lat': 45.610194999999997, 'speed': 88}
+msgid = 1
+msgid    : 1
+mmsi     : 367002190
+latitude : 46.201215
+longitude: -123.387192
+raw_latitude : 27720729.000000
+raw_longitude: -74032315.000000
+cog: 0
+nav_status: 0
+(367002190, 46.201214999999998, -123.38719166666667, 0, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367002190, 'long': -123.38719166666667, 'cog': 0, 'lat': 46.201214999999998, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 366999840
+latitude : 45.610195
+longitude: -122.786492
+raw_latitude : 27366117.000000
+raw_longitude: -73671895.000000
+cog: 337
+nav_status: 0
+(366999840, 45.610194999999997, -122.78649166666666, 337, 88, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 366999840, 'long': -122.78649166666666, 'cog': 337, 'lat': 45.610194999999997, 'speed': 88}
+msgid = 1
+msgid    : 1
+mmsi     : 367002190
+latitude : 46.201215
+longitude: -123.387192
+raw_latitude : 27720729.000000
+raw_longitude: -74032315.000000
+cog: 0
+nav_status: 0
+(367002190, 46.201214999999998, -123.38719166666667, 0, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367002190, 'long': -123.38719166666667, 'cog': 0, 'lat': 46.201214999999998, 'speed': 0}
+msgid = 5
+msgid    : 5
+mmsi       : 367026670
+callsign   : WDD6410
+name       : SEAFIGHTER
+destination: SAN DIEGO
+eta: None
+type: 49
+('draught', <type 'int'>)
+('eta', <type 'NoneType'>)
+('name', <type 'str'>)
+('stern', <type 'int'>)
+('dest', <type 'str'>)
+('starboard', <type 'str'>)
+('mmsi', <type 'int'>)
+('type', <type 'int'>)
+('port', <type 'int'>)
+('bow', <type 'int'>)
+{'draught': 0, 'eta': None, 'name': 'SEAFIGHTER', 'stern': 0, 'dest': 'SAN DIEGO', 'starboard': 0, 'mmsi': 367026670, 'type': 49, 'port': 0, 'bow': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367002190
+latitude : 46.201215
+longitude: -123.387192
+raw_latitude : 27720729.000000
+raw_longitude: -74032315.000000
+cog: 0
+nav_status: 0
+(367002190, 46.201214999999998, -123.38719166666667, 0, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367002190, 'long': -123.38719166666667, 'cog': 0, 'lat': 46.201214999999998, 'speed': 0}
+msgid = 5
+msgid    : 5
+mmsi       : 367026670
+callsign   : WDD6410
+name       : SEAFIGHTER
+destination: SAN DIEGO
+eta: None
+type: 49
+('draught', <type 'int'>)
+('eta', <type 'NoneType'>)
+('name', <type 'str'>)
+('stern', <type 'int'>)
+('dest', <type 'str'>)
+('starboard', <type 'str'>)
+('mmsi', <type 'int'>)
+('type', <type 'int'>)
+('port', <type 'int'>)
+('bow', <type 'int'>)
+{'draught': 0, 'eta': None, 'name': 'SEAFIGHTER', 'stern': 0, 'dest': 'SAN DIEGO', 'starboard': 0, 'mmsi': 367026670, 'type': 49, 'port': 0, 'bow': 0}
+DUPLICATE!
+msgid = 1
+msgid    : 1
+mmsi     : 338060061
+latitude : 45.560235
+longitude: -122.728358
+raw_latitude : 27336141.000000
+raw_longitude: -73637015.000000
+cog: 230
+nav_status: 0
+(338060061, 45.560234999999999, -122.72835833333333, 230, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 338060061, 'long': -122.72835833333333, 'cog': 230, 'lat': 45.560234999999999, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367347050
+latitude : 45.551942
+longitude: -122.708097
+raw_latitude : 27331165.000000
+raw_longitude: -73624858.000000
+cog: 125
+nav_status: 0
+(367347050, 45.551941666666664, -122.70809666666666, 125, 37, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367347050, 'long': -122.70809666666666, 'cog': 125, 'lat': 45.551941666666664, 'speed': 37}
+msgid = 1
+msgid    : 1
+mmsi     : 367419960
+latitude : 45.503808
+longitude: -122.664263
+raw_latitude : 27302285.000000
+raw_longitude: -73598558.000000
+cog: 44
+nav_status: 0
+(367419960, 45.503808333333332, -122.66426333333334, 44, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367419960, 'long': -122.66426333333334, 'cog': 44, 'lat': 45.503808333333332, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367424210
+latitude : 45.838233
+longitude: -122.788867
+raw_latitude : 27502940.000000
+raw_longitude: -73673320.000000
+cog: 301
+nav_status: 0
+(367424210, 45.838233333333335, -122.78886666666666, 301, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367424210, 'long': -122.78886666666666, 'cog': 301, 'lat': 45.838233333333335, 'speed': 0}
+msgid = 8
+msgid = 1
+msgid    : 1
+mmsi     : 303673000
+latitude : 46.926063
+longitude: -124.038007
+raw_latitude : 28155638.000000
+raw_longitude: -74422804.000000
+cog: 247
+nav_status: 0
+(303673000, 46.926063333333332, -124.03800666666666, 247, 89, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 303673000, 'long': -124.03800666666666, 'cog': 247, 'lat': 46.926063333333332, 'speed': 89}
+msgid = 8
+msgid = 1
+msgid    : 1
+mmsi     : 367047270
+latitude : 45.959542
+longitude: -122.813093
+raw_latitude : 27575725.000000
+raw_longitude: -73687856.000000
+cog: 153
+nav_status: 5
+(367047270, 45.959541666666667, -122.81309333333333, 153, 65, 5)
+DUPLICATE!
+{'status': 5, 'mmsi': 367047270, 'long': -122.81309333333333, 'cog': 153, 'lat': 45.959541666666667, 'speed': 65}
+msgid = 1
+msgid    : 1
+mmsi     : 367424210
+latitude : 45.838233
+longitude: -122.788867
+raw_latitude : 27502940.000000
+raw_longitude: -73673320.000000
+cog: 301
+nav_status: 0
+(367424210, 45.838233333333335, -122.78886666666666, 301, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367424210, 'long': -122.78886666666666, 'cog': 301, 'lat': 45.838233333333335, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367071960
+latitude : 45.607730
+longitude: -122.684948
+raw_latitude : 27364638.000000
+raw_longitude: -73610969.000000
+cog: 172
+nav_status: 0
+(367071960, 45.607729999999997, -122.68494833333334, 172, 1, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367071960, 'long': -122.68494833333334, 'cog': 172, 'lat': 45.607729999999997, 'speed': 1}
+msgid = 1
+msgid    : 1
+mmsi     : 366980190
+latitude : 45.655415
+longitude: -122.754785
+raw_latitude : 27393249.000000
+raw_longitude: -73652871.000000
+cog: 0
+nav_status: 0
+(366980190, 45.655414999999998, -122.754785, 0, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 366980190, 'long': -122.754785, 'cog': 0, 'lat': 45.655414999999998, 'speed': 0}
+msgid = 3
+msgid    : 3
+mmsi     : 211723000
+latitude : 27381910
+longitude: -73624340
+msgid = 1
+msgid    : 1
+mmsi     : 366938450
+latitude : 45.587410
+longitude: -122.770507
+raw_latitude : 27352446.000000
+raw_longitude: -73662304.000000
+cog: 163
+nav_status: 0
+(366938450, 45.587409999999998, -122.77050666666666, 163, 1, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 366938450, 'long': -122.77050666666666, 'cog': 163, 'lat': 45.587409999999998, 'speed': 1}
+msgid = 5
+eta: 258816
+msgid    : 5
+mmsi       : 367034090
+callsign   : WCW2786
+name       : ELAND
+destination: NEHALEM OR."
+eta: 2010-03-30 12:00:00
+type: 99
+('draught', <type 'int'>)
+('eta', <type 'datetime.datetime'>)
+('name', <type 'str'>)
+('stern', <type 'int'>)
+('dest', <type 'str'>)
+('starboard', <type 'str'>)
+('mmsi', <type 'int'>)
+('type', <type 'int'>)
+('port', <type 'int'>)
+('bow', <type 'int'>)
+{'draught': 30, 'eta': datetime.datetime(2010, 3, 30, 12, 0), 'name': 'ELAND', 'stern': 40, 'dest': 'NEHALEM OR."', 'starboard': 7, 'mmsi': 367034090, 'type': 99, 'port': 5, 'bow': 11}
+msgid = 3
+msgid    : 3
+mmsi     : 371073000
+latitude : 27719530
+longitude: -74283700
+msgid = 1
+msgid    : 1
+mmsi     : 367321210
+latitude : 46.907717
+longitude: -124.107950
+raw_latitude : 28144630.000000
+raw_longitude: -74464770.000000
+cog: 242
+nav_status: 0
+(367321210, 46.907716666666666, -124.10795, 242, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367321210, 'long': -124.10795, 'cog': 242, 'lat': 46.907716666666666, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 210649000
+latitude : 46.373965
+longitude: -124.656587
+raw_latitude : 27824379.000000
+raw_longitude: -74793952.000000
+cog: 11
+nav_status: 2
+(210649000, 46.373964999999998, -124.65658666666667, 11, 38, 2)
+DUPLICATE!
+{'status': 2, 'mmsi': 210649000, 'long': -124.65658666666667, 'cog': 11, 'lat': 46.373964999999998, 'speed': 38}
+msgid = 1
+msgid    : 1
+mmsi     : 366986380
+latitude : 46.094123
+longitude: -122.918297
+raw_latitude : 27656474.000000
+raw_longitude: -73750978.000000
+cog: 328
+nav_status: 3
+(366986380, 46.094123333333336, -122.91829666666666, 328, 2, 3)
+DUPLICATE!
+{'status': 3, 'mmsi': 366986380, 'long': -122.91829666666666, 'cog': 328, 'lat': 46.094123333333336, 'speed': 2}
+msgid = 3
+msgid    : 3
+mmsi     : 371073000
+latitude : 27719530
+longitude: -74283700
+msgid = 3
+msgid    : 3
+mmsi     : 210649000
+latitude : 27824379
+longitude: -74793952
+msgid = 1
+msgid    : 1
+mmsi     : 210649000
+latitude : 46.373965
+longitude: -124.656587
+raw_latitude : 27824379.000000
+raw_longitude: -74793952.000000
+cog: 11
+nav_status: 2
+(210649000, 46.373964999999998, -124.65658666666667, 11, 38, 2)
+DUPLICATE!
+{'status': 2, 'mmsi': 210649000, 'long': -124.65658666666667, 'cog': 11, 'lat': 46.373964999999998, 'speed': 38}
+msgid = 1
+msgid    : 1
+mmsi     : 366986380
+latitude : 46.094123
+longitude: -122.918297
+raw_latitude : 27656474.000000
+raw_longitude: -73750978.000000
+cog: 328
+nav_status: 3
+(366986380, 46.094123333333336, -122.91829666666666, 328, 2, 3)
+DUPLICATE!
+{'status': 3, 'mmsi': 366986380, 'long': -122.91829666666666, 'cog': 328, 'lat': 46.094123333333336, 'speed': 2}
+msgid = 3
+msgid    : 3
+mmsi     : 210649000
+latitude : 27824379
+longitude: -74793952
+msgid = 1
+msgid    : 1
+mmsi     : 367101660
+latitude : 46.169517
+longitude: -123.913700
+raw_latitude : 27701710.000000
+raw_longitude: -74348220.000000
+cog: 241
+nav_status: 0
+(367101660, 46.169516666666667, -123.91370000000001, 241, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367101660, 'long': -123.91370000000001, 'cog': 241, 'lat': 46.169516666666667, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367101660
+latitude : 46.169517
+longitude: -123.913700
+raw_latitude : 27701710.000000
+raw_longitude: -74348220.000000
+cog: 241
+nav_status: 0
+(367101660, 46.169516666666667, -123.91370000000001, 241, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367101660, 'long': -123.91370000000001, 'cog': 241, 'lat': 46.169516666666667, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367101660
+latitude : 46.169517
+longitude: -123.913700
+raw_latitude : 27701710.000000
+raw_longitude: -74348220.000000
+cog: 241
+nav_status: 0
+(367101660, 46.169516666666667, -123.91370000000001, 241, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367101660, 'long': -123.91370000000001, 'cog': 241, 'lat': 46.169516666666667, 'speed': 0}
+msgid = 5
+msgid    : 5
+mmsi       : 0
+callsign   : WLB297
+name       : IRONWOOD
+destination: TRAINING
+eta: None
+type: 0
+('draught', <type 'int'>)
+('eta', <type 'NoneType'>)
+('name', <type 'str'>)
+('stern', <type 'int'>)
+('dest', <type 'str'>)
+('starboard', <type 'str'>)
+('mmsi', <type 'int'>)
+('type', <type 'int'>)
+('port', <type 'int'>)
+('bow', <type 'int'>)
+{'draught': 42, 'eta': None, 'name': 'IRONWOOD', 'stern': 25, 'dest': 'TRAINING', 'starboard': 3, 'mmsi': 0, 'type': 0, 'port': 9, 'bow': 30}
+msgid = 1
+msgid    : 1
+mmsi     : 367331730
+latitude : 46.204538
+longitude: -123.950143
+raw_latitude : 27722723.000000
+raw_longitude: -74370086.000000
+cog: 112
+nav_status: 0
+(367331730, 46.204538333333332, -123.95014333333333, 112, 1, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367331730, 'long': -123.95014333333333, 'cog': 112, 'lat': 46.204538333333332, 'speed': 1}
+msgid = 1
+msgid    : 1
+mmsi     : 366982310
+latitude : 45.655015
+longitude: -122.754450
+raw_latitude : 27393009.000000
+raw_longitude: -73652670.000000
+cog: 160
+nav_status: 0
+(366982310, 45.655014999999999, -122.75445000000001, 160, 1, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 366982310, 'long': -122.75445000000001, 'cog': 160, 'lat': 45.655014999999999, 'speed': 1}
+msgid = 1
+msgid    : 1
+mmsi     : 368572000
+latitude : 46.197162
+longitude: -123.800662
+raw_latitude : 27718297.000000
+raw_longitude: -74280397.000000
+cog: 289
+nav_status: 15
+(368572000, 46.197161666666666, -123.80066166666667, 289, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 368572000, 'long': -123.80066166666667, 'cog': 289, 'lat': 46.197161666666666, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367331730
+latitude : 46.204538
+longitude: -123.950143
+raw_latitude : 27722723.000000
+raw_longitude: -74370086.000000
+cog: 112
+nav_status: 0
+(367331730, 46.204538333333332, -123.95014333333333, 112, 1, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367331730, 'long': -123.95014333333333, 'cog': 112, 'lat': 46.204538333333332, 'speed': 1}
+msgid = 5
+msgid    : 5
+mmsi       : 0
+callsign   : WLB297
+name       : IRONWOOD
+destination: TRAINING
+eta: None
+type: 0
+('draught', <type 'int'>)
+('eta', <type 'NoneType'>)
+('name', <type 'str'>)
+('stern', <type 'int'>)
+('dest', <type 'str'>)
+('starboard', <type 'str'>)
+('mmsi', <type 'int'>)
+('type', <type 'int'>)
+('port', <type 'int'>)
+('bow', <type 'int'>)
+{'draught': 42, 'eta': None, 'name': 'IRONWOOD', 'stern': 25, 'dest': 'TRAINING', 'starboard': 3, 'mmsi': 0, 'type': 0, 'port': 9, 'bow': 30}
+DUPLICATE!
+msgid = 1
+msgid    : 1
+mmsi     : 368572000
+latitude : 46.197162
+longitude: -123.800662
+raw_latitude : 27718297.000000
+raw_longitude: -74280397.000000
+cog: 289
+nav_status: 15
+(368572000, 46.197161666666666, -123.80066166666667, 289, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 368572000, 'long': -123.80066166666667, 'cog': 289, 'lat': 46.197161666666666, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367315830
+latitude : 45.644128
+longitude: -122.773685
+raw_latitude : 27386477.000000
+raw_longitude: -73664211.000000
+cog: 55
+nav_status: 0
+(367315830, 45.644128333333335, -122.773685, 55, 88, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367315830, 'long': -122.773685, 'cog': 55, 'lat': 45.644128333333335, 'speed': 88}
+msgid = 1
+msgid    : 1
+mmsi     : 367331730
+latitude : 46.204538
+longitude: -123.950143
+raw_latitude : 27722723.000000
+raw_longitude: -74370086.000000
+cog: 112
+nav_status: 0
+(367331730, 46.204538333333332, -123.95014333333333, 112, 1, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367331730, 'long': -123.95014333333333, 'cog': 112, 'lat': 46.204538333333332, 'speed': 1}
+msgid = 1
+msgid    : 1
+mmsi     : 368572000
+latitude : 46.197162
+longitude: -123.800662
+raw_latitude : 27718297.000000
+raw_longitude: -74280397.000000
+cog: 289
+nav_status: 15
+(368572000, 46.197161666666666, -123.80066166666667, 289, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 368572000, 'long': -123.80066166666667, 'cog': 289, 'lat': 46.197161666666666, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367315830
+latitude : 45.644128
+longitude: -122.773685
+raw_latitude : 27386477.000000
+raw_longitude: -73664211.000000
+cog: 55
+nav_status: 0
+(367315830, 45.644128333333335, -122.773685, 55, 88, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367315830, 'long': -122.773685, 'cog': 55, 'lat': 45.644128333333335, 'speed': 88}
+msgid = 1
+msgid    : 1
+mmsi     : 367001830
+latitude : 46.201482
+longitude: -123.387155
+raw_latitude : 27720889.000000
+raw_longitude: -74032293.000000
+cog: 0
+nav_status: 0
+(367001830, 46.201481666666666, -123.38715500000001, 0, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367001830, 'long': -123.38715500000001, 'cog': 0, 'lat': 46.201481666666666, 'speed': 0}
+msgid = 4
+msgid    : 4
+mmsi     : 0
+latitude : 0
+longitude: 0
+msgid = 1
+msgid    : 1
+mmsi     : 367001830
+latitude : 46.201482
+longitude: -123.387155
+raw_latitude : 27720889.000000
+raw_longitude: -74032293.000000
+cog: 0
+nav_status: 0
+(367001830, 46.201481666666666, -123.38715500000001, 0, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367001830, 'long': -123.38715500000001, 'cog': 0, 'lat': 46.201481666666666, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 33809608
+latitude : 46.905155
+longitude: -124.104968
+raw_latitude : 28143093.000000
+raw_longitude: -74462981.000000
+cog: 328
+nav_status: 0
+(33809608, 46.905155000000001, -124.10496833333333, 328, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 33809608, 'long': -124.10496833333333, 'cog': 328, 'lat': 46.905155000000001, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367001830
+latitude : 46.201482
+longitude: -123.387155
+raw_latitude : 27720889.000000
+raw_longitude: -74032293.000000
+cog: 0
+nav_status: 0
+(367001830, 46.201481666666666, -123.38715500000001, 0, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367001830, 'long': -123.38715500000001, 'cog': 0, 'lat': 46.201481666666666, 'speed': 0}
+msgid = 4
+msgid    : 4
+mmsi     : 3669102
+latitude : 27757533
+longitude: -74332250
+msgid = 4
+msgid    : 4
+mmsi     : 3699101
+latitude : 27609709
+longitude: -73665358
+msgid = 1
+msgid    : 1
+mmsi     : 366951180
+latitude : 46.204317
+longitude: -123.950217
+raw_latitude : 27722590.000000
+raw_longitude: -74370130.000000
+cog: 345
+nav_status: 15
+(366951180, 46.204316666666664, -123.95021666666666, 345, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 366951180, 'long': -123.95021666666666, 'cog': 345, 'lat': 46.204316666666664, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367002190
+latitude : 46.201215
+longitude: -123.387192
+raw_latitude : 27720729.000000
+raw_longitude: -74032315.000000
+cog: 0
+nav_status: 0
+(367002190, 46.201214999999998, -123.38719166666667, 0, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367002190, 'long': -123.38719166666667, 'cog': 0, 'lat': 46.201214999999998, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 366999840
+latitude : 45.610537
+longitude: -122.786693
+raw_latitude : 27366322.000000
+raw_longitude: -73672016.000000
+cog: 337
+nav_status: 0
+(366999840, 45.610536666666668, -122.78669333333333, 337, 88, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 366999840, 'long': -122.78669333333333, 'cog': 337, 'lat': 45.610536666666668, 'speed': 88}
+msgid = 1
+msgid    : 1
+mmsi     : 366951180
+latitude : 46.204317
+longitude: -123.950217
+raw_latitude : 27722590.000000
+raw_longitude: -74370130.000000
+cog: 345
+nav_status: 15
+(366951180, 46.204316666666664, -123.95021666666666, 345, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 366951180, 'long': -123.95021666666666, 'cog': 345, 'lat': 46.204316666666664, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 366763770
+latitude : 45.637157
+longitude: -122.783483
+raw_latitude : 27382294.000000
+raw_longitude: -73670090.000000
+cog: 44
+nav_status: 0
+(366763770, 45.637156666666669, -122.78348333333334, 44, 71, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 366763770, 'long': -122.78348333333334, 'cog': 44, 'lat': 45.637156666666669, 'speed': 71}
+msgid = 18
+msgid    : 18
+mmsi     : 338085241
+latitude : 27653394
+longitude: -73757024
+msgid = 1
+msgid    : 1
+mmsi     : 367002190
+latitude : 46.201215
+longitude: -123.387192
+raw_latitude : 27720729.000000
+raw_longitude: -74032315.000000
+cog: 0
+nav_status: 0
+(367002190, 46.201214999999998, -123.38719166666667, 0, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367002190, 'long': -123.38719166666667, 'cog': 0, 'lat': 46.201214999999998, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 366763770
+latitude : 45.637157
+longitude: -122.783483
+raw_latitude : 27382294.000000
+raw_longitude: -73670090.000000
+cog: 44
+nav_status: 0
+(366763770, 45.637156666666669, -122.78348333333334, 44, 71, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 366763770, 'long': -122.78348333333334, 'cog': 44, 'lat': 45.637156666666669, 'speed': 71}
+msgid = 18
+msgid    : 18
+mmsi     : 338085241
+latitude : 27653394
+longitude: -73757024
+msgid = 1
+msgid    : 1
+mmsi     : 367039250
+latitude : 45.586947
+longitude: -122.769695
+raw_latitude : 27352168.000000
+raw_longitude: -73661817.000000
+cog: 168
+nav_status: 0
+(367039250, 45.58694666666667, -122.769695, 168, 1, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367039250, 'long': -122.769695, 'cog': 168, 'lat': 45.58694666666667, 'speed': 1}
+msgid = 1
+msgid    : 1
+mmsi     : 367310529
+latitude : 45.837500
+longitude: -122.789333
+raw_latitude : 27502500.000000
+raw_longitude: -73673600.000000
+cog: 116
+nav_status: 15
+(367310529, 45.837499999999999, -122.78933333333333, 116, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 367310529, 'long': -122.78933333333333, 'cog': 116, 'lat': 45.837499999999999, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 366951180
+latitude : 46.204317
+longitude: -123.950217
+raw_latitude : 27722590.000000
+raw_longitude: -74370130.000000
+cog: 345
+nav_status: 15
+(366951180, 46.204316666666664, -123.95021666666666, 345, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 366951180, 'long': -123.95021666666666, 'cog': 345, 'lat': 46.204316666666664, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 338060061
+latitude : 45.560250
+longitude: -122.728368
+raw_latitude : 27336150.000000
+raw_longitude: -73637021.000000
+cog: 231
+nav_status: 0
+(338060061, 45.560250000000003, -122.72836833333334, 231, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 338060061, 'long': -122.72836833333334, 'cog': 231, 'lat': 45.560250000000003, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 371048000
+latitude : 46.229833
+longitude: -123.426583
+raw_latitude : 27737900.000000
+raw_longitude: -74055950.000000
+cog: 164
+nav_status: 1
+(371048000, 46.229833333333332, -123.42658333333333, 164, 121, 1)
+DUPLICATE!
+{'status': 1, 'mmsi': 371048000, 'long': -123.42658333333333, 'cog': 164, 'lat': 46.229833333333332, 'speed': 121}
+msgid = 18
+msgid    : 18
+mmsi     : 366605190
+latitude : 27361106
+longitude: -73591643
+msgid = 1
+msgid    : 1
+mmsi     : 371048000
+latitude : 46.229833
+longitude: -123.426583
+raw_latitude : 27737900.000000
+raw_longitude: -74055950.000000
+cog: 164
+nav_status: 1
+(371048000, 46.229833333333332, -123.42658333333333, 164, 121, 1)
+DUPLICATE!
+{'status': 1, 'mmsi': 371048000, 'long': -123.42658333333333, 'cog': 164, 'lat': 46.229833333333332, 'speed': 121}
+msgid = 1
+msgid    : 1
+mmsi     : 371048000
+latitude : 46.229833
+longitude: -123.426583
+raw_latitude : 27737900.000000
+raw_longitude: -74055950.000000
+cog: 164
+nav_status: 1
+(371048000, 46.229833333333332, -123.42658333333333, 164, 121, 1)
+DUPLICATE!
+{'status': 1, 'mmsi': 371048000, 'long': -123.42658333333333, 'cog': 164, 'lat': 46.229833333333332, 'speed': 121}
+msgid = 1
+msgid    : 1
+mmsi     : 367347050
+latitude : 45.551872
+longitude: -122.707923
+raw_latitude : 27331123.000000
+raw_longitude: -73624754.000000
+cog: 117
+nav_status: 0
+(367347050, 45.551871666666663, -122.70792333333333, 117, 24, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367347050, 'long': -122.70792333333333, 'cog': 117, 'lat': 45.551871666666663, 'speed': 24}
+msgid = 1
+msgid    : 1
+mmsi     : 371048000
+latitude : 46.229833
+longitude: -123.426583
+raw_latitude : 27737900.000000
+raw_longitude: -74055950.000000
+cog: 164
+nav_status: 1
+(371048000, 46.229833333333332, -123.42658333333333, 164, 121, 1)
+DUPLICATE!
+{'status': 1, 'mmsi': 371048000, 'long': -123.42658333333333, 'cog': 164, 'lat': 46.229833333333332, 'speed': 121}
+msgid = 1
+msgid    : 1
+mmsi     : 369493005
+latitude : 45.495253
+longitude: -122.667055
+raw_latitude : 27297152.000000
+raw_longitude: -73600233.000000
+cog: 193
+nav_status: 5
+(369493005, 45.495253333333331, -122.667055, 193, 41, 5)
+DUPLICATE!
+{'status': 5, 'mmsi': 369493005, 'long': -122.667055, 'cog': 193, 'lat': 45.495253333333331, 'speed': 41}
+msgid = 1
+msgid    : 1
+mmsi     : 367047270
+latitude : 45.959285
+longitude: -122.812873
+raw_latitude : 27575571.000000
+raw_longitude: -73687724.000000
+cog: 156
+nav_status: 5
+(367047270, 45.959285000000001, -122.81287333333333, 156, 65, 5)
+DUPLICATE!
+{'status': 5, 'mmsi': 367047270, 'long': -122.81287333333333, 'cog': 156, 'lat': 45.959285000000001, 'speed': 65}
+msgid = 1
+msgid    : 1
+mmsi     : 303673000
+latitude : 46.925908
+longitude: -124.038562
+raw_latitude : 28155545.000000
+raw_longitude: -74423137.000000
+cog: 248
+nav_status: 0
+(303673000, 46.925908333333332, -124.03856166666667, 248, 88, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 303673000, 'long': -124.03856166666667, 'cog': 248, 'lat': 46.925908333333332, 'speed': 88}
+msgid = 3
+msgid    : 3
+mmsi     : 210649000
+latitude : 27824420
+longitude: -74793963
+msgid = 1
+msgid    : 1
+mmsi     : 367047270
+latitude : 45.959285
+longitude: -122.812873
+raw_latitude : 27575571.000000
+raw_longitude: -73687724.000000
+cog: 156
+nav_status: 5
+(367047270, 45.959285000000001, -122.81287333333333, 156, 65, 5)
+DUPLICATE!
+{'status': 5, 'mmsi': 367047270, 'long': -122.81287333333333, 'cog': 156, 'lat': 45.959285000000001, 'speed': 65}
+msgid = 1
+msgid    : 1
+mmsi     : 367071960
+latitude : 45.607732
+longitude: -122.684947
+raw_latitude : 27364639.000000
+raw_longitude: -73610968.000000
+cog: 173
+nav_status: 0
+(367071960, 45.607731666666666, -122.68494666666666, 173, 1, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367071960, 'long': -122.68494666666666, 'cog': 173, 'lat': 45.607731666666666, 'speed': 1}
+msgid = 1
+msgid    : 1
+mmsi     : 367419960
+latitude : 45.503808
+longitude: -122.664265
+raw_latitude : 27302285.000000
+raw_longitude: -73598559.000000
+cog: 131
+nav_status: 0
+(367419960, 45.503808333333332, -122.664265, 131, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367419960, 'long': -122.664265, 'cog': 131, 'lat': 45.503808333333332, 'speed': 0}
+msgid = 3
+msgid    : 3
+mmsi     : 210649000
+latitude : 27824420
+longitude: -74793963
+msgid = 1
+msgid    : 1
+mmsi     : 367424210
+latitude : 45.838233
+longitude: -122.788867
+raw_latitude : 27502940.000000
+raw_longitude: -73673320.000000
+cog: 338
+nav_status: 0
+(367424210, 45.838233333333335, -122.78886666666666, 338, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367424210, 'long': -122.78886666666666, 'cog': 338, 'lat': 45.838233333333335, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367424210
+latitude : 45.838233
+longitude: -122.788867
+raw_latitude : 27502940.000000
+raw_longitude: -73673320.000000
+cog: 338
+nav_status: 0
+(367424210, 45.838233333333335, -122.78886666666666, 338, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367424210, 'long': -122.78886666666666, 'cog': 338, 'lat': 45.838233333333335, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 366938450
+latitude : 45.587410
+longitude: -122.770507
+raw_latitude : 27352446.000000
+raw_longitude: -73662304.000000
+cog: 169
+nav_status: 0
+(366938450, 45.587409999999998, -122.77050666666666, 169, 1, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 366938450, 'long': -122.77050666666666, 'cog': 169, 'lat': 45.587409999999998, 'speed': 1}
+msgid = 1
+msgid    : 1
+mmsi     : 366986380
+latitude : 46.094137
+longitude: -122.918313
+raw_latitude : 27656482.000000
+raw_longitude: -73750988.000000
+cog: 315
+nav_status: 3
+(366986380, 46.094136666666664, -122.91831333333333, 315, 4, 3)
+DUPLICATE!
+{'status': 3, 'mmsi': 366986380, 'long': -122.91831333333333, 'cog': 315, 'lat': 46.094136666666664, 'speed': 4}
+msgid = 1
+msgid    : 1
+mmsi     : 367321210
+latitude : 46.907717
+longitude: -124.107950
+raw_latitude : 28144630.000000
+raw_longitude: -74464770.000000
+cog: 236
+nav_status: 0
+(367321210, 46.907716666666666, -124.10795, 236, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367321210, 'long': -124.10795, 'cog': 236, 'lat': 46.907716666666666, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 366986380
+latitude : 46.094137
+longitude: -122.918313
+raw_latitude : 27656482.000000
+raw_longitude: -73750988.000000
+cog: 315
+nav_status: 3
+(366986380, 46.094136666666664, -122.91831333333333, 315, 4, 3)
+DUPLICATE!
+{'status': 3, 'mmsi': 366986380, 'long': -122.91831333333333, 'cog': 315, 'lat': 46.094136666666664, 'speed': 4}
+msgid = 1
+msgid    : 1
+mmsi     : 367315830
+latitude : 45.644355
+longitude: -122.773263
+raw_latitude : 27386613.000000
+raw_longitude: -73663958.000000
+cog: 52
+nav_status: 0
+(367315830, 45.644354999999997, -122.77326333333333, 52, 88, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367315830, 'long': -122.77326333333333, 'cog': 52, 'lat': 45.644354999999997, 'speed': 88}
+msgid = 1
+msgid    : 1
+mmsi     : 367315830
+latitude : 45.644355
+longitude: -122.773263
+raw_latitude : 27386613.000000
+raw_longitude: -73663958.000000
+cog: 52
+nav_status: 0
+(367315830, 45.644354999999997, -122.77326333333333, 52, 88, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367315830, 'long': -122.77326333333333, 'cog': 52, 'lat': 45.644354999999997, 'speed': 88}
+msgid = 1
+msgid    : 1
+mmsi     : 367101660
+latitude : 46.169517
+longitude: -123.913700
+raw_latitude : 27701710.000000
+raw_longitude: -74348220.000000
+cog: 215
+nav_status: 0
+(367101660, 46.169516666666667, -123.91370000000001, 215, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367101660, 'long': -123.91370000000001, 'cog': 215, 'lat': 46.169516666666667, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 33809608
+latitude : 46.905155
+longitude: -124.104968
+raw_latitude : 28143093.000000
+raw_longitude: -74462981.000000
+cog: 328
+nav_status: 0
+(33809608, 46.905155000000001, -124.10496833333333, 328, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 33809608, 'long': -124.10496833333333, 'cog': 328, 'lat': 46.905155000000001, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367101660
+latitude : 46.169517
+longitude: -123.913700
+raw_latitude : 27701710.000000
+raw_longitude: -74348220.000000
+cog: 215
+nav_status: 0
+(367101660, 46.169516666666667, -123.91370000000001, 215, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367101660, 'long': -123.91370000000001, 'cog': 215, 'lat': 46.169516666666667, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367331730
+latitude : 46.204537
+longitude: -123.950150
+raw_latitude : 27722722.000000
+raw_longitude: -74370090.000000
+cog: 112
+nav_status: 0
+(367331730, 46.204536666666669, -123.95014999999999, 112, 1, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367331730, 'long': -123.95014999999999, 'cog': 112, 'lat': 46.204536666666669, 'speed': 1}
+msgid = 1
+msgid    : 1
+mmsi     : 366982310
+latitude : 45.655013
+longitude: -122.754450
+raw_latitude : 27393008.000000
+raw_longitude: -73652670.000000
+cog: 165
+nav_status: 0
+(366982310, 45.655013333333336, -122.75445000000001, 165, 1, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 366982310, 'long': -122.75445000000001, 'cog': 165, 'lat': 45.655013333333336, 'speed': 1}
+msgid = 1
+msgid    : 1
+mmsi     : 367001830
+latitude : 46.201482
+longitude: -123.387155
+raw_latitude : 27720889.000000
+raw_longitude: -74032293.000000
+cog: 0
+nav_status: 0
+(367001830, 46.201481666666666, -123.38715500000001, 0, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367001830, 'long': -123.38715500000001, 'cog': 0, 'lat': 46.201481666666666, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367101660
+latitude : 46.169517
+longitude: -123.913700
+raw_latitude : 27701710.000000
+raw_longitude: -74348220.000000
+cog: 215
+nav_status: 0
+(367101660, 46.169516666666667, -123.91370000000001, 215, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367101660, 'long': -123.91370000000001, 'cog': 215, 'lat': 46.169516666666667, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367331730
+latitude : 46.204537
+longitude: -123.950150
+raw_latitude : 27722722.000000
+raw_longitude: -74370090.000000
+cog: 112
+nav_status: 0
+(367331730, 46.204536666666669, -123.95014999999999, 112, 1, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367331730, 'long': -123.95014999999999, 'cog': 112, 'lat': 46.204536666666669, 'speed': 1}
+msgid = 1
+msgid    : 1
+mmsi     : 366982310
+latitude : 45.655013
+longitude: -122.754450
+raw_latitude : 27393008.000000
+raw_longitude: -73652670.000000
+cog: 165
+nav_status: 0
+(366982310, 45.655013333333336, -122.75445000000001, 165, 1, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 366982310, 'long': -122.75445000000001, 'cog': 165, 'lat': 45.655013333333336, 'speed': 1}
+msgid = 1
+msgid    : 1
+mmsi     : 367101660
+latitude : 46.169517
+longitude: -123.913700
+raw_latitude : 27701710.000000
+raw_longitude: -74348220.000000
+cog: 215
+nav_status: 0
+(367101660, 46.169516666666667, -123.91370000000001, 215, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367101660, 'long': -123.91370000000001, 'cog': 215, 'lat': 46.169516666666667, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367331730
+latitude : 46.204537
+longitude: -123.950150
+raw_latitude : 27722722.000000
+raw_longitude: -74370090.000000
+cog: 112
+nav_status: 0
+(367331730, 46.204536666666669, -123.95014999999999, 112, 1, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367331730, 'long': -123.95014999999999, 'cog': 112, 'lat': 46.204536666666669, 'speed': 1}
+msgid = 8
+msgid = 1
+msgid    : 1
+mmsi     : 367331730
+latitude : 46.204537
+longitude: -123.950150
+raw_latitude : 27722722.000000
+raw_longitude: -74370090.000000
+cog: 112
+nav_status: 0
+(367331730, 46.204536666666669, -123.95014999999999, 112, 1, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367331730, 'long': -123.95014999999999, 'cog': 112, 'lat': 46.204536666666669, 'speed': 1}
+msgid = 1
+msgid    : 1
+mmsi     : 368572000
+latitude : 46.197150
+longitude: -123.800672
+raw_latitude : 27718290.000000
+raw_longitude: -74280403.000000
+cog: 289
+nav_status: 15
+(368572000, 46.197150000000001, -123.80067166666667, 289, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 368572000, 'long': -123.80067166666667, 'cog': 289, 'lat': 46.197150000000001, 'speed': 0}
+msgid = 4
+msgid    : 4
+mmsi     : 3669102
+latitude : 27757533
+longitude: -74332250
+msgid = 4
+msgid    : 4
+mmsi     : 3699101
+latitude : 27609709
+longitude: -73665358
+msgid = 8
+msgid = 1
+msgid    : 1
+mmsi     : 368572000
+latitude : 46.197150
+longitude: -123.800672
+raw_latitude : 27718290.000000
+raw_longitude: -74280403.000000
+cog: 289
+nav_status: 15
+(368572000, 46.197150000000001, -123.80067166666667, 289, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 368572000, 'long': -123.80067166666667, 'cog': 289, 'lat': 46.197150000000001, 'speed': 0}
+msgid = 8
+msgid = 1
+msgid    : 1
+mmsi     : 210649000
+latitude : 46.374172
+longitude: -124.656547
+raw_latitude : 27824503.000000
+raw_longitude: -74793928.000000
+cog: 12
+nav_status: 2
+(210649000, 46.374171666666669, -124.65654666666667, 12, 40, 2)
+DUPLICATE!
+{'status': 2, 'mmsi': 210649000, 'long': -124.65654666666667, 'cog': 12, 'lat': 46.374171666666669, 'speed': 40}
+msgid = 1
+msgid    : 1
+mmsi     : 366951180
+latitude : 46.204317
+longitude: -123.950217
+raw_latitude : 27722590.000000
+raw_longitude: -74370130.000000
+cog: 345
+nav_status: 15
+(366951180, 46.204316666666664, -123.95021666666666, 345, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 366951180, 'long': -123.95021666666666, 'cog': 345, 'lat': 46.204316666666664, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367059880
+latitude : 45.566020
+longitude: -122.716525
+raw_latitude : 27339612.000000
+raw_longitude: -73629915.000000
+cog: 173
+nav_status: 0
+(367059880, 45.566020000000002, -122.716525, 173, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367059880, 'long': -122.716525, 'cog': 173, 'lat': 45.566020000000002, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 368572000
+latitude : 46.197150
+longitude: -123.800672
+raw_latitude : 27718290.000000
+raw_longitude: -74280403.000000
+cog: 289
+nav_status: 15
+(368572000, 46.197150000000001, -123.80067166666667, 289, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 368572000, 'long': -123.80067166666667, 'cog': 289, 'lat': 46.197150000000001, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367039250
+latitude : 45.586948
+longitude: -122.769695
+raw_latitude : 27352169.000000
+raw_longitude: -73661817.000000
+cog: 197
+nav_status: 0
+(367039250, 45.586948333333332, -122.769695, 197, 2, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367039250, 'long': -122.769695, 'cog': 197, 'lat': 45.586948333333332, 'speed': 2}
+msgid = 8
+msgid = 1
+msgid    : 1
+mmsi     : 235658000
+latitude : 46.650250
+longitude: -125.477922
+raw_latitude : 27990150.000000
+raw_longitude: -75286753.000000
+cog: 4
+nav_status: 0
+(235658000, 46.65025, -125.47792166666666, 4, 128, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 235658000, 'long': -125.47792166666666, 'cog': 4, 'lat': 46.65025, 'speed': 128}
+msgid = 1
+msgid    : 1
+mmsi     : 366951180
+latitude : 46.204317
+longitude: -123.950217
+raw_latitude : 27722590.000000
+raw_longitude: -74370130.000000
+cog: 345
+nav_status: 15
+(366951180, 46.204316666666664, -123.95021666666666, 345, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 366951180, 'long': -123.95021666666666, 'cog': 345, 'lat': 46.204316666666664, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 368572000
+latitude : 46.197150
+longitude: -123.800672
+raw_latitude : 27718290.000000
+raw_longitude: -74280403.000000
+cog: 289
+nav_status: 15
+(368572000, 46.197150000000001, -123.80067166666667, 289, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 368572000, 'long': -123.80067166666667, 'cog': 289, 'lat': 46.197150000000001, 'speed': 0}
+msgid = 3
+msgid    : 3
+mmsi     : 477273000
+latitude : 27409470
+longitude: -73663330
+msgid = 3
+msgid    : 3
+mmsi     : 477273000
+latitude : 27409470
+longitude: -73663330
+msgid = 1
+msgid    : 1
+mmsi     : 367310529
+latitude : 45.837500
+longitude: -122.789333
+raw_latitude : 27502500.000000
+raw_longitude: -73673600.000000
+cog: 116
+nav_status: 15
+(367310529, 45.837499999999999, -122.78933333333333, 116, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 367310529, 'long': -122.78933333333333, 'cog': 116, 'lat': 45.837499999999999, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 366999840
+latitude : 45.610955
+longitude: -122.786942
+raw_latitude : 27366573.000000
+raw_longitude: -73672165.000000
+cog: 337
+nav_status: 0
+(366999840, 45.610954999999997, -122.78694166666666, 337, 88, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 366999840, 'long': -122.78694166666666, 'cog': 337, 'lat': 45.610954999999997, 'speed': 88}
+msgid = 1
+msgid    : 1
+mmsi     : 338060061
+latitude : 45.560253
+longitude: -122.728372
+raw_latitude : 27336152.000000
+raw_longitude: -73637023.000000
+cog: 231
+nav_status: 0
+(338060061, 45.560253333333335, -122.72837166666666, 231, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 338060061, 'long': -122.72837166666666, 'cog': 231, 'lat': 45.560253333333335, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367310529
+latitude : 45.837500
+longitude: -122.789333
+raw_latitude : 27502500.000000
+raw_longitude: -73673600.000000
+cog: 116
+nav_status: 15
+(367310529, 45.837499999999999, -122.78933333333333, 116, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 367310529, 'long': -122.78933333333333, 'cog': 116, 'lat': 45.837499999999999, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 371048000
+latitude : 46.229350
+longitude: -123.426367
+raw_latitude : 27737610.000000
+raw_longitude: -74055820.000000
+cog: 163
+nav_status: 1
+(371048000, 46.229349999999997, -123.42636666666667, 163, 121, 1)
+DUPLICATE!
+{'status': 1, 'mmsi': 371048000, 'long': -123.42636666666667, 'cog': 163, 'lat': 46.229349999999997, 'speed': 121}
+msgid = 1
+msgid    : 1
+mmsi     : 366999840
+latitude : 45.610955
+longitude: -122.786942
+raw_latitude : 27366573.000000
+raw_longitude: -73672165.000000
+cog: 337
+nav_status: 0
+(366999840, 45.610954999999997, -122.78694166666666, 337, 88, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 366999840, 'long': -122.78694166666666, 'cog': 337, 'lat': 45.610954999999997, 'speed': 88}
+msgid = 1
+msgid    : 1
+mmsi     : 367002190
+latitude : 46.201215
+longitude: -123.387192
+raw_latitude : 27720729.000000
+raw_longitude: -74032315.000000
+cog: 0
+nav_status: 0
+(367002190, 46.201214999999998, -123.38719166666667, 0, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367002190, 'long': -123.38719166666667, 'cog': 0, 'lat': 46.201214999999998, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367059880
+latitude : 45.566020
+longitude: -122.716525
+raw_latitude : 27339612.000000
+raw_longitude: -73629915.000000
+cog: 158
+nav_status: 0
+(367059880, 45.566020000000002, -122.716525, 158, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367059880, 'long': -122.716525, 'cog': 158, 'lat': 45.566020000000002, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 371048000
+latitude : 46.229350
+longitude: -123.426367
+raw_latitude : 27737610.000000
+raw_longitude: -74055820.000000
+cog: 163
+nav_status: 1
+(371048000, 46.229349999999997, -123.42636666666667, 163, 121, 1)
+DUPLICATE!
+{'status': 1, 'mmsi': 371048000, 'long': -123.42636666666667, 'cog': 163, 'lat': 46.229349999999997, 'speed': 121}
+msgid = 1
+msgid    : 1
+mmsi     : 367002190
+latitude : 46.201215
+longitude: -123.387192
+raw_latitude : 27720729.000000
+raw_longitude: -74032315.000000
+cog: 0
+nav_status: 0
+(367002190, 46.201214999999998, -123.38719166666667, 0, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367002190, 'long': -123.38719166666667, 'cog': 0, 'lat': 46.201214999999998, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 371048000
+latitude : 46.229350
+longitude: -123.426367
+raw_latitude : 27737610.000000
+raw_longitude: -74055820.000000
+cog: 163
+nav_status: 1
+(371048000, 46.229349999999997, -123.42636666666667, 163, 121, 1)
+DUPLICATE!
+{'status': 1, 'mmsi': 371048000, 'long': -123.42636666666667, 'cog': 163, 'lat': 46.229349999999997, 'speed': 121}
+msgid = 1
+msgid    : 1
+mmsi     : 367347050
+latitude : 45.551868
+longitude: -122.707838
+raw_latitude : 27331121.000000
+raw_longitude: -73624703.000000
+cog: 97
+nav_status: 0
+(367347050, 45.551868333333331, -122.70783833333333, 97, 6, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367347050, 'long': -122.70783833333333, 'cog': 97, 'lat': 45.551868333333331, 'speed': 6}
+msgid = 5
+eta: 783104
+msgid    : 5
+mmsi       : 367347050
+callsign   : WDC5827
+name       : BETTY LOU
+destination: VANCOVER
+eta: 2010-11-30 12:00:00
+type: 31
+('draught', <type 'int'>)
+('eta', <type 'datetime.datetime'>)
+('name', <type 'str'>)
+('stern', <type 'int'>)
+('dest', <type 'str'>)
+('starboard', <type 'str'>)
+('mmsi', <type 'int'>)
+('type', <type 'int'>)
+('port', <type 'int'>)
+('bow', <type 'int'>)
+{'draught': 29, 'eta': datetime.datetime(2010, 11, 30, 12, 0), 'name': 'BETTY LOU', 'stern': 14, 'dest': 'VANCOVER', 'starboard': 5, 'mmsi': 367347050, 'type': 31, 'port': 7, 'bow': 7}
+msgid = 1
+msgid    : 1
+mmsi     : 366980190
+latitude : 45.655417
+longitude: -122.754785
+raw_latitude : 27393250.000000
+raw_longitude: -73652871.000000
+cog: 0
+nav_status: 0
+(366980190, 45.655416666666667, -122.754785, 0, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 366980190, 'long': -122.754785, 'cog': 0, 'lat': 45.655416666666667, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 369493005
+latitude : 45.495053
+longitude: -122.667133
+raw_latitude : 27297032.000000
+raw_longitude: -73600280.000000
+cog: 196
+nav_status: 5
+(369493005, 45.495053333333331, -122.66713333333334, 196, 40, 5)
+DUPLICATE!
+{'status': 5, 'mmsi': 369493005, 'long': -122.66713333333334, 'cog': 196, 'lat': 45.495053333333331, 'speed': 40}
+msgid = 5
+eta: 783104
+msgid    : 5
+mmsi       : 367347050
+callsign   : WDC5827
+name       : BETTY LOU
+destination: VANCOVER
+eta: 2010-11-30 12:00:00
+type: 31
+('draught', <type 'int'>)
+('eta', <type 'datetime.datetime'>)
+('name', <type 'str'>)
+('stern', <type 'int'>)
+('dest', <type 'str'>)
+('starboard', <type 'str'>)
+('mmsi', <type 'int'>)
+('type', <type 'int'>)
+('port', <type 'int'>)
+('bow', <type 'int'>)
+{'draught': 29, 'eta': datetime.datetime(2010, 11, 30, 12, 0), 'name': 'BETTY LOU', 'stern': 14, 'dest': 'VANCOVER', 'starboard': 5, 'mmsi': 367347050, 'type': 31, 'port': 7, 'bow': 7}
+DUPLICATE!
+msgid = 1
+msgid    : 1
+mmsi     : 366980190
+latitude : 45.655417
+longitude: -122.754785
+raw_latitude : 27393250.000000
+raw_longitude: -73652871.000000
+cog: 0
+nav_status: 0
+(366980190, 45.655416666666667, -122.754785, 0, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 366980190, 'long': -122.754785, 'cog': 0, 'lat': 45.655416666666667, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367047270
+latitude : 45.958995
+longitude: -122.812655
+raw_latitude : 27575397.000000
+raw_longitude: -73687593.000000
+cog: 158
+nav_status: 5
+(367047270, 45.958995000000002, -122.81265500000001, 158, 65, 5)
+DUPLICATE!
+{'status': 5, 'mmsi': 367047270, 'long': -122.81265500000001, 'cog': 158, 'lat': 45.958995000000002, 'speed': 65}
+msgid = 1
+msgid    : 1
+mmsi     : 303673000
+latitude : 46.925742
+longitude: -124.039175
+raw_latitude : 28155445.000000
+raw_longitude: -74423505.000000
+cog: 248
+nav_status: 0
+(303673000, 46.925741666666667, -124.039175, 248, 89, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 303673000, 'long': -124.039175, 'cog': 248, 'lat': 46.925741666666667, 'speed': 89}
+msgid = 1
+msgid    : 1
+mmsi     : 367071960
+latitude : 45.607733
+longitude: -122.684945
+raw_latitude : 27364640.000000
+raw_longitude: -73610967.000000
+cog: 174
+nav_status: 0
+(367071960, 45.607733333333336, -122.684945, 174, 1, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367071960, 'long': -122.684945, 'cog': 174, 'lat': 45.607733333333336, 'speed': 1}
+msgid = 1
+msgid    : 1
+mmsi     : 367047270
+latitude : 45.958995
+longitude: -122.812655
+raw_latitude : 27575397.000000
+raw_longitude: -73687593.000000
+cog: 158
+nav_status: 5
+(367047270, 45.958995000000002, -122.81265500000001, 158, 65, 5)
+DUPLICATE!
+{'status': 5, 'mmsi': 367047270, 'long': -122.81265500000001, 'cog': 158, 'lat': 45.958995000000002, 'speed': 65}
+msgid = 1
+msgid    : 1
+mmsi     : 367424210
+latitude : 45.838233
+longitude: -122.788867
+raw_latitude : 27502940.000000
+raw_longitude: -73673320.000000
+cog: 350
+nav_status: 0
+(367424210, 45.838233333333335, -122.78886666666666, 350, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367424210, 'long': -122.78886666666666, 'cog': 350, 'lat': 45.838233333333335, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367424210
+latitude : 45.838233
+longitude: -122.788867
+raw_latitude : 27502940.000000
+raw_longitude: -73673320.000000
+cog: 350
+nav_status: 0
+(367424210, 45.838233333333335, -122.78886666666666, 350, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367424210, 'long': -122.78886666666666, 'cog': 350, 'lat': 45.838233333333335, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367419960
+latitude : 45.503807
+longitude: -122.664268
+raw_latitude : 27302284.000000
+raw_longitude: -73598561.000000
+cog: 253
+nav_status: 0
+(367419960, 45.503806666666669, -122.66426833333334, 253, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367419960, 'long': -122.66426833333334, 'cog': 253, 'lat': 45.503806666666669, 'speed': 0}
+msgid = 5
+msgid    : 5
+mmsi       : 338060061
+callsign   : 
+name       : VANCOUVER
+destination: 
+eta: None
+type: 31
+('draught', <type 'int'>)
+('eta', <type 'NoneType'>)
+('name', <type 'str'>)
+('stern', <type 'int'>)
+('dest', <type 'str'>)
+('starboard', <type 'str'>)
+('mmsi', <type 'int'>)
+('type', <type 'int'>)
+('port', <type 'int'>)
+('bow', <type 'int'>)
+{'draught': 40, 'eta': None, 'name': 'VANCOUVER', 'stern': 13, 'dest': '', 'starboard': 4, 'mmsi': 338060061, 'type': 31, 'port': 5, 'bow': 10}
+msgid = 5
+msgid    : 5
+mmsi       : 0
+callsign   : 
+name       : 
+destination: 
+eta: None
+type: 0
+('draught', <type 'int'>)
+('eta', <type 'NoneType'>)
+('name', <type 'str'>)
+('stern', <type 'int'>)
+('dest', <type 'str'>)
+('starboard', <type 'str'>)
+('mmsi', <type 'int'>)
+('type', <type 'int'>)
+('port', <type 'int'>)
+('bow', <type 'int'>)
+{'draught': 0, 'eta': None, 'name': '', 'stern': 0, 'dest': '', 'starboard': 0, 'mmsi': 0, 'type': 0, 'port': 0, 'bow': 0}
+DUPLICATE!
+msgid = 3
+msgid    : 3
+mmsi     : 210649000
+latitude : 27824538
+longitude: -74793958
+msgid = 1
+msgid    : 1
+mmsi     : 366986380
+latitude : 46.094150
+longitude: -122.918333
+raw_latitude : 27656490.000000
+raw_longitude: -73751000.000000
+cog: 320
+nav_status: 3
+(366986380, 46.094149999999999, -122.91833333333334, 320, 5, 3)
+DUPLICATE!
+{'status': 3, 'mmsi': 366986380, 'long': -122.91833333333334, 'cog': 320, 'lat': 46.094149999999999, 'speed': 5}
+msgid = 1
+msgid    : 1
+mmsi     : 366986380
+latitude : 46.094150
+longitude: -122.918333
+raw_latitude : 27656490.000000
+raw_longitude: -73751000.000000
+cog: 320
+nav_status: 3
+(366986380, 46.094149999999999, -122.91833333333334, 320, 5, 3)
+DUPLICATE!
+{'status': 3, 'mmsi': 366986380, 'long': -122.91833333333334, 'cog': 320, 'lat': 46.094149999999999, 'speed': 5}
+msgid = 1
+msgid    : 1
+mmsi     : 367101660
+latitude : 46.169517
+longitude: -123.913700
+raw_latitude : 27701710.000000
+raw_longitude: -74348220.000000
+cog: 56
+nav_status: 0
+(367101660, 46.169516666666667, -123.91370000000001, 56, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367101660, 'long': -123.91370000000001, 'cog': 56, 'lat': 46.169516666666667, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367101660
+latitude : 46.169517
+longitude: -123.913700
+raw_latitude : 27701710.000000
+raw_longitude: -74348220.000000
+cog: 56
+nav_status: 0
+(367101660, 46.169516666666667, -123.91370000000001, 56, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367101660, 'long': -123.91370000000001, 'cog': 56, 'lat': 46.169516666666667, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 33809608
+latitude : 46.905155
+longitude: -124.104968
+raw_latitude : 28143093.000000
+raw_longitude: -74462981.000000
+cog: 328
+nav_status: 0
+(33809608, 46.905155000000001, -124.10496833333333, 328, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 33809608, 'long': -124.10496833333333, 'cog': 328, 'lat': 46.905155000000001, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367101660
+latitude : 46.169517
+longitude: -123.913700
+raw_latitude : 27701710.000000
+raw_longitude: -74348220.000000
+cog: 56
+nav_status: 0
+(367101660, 46.169516666666667, -123.91370000000001, 56, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367101660, 'long': -123.91370000000001, 'cog': 56, 'lat': 46.169516666666667, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 368572000
+latitude : 46.197148
+longitude: -123.800663
+raw_latitude : 27718289.000000
+raw_longitude: -74280398.000000
+cog: 287
+nav_status: 15
+(368572000, 46.197148333333331, -123.80066333333333, 287, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 368572000, 'long': -123.80066333333333, 'cog': 287, 'lat': 46.197148333333331, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367101660
+latitude : 46.169517
+longitude: -123.913700
+raw_latitude : 27701710.000000
+raw_longitude: -74348220.000000
+cog: 56
+nav_status: 0
+(367101660, 46.169516666666667, -123.91370000000001, 56, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367101660, 'long': -123.91370000000001, 'cog': 56, 'lat': 46.169516666666667, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 368572000
+latitude : 46.197148
+longitude: -123.800663
+raw_latitude : 27718289.000000
+raw_longitude: -74280398.000000
+cog: 287
+nav_status: 15
+(368572000, 46.197148333333331, -123.80066333333333, 287, 0, 15)
+DUPLICATE!
+{'status': 15, 'mmsi': 368572000, 'long': -123.80066333333333, 'cog': 287, 'lat': 46.197148333333331, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 367001830
+latitude : 46.201482
+longitude: -123.387155
+raw_latitude : 27720889.000000
+raw_longitude: -74032293.000000
+cog: 0
+nav_status: 0
+(367001830, 46.201481666666666, -123.38715500000001, 0, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367001830, 'long': -123.38715500000001, 'cog': 0, 'lat': 46.201481666666666, 'speed': 0}
+msgid = 1
+msgid    : 1
+mmsi     : 366982310
+latitude : 45.655013
+longitude: -122.754450
+raw_latitude : 27393008.000000
+raw_longitude: -73652670.000000
+cog: 169
+nav_status: 0
+(366982310, 45.655013333333336, -122.75445000000001, 169, 1, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 366982310, 'long': -122.75445000000001, 'cog': 169, 'lat': 45.655013333333336, 'speed': 1}
+msgid = 1
+msgid    : 1
+mmsi     : 367321210
+latitude : 46.907717
+longitude: -124.107950
+raw_latitude : 28144630.000000
+raw_longitude: -74464770.000000
+cog: 227
+nav_status: 0
+(367321210, 46.907716666666666, -124.10795, 227, 0, 0)
+DUPLICATE!
+{'status': 0, 'mmsi': 367321210, 'long': -124.10795, 'cog': 227, 'lat': 46.907716666666666, 'speed': 0}

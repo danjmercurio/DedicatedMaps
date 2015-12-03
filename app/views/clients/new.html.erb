@@ -1,0 +1,23 @@
+<fieldset>
+
+  <legend>New Client</legend>
+
+  <% form_for(@client) do |f| %>
+
+    <% @client.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+      <% end %>
+
+    <%= render :partial => 'account',
+               :locals  => {:client => @client, 
+                            :f => f 
+                            }
+     %>
+   
+    <p>
+      <%= f.submit 'Create' %>
+    </p>
+  
+  <% end %>
+
+</fieldset>

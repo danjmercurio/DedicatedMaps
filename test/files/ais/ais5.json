@@ -1,0 +1,133 @@
+{"ais5":
+{
+    "367315830":
+    {
+        "dim_starboard":4,
+         "name":"MARY B",
+         "dim_stern":16,
+         "destination":"WAUNA",
+         "type":31,
+         "dim_port":3,
+         "eta":"1900-05-10T03:20:00",
+         "dim_bow":5,
+         "draught":25
+    },
+     "311351000":
+    {
+        "dim_starboard":16,
+         "name":"WESTWOOD VICTORIA",
+         "dim_stern":20,
+         "destination":"LONGVIEW",
+         "type":70,
+         "dim_port":15,
+         "eta":"1900-05-11T05:00:00",
+         "dim_bow":180,
+         "draught":95
+    },
+     "338085238":
+    {
+        "dim_starboard":1,
+         "name":"",
+         "dim_stern":10,
+         "destination":"AIS B",
+         "type":54,
+         "dim_port":2,
+         "eta":nil,
+         "dim_bow":2
+    },
+     "351215000":
+    {
+        "dim_starboard":8,
+         "name":"PHAROS SW",
+         "dim_stern":25,
+         "destination":"LONGVIEW USA",
+         "type":70,
+         "dim_port":20,
+         "eta":"1900-05-05T14:00:00",
+         "dim_bow":145,
+         "draught":78
+    },
+     "366926730":
+    {
+        "dim_starboard":6,
+         "name":"LUCY FRANCO",
+         "dim_stern":15,
+         "destination":"PORTLAND",
+         "type":31,
+         "dim_port":3,
+         "eta":"1900-01-03T12:00:00",
+         "dim_bow":3,
+         "draught":30
+    },
+     "338085241":
+    {
+        "dim_starboard":2,
+         "name":"",
+         "dim_stern":4,
+         "destination":"AIS B",
+         "type":54,
+         "dim_port":1,
+         "eta":nil,
+         "dim_bow":7
+    },
+     "367324810":
+    {
+        "dim_starboard":16,
+         "name":"PAULA LEE",
+         "dim_stern":15,
+         "destination":"",
+         "type":50,
+         "dim_port":6,
+         "eta":nil,
+         "dim_bow":68,
+         "draught":0
+    },
+     "367047270":
+    {
+        "dim_starboard":7,
+         "name":"LIBERTY",
+         "dim_stern":22,
+         "destination":"PORTLAND",
+         "type":31,
+         "dim_port":5,
+         "eta":nil,
+         "dim_bow":12,
+         "draught":30
+    },
+     "338097953":
+    {
+        "dim_starboard":4,
+         "name":"REDLINGER",
+         "dim_stern":9,
+         "destination":"",
+         "type":35,
+         "dim_port":4,
+         "eta":nil,
+         "dim_bow":11,
+         "draught":12
+    },
+     "538002665":
+    {
+        "dim_starboard":11,
+         "name":"CS GLOBAL SENTINEL",
+         "dim_stern":92,
+         "destination":"48.3N 128.5W",
+         "type":90,
+         "dim_port":17,
+         "eta":"1900-05-11T21:30:00",
+         "dim_bow":66,
+         "draught":68
+    },
+     "636011072":
+    {
+        "dim_starboard":14,
+         "name":"SANKO SUPREME",
+         "dim_stern":25,
+         "destination":"PORTLAND",
+         "type":70,
+         "dim_port":18,
+         "eta":"1900-05-10T14:30:00",
+         "dim_bow":170,
+         "draught":68
+    }
+}}

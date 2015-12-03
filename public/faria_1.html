@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Report</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+<link href="lib_styles.1.css" rel="stylesheet" type="text/css" />  <!-- page styles -->
+<SCRIPT language=JavaScript src="lib_validate.js" type=text/javascript></SCRIPT>
+<SCRIPT language=JavaScript src="javascripts/prototype.js" type=text/javascript></SCRIPT>
+<SCRIPT language=JavaScript>
+	function validate() {
+		var c = 0;		
+		c += valDate( "1","2","year" );
+		c += valWholeNum( "3", 0, 999999999999 );
+		c += valWholeNum( "4", 460, 640 );
+		for( var i = 5; i <= 18; i++ )
+			c += valWholeNum( i, 0, 999999 );
+		return c == 17 ? true : false;
+	}
+
+	function optlist(s,e) {
+		for( var i = s; i <= e; i++ ) {
+			if( i < 10 )
+				document.write( '<option value="0' + i + '">0' + i + '</option>');
+			else
+				document.write( '<option value="' + i + '">' + i + '</option>');
+		}
+	}
+	function ShowInstructions() {
+		window.open( 'form.ner.mults_catch_info.html', 'Instructions', 'resizable=no, scrollbars=no');
+	}
+</SCRIPT>
+</head>
+
+<body bgcolor="#eeeeef">
+<form name="submitcatch" action="submitcatch.html" method="post">
+	<p class="black" align="center">
+	<b>This report is to be used for trips into the <i>US/Canada Management Area</i> and/or
+	the <i>Regular B DAS <br>Program</i> or any of the <i>Special Access Programs:</b>
+	<a href='javascript:ShowInstructions();'>Click here to display full instructions...</a></p>
+	<table align="center">
+	<tr>
+		<td class="black" align="right">Date Fish Caught: &nbsp; </td>
+		<td><select id="1" size="1">
+				<option value="">Month</option>
+				<option value="01">Jan</option>
+				<option value="02">Feb</option>
+				<option value="03">Mar</option>
+				<option value="04">Apr</option>
+				<option value="05">May</option>
+				<option value="06">Jun</option>
+				<option value="07">Jul</option>
+				<option value="08">Aug</option>
+				<option value="09">Sep</option>
+				<option value="10">Oct</option>
+				<option value="11">Nov</option>
+				<option value="12">Dec</option>
+			</select>
+			/
+			<select name="2" size="1">
+				<option value="">Day</option>
+				<script>optlist(1,31)</script>
+			</select> / 
+			<select id="year" size="1" NAME="year">
+				<script>optlist(2007,2010)</script>
+			</select></td>
+		<td></td>
+	</tr>
+		<td class="black" align="right">Vessel Trip Report (VTR) Serial Number:</td><td><input id="3" name="3" type="text" value="" size=12 maxlength=12></td>
+		<td class="black">Statistical Area: <td><td><input id="4" name="4" type="text" value="" size=3 maxlength=3></td>
+	</tr></table>
+	<table width='100%'>
+		<tr><td class="tableHeading">Species</td><td class="tableHeading">Catch (lbs)</td><td class="tableHeading">Discard (lbs)</td><td class="tableHeading">Species</td><td class="tableHeading">Catch (lbs)</td><td class="tableHeading">Discard (lbs)</td></tr>
+		<tr><td class="black" align="right">Cod: </td><td><input id="5" name="5" type="text" value="0" size="6"></td><td><input id="12" name="12" type="text" value="0" size="6"></td>
+		    <td class="black" align="right">Yellowtail Flounder: </td><td><input id="6" name="6" type="text" value="0" size="6"></td><td><input id="13" name="13" type="text" value="0" size = "6"></td></tr>
+		<tr><td class="black" align="right">American Plaice: </td><td><input id="7" name="7" type="text" value="0" size="6"></td><td><input id="14" name="14" type="text" value="0" size = "6"></td>
+		    <td class="black" align="right">White Hake: </td><td><input id="8" name="8" type="text" value="0" size="6"></td><td><input id="15" name="15" type="text" value="0" size = "6"></td></tr>
+		<tr><td class="black" align="right">Winter Flounder: </td><td><input id="9" name="9" type="text" value="0" size="6"></td><td><input id="16" name="16" type="text" value="0" size="6"></td>
+		    <td class="black" align="right">Witch Flounder: </td><td><input id="10" name="10" type="text" value="0" size="6"></td><td><input id="17" name="17" type="text" value="0" size="6"></td></tr>
+		<tr><td class="black" align="right">Haddock: </td><td><input id="11" name="11" type="text" value="0" size="6"></td><td><input id="18" name="18" type="text" value="0" size="6"></td></tr>
+	</table>
+	</p>
+	<input type="hidden" id="formMax" name="formMax" value="18">
+	<input type="hidden" id="formDestination" name="formDestination" value="nmfs.ole.ne@noaa.gov">
+	<input type="hidden" id="formName" name="formName" value="NER.MULTS_CATCH">
+	<input type="hidden" id="formVersion" name="formVersion" value="2">
+</form>
+
+<center>
+
+  <script type="text/javascript">
+    cue_status = function() {
+        if (typeof(cue_timer) == 'number') clearTimeout(cue_timer);
+        cue_timer = setTimeout(update_status, 3000);
+    }
+    update_status = function() {
+      $('loader').toggle();
+      $('delivered').toggle();
+    }
+  </script>
+
+  <button onclick="$('loader').toggle(); cue_status();">Submit</button>
+
+  <div id="loader" style="display:none">
+    <img src="faria_sending.gif"/>
+  </div>
+
+  <div id="delivered" style="display:none">
+   <img src="faria_delivered.gif"/>
+  </div>
+
+</center>
+
+</body>
+</html>

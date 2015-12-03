@@ -1,0 +1,54 @@
+10-14-09 00:37:04 96.25.64.128 Hourly reset: Tue Oct 13 18:37:04 MDT 2009
+11-03-09 22:51:04 97.115.49.160 Error: Query failed: UPDATE ships, ais_ship_type_icons SET
+                name = 'KAGHAN',
+                ships.icon_id = ais_ship_type_icons.icon_id,
+                dim_bow = 191,
+                dim_stern = 35,
+                dim_port = 10,
+                dim_starboard = 22,
+                draught =  68,
+                destination = 'KALAMA',
+                eta = 19701231,
+                updated_at = NOW()
+                WHERE asset_id = 2672
+                AND ais_ship_type_icons.ship_type_code = 70; Unknown column 'name' in 'field list'
+11-03-09 22:57:21 97.115.49.160 Error: Query failed: UPDATE ships, ais_ship_type_icons SET
+                name = 'KAGHAN',
+                ships.icon_id = ais_ship_type_icons.icon_id,
+                dim_bow = 191,
+                dim_stern = 35,
+                dim_port = 10,
+                dim_starboard = 22,
+                draught =  68,
+                destination = 'KALAMA',
+                eta = 19701231,
+                updated_at = NOW()
+                WHERE asset_id = 2672
+                AND ais_ship_type_icons.ship_type_code = 70; Unknown column 'name' in 'field list'
+11-03-09 23:00:14 97.115.49.160 Error: Query failed: UPDATE ships, ais_ship_type_icons SET
+                name = 'KAGHAN',
+                ships.icon_id = ais_ship_type_icons.icon_id,
+                dim_bow = 191,
+                dim_stern = 35,
+                dim_port = 10,
+                dim_starboard = 22,
+                draught =  68,
+                destination = 'KALAMA',
+                eta = 19701231,
+                updated_at = NOW()
+                WHERE asset_id = 2672
+                AND ais_ship_type_icons.ship_type_code = 70; Unknown column 'name' in 'field list'
+11-03-09 23:01:25 97.115.49.160 Error: Query failed: UPDATE ships, ais_ship_type_icons SET
+                name = 'KAGHAN',
+                ships.icon_id = ais_ship_type_icons.icon_id,
+                dim_bow = 191,
+                dim_stern = 35,
+                dim_port = 10,
+                dim_starboard = 22,
+                draught =  68,
+                destination = 'KALAMA',
+                eta = 19701231,
+                updated_at = NOW()
+                WHERE asset_id = 2672
+                AND ais_ship_type_icons.ship_type_code = 70; Unknown column 'name' in 'field list'
+11-12-09 03:11:48 75.175.119.191 Hourly reset: Wed Nov 11 20:11:48 MST 2009

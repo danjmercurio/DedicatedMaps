@@ -1,0 +1,40 @@
+<fieldset>
+
+<legend>Layers</legend>
+
+<%= link_to 'Add new layer', new_layer_path %>
+<p>
+Title is what is displayed to the user. Name is used in the Rails and javascript code.
+Description is an optional long description of what a layer is/does. It is not currently publically viewable.
+</p>
+
+<p>
+Destroying a layer will remove it from all maps that have it enabled.
+</p>
+
+<table class="index">
+  <tr>
+    <th>Title</th>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+
+<% @layers.each do |layer| %>
+  <tr bgcolor="<%= cycle("#dddddd", "#ffffff") %>">
+    <td><%=h layer.title %></td>
+    <td><%=h layer.name %></td>
+    <% if layer.category == 'StagingArea' %>
+      <td><%=h "#{layer.category} (#{layer.staging_area_company.id})"%></td>
+    <% else %>
+      <td><%=h layer.category %></td>
+    <% end %>
+    <td><%=h layer.description %></td>
+    <td><%= link_to 'Edit', edit_layer_path(layer) %></td>
+    <td><%= link_to "Delete", :controller=> "layers", :action => "delete", :id => layer.id %></td>
+
+  </tr>
+<% end %>
+</table>
+
+</fieldset>

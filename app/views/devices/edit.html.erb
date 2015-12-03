@@ -1,0 +1,22 @@
+<fieldset>
+
+  <legend>Device Settings</legend>
+
+  <%= form_for @device, {
+      :loading => "Element.show('device_loading')",
+      :complete => "Element.hide('device_loading')"
+    } do |f| %>
+    
+    
+    
+    <%= render :partial => @device.device_type.name,
+               :locals  => {:f => f}
+               %>
+               
+    <p>
+      <%= f.submit 'Update' %>
+    </p>
+
+    <% end %> 
+ 
+</fieldset>

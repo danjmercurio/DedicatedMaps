@@ -1,0 +1,158 @@
+<h1><%= @asset.common_name %></h1>
+
+<br />
+
+<ul id="asset_tabs" class="subsection_tabs">  
+  <li class="tab"><a href="#asset_tab">Settings</a></li>  
+  <li class="tab"><a href="#devices">Tracking</a></li>
+  <li class="tab"><a href="#sharing">Sharing</a></li>
+    
+  <% if @asset.asset_type.name == 'ship' %>
+    <li class="tab"><a href="#ship_data">Ship Specs</a></li>
+  <% end %>
+  
+  <% if @asset.asset_type.name == 'fishing_vessel' %>
+    <li class="tab"><a href="#ship_data">Ship Specs</a></li>
+    <li class="tab"><a href="#trip_data">Trips</a></li>
+  <% end %>
+  
+  <% if @asset.asset_type.name == 'aircraft' %>
+    <li class="tab"><a href="#aircraft_data">Aircraft Specs</a></li>
+  <% end %>  
+  
+  <li class="tab"><a href="#fields">Data Fields</a></li>  
+</ul>
+
+<div id="asset_tab">
+
+  <%= form_for @asset do |f| -%>
+       
+    <p>
+      <%= f.label :Name %><br />
+      <%= f.text_field :common_name %>
+    </p>
+    
+    <p>
+      <%= f.label :visibility %>
+      <% @visibilities.each do |v| %>
+        <br />
+        <%= f.radio_button :visibility_id, v.id %>
+        <%= v.name %> - <%= v.description %>
+      <% end %>
+    </p>
+    
+    <p>
+      <%= f.check_box :is_active %>
+      <%= f.label :Active %> - Asset will be tracked and displayed according to visibility settings.
+    </p>
+      
+    <p>
+      <%= f.submit 'Update' %>
+    </p>
+    
+  <% end %>
+
+</div>
+
+<div id="devices">
+  <%= render :partial => 'devices',
+             :locals  => {:asset => @asset, 
+                          :devices => @devices
+                          } %>
+</div>
+
+<div id="sharing">
+
+  <% if @client.clients.length() == 0 %>
+    
+    You do not have client sharing enabled. Please contact us to share assets with other clients.
+    
+  <% else %>
+    
+    Share this asset with:<br />
+
+    <%= form_for @asset, {
+          :loading => "Element.show('share_loading')",
+          :complete => "Element.hide('share_loading')"
+          } do |f| -%>
+      <% @client.clients.each do |client| -%>
+        <br />
+        <% field_id = "client_#{client.id}" %> 
+        <%= check_box_tag "asset[client_ids][]", client.id, @asset.clients.include?(client), {:id => field_id} %>
+        <%= label_tag field_id, h(client.company_name) %>
+        
+        <% if @asset.asset_type.name == "fishing_vessel" %>
+          (
+          <%= check_box_tag "", client.id, rand(2)==1, {:id => field_id + "L"} %>
+          <%= label_tag field_id + "L", "Hide Location"%>
+          
+          <%= check_box_tag "", client.id, rand(2)==1, {:id => field_id + "C"} %>
+          <%= label_tag field_id + "C", "Hide Catch" %>
+          
+          <%= check_box_tag "", client.id, rand(2)==1, {:id => field_id + "I"} %>
+          <%= label_tag field_id + "I", "Show Inspection Log" %>
+          )
+          
+          <br />
+          
+        <% end %>
+        
+      <% end %>
+      <br />
+      <%= hidden_field_tag "sharing_checkboxes", 1 %>
+      <%= f.submit 'Update' %>
+    <% end %>
+  
+  <% end %>
+  
+</div>
+
+<% if @asset.asset_type.name == 'ship' %>
+
+  <div id="ship_data">
+    <%= render :partial => 'ship',
+               :locals  => {:asset => @asset, 
+                            :icons => @icons
+                           } %>
+  </div>
+  
+<% elsif @asset.asset_type.name == 'fishing_vessel' %>
+
+  <div id="ship_data">
+    <%= render :partial => 'fishing_vessel',
+               :locals  => {:asset => @asset, 
+                            :icons => @icons
+                           } %>
+  </div>
+  
+  <div id="trip_data">
+    <%= render :partial => 'fishing_trip',
+               :locals  => {:asset => @asset,
+                            :fish => @fish,
+                            :fishing_gear => @fishing_gear,
+                            :fishermen => @fishermen
+                }
+    %>
+  </div>
+    
+<% elsif @asset.asset_type.name == 'aircraft' %>
+
+  <div id="aircraft_data">
+    <%= render :partial => 'aircraft',
+               :locals  => {:asset => @asset, 
+                            :icons => @icons
+                           } %>
+  </div>
+  
+<% end %>
+
+<div id="fields">
+  <%= render :partial => 'fields',
+             :locals  => {:asset => @asset, 
+                          :custom_field => @custom_field
+                         } %>
+</div>
+
+<script type="text/javascript">
+  new Control.Tabs('asset_tabs');
+</script>

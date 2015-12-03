@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+  <title>Dedicated Maps - Map</title>
+  
+  <%= stylesheet_link_tag "reset" %>
+  <%= stylesheet_link_tag "private" %>
+  <%= stylesheet_link_tag "info_window" %>
+  <%= stylesheet_link_tag "window" %>
+
+  <!--[if lt IE 8]>
+    <% javascript_tag do -%>
+      window.location="/ie8";
+    <% end %>
+  <![endif]-->
+
+	<%= javascript_include_tag :defaults %>
+  <!-- put jQuery in noConflict mode to use it with prototype.js -->
+  <script type='text/javascript'>$.noConflict();</script>
+
+  <%= javascript_include_tag "prototype" %>
+
+<!-- latest google maps javascript API with dan's API key -->
+  <script 
+    src="https://maps.googleapis.com/maps/api/js?v=3.21&key=AIzaSyBePgQ3O-hy_QqA0lDdd8IDkGYPrMBp7b4"></script>
+  
+  <%= javascript_include_tag "markermanager" %>
+  <%= javascript_include_tag "icons" %>
+  <%= javascript_include_tag "layer" %>
+  <%= javascript_include_tag "map" %>
+  <%= javascript_include_tag "balloon_templates" %>
+  <%= javascript_include_tag "livepipe" %>
+  <%= javascript_include_tag "resizable" %>
+  <%= javascript_include_tag "window" %>
+  <%= javascript_include_tag "slider" %>
+  <%= javascript_include_tag "infobubble-compiled" %>
+
+
+  
+</head>
+
+<body>
+
+  <div class="header">
+    
+    <div class="logo">
+      <span class='client'><%= @map.user.client.company_name %></span>      
+      <% if @admin_viewing %>
+        <%= button_to_function 'Save Current View', 'save_map();' , {:title => 'This will save the current map location and setting for the next viewer.'}%>
+        <%= 'Map owner: ' + @map.user.first_name + ' ' + @map.user.last_name %>
+      <% end %>
+    </div>
+          
+    <div class="messages" style="text-align:right">
+      <span style="color:red;">
+      	<%= flash[:notice] %>
+      </span>
+    </div>
+      
+    <%= render :partial=>"layouts/account_bar" %>
+
+  </div>
+
+  <%= yield %>
+
+  <div class="footer" style="text-align:right; margin: 10px 10px;">
+   &#169;<%= Time.now.year %> Dedicated Maps, Inc. All rights reserved.
+  </div>
+  
+</body>
+
+</html>

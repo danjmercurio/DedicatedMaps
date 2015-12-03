@@ -1,0 +1,39 @@
+<fieldset>
+
+<legend>Public Maps</legend>
+
+  <%= link_to 'Add new public map', new_public_map_path %><br /><br />
+
+  <% if @public_maps.length() == 0 %>
+
+    <br />You have no public maps configured.
+
+  <% else %>
+
+  <table class="index">
+    <tr>
+      <th>Client</th>
+      <th>Subdomain</th>
+      <th>Active</th>
+      <th>Last viewed</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% @public_maps.each do |public_map| %>
+      <tr bgcolor="<%= cycle("#dddddd", "#ffffff") %>">
+        <td><%=h public_map.client.company_name %></td>
+        <td><%=h public_map.username %></td>
+        <td><%=h public_map.active %></td>
+        <td><%=h public_map.last_login %></td>
+        <td><%= link_to 'Edit', edit_public_map_path(public_map) %></td>
+        <td><%= link_to "Delete", :controller=> "public_maps", :action => "delete", :id => public_map.id %></td>
+        <td><%= link_to 'View Map', map_path(public_map.map) %></td>
+      </tr>
+    <% end %>
+  </table>
+
+<% end %>
+  
+</fieldset>

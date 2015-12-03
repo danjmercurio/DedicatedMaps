@@ -1,0 +1,30 @@
+<%
+  @min_visibility = Visibility.find_by_name("Private")
+   
+  @asset_type_id = AssetType.find_by_name('other').to_param
+ 
+  @my_items = Asset.find_all_by_client_id_and_asset_type_id(
+    @map.user.client.id,
+    @asset_type_id,
+    :conditions => ["visibility_id >= ?", @min_visibility.id],
+    :include => [:current_location, {:other => :icon}]
+  )
+
+%>
+
+<% if @my_items.length() == 0 %>
+
+    You currently have no assets of type "other" registered.
+
+<% else %>
+
+  <% options = "<option value='0'>Locate...</option>".html_safe %>
+
+  <% @my_items.each do |item| %>
+    <% options.concat("<option value=#{item.id}>#{item.common_name[0..18]}</option>".html_safe) %>
+  <% end %>
+
+  <%= select_tag "Locate My Items", options, :id=>"my_item_locate" %>
+  <%= observe_field('my_item_locate', :function => 'layer.my_items.list[value].centerOpen()')%>
+
+<% end %>
