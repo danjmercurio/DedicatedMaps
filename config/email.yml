@@ -46,30 +46,30 @@
 #
 # This requires some additional configuration.  See the article at:
 # http://redmineblog.com/articles/setup-redmine-to-send-email-using-gmail/
-#
- production:
-   delivery_method: :smtp
-   smtp_settings:
-     tls: true
-     address: "smtp.gmail.com"
-     enable_starttls_auto: true
-     port: 587
-     domain: "dedicatedmaps.com" # 'your.domain.com' for GoogleApps
-     authentication: :plain
-     user_name: "no-reply@dedicatedmaps.com"
-     password: "dmaps_email"
-development:
-   delivery_method: :smtp
-   smtp_settings:
-     tls: true
-     address: "smtp.gmail.com"
-     enable_starttls_auto: true
-     port: 587
-     domain: "dedicatedmaps.com" # 'your.domain.com' for GoogleApps
-     authentication: :plain
-     user_name: "no-reply@dedicatedmaps.com"
-     password: "dmaps_email"
-#
+# #
+#  production:
+#    delivery_method: :smtp
+#    smtp_settings:
+#      tls: true
+#      address: "smtp.gmail.com"
+#      enable_starttls_auto: true
+#      port: 587
+#      domain: "dedicatedmaps.com" # 'your.domain.com' for GoogleApps
+#      authentication: :plain
+#      user_name: "no-reply@dedicatedmaps.com"
+#      password: "dmaps_email"
+# development:
+#    delivery_method: :smtp
+#    smtp_settings:
+#      tls: true
+#      address: "smtp.gmail.com"
+#      enable_starttls_auto: true
+#      port: 587
+#      domain: "dedicatedmaps.com" # 'your.domain.com' for GoogleApps
+#      authentication: :plain
+#      user_name: "no-reply@dedicatedmaps.com"
+#      password: "dmaps_email"
+# #
 #
 # == More configuration options
 #
