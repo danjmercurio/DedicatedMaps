@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-#gem 'rails', '3.2.0'
+gem 'rails', '3.2.2'
 
 # Bundle edge Rails instead:
 #gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'rails', :github => 'rails/rails', :branch => '3-2-stable'
+#gem 'rails', :github => 'rails/rails', :branch => '3-2-stable'
 
 # Important! mysql2 gem version must be 0.3.x && < 0.4 to work with rails 3.2!
 gem 'mysql2', '~> 0.3.18' #:git => 'git://github.com/brianmario/mysql2.git'
