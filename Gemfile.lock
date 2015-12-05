@@ -1,10 +1,4 @@
 GIT
-  remote: git://github.com/brianmario/mysql2.git
-  revision: 9047e702a7b50c9eedba0382af2066955456e2e2
-  specs:
-    mysql2 (0.3.18)
-
-GIT
   remote: git://github.com/ctran/annotate_models.git
   revision: 52ffefcbe4e89cb172e2007eda0f74ac40798727
   specs:
@@ -116,6 +110,7 @@ GEM
     mimemagic (0.3.0)
     mini_portile (0.6.2)
     multi_json (1.11.0)
+    mysql2 (0.3.20)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     polyglot (0.3.5)
@@ -161,7 +156,7 @@ DEPENDENCIES
   annotate!
   coffee-rails (~> 3.2.1)
   delayed_job
-  mysql2!
+  mysql2 (~> 0.3.18)
   nokogiri
   paperclip!
   prototype-rails
