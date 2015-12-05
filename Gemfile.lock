@@ -67,6 +67,17 @@ GIT
       thor (>= 0.14.6, < 2.0)
 
 GIT
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: 850a199da1f827571d3a21b075be45fe7d853e8f
+  specs:
+    paperclip (4.3.1)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (= 0.3.0)
+
+GIT
   remote: git://github.com/yamldb/yaml_db.git
   revision: cecfdfc8d6d3b2adbca26b9fc416d93a40dd2348
   specs:
@@ -79,6 +90,10 @@ GEM
   specs:
     arel (3.0.3)
     builder (3.0.4)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -98,6 +113,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mimemagic (0.3.0)
     mini_portile (0.6.2)
     multi_json (1.11.0)
     nokogiri (1.6.6.2)
@@ -147,6 +163,7 @@ DEPENDENCIES
   delayed_job
   mysql2!
   nokogiri
+  paperclip!
   prototype-rails
   prototype_legacy_helper (= 0.0.0)!
   rails!
@@ -154,3 +171,6 @@ DEPENDENCIES
   test-unit
   uglifier (>= 1.0.3)
   yaml_db!
+
+BUNDLED WITH
+   1.10.6

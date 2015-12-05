@@ -103,19 +103,10 @@
 # AisShipTypeIcon.create(:ship_type_code =>97, :icon_id =>9)
 # AisShipTypeIcon.create(:ship_type_code =>98, :icon_id =>9)
 # AisShipTypeIcon.create(:ship_type_code =>99, :icon_id =>9)
-unless Rails.env.production?
-  connection = ActiveRecord::Base.connection
-  connection.tables.each do |table|
-    connection.execute("TRUNCATE #{table}") unless table == "schema_migrations"
-  end
-
-  sql = File.read('db/ddmaps.sql')
-  statements = sql.split(/;$/)
-  statements.pop
-
-  ActiveRecord::Base.transaction do
-    statements.each do |statement|
-      connection.execute(statement)
-    end
-  end
-end
+# connection = ActiveRecord::Base.connection
+# connection.tables.each do |table|
+#     connection.execute("TRUNCATE #{table}") unless table == "schema_migrations"
+# end
+# sql = File.read('db/ddmaps.sql').mb_chars.tidy_bytes(force = true)
+# connection.execute(sql)
+puts 'Run in mysql client: source db/ddmaps.sql'
