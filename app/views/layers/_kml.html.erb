@@ -47,7 +47,7 @@ input#kml_url {
             <td width="80"><%= f.check_box :active, :checked => (kml.active == 1) %></td>
             <td width="240"><%= f.text_field :label, :value => kml.label %></td>
             <td width="240">
-              <% if kml.kml_file %>
+              <% if kml.kml_file.size %>
                   <%= f.text_field :url, :value=> kml.kml_file.url.force_encoding("UTF-8") %>
               <% else %>
                 <%= f.text_field :url, :value => kml.url.force_encoding("UTF-8") %>
