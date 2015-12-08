@@ -2,6 +2,7 @@ class KmlsController < ApplicationController
   before_filter :ensure_super
   
   def index
+    @layer = Layer.find(params[:layer_id])
     redirect_to edit_layer_path(@layer) + '#kmls'
   end
 
@@ -40,20 +41,29 @@ class KmlsController < ApplicationController
                            :locals  => {:layer => @layer, 
                                         :kml => @kml 
                                 } }
+      format.html {redirect_to edit_layer_path(@layer) + '#kmls'}
     end
    
   end
   
   def destroy
+    # @kml = Kml.find(params[:id])
+    # @kml.destroy
+    # @layer = @kml.layer
+    # @kml = Kml.new
+    # respond_to do |format|
+    #   format.js  {render :partial => 'layers/kml', 
+    #                      :locals  => {:layer => @layer, 
+    #                                   :kml => @kml 
+    #                           } }
+    # end
     @kml = Kml.find(params[:id])
-    @kml.destroy
     @layer = @kml.layer
-    @kml = Kml.new
-    respond_to do |format|
-      format.js  {render :partial => 'layers/kml', 
-                         :locals  => {:layer => @layer, 
-                                      :kml => @kml 
-                              } }
+    @kml.destroy
+    respond_to do |format| 
+      format.html {
+        redirect_to edit_layer_path(@layer) + '#kmls'
+      }
     end
   end
 end
