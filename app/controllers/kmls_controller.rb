@@ -10,11 +10,10 @@ class KmlsController < ApplicationController
   # POST /kmls
   def create
     @layer = Layer.find(params[:layer_id])
-    @kml = @layer.kmls.build(params[:kml])
+    @kml = @layer.kmls.new(params[:kml])
     
-    if uploaded_file = params[:kml][:kml_file]
-      # @kml.stored_file = StoredFile.create(:binary_data => uploaded_file.read, :content_type => uploaded_file.content_type.chomp)
-      @kml.url = @kml.kml_file.url
+    if params[:kml][:kml_file]
+      @kml.url = @kml.kml_file.url.force_encoding("UTF-8")
     end
       
     respond_to do |format|

@@ -17,7 +17,7 @@
 class Kml < ActiveRecord::Base
   belongs_to :layer
   has_attached_file :kml_file
-  validates_attachment :kml_file, presence: true, content_type: { 
+  validates_attachment :kml_file, content_type: { 
   	content_type: ["application/vnd.google-earth.kmz", "application/vnd.google-earth.kml+xml"] }, 
   	size: { in: 0..5.megabytes }
 end
