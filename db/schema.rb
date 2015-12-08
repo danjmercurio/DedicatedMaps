@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130123012818) do
+ActiveRecord::Schema.define(:version => 20151208133853) do
 
   create_table "aircraft", :force => true do |t|
     t.integer  "asset_id"
@@ -317,10 +317,14 @@ ActiveRecord::Schema.define(:version => 20130123012818) do
     t.string   "label"
     t.string   "url"
     t.integer  "sort"
-    t.integer  "active",         :null => false
+    t.integer  "active",                :null => false
     t.integer  "stored_file_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "kml_file_file_name"
+    t.string   "kml_file_content_type"
+    t.integer  "kml_file_file_size"
+    t.datetime "kml_file_updated_at"
   end
 
   create_table "layers", :force => true do |t|

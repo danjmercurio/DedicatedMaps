@@ -1,5 +1,5 @@
 <% layer.kmls.each do |kml| %>
-  <% kml.url = "http://dedicatedmaps.com/stored_files/#{kml.stored_file.id}" if kml.stored_file %>
+  <% kml.url = "http://#{request.host_with_port}#{kml.kml_file.url}" if kml.kml_file.size %>
   <%= check_box_tag "kml_#{kml.id}", 1, false,
   :onclick   => "(this.checked) ? layer.#{layer.name}.kml_on(#{kml.id},'#{kml.url}') : layer.#{layer.name}.kml_off(#{kml.id})" %>
   <%= label_tag "kml_#{kml.id}", kml.label %>

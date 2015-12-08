@@ -8,6 +8,9 @@ input[type="button"]{
 input[type="text"]{
   margin:5px;
 }
+input#kml_url {
+
+}
 </style>
 
 <table>
@@ -44,7 +47,7 @@ input[type="text"]{
             <td width="80"><%= f.check_box :active, :checked => (kml.active == 1) %></td>
             <td width="240"><%= f.text_field :label, :value => kml.label %></td>
             <td width="240">
-              <% if kml.stored_file %>
+              <% if kml.kml_file %>
                   <%= kml.url %>
               <% else %>
                 <%= f.text_field :url, :value => kml.url %>
@@ -76,9 +79,7 @@ input[type="text"]{
       </td>
       <td id="url_or_file" width="240">
         <%= f.text_field :url %>
-        <%= f.file_field 'kml_file',
-          :accept => 'application/vnd.google-earth.kmz, application/vnd.google-earth.kml+xml', 
-          :style => 'display:none;' %>
+        <%= f.file_field :kml_file, {:accept => 'application/vnd.google-earth.kmz, application/vnd.google-earth.kml+xml'} %>
       </td>
       <td>
         <%= f.submit 'Add' %>

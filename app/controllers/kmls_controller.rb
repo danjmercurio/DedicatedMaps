@@ -12,9 +12,9 @@ class KmlsController < ApplicationController
     @layer = Layer.find(params[:layer_id])
     @kml = @layer.kmls.build(params[:kml])
     
-    if uploaded_file = params[:kml_file]
-      @kml.stored_file = StoredFile.create(:binary_data => uploaded_file.read, :content_type => uploaded_file.content_type.chomp)
-      @kml.url = uploaded_file.original_filename
+    if uploaded_file = params[:kml][:kml_file]
+      # @kml.stored_file = StoredFile.create(:binary_data => uploaded_file.read, :content_type => uploaded_file.content_type.chomp)
+      @kml.url = @kml.kml_file.url
     end
       
     respond_to do |format|

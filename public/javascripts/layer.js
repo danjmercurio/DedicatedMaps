@@ -719,6 +719,8 @@ kml_load = function(id, url) {
   //   }
   //   ajax_calls_pop();
   // });
+  console.log("Loading KML");
+  console.log(url);
   var geoXml = new google.maps.KmlLayer({
     url: url,
     map: map
