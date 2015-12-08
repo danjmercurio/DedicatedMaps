@@ -12,7 +12,7 @@ class KmlsController < ApplicationController
     @layer = Layer.find(params[:layer_id])
     @kml = @layer.kmls.new(params[:kml])
     
-    if params[:kml][:kml_file] && !params.has_key?(:url)
+    if @kml.kml_file.present?
       @kml.url = @kml.kml_file.url.force_encoding("UTF-8")
     end
       
