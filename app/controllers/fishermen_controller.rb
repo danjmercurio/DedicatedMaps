@@ -1,7 +1,7 @@
 class FishermenController < ApplicationController
-  layout "private" 
+  layout "private"
   before_filter :ensure_login
-    
+
   # GET /fishermen
   def index
     if @loggedin_user.super?
@@ -10,11 +10,11 @@ class FishermenController < ApplicationController
     elsif @loggedin_user.admin?
       # Can only list fishermen with the same client
       @fishermen = Fisherman.find_all_by_client_id(@loggedin_user.client_id, :order => :last_name)
-    else 
+    else
       # standard users can't view fishing_trips list
       error_404
     end
-    
+
     @fisherman = Fisherman.new
     respond_to do |format|
       format.html
@@ -29,14 +29,14 @@ class FishermenController < ApplicationController
         format.js  {render :partial => 'form', :locals  => {:fisherman => @fisherman}}
       else
         format.js  {render :txt => "Error saving crew member data."}
-      end        
+      end
     end
   end
-  
+
   # POST /fishermen
   def create
     @fisherman = Fisherman.new(params[:fisherman])
- 
+
     respond_to do |format|
       if @fisherman.save
         #flash[:notice] = 'Field data was successfully saved.'
@@ -48,11 +48,11 @@ class FishermenController < ApplicationController
       format.html  {redirect_to :fishermen}
     end
   end
-  
+
   def destroy
     @fisherman = Fisherman.find_by_id(params[:id])
     @fisherman.active = false
-    
+
     respond_to do |format|
       if @fisherman.save
         # flash[:notice] = 'Crew member deleted.'
@@ -64,5 +64,5 @@ class FishermenController < ApplicationController
       end
     end
   end
-  
+
 end
