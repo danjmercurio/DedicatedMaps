@@ -1,3 +1,4 @@
+#require 'subdomain'
 Ddmap::Application.routes.draw do
   match 'job_viewer' => 'job_viewer#index', :as => :job_viewer
   resources :fishing_areas
@@ -62,10 +63,15 @@ Ddmap::Application.routes.draw do
   match 'shared_items/:id.:format' => 'assets#show', :as => :shared_items
   match 'public_items/:id.:format' => 'assets#show', :as => :public_items
   resources :maps
+
+ 
   match '/:controller(/:action(/:id))'
+
+
   #match '/' => 'maps#show'
   match '/' => 'public#index'
   match ':page' => 'public#show', :as => :public, :page => /about|contact|products|services|contact|success|ie8/
   match '/' => 'private#index'
   match ':page' => 'private#show', :as => :private, :page => /map|help|admin/
+
 end

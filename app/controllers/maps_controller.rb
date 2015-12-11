@@ -1,6 +1,8 @@
 class MapsController < ApplicationController
+  # skip_before_filter :subdomain_redirect
   before_filter :handle_public_map, :only => [:show, :update]
   before_filter :ensure_login, :only => [:show, :update]
+
 
   # GET /maps/1
   def show

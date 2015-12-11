@@ -9,19 +9,19 @@
 # conn.execute('ALTER TABLE staging_area_companies AUTO_INCREMENT = 0') if conn.adapter_name == 'MySQL'
 # conn.execute("delete from sqlite_sequence where name = 'staging_area_companies'") if conn.adapter_name == 'SQLite'
 # StagingAreaCompany.create(:name => "crc", :title =>  "Clean Rivers Cooperative")               # :id => 1,
-# StagingAreaCompany.create(:name => "mfsa",  :title=>  "Marine Fire & Safety Assoc.")           # :id => 2, 
-# StagingAreaCompany.create(:name => "poi",   :title=>  "Points Of Interest")                     # :id => 3, 
-# StagingAreaCompany.create(:name => "msrc",  :title=>  "MSRC - WRRL")                           # :id => 4, 
-# StagingAreaCompany.create(:name => "nrc",   :title=>  "National Response Corporation")          # :id => 5, 
-# StagingAreaCompany.create(:name => "bco",   :title=>  "Burrard Clean Operations")               # :id => 6, 
-# StagingAreaCompany.create(:name => "cic",   :title=>  "Clean Islands Council")                  # :id => 7, 
-# StagingAreaCompany.create(:name => "seapro",:title=> "Seapro")                              # :id => 8, 
-# StagingAreaCompany.create(:name => "ccs",   :title=>"Clean Cowlitz Sweep")                    # :id => 9, 
-# StagingAreaCompany.create(:name => "ies",   :title=>"IES")                                   # :id => 10, 
-# StagingAreaCompany.create(:name => "tbl",   :title=>"Tidewater Barge Lines")                 # :id => 11, 
-# StagingAreaCompany.create(:name => "gds",   :title=>"Global Diving & Salvage")               # :id => 12, 
-# StagingAreaCompany.create(:name => "wrrl",  :title=> "Western Region Resource List")         # :id => 13, 
-# StagingAreaCompany.create(:name => "nrc_wrrl", :title=> "NRC - WRRL")                       # :id => 14, 
+# StagingAreaCompany.create(:name => "mfsa",  :title=>  "Marine Fire & Safety Assoc.")           # :id => 2,
+# StagingAreaCompany.create(:name => "poi",   :title=>  "Points Of Interest")                     # :id => 3,
+# StagingAreaCompany.create(:name => "msrc",  :title=>  "MSRC - WRRL")                           # :id => 4,
+# StagingAreaCompany.create(:name => "nrc",   :title=>  "National Response Corporation")          # :id => 5,
+# StagingAreaCompany.create(:name => "bco",   :title=>  "Burrard Clean Operations")               # :id => 6,
+# StagingAreaCompany.create(:name => "cic",   :title=>  "Clean Islands Council")                  # :id => 7,
+# StagingAreaCompany.create(:name => "seapro",:title=> "Seapro")                              # :id => 8,
+# StagingAreaCompany.create(:name => "ccs",   :title=>"Clean Cowlitz Sweep")                    # :id => 9,
+# StagingAreaCompany.create(:name => "ies",   :title=>"IES")                                   # :id => 10,
+# StagingAreaCompany.create(:name => "tbl",   :title=>"Tidewater Barge Lines")                 # :id => 11,
+# StagingAreaCompany.create(:name => "gds",   :title=>"Global Diving & Salvage")               # :id => 12,
+# StagingAreaCompany.create(:name => "wrrl",  :title=> "Western Region Resource List")         # :id => 13,
+# StagingAreaCompany.create(:name => "nrc_wrrl", :title=> "NRC - WRRL")                       # :id => 14,
 
 
 # AisShipTypeIcon.create(:ship_type_code =>20, :icon_id => 9)
@@ -109,4 +109,4 @@
 # end
 # sql = File.read('db/ddmaps.sql').mb_chars.tidy_bytes(force = true)
 # connection.execute(sql)
-puts 'Run in mysql client: source db/ddmaps.sql'
+#puts 'Run in mysql client: source db/ddmaps.sql'

@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
   helper_method :logout_user
 
   def error_404
-    render :file => 'public/404.html', :status => 404
+    render :file => "#{Rails.root}/public/404", :status => 404, :layout => 'public', :formats => [:html]
   end
 
   private
@@ -58,10 +58,11 @@ class ApplicationController < ActionController::Base
       render '/public/index', :layout => 'public' if request.path == '/'
     elsif !subdomain.blank?
       user = User.find_by_username(subdomain)
-      if user.nil?
-        error_404 
+      if !user.nil? && request.path == '/'
+        params[:id] = user.map.id
+        redirect_to "http://#{request.domain}:#{request.port}" + maps_path + "/" + user.map.id.to_s
       else
-        params[:id] = user.map.id if request.path == '/'
+        error_404
       end
     elsif request.path == '/'
       render '/public/index', :layout => 'public'
