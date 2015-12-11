@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
   
   def logout_user
     # Session.destroy(@application_session)
-    Session.destroy(params[:id])
+    Session.destroy(params[:id]) if params[:id]
     session[:id] = @loggedin_user = @anonymous_user = nil
   end
   helper_method :logout_user
