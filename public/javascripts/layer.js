@@ -112,9 +112,10 @@ loader = (function() {
     div.appendChild(spinner);
     return(div);
 })();
-
+var infoBubble = null;
 //returns a marker, given data
 Layer.prototype.render = function(current) {
+
   options = this.optsFn(current);
   icon = options['icon'];
   title = options['title'];
@@ -133,12 +134,12 @@ Layer.prototype.render = function(current) {
     google.maps.event.addListener(marker, 'click', function(){ 
       layer.waiting = name;
 
-      if (marker.infoBubble && marker.infoBubble.isOpen()) {
-        marker.infoBubble.close();
+      if (infoBubble && infoBubble.isOpen()) {
+        infoBubble.close();
       }
       //marker has been clicked
         //initialize the infoBubble for each marker
-        marker.infoBubble = new InfoBubble({
+        infoBubble = new InfoBubble({
            maxHeight: 250,
             minHeight: 250,
             maxWidth:400,
@@ -149,17 +150,17 @@ Layer.prototype.render = function(current) {
             disableAutoPan: false
           });
         //open the bubble
-        if (marker.infoBubble && !marker.infoBubble.isOpen()) {
-          marker.infoBubble.open();
+        if (infoBubble && !infoBubble.isOpen()) {
+          infoBubble.open();
         }
         jQuery.ajax({
           beforeSend: function() {
-            marker.infoBubble.addTab('Loading...', loader);
+            infoBubble.addTab('Loading...', loader);
             console.log("AJAX REQUEST: " + "/marker/" + name + "/" + marker.id + ".json");
           },
           url: "/marker/" + name + "/" + marker.id + ".json",
           error: function(reqObject, textstatus, errorthrown) {
-            marker.infoBubble.updateTab('0', 'Error', function(errorthrown) {
+            infoBubble.updateTab('0', 'Error', function(errorthrown) {
               return "ERROR: Resp code..." + errorthrown;
             });
           },
@@ -170,16 +171,16 @@ Layer.prototype.render = function(current) {
 
             //if the bubble is for public_ships
             if (name == 'public_ships') {
-              marker.infoBubble.updateTab('0', 'Info', layer.shipInfo(json, 'public_ships'));
+              infoBubble.updateTab('0', 'Info', layer.shipInfo(json, 'public_ships'));
             } else {
             
             //build the info tab
-            marker.infoBubble.updateTab('0', 'Info', buildInfoTabContainer(json, marker)); 
+            infoBubble.updateTab('0', 'Info', buildInfoTabContainer(json, marker)); 
 
             //build equipment tab           
             //if there is equipment in the json, tell us about it
             if (json.staging_area_assets && json.staging_area_assets.length > 0) {
-              marker.infoBubble.addTab('Equip', buildEquipmentContainer(json, marker));
+              infoBubble.addTab('Equip', buildEquipmentContainer(json, marker));
             }
            } 
             
@@ -195,8 +196,8 @@ Layer.prototype.render = function(current) {
     });
     //close the bubble if user clicks outside the map
     google.maps.event.addListener(layer.map, 'click', function() {
-      if (marker.infoBubble && marker.infoBubble.isOpen()) {
-        marker.infoBubble.close();
+      if (infoBubble && infoBubble.isOpen()) {
+        infoBubble.close();
       }
     });
   }
