@@ -322,7 +322,7 @@ layer.set_staging_area_container = function(info){
       // Center here image
       var a = document.createElement('a');
       a.setAttribute("title","Center map here.");
-      a.href = "javascript:map.panTo(new GLatLng(" + info.lat + "," + info.lon + "));";
+      a.href = "javascript:map.panTo(new google.maps.LatLng(" + info.lat + "," + info.lon + "));";
         var image = document.createElement('img');
         image.src = "/images/crosshairs.png";
         image.setAttribute("alt","Center map here.");
