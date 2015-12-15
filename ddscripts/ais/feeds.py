@@ -25,7 +25,11 @@ def sockify(addr):   # Takes an addres, port pair, returns a network socket conn
 #    sock.setblocking(0)
     return sock
 
-sources = [('216.177.253.143', 3131), ('208.79.150.114', 1001)]
+#sources = [('216.177.253.143', 3131), ('208.79.150.114', 1001)]
+
+sources = [('216.177.253.143', 3131)]
+
+
 #,  # bar pilots
            #('206.72.107.155', 1000),   # exchange
                # puget sound
