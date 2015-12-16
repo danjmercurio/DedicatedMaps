@@ -180,7 +180,7 @@ Layer.prototype.render = function(current) {
             //build equipment tab           
             //if there is equipment in the json, tell us about it
             if (json.staging_area_assets && json.staging_area_assets.length > 0) {
-              infoBubble.addTab('Equip', buildEquipmentContainer(json, marker));
+              infoBubble.addTab('Equip', buildEquipmentContainer(json, marker, infoBubble));
             }
            } 
             

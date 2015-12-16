@@ -65,7 +65,7 @@ var buildInfoTabContainer = function(json, marker) {
   return div;
   
 }
- var buildEquipmentContainer = function(json, marker) {
+ var buildEquipmentContainer = function(json, marker, infoBubble) {
 
               if (json.staging_area_assets && json.staging_area_assets.length > 0) {
                 var div = document.createElement('div');
@@ -149,13 +149,13 @@ var buildInfoTabContainer = function(json, marker) {
                           
                           return div;
                           }
-                          //if marker.infoBubble.tabs_ contains a 'Detail' tab, update it, else, add a new tab
-                          if (marker.infoBubble.tabs_.length >= 3) {
-                            marker.infoBubble.updateTab('2', 'Detail', getAssetDetailsContainer(reqObject.responseJSON));
-                            marker.infoBubble.setTabActive_(marker.infoBubble.tabs_[2].tab);
+                          //if infoBubble.tabs_ contains a 'Detail' tab, update it, else, add a new tab
+                          if (infoBubble.tabs_.length >= 3) {
+                            infoBubble.updateTab('2', 'Detail', getAssetDetailsContainer(reqObject.responseJSON));
+                            infoBubble.setTabActive_(infoBubble.tabs_[2].tab);
                           } else {
-                            marker.infoBubble.addTab('Detail', getAssetDetailsContainer(reqObject.responseJSON));
-                            marker.infoBubble.setTabActive_(marker.infoBubble.tabs_[2].tab);
+                            infoBubble.addTab('Detail', getAssetDetailsContainer(reqObject.responseJSON));
+                            infoBubble.setTabActive_(infoBubble.tabs_[2].tab);
                           }                                                                
                         }
                       });
