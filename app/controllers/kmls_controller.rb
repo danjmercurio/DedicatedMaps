@@ -13,6 +13,7 @@ class KmlsController < ApplicationController
     @kml = @layer.kmls.new(params[:kml])
     
     if @kml.kml_file.present?
+      # Encoding issues here with filename.
       @kml.url = @kml.kml_file.url.force_encoding("UTF-8")
     end
       

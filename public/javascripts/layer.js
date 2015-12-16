@@ -130,7 +130,7 @@ Layer.prototype.render = function(current) {
   var name = this.name;
   var balloon_style = this.balloon_style;
   
-  if (!current.no_info) {
+  if (true) {
     google.maps.event.addListener(marker, 'click', function(){ 
       layer.waiting = name;
 
