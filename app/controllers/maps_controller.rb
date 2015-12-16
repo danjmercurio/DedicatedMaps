@@ -12,6 +12,12 @@ class MapsController < ApplicationController
       return
     end
 
+    # if the public map user is deactivated, go to a 404. deactivated private map user accounts won't get this far as they are not allowed to log in
+    if !@map.user.active
+      error_404
+      return
+    end
+
     # only show private maps to owners and admins/supers
     if (@map.user.privilege.name != 'public') && !(@owner_viewing || @admin_viewing)
       error_404

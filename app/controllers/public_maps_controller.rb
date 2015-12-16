@@ -86,7 +86,7 @@ class PublicMapsController < ApplicationController
     end
     
     @public_map.attributes = params[:user]
-    if @public_map.save_without_validation
+    if @public_map.save(:validate => false)
       flash[:notice] = "Map successfully updated."
       redirect_to public_maps_url
     end

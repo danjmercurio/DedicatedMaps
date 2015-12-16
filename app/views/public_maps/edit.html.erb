@@ -24,7 +24,7 @@
 
 <hr />
      
-<% form_for(@public_map, :url => {:controller => "public_maps", :action => "update"},
+<%= form_for(@public_map, :url => {:controller => "public_maps", :action => "update"},
   :loading => "Element.show('layer_loading')",
   :complete => "Element.hide('layer_loading')"
   ) do |f| -%>
@@ -36,7 +36,6 @@
   <%= render :partial => 'layers' , :locals => {:f => f, :user => @public_map} %>
   <br />
   <%= f.submit 'Update' %>
-  <%= loader('layer_loading', 'Updating...') %>
   <div id="layer_message"></div>
 
   <% end %>
