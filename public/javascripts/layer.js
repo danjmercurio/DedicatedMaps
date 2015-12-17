@@ -99,7 +99,6 @@ Layer.prototype.clear_markers = function () {
      google.maps.event.clearInstanceListeners(current);
    }
   this.mgr.clearMarkers();
-  this.mgr = new MarkerManager(map);
   this.list = [];
 }
 
@@ -295,8 +294,7 @@ Layer.prototype.search_filter = function(arg) {
       
   //   }
   // };
-
-  var my_layer = this;
+  var currentLayer = this
   // ajax_load(
   //   ,
   //   function(data,responseCode){my_layer.callback(data, responseCode);}
@@ -305,10 +303,13 @@ Layer.prototype.search_filter = function(arg) {
   jQuery.ajax({
     url: url,
     success: function(data) {
-      my_layer.clear_markers();
-      my_layer.load(JSON.parse(data));
+      //in this context, this refers to the jQuery ajax request object
+      currentLayer.clear_markers();
+      currentLayer.load(data);
     },
-    error: function() { alert("Error processing search. Please try later."); }
+    error: function() { 
+      alert("Error processing search. Please try later."); 
+    }
   });
 }
 
