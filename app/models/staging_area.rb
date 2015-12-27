@@ -61,16 +61,16 @@ class StagingArea < ActiveRecord::Base
       return e.message
     end
 
-    if params[:map_asset_types] && params[:map_assets]
+    if (params.has_key?(:map_asset_types) && params.has_key?(:map_assets))
       # use delayed job to process the file further
 
       types     = StoredText.create(:text_data =>  types_doc.serialize(     :encoding => 'UTF-8') {|config| config.format.as_xml})
       assets    = StoredText.create(:text_data =>  assets_doc.serialize(    :encoding => 'UTF-8') {|config| config.format.as_xml})
       locations = StoredText.create(:text_data =>  locations_doc.serialize( :encoding => 'UTF-8') {|config| config.format.as_xml})
 
-      #self.delay.prune_and_insert_uploads(params[:company_id], assets, locations, types)
       #StagingArea.delay.send_later(:prune_and_insert_uploads, params[:company_id], assets, locations, types)
-      StagingArea.delay.prune_and_insert_uploads(params[:company_id], assets, locations, types)
+      self.prune_and_insert_uploads(params[:company_id], assets, locations, types)
+      #prune_and_insert_uploads(params[:company_id], assets, locations, types)
     else
       self.delete_former_records(params[:company_id])
       insert_locations(locations_doc, params[:company_id])
