@@ -1,6 +1,7 @@
 class KmlsController < ApplicationController
   before_filter :ensure_super
-  
+  # skip_before_filter :maintain_session_and_user, :only => [:create]
+  # skip_before_filter :subdomain_redirect, :only => [:create]
   def index
     @layer = Layer.find(params[:layer_id])
     redirect_to edit_layer_path(@layer) + '#kmls'
@@ -17,6 +18,10 @@ class KmlsController < ApplicationController
       @kml.url = @kml.kml_file.url.force_encoding("UTF-8")
     end
       
+    if @kml.active == nil
+      @kml.active = 0
+    end
+
     respond_to do |format|
       if @kml.save
         @kml = Kml.new
@@ -24,6 +29,7 @@ class KmlsController < ApplicationController
         flash[:notice] = 'Error saving kml data.'
       end
       format.html {redirect_to edit_layer_path(@layer) + '#kmls'}
+      format.json {render json: @kml}
     end
   end
   

@@ -54,6 +54,7 @@ gem 'prototype_legacy_helper', '0.0.0', :git => 'git://github.com/rails/prototyp
 gem 'nokogiri'
 
 gem 'delayed_job'
+gem 'delayed_job_active_record'
 
 # adds rake tasks for database dumps
 gem 'yaml_db', github: 'yamldb/yaml_db'

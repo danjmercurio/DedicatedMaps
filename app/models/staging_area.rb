@@ -39,20 +39,20 @@ class StagingArea < ActiveRecord::Base
       if params[:map_assets]
         doc           = Nokogiri::XML(params[:map_assets].read) { |config| config.strict.noblanks }
         self.check_existence_of(["Ident", "LocationCode", "AssetTypeCode", "MapAsset"], doc, "Map Assets")
-        xslt          = Nokogiri::XSLT(File.read("#{RAILS_ROOT}/ddscripts/staging_areas/Map_Assets.xsl"))
+        xslt          = Nokogiri::XSLT(File.read("ddscripts/staging_areas/Map_Assets.xsl"))
         assets_doc    = xslt.transform(doc)
       end
 
       if params[:map_asset_types]
         doc           = Nokogiri::XML(params[:map_asset_types].read) { |config| config.strict.noblanks }
         self.check_existence_of(["AssetTypeCode", "AssetTypeName"], doc, "Map Asset Types")
-        xslt          = Nokogiri::XSLT(File.read("#{RAILS_ROOT}/ddscripts/staging_areas/Map_Asset_Types.xsl"))
+        xslt          = Nokogiri::XSLT(File.read("ddscripts/staging_areas/Map_Asset_Types.xsl"))
         types_doc     = xslt.transform(doc)
       end
 
       doc           = Nokogiri::XML(params[:map_locations].read) { |config| config.strict.noblanks }
       self.check_existence_of(["LocationCode", "LocationName", "Latitude", "Longitude"], doc, "Map Locations")
-      xslt          = Nokogiri::XSLT(File.read("#{RAILS_ROOT}/ddscripts/staging_areas/Map_Locations.xsl"))
+      xslt          = Nokogiri::XSLT(File.read("ddscripts/staging_areas/Map_Locations.xsl"))
       locations_doc = xslt.transform(doc)
 
     rescue Nokogiri::XML::SyntaxError => e
@@ -68,8 +68,9 @@ class StagingArea < ActiveRecord::Base
       assets    = StoredText.create(:text_data =>  assets_doc.serialize(    :encoding => 'UTF-8') {|config| config.format.as_xml})
       locations = StoredText.create(:text_data =>  locations_doc.serialize( :encoding => 'UTF-8') {|config| config.format.as_xml})
 
-      StagingArea.send_later(:prune_and_insert_uploads, params[:company_id], assets, locations, types)
-      # prune_and_insert_uploads(params[:company_id], assets, locations, types)
+      #self.delay.prune_and_insert_uploads(params[:company_id], assets, locations, types)
+      #StagingArea.delay.send_later(:prune_and_insert_uploads, params[:company_id], assets, locations, types)
+      StagingArea.delay.prune_and_insert_uploads(params[:company_id], assets, locations, types)
     else
       self.delete_former_records(params[:company_id])
       insert_locations(locations_doc, params[:company_id])

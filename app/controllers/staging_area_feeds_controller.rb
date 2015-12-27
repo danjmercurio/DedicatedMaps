@@ -1,5 +1,6 @@
 class StagingAreaFeedsController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => :create
+  skip_before_filter :subdomain_redirect, :only => [:create]
   before_filter :authenticate
 
   #POST /staging_area_feeds
