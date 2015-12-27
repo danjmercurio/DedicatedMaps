@@ -44,6 +44,7 @@ Info window styles
 	font-size: .9em;
 	color: #333;
 	float:right;
+	margin-right: 10px;
 }
 
 .crosshairs{
