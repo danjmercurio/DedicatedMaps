@@ -124,7 +124,7 @@ var buildInfoTabContainer = function(json, marker) {
                                 var imglink = document.createElement('a');
                                 imglink.setAttribute('href', '#');
                                 var img = document.createElement('img');
-                                img.setAttribute('height', '125px');
+                                img.setAttribute('height', '75px');
                                 img.setAttribute('src', url);
                                 img.setAttribute('target', '_blank');
                                 jQuery(imglink).click(function() {

@@ -37,20 +37,20 @@ class StagingArea < ActiveRecord::Base
     begin   
 
       if params[:map_assets]
-        doc           = Nokogiri::XML(params[:map_assets].read) { |config| config.strict.noblanks }
+        doc           = Nokogiri::XML(File.read(params[:map_assets].path)) { |config| config.strict.noblanks }
         self.check_existence_of(["Ident", "LocationCode", "AssetTypeCode", "MapAsset"], doc, "Map Assets")
         xslt          = Nokogiri::XSLT(File.read("ddscripts/staging_areas/Map_Assets.xsl"))
         assets_doc    = xslt.transform(doc)
       end
 
       if params[:map_asset_types]
-        doc           = Nokogiri::XML(params[:map_asset_types].read) { |config| config.strict.noblanks }
+        doc           = Nokogiri::XML(File.read(params[:map_asset_types].path)) { |config| config.strict.noblanks }
         self.check_existence_of(["AssetTypeCode", "AssetTypeName"], doc, "Map Asset Types")
         xslt          = Nokogiri::XSLT(File.read("ddscripts/staging_areas/Map_Asset_Types.xsl"))
         types_doc     = xslt.transform(doc)
       end
+      doc  = Nokogiri::XML(File.read(params[:map_locations].path)) { |config| config.strict.noblanks }
 
-      doc           = Nokogiri::XML(params[:map_locations].read) { |config| config.strict.noblanks }
       self.check_existence_of(["LocationCode", "LocationName", "Latitude", "Longitude"], doc, "Map Locations")
       xslt          = Nokogiri::XSLT(File.read("ddscripts/staging_areas/Map_Locations.xsl"))
       locations_doc = xslt.transform(doc)
