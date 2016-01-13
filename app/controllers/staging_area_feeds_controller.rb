@@ -56,12 +56,18 @@ class StagingAreaFeedsController < ApplicationController
 
         if result == "ok"
           title = StagingAreaCompany.find(params[:company_id]).title
-          format.html { render :text => "Staging area assets for #{title} posted sucessfully. Data will be available on maps momentarily."}
+          format.html {
+            render :text => "Staging area assets for #{title} posted sucessfully. Data will be available on maps momentarily."
+          }
         else
-          format.html { render :text => "Error: " + result.inspect, :status => 500}
+          format.html {
+            render :text => "Error: " + result.inspect, :status => 500
+          }
         end 
       else
-        format.html { render :text => "Unauthorized to access.", :status => 401 }
+        format.html {
+          render :text => "Unauthorized to access.", :status => 401
+        }
       end
     end
   end
