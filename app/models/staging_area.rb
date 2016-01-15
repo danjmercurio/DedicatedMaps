@@ -35,21 +35,22 @@ class StagingArea < ActiveRecord::Base
     
     # Parse XML and apply transformations
     begin   
-
+      # Note: Nokogiri returns a parse error for XML with non-unicode characters when in strict mode. Strict mode temporarily turned off.
       if params[:map_assets]
-        doc           = Nokogiri::XML(File.read(params[:map_assets].path)) { |config| config.strict.noblanks }
+        doc           = Nokogiri::XML(File.read(params[:map_assets].path)) { |config| config.noblanks }
         self.check_existence_of(["Ident", "LocationCode", "AssetTypeCode", "MapAsset"], doc, "Map Assets")
         xslt          = Nokogiri::XSLT(File.read("ddscripts/staging_areas/Map_Assets.xsl"))
         assets_doc    = xslt.transform(doc)
       end
 
       if params[:map_asset_types]
-        doc           = Nokogiri::XML(File.read(params[:map_asset_types].path)) { |config| config.strict.noblanks }
+        doc           = Nokogiri::XML(File.read(params[:map_asset_types].path)) { |config| config.noblanks }
         self.check_existence_of(["AssetTypeCode", "AssetTypeName"], doc, "Map Asset Types")
         xslt          = Nokogiri::XSLT(File.read("ddscripts/staging_areas/Map_Asset_Types.xsl"))
         types_doc     = xslt.transform(doc)
       end
-      doc  = Nokogiri::XML(File.read(params[:map_locations].path)) { |config| config.strict.noblanks }
+
+      doc  = Nokogiri::XML(File.read(params[:map_locations].path)) { |config| config.noblanks }
 
       self.check_existence_of(["LocationCode", "LocationName", "Latitude", "Longitude"], doc, "Map Locations")
       xslt          = Nokogiri::XSLT(File.read("ddscripts/staging_areas/Map_Locations.xsl"))
@@ -72,8 +73,8 @@ class StagingArea < ActiveRecord::Base
       self.prune_and_insert_uploads(params[:company_id], assets, locations, types)
       #prune_and_insert_uploads(params[:company_id], assets, locations, types)
     else
-      self.delete_former_records(params[:company_id])
-      insert_locations(locations_doc, params[:company_id])
+      self.delay.delete_former_records(params[:company_id])
+      insert_locations(locations_doc.serialize, params[:company_id]) # Stringified version of locations_doc must be passed in because we are using Delayed Job
     end
     "ok"
   end
@@ -127,16 +128,18 @@ class StagingArea < ActiveRecord::Base
     end
   end
 
-  def self.insert_locations (locations, company_id)
+  def self.insert_locations (locations_s, company_id)
+    locations = Nokogiri::XML(locations_s) # Now that the original Nokogiri::XML::Document has been passed in as a string, overwrite it and make it a Nokogiri object again
     location_ids = {}
     locations.css('row').each do |node|
       logger.info node.inspect
       location = {:staging_area_company_id => company_id}
       node.children.each do |child|
         if child.name != "detail"
-          location[child.name.downcase.to_sym] = self.prepare(child.content.to_s) 
+          location[child.name.downcase.to_sym] = self.prepare(child.content.to_s) unless child.name.downcase == "text"
         end
       end
+      logger.info location.inspect
       s = StagingArea.create(location)
       location_ids[node.css('access_id').text.to_i] = s.id
       node.css('detail').each do |detail|

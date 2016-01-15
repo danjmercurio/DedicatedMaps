@@ -1,9 +1,9 @@
 GIT
   remote: git://github.com/ctran/annotate_models.git
-  revision: d878a5b784ee0f703e9ee677bc0231dc24159512
+  revision: 56abbaa3eb5e41a3b236f782c0bb2a49dc3d36f1
   specs:
-    annotate (2.6.10)
-      activerecord (>= 3.2, <= 4.3)
+    annotate (2.7.0)
+      activerecord (>= 3.2, < 6.0)
       rake (~> 10.4)
 
 GIT
@@ -14,18 +14,18 @@ GIT
 
 GIT
   remote: git://github.com/thoughtbot/paperclip.git
-  revision: 850a199da1f827571d3a21b075be45fe7d853e8f
+  revision: 8667baac488ebaa8cf778869bec4ebc75a238fad
   specs:
     paperclip (4.3.1)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       cocaine (~> 0.5.5)
       mime-types
-      mimemagic (= 0.3.0)
+      mimemagic (~> 0.3.0)
 
 GIT
   remote: git://github.com/yamldb/yaml_db.git
-  revision: f980a67dfcfef76824676f3938b176b68c260e68
+  revision: f08c1ce48d823d1700bd76414a14c55d7fce3c81
   specs:
     yaml_db (0.3.0)
       rails (>= 3.0, < 4.3)
@@ -97,14 +97,14 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
-    mimemagic (0.3.0)
+    mimemagic (0.3.1)
     mini_portile2 (2.0.0)
     multi_json (1.11.2)
     mysql2 (0.3.20)
-    nokogiri (1.6.7)
+    nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
     polyglot (0.3.5)
-    power_assert (0.2.6)
+    power_assert (0.2.7)
     prototype-rails (3.2.1)
       rails (~> 3.2)
     rack (1.4.7)
@@ -129,10 +129,10 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
-    rake (10.4.2)
+    rake (10.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
-    sass (3.4.19)
+    sass (3.4.21)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
