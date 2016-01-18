@@ -27,6 +27,9 @@ class StagingArea < ActiveRecord::Base
   has_many :staging_area_assets, :dependent => :destroy
   has_many :staging_area_details, :dependent => :destroy
 
+  include Backburner::Performable
+
+
   def self.parse_uploads(params)
     sa = StagingAreaCompany.find_by_id(params[:company_id])
     sa.update_attribute(:title, params[:company_title]) if params[:company_title] 
@@ -69,17 +72,13 @@ class StagingArea < ActiveRecord::Base
       assets    = StoredText.create(:text_data =>  assets_doc.serialize(    :encoding => 'UTF-8') {|config| config.format.as_xml})
       locations = StoredText.create(:text_data =>  locations_doc.serialize( :encoding => 'UTF-8') {|config| config.format.as_xml})
 
-      #StagingArea.delay.send_later(:prune_and_insert_uploads, params[:company_id], assets, locations, types)
-      #self.prune_and_insert_uploads(params[:company_id], assets, locations, types)
-      #end_later(:prune_and_insert_uploads, params[:company_id], assets, locations, types)
-      self.delay.prune_and_insert_uploads(params[:company_id], assets, locations, types)
-      #prune_and_insert_uploads(params[:company_id], assets, locations, types)
+      prune_and_insert_uploads(params[:company_id], assets, locations, types)
     else
-      # hand off this task to delayed_job
-      self.delay.delete_former_records(params[:company_id])
+      # hand off this task to backburner
+      delete_former_records(params[:company_id])
       
       # hand off this task to delayed_job
-      send_later(:insert_locations, locations_doc.serialize, params[:company_id]) # pass the XML document as a serialized string so it plays nice with delayed_job
+      self.async.insert_locations(locations_doc.serialize, params[:company_id]) # pass the XML document as a serialized string so it plays nice with backburner
     end
     "ok"
   end
@@ -88,13 +87,18 @@ class StagingArea < ActiveRecord::Base
     self.delete_former_records(company_id)
 
     # insert new records managing access_ids to maintain relationships 
-    locations_doc = Nokogiri::XML(locations.text_data) { |cfg| cfg.noblanks }
-    assets_doc    = Nokogiri::XML(assets.text_data) { |cfg| cfg.noblanks }
-    types_doc     = Nokogiri::XML(types.text_data) { |cfg| cfg.noblanks }
+    # locations_doc = Nokogiri::XML(locations.text_data) { |cfg| cfg.noblanks }
+    # assets_doc    = Nokogiri::XML(assets.text_data) { |cfg| cfg.noblanks }
+    # types_doc     = Nokogiri::XML(types.text_data) { |cfg| cfg.noblanks }
+    locations_doc = locations.text_data
+    assets_doc = assets.text_data
+    types_doc = types.text_data
 
     type_ids      = self.insert_types(types_doc, company_id)
     location_ids  = self.insert_locations(locations_doc, company_id)
-    self.insert_assets(assets_doc, company_id, type_ids, location_ids)
+
+    # hand off job to backburner
+    self.async.insert_assets(assets_doc, company_id, type_ids, location_ids)
 
     # remove from stored text
     assets.destroy
@@ -108,6 +112,7 @@ class StagingArea < ActiveRecord::Base
     StagingArea.destroy_all(:staging_area_company_id => company_id)
     StagingAreaAssetType.destroy_all(:staging_area_company_id => company_id)    
   end
+  handle_static_asynchronously :delete_former_records
 
   def self.check_existence_of(required_fields, xml, filename)
     required_fields.each do |field|
@@ -116,6 +121,7 @@ class StagingArea < ActiveRecord::Base
   end
 
   def self.insert_assets(assets, company_id, type_ids, location_ids)
+    assets = Nokogiri::XML(assets) { |cfg| cfg.noblanks }
     assets.css('row').each do |node|
       asset = {}
       node.children.each do |child|
@@ -132,9 +138,10 @@ class StagingArea < ActiveRecord::Base
       end
     end
   end
+  handle_static_asynchronously :insert_assets
 
   def self.insert_locations (locations_raw, company_id)
-    locations = Nokogiri::XML(locations_raw) # reconstruct the nokogiri xml document object from the string passed in
+    locations = Nokogiri::XML(locations_raw) {|config| config.noblanks} # reconstruct the nokogiri xml document object from the string passed in
     location_ids = {}
     locations.css('row').each do |node|
       logger.info node.inspect
@@ -156,6 +163,7 @@ class StagingArea < ActiveRecord::Base
   end
 
   def self.insert_types (types, company_id)
+    types = Nokogiri::XML(types) { |cfg| cfg.noblanks }
     type_ids = {}
     types.css('row').each do |node|
       s = StagingAreaAssetType.create(
@@ -164,6 +172,7 @@ class StagingArea < ActiveRecord::Base
       type_ids[node.css('access_id').text.to_i] = s.id
     end
     type_ids
+
   end
 
   def self.prepare(data)

@@ -12,6 +12,6 @@ require File.expand_path('../config/application', __FILE__)
 #require 'rake'
 #require 'rake/testtask'
 #require 'rdoc/task'
-
+require 'backburner/tasks'
 
 Ddmap::Application.load_tasks

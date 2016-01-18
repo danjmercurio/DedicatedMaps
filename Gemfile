@@ -30,6 +30,8 @@ group :development do
   gem "pry-rails"
 end
 
+gem 'backburner'
+
 # javascript
 # gem 'jquery-rails'
 gem 'prototype-rails'
