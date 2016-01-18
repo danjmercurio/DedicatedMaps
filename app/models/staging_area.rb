@@ -70,12 +70,15 @@ class StagingArea < ActiveRecord::Base
       locations = StoredText.create(:text_data =>  locations_doc.serialize( :encoding => 'UTF-8') {|config| config.format.as_xml})
 
       #StagingArea.delay.send_later(:prune_and_insert_uploads, params[:company_id], assets, locations, types)
-      self.prune_and_insert_uploads(params[:company_id], assets, locations, types)
+      #self.prune_and_insert_uploads(params[:company_id], assets, locations, types)
+      #end_later(:prune_and_insert_uploads, params[:company_id], assets, locations, types)
+      self.delay.prune_and_insert_uploads(params[:company_id], assets, locations, types)
       #prune_and_insert_uploads(params[:company_id], assets, locations, types)
     else
+      # hand off this task to delayed_job
       self.delay.delete_former_records(params[:company_id])
       
-      #insert_locations(locations_doc, params[:company_id]).send_later(:prune_and_insert_uploads
+      # hand off this task to delayed_job
       send_later(:insert_locations, locations_doc.serialize, params[:company_id]) # pass the XML document as a serialized string so it plays nice with delayed_job
     end
     "ok"
