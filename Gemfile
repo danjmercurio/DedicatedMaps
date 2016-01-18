@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 #gem 'rails', '3.2.22'
 
 # Bundle edge Rails instead:
-gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'rails' #, :git => 'git://github.com/rails/rails.git'
 
 #gem 'rails', :github => 'rails/rails', :branch => '3-2-stable'
 
@@ -14,13 +14,13 @@ gem 'mysql2'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails'
+  gem 'coffee-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
 
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier'
 end
 
 group :development do
@@ -30,7 +30,7 @@ end
 
 # javascript
 # gem 'jquery-rails'
-gem 'prototype-rails'
+gem 'prototype-rails', github: 'rails/prototype-rails', branch: '4.2'
 
 # support for legacy (Rails 2) prototype helper methods
 gem 'prototype_legacy_helper', '0.0.0', :git => 'git://github.com/rails/prototype_legacy_helper.git'
@@ -56,8 +56,6 @@ gem 'nokogiri'
 gem 'delayed_job'
 gem 'delayed_job_active_record'
 
-# adds rake tasks for database dumps
-gem 'yaml_db', github: 'yamldb/yaml_db'
 
 # adds annotate command
 gem 'annotate', github: 'ctran/annotate_models'

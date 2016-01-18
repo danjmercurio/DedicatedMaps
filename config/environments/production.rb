@@ -89,6 +89,8 @@ Ddmap::Application.configure do
   #debug remote javascript
   #config.action_view.debug_rjs = true
 
+  config.eager_load = true
+
   #email stuff
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp

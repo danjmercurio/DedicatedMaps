@@ -41,12 +41,12 @@ Ddmap::Application.configure do
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
 
-  # Raise exception on mass assignment protection for Active Record models
-  config.active_record.mass_assignment_sanitizer = :strict
+  # Raise exception on mass assignment protection for Active Record models (DEPRECATED)
+  # config.active_record.mass_assignment_sanitizer = :strict
 
-  # Log the query plan for queries taking more than this (works
+  # Log the query plan for queries taking more than this (works (DEPRECATED)
   # with SQLite, MySQL, and PostgreSQL)
-  config.active_record.auto_explain_threshold_in_seconds = 0.5
+  #config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # Do not compress assets
   config.assets.compress = false
@@ -56,6 +56,9 @@ Ddmap::Application.configure do
 
   #debug remote javascript
   #config.action_view.debug_rjs = true
+
+  #eager loading
+  config.eager_load = false
 
   #mailer
   config.action_mailer.perform_deliveries = true
