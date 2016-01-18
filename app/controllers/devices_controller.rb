@@ -18,7 +18,8 @@ class DevicesController < ApplicationController
   # GET /devices
   def index
     if @loggedin_user.super?
-      @devices = Device.find(:all, :conditions => ['client_id IS NOT NULL'] )
+      # RAILS 3 @devices = Device.find(:all, :conditions => ['client_id IS NOT NULL'] )
+      @devices = Device.where('client_id IS NOT NULL')
     elsif @loggedin_user.admin?
       # Can only list devices with the same client
       @devices = Device.find(:all, :conditions => {:client_id => @loggedin_user.client_id} )

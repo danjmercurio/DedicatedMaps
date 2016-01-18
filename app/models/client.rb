@@ -24,7 +24,7 @@ class Client < ActiveRecord::Base
   
   has_many :users,          :dependent => :destroy
   has_many :users,          :through => :licenses
-  has_many :licenses, :order => "created_at", :dependent => :destroy
+  has_many :licenses, -> {order :created_at}, :dependent => :destroy
   has_many :assets,         :dependent => :destroy
   has_many :shared_assets,  :dependent => :destroy
   # has_many :assets,         :through => :shared_assets
@@ -38,7 +38,7 @@ class Client < ActiveRecord::Base
 
   validates_presence_of :company_name
    
-  validates_format_of :contact_email, :with => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+  validates_format_of :contact_email, :with => /\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\z/i,
                       :message => "must be a valid email address"
   
   def remove_all_layers

@@ -29,17 +29,6 @@
     <%= link_to 'Tracking Devices', devices_path, :class => :section %>
   </li>
   
-  <!-- <% if Asset.find_all_by_client_id(@loggedin_user.client.id).map {|a| a.asset_type.name}.include?("fishing_vessel") %> -->
-    <!-- <li> -->
-      <!-- <%= link_to 'Fishing History', fishing_trips_path, :class => :section %> -->
-    <!-- </li> -->
-  <!-- <% end %> -->
-  
-  <% if Fisherman.find_all_by_client_id(@loggedin_user.client.id).length > 0 %>
-    <li>
-      <%= link_to 'Fishing Crew', fishermen_path, :class => :section %>
-    </li>
-  <% end %>
   
   <li>
     <%#= link_to 'Site Stats', :action => 'stats' %>

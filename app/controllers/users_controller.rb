@@ -55,7 +55,8 @@ class UsersController < ApplicationController
   def index
     pub = Privilege.find_by_name('public')
     if @loggedin_user.super?
-      @users = User.all(:order => "client_id, last_name", :conditions => ['privilege_id <> ?', pub.id])
+      # RAILS 3 @users = User.all(:order => "client_id, last_name", :conditions => ['privilege_id <> ?', pub.id])
+      @users = User.where('privilege_id <> :privilege_id', {privilege_id: pub.id})
     elsif @loggedin_user.admin?
       # Can only list users with the same client
       @users = User.find(:all,
@@ -90,7 +91,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @loggedin_user.admin_for?(@user)
       set_client_privilege
-      @layers = @user.client.layers.all(:order => :sort)
+      @layers = @user.client.layers.all.order('created_at DESC')
     else
       error_404
     end
@@ -172,7 +173,8 @@ class UsersController < ApplicationController
   def set_client_privilege
     if @loggedin_user.super?
       @clients = Client.all
-      @privileges = Privilege.all(:order => "id DESC", :conditions => ['name <> (?)', 'public'])
+      # RAILS 3 @privileges = Privilege.all(:order => "id DESC", :conditions => ['name <> (?)', 'public'])
+      @privileges = Privilege.where('name <> :name', {name: 'public'}).order('id DESC')
     elsif @loggedin_user.admin?
       @privileges = Privilege.find(:all, :conditions => ["name NOT in (?)", ['super','public']])
       #Admins can't set anyone to be a super or public user.

@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @session = Session.new(params[:session])
+    @session = Session.new(user_params)
     if @session.save
       if !@session.user.has_license?
        flash[:notice] = "User license is expired."
@@ -56,6 +56,12 @@ class SessionsController < ApplicationController
       flash[:notice] = "The recovery link given is not valid"
       redirect_to(root_url)
     end
+end
+
+private
+
+def user_params
+  params.require(:session).permit(:username, :password)
 end
   
 end

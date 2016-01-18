@@ -24,7 +24,7 @@ class PublicMapsController < ApplicationController
   # GET /public_maps
   def index
     public_privilege = Privilege.find_by_name('public')
-    @public_maps = User.find_all_by_privilege_id(public_privilege)
+    @public_maps = User.where('privilege_id = :privilege', {privilege: public_privilege.id})
   end
 
   # GET /public_map/new
@@ -37,7 +37,7 @@ class PublicMapsController < ApplicationController
   def edit
     @public_map = User.find(params[:id])
     @clients = Client.all
-    @layers = @public_map.client.layers.all(:order => :sort)
+    @layers = @public_map.client.layers.all.order('created_at DESC')
   end
 
   # POST /public_map

@@ -37,7 +37,7 @@ class MapsController < ApplicationController
     end
     
     # Restrict layers to those enabled by both client and user.
-    @layers = @map.user.client.layers.all(:order => :sort) & @map.user.layers.all
+    @layers = @map.user.client.layers.all.order('created_at DESC') & @map.user.layers.all
 
     @layer_config = Hash.new()
     @layers.each do |y|

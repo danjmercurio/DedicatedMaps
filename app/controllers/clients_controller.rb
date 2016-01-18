@@ -24,8 +24,8 @@ class ClientsController < ApplicationController
   def edit
     @client = Client.find(params[:id])
     @license = License.new
-    @layers = Layer.all(:order => :sort)
-    @clients = Client.all(:conditions => ['id <> ?', @client.id])
+    @layers = Layer.all.order('created_at DESC')
+    @clients = Client.where('id <> :id', {id: @client.id})
   end
 
   # POST /clients
@@ -77,7 +77,7 @@ class ClientsController < ApplicationController
     end
 
    respond_to do |format|
-     if @client.update_attributes(params[:client])
+     if @client.update_attributes(user_params)
         format.html { 
           flash[:notice] = 'Company account successfully updated.'
           redirect_to :action => "edit" 
@@ -89,5 +89,13 @@ class ClientsController < ApplicationController
       end
     end
   end
+
+private
+
+def user_params
+  params.require(:client).permit(:client, :active, :company_name,
+    :address1, :address2, :city, :zip, :company_url, :contact_name,
+    :contact_phone, :contact_email, :contact_notes, :layer_ids)
+end
 
 end

@@ -7,7 +7,8 @@ class AssetsController < ApplicationController
   def index
     if @loggedin_user.super?
       # public ships have a client_id = NULL
-      @assets = Asset.find(:all, :conditions => ['client_id IS NOT NULL'], :order => :client_id)
+      # RAILS 3 @assets = Asset.find(:all, :conditions => ['client_id IS NOT NULL'], :order => :client_id)
+      @assets = Asset.where('client_id IS NOT NULL').order('client_id DESC')
      elsif @loggedin_user.admin?
       # Can only list users with the same client
       @assets = Asset.find(:all, :conditions => {:client_id => @loggedin_user.client_id} )
@@ -38,7 +39,7 @@ class AssetsController < ApplicationController
   def new
     @asset = Asset.new
     @visibilities = Visibility.all
-    @asset_types = AssetType.all(:order => :sort)
+    @asset_types = AssetType.all.order('id DESC')
     if @loggedin_user.super?
       @clients = Client.all
     end
@@ -53,7 +54,7 @@ class AssetsController < ApplicationController
     @asset = Asset.find(params[:id])
     @client = @asset.client
     @custom_field = CustomField.new
-    @icons = Icon.find_all_by_asset_type_id(@asset.asset_type_id)       
+    @icons = Icon.where('asset_type_id', {asset_type_id: @asset.asset_type_id})      
     @visibilities = Visibility.all
     @device = Device.new
     @device_types = DeviceType.all

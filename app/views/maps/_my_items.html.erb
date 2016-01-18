@@ -3,12 +3,15 @@
    
   @asset_type_id = AssetType.find_by_name('other').to_param
  
-  @my_items = Asset.find_all_by_client_id_and_asset_type_id(
-    @map.user.client.id,
-    @asset_type_id,
-    :conditions => ["visibility_id >= ?", @min_visibility.id],
-    :include => [:current_location, {:other => :icon}]
-  )
+  # RAILS 3
+  # @my_items = Asset.find_all_by_client_id_and_asset_type_id(
+  #   @map.user.client.id,
+  #   @asset_type_id,
+  #   :conditions => ["visibility_id >= ?", @min_visibility.id],
+  #   :include => [:current_location, {:other => :icon}]
+  # )
+
+  @my_items = Asset.includes(:current_location, {:other => :icon}).where("client_id = :client_id AND asset_type_id = :asset_type_id AND visibility_id >= :min_visibility_id", {client_id: @map.user.client.id, asset_type_id: @asset_type_id, min_visibility_id: @min_visibility.id})
 
 %>
 

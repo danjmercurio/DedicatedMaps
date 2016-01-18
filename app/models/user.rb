@@ -25,14 +25,13 @@ class User < ActiveRecord::Base
     validates_uniqueness_of :username, :message => "or subdomain is already in use by another person"
     validates_uniqueness_of :email, :message => 'is already in used by another user'
     
-    validates_format_of :username, :with => /^([a-z0-9_]{2,26})$/i,
-                        :message => "must be 4 to 26 letters, numbers, or underscores and have no spaces"
+    validates_format_of :username, :with => /\A([a-z0-9_]{2,26})\z/i, :message => "must be 4 to 26 letters, numbers, or underscores and have no spaces"
   
-    validates_format_of :password, :with => /^([\x20-\x7E]){4,26}$/,
+    validates_format_of :password, :with => /\A([\x20-\x7E]){4,26}\z/,
                         :message => "must be 4 to 26 characters",
                         :unless => :password_is_not_being_updated?
   
-    validates_format_of :email, :with => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+    validates_format_of :email, :with => /\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\z/i,
                         :message => "must be a valid email address"
     
     validates_confirmation_of :password, :on => :create
@@ -57,7 +56,8 @@ class User < ActiveRecord::Base
     end
       
     def has_license?
-      licenses = License.find(:all, :conditions => "client_id = #{self.client.id}")
+      #licenses = License.find(:all, :conditions => "client_id = #{self.client.id}")
+      licenses = License.where("client_id = :client", {client: self.client.id})
       licenses.any? {|license| !license.deactivated && (license.expires > Time.now)}
     end
     
