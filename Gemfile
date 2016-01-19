@@ -33,8 +33,10 @@ group :development do
 end
 
 gem 'backburner'
+
 # javascript
-# gem 'jquery-rails'
+gem 'jquery-rails'
+
 gem 'prototype-rails', github: 'rails/prototype-rails', branch: '4.2'
 
 # support for legacy (Rails 2) prototype helper methods

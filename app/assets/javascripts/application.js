@@ -12,6 +12,7 @@
 //
 
 //= require_tree .
+//= require jquery
 //= require prototype
 //= require prototype_ujs
 //= require effects
