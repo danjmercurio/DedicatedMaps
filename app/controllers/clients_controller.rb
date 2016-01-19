@@ -30,7 +30,7 @@ class ClientsController < ApplicationController
 
   # POST /clients
   def create
-    @client = Client.new(params[:client])
+    @client = Client.new(user_params)
     
     respond_to do |format|
       if @client.save
@@ -93,9 +93,7 @@ class ClientsController < ApplicationController
 private
 
 def user_params
-  params.require(:client).permit(:client, :active, :company_name,
-    :address1, :address2, :city, :zip, :company_url, :contact_name,
-    :contact_phone, :contact_email, :contact_notes, :layer_ids)
+  params.require(:client).permit(:active, :company_name, :address1, :address2, :city, :zip, :company_url, :contact_name, :contact_phone, :contact_email, :contact_notes, layer_ids: [], client_ids: [])
 end
 
 end

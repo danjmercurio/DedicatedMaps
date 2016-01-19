@@ -11,6 +11,8 @@ gem 'rails' #, :git => 'git://github.com/rails/rails.git'
 #gem 'mysql2', '~> 0.3.18' #:git => 'git://github.com/brianmario/mysql2.git'
 gem 'mysql2'
 
+gem 'responders'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -26,8 +28,11 @@ end
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
+  gem "meta_request"
+  gem "pry-rails"
 end
 
+gem 'backburner'
 # javascript
 # gem 'jquery-rails'
 gem 'prototype-rails', github: 'rails/prototype-rails', branch: '4.2'
