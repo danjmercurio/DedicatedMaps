@@ -4,7 +4,7 @@ Ddmap::Application.routes.draw do
   resources :fishing_areas
   resources :staging_areas
   resources :custom_fields
-  #get 'staging_areas_company/:id.:format' => 'staging_areas#index', :as => :staging_areas
+  get 'staging_areas_company/:id.:format' => 'staging_areas#index' # :as => :staging_areas
   get 'marker/:name/:id.:format' => 'markers#show', :as => :markers
   get 'search/:controller/:name/:id.:format' => 'controller#search', :as => :search, :name => :name
   get 'wrrl_company_search/:id.:format' => 'wrrls#company_search', :as => :wrrl_company_search
@@ -50,13 +50,13 @@ Ddmap::Application.routes.draw do
   resources :staging_area_feeds
   resources :clients
   resources :assets
-  resources :public_ships
-  #get 'my_ships.:format' => 'ships#index', :as => :my_ships, :distill => 'my'
-  get 'shared_ships.:format' => 'ships#index', :as => :shared_ships, :distill => 'shared'
-  #get 'public_ships.:format' => 'ships#index', :as => :public_ships, :distill => 'public'
-  #get 'my_ships/:id.:format' => 'assets#show', :as => :my_ships
-  #get 'shared_ships/:id.:format' => 'assets#show', :as => :shared_ships
-  #get 'public_ships/:id.:format' => 'assets#show', :as => :public_ships
+  #resources :public_ships
+  get 'my_ships.:format' => 'ships#index', :distill => 'my' #, :as => :my_ships, 
+  get 'shared_ships.:format' => 'ships#index', :distill => 'shared' #, :as => :shared_ships, 
+  get 'public_ships.:format' => 'ships#index', :distill => 'public' #, :as => :public_ships, 
+  get 'my_ships/:id.:format' => 'assets#show' #, :as => :my_ships
+  get 'shared_ships/:id.:format' => 'assets#show' #, :as => :shared_ships
+  get 'public_ships/:id.:format' => 'assets#show' #, :as => :public_ships
   #get 'my_items.:format' => 'others#index', :as => :my_items, :distill => 'my'
   # get 'shared_items.:format' => 'others#index', :as => :shared_items, :distill => 'shared'
   # get 'public_items.:format' => 'others#index', :as => :public_items, :distill => 'public'

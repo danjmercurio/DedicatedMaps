@@ -42,42 +42,43 @@ class Asset < ActiveRecord::Base
   def constitute
     # Return an object that will be shown in a balloon for this type of asset.
     case self.asset_type.name
-    when "ship"
-      ship_detail = self.ship
-      ship_detail['name'] = self.common_name
-      ship_detail['owner'] = self.client.company_name if self.client != nil
-      ship_detail['icon'] = self.ship.icon
-      ship_detail['age'] = age(self.current_location.timestamp) + ' ago'
-      ship_detail
-    when "fishing_vessel"
-      #Boat info
-      ship_detail = self.fishing_vessel
-      ship_detail['name'] = self.common_name
-      ship_detail['owner'] = self.client.company_name
-      ship_detail['icon'] = self.fishing_vessel.icon
-      # Current trip information
-      trip = self.fishing_vessel.current_trip
-      ship_detail['trip'] = trip
-      ship_detail['crew'] = trip.fishermen.all.map {|m| m.first_name + " " + m.last_name + " - " + m.duties}
-      ship_detail['gear'] = trip.fishing_gear.all.map {|g| g.title}
-      ship_detail['intended'] = trip.intended_catches.all.map {|c| c.fish.title}
-      ship_detail['actual'] = trip.intended_catches.all.map {|c| c.fish.title + ": " + (3000+100*(1+rand(100))).to_s}
-      ship_detail
-    when "other"
-      other_detail = self.other
-      other_detail['lat'] = self.current_location.lat.to_s
-      other_detail['lon'] = self.current_location.lon.to_s
-      other_detail['name'] = self.common_name
-      other_detail['timestamp'] = Time.zone.parse(self.current_location.timestamp.to_s).strftime('%r %b %d, %Y')
-      custom_data = self.custom_fields
-      if !custom_data.empty?
-        details = {}
-        custom_data.each do |detail|
-          details[detail.name] = detail.value
+      when "ship"
+        ship_detail = self.ship
+        binding.pry
+        ship_detail['name'] = self.common_name
+        ship_detail['owner'] = self.client.company_name if self.client != nil
+        ship_detail['icon'] = self.ship.icon
+        ship_detail['age'] = age(self.current_location.timestamp) + ' ago'
+        ship_detail
+      when "fishing_vessel"
+        #Boat info
+        ship_detail = self.fishing_vessel
+        ship_detail['name'] = self.common_name
+        ship_detail['owner'] = self.client.company_name
+        ship_detail['icon'] = self.fishing_vessel.icon
+        # Current trip information
+        trip = self.fishing_vessel.current_trip
+        ship_detail['trip'] = trip
+        ship_detail['crew'] = trip.fishermen.all.map {|m| m.first_name + " " + m.last_name + " - " + m.duties}
+        ship_detail['gear'] = trip.fishing_gear.all.map {|g| g.title}
+        ship_detail['intended'] = trip.intended_catches.all.map {|c| c.fish.title}
+        ship_detail['actual'] = trip.intended_catches.all.map {|c| c.fish.title + ": " + (3000+100*(1+rand(100))).to_s}
+        ship_detail
+      when "other"
+        other_detail = self.other
+        other_detail['lat'] = self.current_location.lat.to_s
+        other_detail['lon'] = self.current_location.lon.to_s
+        other_detail['name'] = self.common_name
+        other_detail['timestamp'] = Time.zone.parse(self.current_location.timestamp.to_s).strftime('%r %b %d, %Y')
+        custom_data = self.custom_fields
+        if !custom_data.empty?
+          details = {}
+          custom_data.each do |detail|
+            details[detail.name] = detail.value
+          end
         end
-      end
-      other_detail['details'] = details
-      other_detail
+        other_detail['details'] = details
+        other_detail
     end
   end 
 

@@ -27,20 +27,28 @@ class ShipsController < ApplicationController
       when 'public'
         # don't show public ships that will show up in the shared layer
         @min_visibility = Visibility.find_by_name("Shared")
-        @shared = Asset.joins("INNER JOIN `shared_assets` ON `assets`.`id` = `shared_assets`.`asset_id`").where(["visibility_id >= ? AND shared_assets.client_id = ?", @min_visibility.id, @loggedin_user.client.id]).
-        find_all_by_asset_type_id(@asset_type_id)
-        
-
-        @shared = "0" if @shared.length() == 0 
-        
+        @shared = Asset.joins("INNER JOIN `shared_assets` ON `assets`.`id` = `shared_assets`.`asset_id`").
+        where("visibility_id >= ? AND asset_type_id = ?", @min_visibility.id, @asset_type_id)
+        # .find_all_by_asset_type_id(@asset_type_id)
+ 
         @min_visibility = Visibility.find_by_name("Public")
+       
+        # Primary Ships
+        if @shared.length == 0
+          @assets = Asset.includes([:current_location, {:ship => :icon}]).
+          where("visibility_id = ? AND asset_type_id = ?", @min_visibility.id, @asset_type_id)
+        else
+          @assets = Asset.includes([:current_location, {:ship => :icon}]).
+          where("visibility_id = ? AND asset_type_id = ? AND id NOT IN (?)", @min_visibility.id, @asset_type_id, @shared.pluck(:id))
+        end
+
         # @assets = Asset.find_all_by_asset_type_id(
         #   @asset_type_id,
         #   :conditions => ["visibility_id = ? AND (client_id <> ? OR client_id IS NULL) AND id NOT IN (?)",
         #     @min_visibility.id, @loggedin_user.client.id, @shared],
         #   :include => [{:current_location => :device}, {:ship => :icon}]
         # )
-        @assets = Asset.includes([:current_location, {:ship => :icon}]).where(["visibility_id = ? AND (client_id <> ? OR client_id IS NULL) AND id NOT IN (?)", @min_visibility.id, @loggedin_user.client.id, @shared]).find_all_by_asset_type_id(@asset_type_id)
+        #find_all_by_asset_type_id(@asset_type_id)
 
 
         # @assets = @assets | Asset.find_all_by_asset_type_id(
@@ -49,7 +57,7 @@ class ShipsController < ApplicationController
         #     @min_visibility.id, @loggedin_user.client.id, @shared_fishing],
         #   :include => [{:current_location => :device}, {:fishing_vessel => :icon}]
         # ) 
-        @assets = @assets | Asset.includes([:current_location, {:ship => :icon}]).where(["visibility_id = ? AND (client_id <> ? OR client_id IS NULL) AND id NOT IN (?)", @min_visibility.id, @loggedin_user.client.id, @shared_fishing]).find_all_by_asset_type_id(@fishing_type_id)
+        #find_all_by_asset_type_id(@fishing_type_id)
 
     end
     
@@ -100,19 +108,27 @@ class ShipsController < ApplicationController
         #   :include => [:current_location, {:fishing_vessel => :icon}]
         # )
 
-        @shared_fishing = Asset.joins("INNER JOIN `shared_assets` ON `assets`.`id` = `shared_assets`.`asset_id`").where(["visibility_id >= ? AND shared_assets.client_id = ?", @min_visibility.id, @loggedin_user.client.id]).find_all_by_client_id_and_asset_type_id(@loggedin_user.client.id, @fishing_type_id)
-
-        @shared_fishing = "0" if @shared_fishing.length() == 0        
+        @shared_fishing = Asset.joins("INNER JOIN `shared_assets` ON `assets`.`id` = `shared_assets`.`asset_id`").
+        where("visibility_id >= ? AND asset_type_id = ?", @min_visibility.id, @fishing_type_id)#find_all_by_client_id_and_asset_type_id(@loggedin_user.client.id, @fishing_type_id)
+     
         @min_visibility = Visibility.find_by_name("Public")
         
-        @fishing_assets = Asset.find_all_by_asset_type_id(
-          @fishing_type_id,
-          :select => "`assets`.`id`",
-          :conditions => ["visibility_id = ? AND (client_id <> ? OR client_id IS NULL) AND id NOT IN (?)",
-            @min_visibility.id, @loggedin_user.client.id, @shared_fishing],
-          :include => [{:current_location => :device}, {:fishing_vessel => :icon}]
-        ) 
+        # @fishing_assets = Asset.find_all_by_asset_type_id(
+        #   @fishing_type_id,
+        #   :select => "`assets`.`id`",
+        #   :conditions => ["visibility_id = ? AND (client_id <> ? OR client_id IS NULL) AND id NOT IN (?)",
+        #     @min_visibility.id, @loggedin_user.client.id, @shared_fishing],
+        #  @ :include => [{:current_location => :device}, {:fishing_vessel => :icon}]
+        # )
 
+        # Fishing Vessels
+        if @shared_fishing.length == 0
+          @fishing_assets = Asset.includes([:current_location, {:ship => :icon}]).
+          where("visibility_id = ? AND asset_type_id = ?", @min_visibility.id, @fishing_type_id)
+        else          
+          @fishing_assets = Asset.includes([:current_location, {:ship => :icon}]).
+          where("visibility_id = ? AND asset_type_id = ? AND id NOT IN (?)", @min_visibility.id, @fishing_type_id, @shared_fishing.pluck(:id))
+        end
     end
 
     @results = @results | @fishing_assets.collect {|s|
