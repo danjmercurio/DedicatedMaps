@@ -67,7 +67,7 @@ var buildInfoTabContainer = function(json, marker) {
         pdf1.setAttribute('href', "http://www.dedicatedmaps.com/pdf/" + element.value);
 
         // Build thumbnail URL from PDF file path
-        var thumb = "http://www.dedicatedmaps.com/pdf/thumb/" + element.value.substr(0, element.value.lastIndexOf('.')) + ".png";
+        var thumb = "http://www.dedicatedmaps.com/pdf/thumbs/" + element.value.substr(0, element.value.lastIndexOf('.')) + ".png";
 
         // Use document's createElement here since our createElement expects a text node
         var pdfThumb1 = document.createElement('img');
@@ -84,7 +84,7 @@ var buildInfoTabContainer = function(json, marker) {
         pdf2.setAttribute('href', "http://www.dedicatedmaps.com/pdf/" + element.value);
 
         // Build thumbnail URL from PDF file path
-        var thumb = "http://www.dedicatedmaps.com/pdf/thumb/" + element.value.substr(0, element.value.lastIndexOf('.')) + ".png";
+        var thumb = "http://www.dedicatedmaps.com/pdf/thumbs/" + element.value.substr(0, element.value.lastIndexOf('.')) + ".png";
 
         // Use document's createElement here since our createElement expects a text node
         var pdfThumb2 = document.createElement('img');
