@@ -65,12 +65,33 @@ var buildInfoTabContainer = function(json, marker) {
         //PDF icons for GRP layer
         var pdf1 = createElement('a', element.value)
         pdf1.setAttribute('href', "http://www.dedicatedmaps.com/pdf/" + element.value);
-        div.appendChild(pdf1); 
+
+        // Build thumbnail URL from PDF file path
+        var thumb = "http://www.dedicatedmaps.com/pdf/thumb/" + element.value.substr(0, element.value.lastIndexOf('.')) + ".png";
+
+        // Use document's createElement here since our createElement expects a text node
+        var pdfThumb1 = document.createElement('img');
+        pdfThumb1.setAttribute('src', thumb);
+        
+        pdf1.appendChild(document.createElement('br'));
+        pdf1.appendChild(pdfThumb1);
+        div.appendChild(pdf1);
+        div.appendChild(document.createElement('br'));
       }
       if (element.name == "pdf_2"){
         //PDF icons for GRP layer
         var pdf2 = createElement('a', element.value)
         pdf2.setAttribute('href', "http://www.dedicatedmaps.com/pdf/" + element.value);
+
+        // Build thumbnail URL from PDF file path
+        var thumb = "http://www.dedicatedmaps.com/pdf/thumb/" + element.value.substr(0, element.value.lastIndexOf('.')) + ".png";
+
+        // Use document's createElement here since our createElement expects a text node
+        var pdfThumb2 = document.createElement('img');
+        pdfThumb2.setAttribute('src', thumb);
+
+        pdf2.appendChild(document.createElement('br'));
+        pdf2.appendChild(pdfThumb2);
         div.appendChild(pdf2); 
       }     
     });
