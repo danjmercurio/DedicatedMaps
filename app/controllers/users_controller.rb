@@ -125,13 +125,13 @@ class UsersController < ApplicationController
         }
         format.js { render :text =>  "Error: Password must be at least 6 characters." }
       else
-	    if @user.update_attributes!(params[:user])
-	        format.html { 
-	          flash[:notice] = 'User account was successfully updated.'
-	          redirect_to :back
-	        }
-	        format.js { render :text =>  "User account successfully updated." }
-	    else
+  	    if @user.update_attributes!(params[:user])
+  	        format.html { 
+  	          flash[:notice] = 'User account was successfully updated.'
+  	          redirect_to :back
+  	        }
+  	        format.js { render :text =>  "User account successfully updated." }
+  	    else
 	        format.html {
 	          flash[:notice] = 'Error: User account was not successfully updated.'
 	          redirect_to :back 

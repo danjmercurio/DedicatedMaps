@@ -1,7 +1,7 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: ddmaps_dev
+  database: ddmaps
   username: root
   password: mapapp
   host: localhost
@@ -19,7 +19,7 @@ production:
 test:
   adapter: mysql2
   encoding: utf8
-  database: ddmaps_dev
+  database: ddmaps
   username: root
   password: mapapp
   host: localhost

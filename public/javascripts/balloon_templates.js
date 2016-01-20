@@ -1,7 +1,7 @@
 function createElement(elemName, text) {
   var element = document.createElement(elemName);
   if (typeof(text) == 'string') {
-    if (text != '') element.appendChild(document.createTextNode(text));
+    if (text !== '') element.appendChild(document.createTextNode(text));
   } else {
     element.appendChild(text);
   }
@@ -57,15 +57,28 @@ var buildInfoTabContainer = function(json, marker) {
       if (element.value.charAt(0) == '#') {
           jQuery(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> <a target='_blank' href='" + element.value.substr(1, element.value.length - 2) + "'>" + element.value.substr(1, element.value.length - 2) + "</a></span>");
 
-      } else {
-          jQuery(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> " + element.value + "</span>");
-        }          
+      } 
+      else { // # This is super sloppy! Refactor!
+          if (element.name !== "pdf_1" && element.name !== "pdf_2") jQuery(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> " + element.value + "</span>");
+      }    
+      if (element.name == "pdf_1"){
+        //PDF icons for GRP layer
+        var pdf1 = createElement('a', element.value)
+        pdf1.setAttribute('href', "http://www.dedicatedmaps.com/pdf/" + element.value);
+        div.appendChild(pdf1); 
+      }
+      if (element.name == "pdf_2"){
+        //PDF icons for GRP layer
+        var pdf2 = createElement('a', element.value)
+        pdf2.setAttribute('href', "http://www.dedicatedmaps.com/pdf/" + element.value);
+        div.appendChild(pdf2); 
+      }     
     });
   }
-  return div;
-  
+  return div;  
 }
- var buildEquipmentContainer = function(json, marker, infoBubble) {
+
+var buildEquipmentContainer = function(json, marker, infoBubble) {
 
               if (json.staging_area_assets && json.staging_area_assets.length > 0) {
                 var div = document.createElement('div');
