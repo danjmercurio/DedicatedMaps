@@ -72,6 +72,7 @@ var buildInfoTabContainer = function(json, marker) {
         // PDF icons for GRP layer
         var pdf1 = createElement('a', element.value)
         pdf1.setAttribute('href', "http://www.dedicatedmaps.com/pdf/" + label + ".pdf");
+        pdf1.setAttribute('target', '_new');
 
         // Build thumbnail URL from PDF file path
         var thumb = "http://www.dedicatedmaps.com/pdf/thumbs/" + label + ".png";
@@ -95,6 +96,7 @@ var buildInfoTabContainer = function(json, marker) {
         //PDF icons for GRP layer
         var pdf2 = createElement('a', element.value)
         pdf2.setAttribute('href', "http://www.dedicatedmaps.com/pdf/" + label + ".pdf");
+        pdf2.setAttribute('target', '_new');
 
         // Build thumbnail URL from PDF file path
         var thumb = "http://www.dedicatedmaps.com/pdf/thumbs/" + label + ".png";
