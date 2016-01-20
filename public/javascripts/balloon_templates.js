@@ -62,16 +62,25 @@ var buildInfoTabContainer = function(json, marker) {
           if (element.name !== "pdf_1" && element.name !== "pdf_2") jQuery(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> " + element.value + "</span>");
       }    
       if (element.name == "pdf_1"){
-        //PDF icons for GRP layer
+
+        // Insert a page break for good looks
+        div.appendChild(document.createElement('br'));
+
+        // Eliminate any issues with case sensitivity
+        var label = element.value.substr(0, element.value.lastIndexOf('.')).toUpperCase();
+
+        // PDF icons for GRP layer
         var pdf1 = createElement('a', element.value)
-        pdf1.setAttribute('href', "http://www.dedicatedmaps.com/pdf/" + element.value);
+        pdf1.setAttribute('href', "http://www.dedicatedmaps.com/pdf/" + label + ".pdf");
 
         // Build thumbnail URL from PDF file path
-        var thumb = "http://www.dedicatedmaps.com/pdf/thumbs/" + element.value.substr(0, element.value.lastIndexOf('.')) + ".png";
+        var thumb = "http://www.dedicatedmaps.com/pdf/thumbs/" + label + ".png";
 
         // Use document's createElement here since our createElement expects a text node
         var pdfThumb1 = document.createElement('img');
         pdfThumb1.setAttribute('src', thumb);
+        pdfThumb1.setAttribute('height', '150px');
+        pdfThumb1.setAttribute('width', '150px');
         
         pdf1.appendChild(document.createElement('br'));
         pdf1.appendChild(pdfThumb1);
@@ -79,16 +88,22 @@ var buildInfoTabContainer = function(json, marker) {
         div.appendChild(document.createElement('br'));
       }
       if (element.name == "pdf_2"){
+        
+        // Eliminate any issues with case sensitivity
+        var label = element.value.substr(0, element.value.lastIndexOf('.')).toUpperCase();
+
         //PDF icons for GRP layer
         var pdf2 = createElement('a', element.value)
-        pdf2.setAttribute('href', "http://www.dedicatedmaps.com/pdf/" + element.value);
+        pdf2.setAttribute('href', "http://www.dedicatedmaps.com/pdf/" + label + ".pdf");
 
         // Build thumbnail URL from PDF file path
-        var thumb = "http://www.dedicatedmaps.com/pdf/thumbs/" + element.value.substr(0, element.value.lastIndexOf('.')) + ".png";
+        var thumb = "http://www.dedicatedmaps.com/pdf/thumbs/" + label + ".png";
 
         // Use document's createElement here since our createElement expects a text node
         var pdfThumb2 = document.createElement('img');
         pdfThumb2.setAttribute('src', thumb);
+        pdfThumb2.setAttribute('height', '150px');
+        pdfThumb2.setAttribute('width', '150px');
 
         pdf2.appendChild(document.createElement('br'));
         pdf2.appendChild(pdfThumb2);
