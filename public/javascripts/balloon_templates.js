@@ -53,6 +53,11 @@ var buildInfoTabContainer = function(json, marker) {
     jQuery(div).append("<span class='label'>Email: <a href='" + linkify(json.email) + "'>" + json.email + "</a></span>");
   }
   if (json.staging_area_details && json.staging_area_details.length > 0) {
+      
+    // The span that will hold GRP pdfs
+    var pdfspan = document.createElement('span'); 
+
+
     jQuery.each(json.staging_area_details, function(index, element) { 
       if (element.value.charAt(0) == '#') {
           jQuery(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> <a target='_blank' href='" + element.value.substr(1, element.value.length - 2) + "'>" + element.value.substr(1, element.value.length - 2) + "</a></span>");
@@ -60,7 +65,8 @@ var buildInfoTabContainer = function(json, marker) {
       } 
       else { // # This is super sloppy! Refactor!
           if (element.name !== "pdf_1" && element.name !== "pdf_2") jQuery(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> " + element.value + "</span>");
-      }    
+      }
+
       if (element.name == "pdf_1"){
 
         // Insert a page break for good looks
@@ -83,10 +89,8 @@ var buildInfoTabContainer = function(json, marker) {
         pdfThumb1.setAttribute('height', '150px');
         pdfThumb1.setAttribute('width', '150px');
         
-        pdf1.appendChild(document.createElement('br'));
         pdf1.appendChild(pdfThumb1);
-        div.appendChild(pdf1);
-        div.appendChild(document.createElement('br'));
+        pdfspan.appendChild(pdf1);
       }
       if (element.name == "pdf_2"){
         
@@ -107,9 +111,12 @@ var buildInfoTabContainer = function(json, marker) {
         pdfThumb2.setAttribute('height', '150px');
         pdfThumb2.setAttribute('width', '150px');
 
-        pdf2.appendChild(document.createElement('br'));
         pdf2.appendChild(pdfThumb2);
-        div.appendChild(pdf2); 
+        pdfspan.appendChild(pdf2);
+
+        // Finally, append the PDF span to the div
+
+        div.appendChild(pdfspan);
       }     
     });
   }

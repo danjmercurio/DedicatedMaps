@@ -141,8 +141,8 @@ Layer.prototype.render = function(current) {
         infoBubble = new InfoBubble({
            maxHeight: 250,
             minHeight: 250,
-            maxWidth:400,
-            minWidth: 400,
+            maxWidth: 500,
+            minWidth: 500,
             marker: marker,
             map: layer.map,
             position: latlng,
