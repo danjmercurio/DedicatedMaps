@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
 
   def create
     @session = Session.new(params[:session])
+    binding.pry
     if @session.save
       if !@session.user.has_license?
        flash[:notice] = "User license is expired."
