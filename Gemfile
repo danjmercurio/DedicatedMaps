@@ -13,6 +13,8 @@ gem 'mysql2'
 
 gem 'responders'
 
+gem 'rails-perftest'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

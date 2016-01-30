@@ -26,6 +26,8 @@ Ddmap::Application.configure do
   #how to report deprecation notices
   config.active_support.deprecation = :stderr
 
+  config.eager_load = false
+
   # Use SQL instead of Active Record's schema dumper when creating the test database.
   # This is necessary if your schema can't be completely dumped by the schema dumper,
   # like if you have constraints or database-specific column types
