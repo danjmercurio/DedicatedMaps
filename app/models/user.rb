@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
     validates_presence_of :password, :salt, :on => :create
   
     validates_uniqueness_of :username, :message => "or subdomain is already in use by another person"
-    validates_uniqueness_of :email, :message => 'is already in used by another user'
+    validates_uniqueness_of :email, :message => 'is already in use by another user'
     
     validates_format_of :username, :with => /\A([a-z0-9_]{2,26})\z/i, :message => "must be 4 to 26 letters, numbers, or underscores and have no spaces"
   
