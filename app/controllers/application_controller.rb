@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
     render :file => "#{Rails.root}/public/404", :status => 404, :layout => 'public', :formats => [:html]
   end
 
-  private
+ # private
 
   def subdomain_redirect
     subdomain = request.subdomains.join('') #we only consider one level of subdomains

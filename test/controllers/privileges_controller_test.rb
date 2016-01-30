@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class PrivilegesControllerTest < ActionController::TestCase
+
+  def setup
+    @controller = Privilege.new
+  end
+
   test "should get index" do
     get :index
     assert_response :success
@@ -37,7 +42,7 @@ class PrivilegesControllerTest < ActionController::TestCase
 
   test "should destroy privilege" do
     assert_difference('Privilege.count', -1) do
-      delete :destroy, :id => privileges(:one).to_param
+      delete :destroy, :id => Privilege.last.id
     end
 
     assert_redirected_to privileges_path

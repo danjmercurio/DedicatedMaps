@@ -36,6 +36,7 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 
- session = Session.create()
+ session = Session.create({:username => "dhollerich", :password => "DDhh2008"})
+ session.save!
 #"utf8"=>"✓", "authenticity_token"=>"RrR5QgQZ5Ff3rbhItPeEzhfdfh1aOnUGx2xC8OtZnmY=",
 end

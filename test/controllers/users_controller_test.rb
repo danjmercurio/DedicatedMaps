@@ -1,13 +1,22 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
+
+  def setup
+     @session = Session.create({:username => "dhollerich", :password => "DDhh2008"})
+
+  end
+
   test "should get index" do
-    get :index
+    @controller.maintain_session_and_user
+    Rails::logger.debug(get :index)
+    Rails::logger.debug(@loggedin_user)
     assert_response :success
     assert_not_nil assigns(:users)
   end
 
   test "should get new" do
+    @controller.maintain_session_and_user
     get :new
     assert_response :success
   end

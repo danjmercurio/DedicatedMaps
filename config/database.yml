@@ -19,7 +19,7 @@ production:
 test:
   adapter: mysql2
   encoding: utf8
-  database: ddmaps
+  database: ddmaps_test
   username: root
   password: mapapp
   host: localhost

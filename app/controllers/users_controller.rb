@@ -80,7 +80,7 @@ class UsersController < ApplicationController
     # The layers allowed for the user defaults to the layers available to the admin
     # creating the user. If the loggedin_user is a super user, the layers
     # will update when the user updates the client menu.
-    @layers = @loggedin_user.client.layers.all(:order => :sort)
+    @layers = @loggedin_user.client.layers.all
     respond_to do |format|
       format.html # new.html.erb
     end

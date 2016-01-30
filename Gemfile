@@ -13,8 +13,6 @@ gem 'mysql2'
 
 gem 'responders'
 
-gem 'rails-perftest'
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -27,11 +25,17 @@ group :assets do
   gem 'uglifier'
 end
 
-group :development do
+group :development, :test do
   gem "better_errors"
   gem "binding_of_caller"
   gem "meta_request"
   gem "pry-rails"
+  gem 'rspec-rails'
+  gem 'rails-perftest'
+  gem 'single_test' # rake tasks for running tests on single controllers
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'database_cleaner'
 end
 
 gem 'backburner'
