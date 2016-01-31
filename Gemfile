@@ -1,16 +1,16 @@
 source 'https://rubygems.org'
 
-#gem 'rails', '3.2.22'
-
-# Bundle edge Rails instead:
+# Rails 4 stable
 gem 'rails' #, :git => 'git://github.com/rails/rails.git'
 
-#gem 'rails', :github => 'rails/rails', :branch => '3-2-stable'
+# Rails 3.2 branch
+# gem 'rails', :github => 'rails/rails', :branch => '3-2-stable'
 
+gem 'mysql2'
 # Important! mysql2 gem version must be 0.3.x && < 0.4 to work with rails 3.2!
 #gem 'mysql2', '~> 0.3.18' #:git => 'git://github.com/brianmario/mysql2.git'
-gem 'mysql2'
 
+# Backwards compatibility with older Prototype functions
 gem 'responders'
 
 # Gems used only for assets and not required
@@ -38,15 +38,25 @@ group :development, :test do
   gem 'database_cleaner'
 end
 
+# Backburner for asychronous job processing (XML POST to /staging_area_feeds)
 gem 'backburner'
 
-# javascript
+# Javascript
 gem 'jquery-rails'
 
 gem 'prototype-rails', github: 'rails/prototype-rails', branch: '4.2'
 
 # support for legacy (Rails 2) prototype helper methods
 gem 'prototype_legacy_helper', '0.0.0', :git => 'git://github.com/rails/prototype_legacy_helper.git'
+
+# Nokogiri for XML parsing
+gem 'nokogiri'
+
+# Legacy rails unit tests (rake test)
+gem 'test-unit'
+
+# Paperclip for KML/XML file uploads
+gem 'paperclip', git: "git://github.com/thoughtbot/paperclip.git"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -61,19 +71,10 @@ gem 'prototype_legacy_helper', '0.0.0', :git => 'git://github.com/rails/prototyp
 # gem 'capistrano'
 
 # To use debugger
-#gem 'ruby-debug19', :require => 'ruby-debug'
-#gem 'debugger'
-
-gem 'nokogiri'
-
-gem 'delayed_job'
-gem 'delayed_job_active_record'
-
+# gem 'debugger'
 
 # adds annotate command
-gem 'annotate', github: 'ctran/annotate_models'
+# gem 'Annotate', github: 'ctran/annotate_models'
 
-gem 'test-unit'
 
-# paperclip for KML/XML file uploads
-gem 'paperclip', git: "git://github.com/thoughtbot/paperclip.git"
+
