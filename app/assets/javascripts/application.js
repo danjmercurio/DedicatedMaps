@@ -14,6 +14,7 @@
 
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require prototype
 //= require prototype_ujs
 //= require effects

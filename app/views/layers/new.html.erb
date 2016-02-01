@@ -11,11 +11,11 @@
     
      <p>
        <%= f.label :category , 'Type' %><br />
-       <%= select_tag :category, options_for_select(Layer.categories, @layer.category.to_s), :name => 'layer[category]' %>
+       <%= select_tag :category, options_for_select(Layer.categories, @layer.category.to_s), {:name => 'layer[category]', :class => "form-control"} %>
      </p>
     
     <p>
-      <%= f.submit 'Create' %>
+      <%= f.submit 'Create', class:"btn" %>
     </p>
   <% end %>
 

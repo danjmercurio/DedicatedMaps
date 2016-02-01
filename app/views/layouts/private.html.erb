@@ -1,12 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  
+<html lang="en">
   <head>
   
     <title>Dedicated Maps Admin</title>
     
+    <%= stylesheet_link_tag "application" %>
     <%= stylesheet_link_tag "reset" %>
     <%= stylesheet_link_tag "private" %>
     <%= stylesheet_link_tag "admin" %>
@@ -21,15 +20,15 @@
     
   <body>
 
-    <div class="header">
-    
-      <div class="logo">
-        <span class='client'><%= @loggedin_user.client.company_name %></span>
-      </div>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand"><span class='client'><%= @loggedin_user.client.company_name %></span></a>
+        </div>
       
-      <%= render :partial=>"layouts/account_bar" %>
-    
-    </div>
+        <%= render :partial=>"layouts/account_bar" %>
+      </div>
+    </nav>
     <div id="maincontainer">
 
       <div id="contentwrapper">

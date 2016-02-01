@@ -13,6 +13,16 @@ GIT
     prototype_legacy_helper (0.0.0)
 
 GIT
+  remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
+  revision: c6893c3db02108bcdee7f8f333531b99806779ac
+  specs:
+    twitter-bootstrap-rails (3.2.2)
+      actionpack (>= 3.1)
+      execjs (>= 2.2.2, >= 2.2)
+      less-rails (>= 2.5.0)
+      railties (>= 3.1)
+
+GIT
   remote: git://github.com/thoughtbot/paperclip.git
   revision: 37589f9b0c869c8df5be1ee4d83e14fb353a7dff
   specs:
@@ -94,6 +104,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
+    commonjs (0.2.7)
     concurrent-ruby (1.0.0)
     dante (0.2.0)
     database_cleaner (1.5.1)
@@ -118,6 +129,13 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    less (2.6.0)
+      commonjs (~> 0.2.7)
+    less-rails (2.7.1)
+      actionpack (>= 4.0)
+      less (~> 2.6.0)
+      sprockets (> 2, < 4)
+      tilt
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -250,6 +268,7 @@ DEPENDENCIES
   sass-rails
   single_test
   test-unit
+  twitter-bootstrap-rails!
   uglifier
 
 BUNDLED WITH

@@ -48,7 +48,8 @@
     <%= form_for @user, {
         :update => "account_message",
         :loading => "Element.hide('account_message');Element.show('account_loading')",
-        :complete => "Element.show('account_message');Element.hide('account_loading')"
+        :complete => "Element.show('account_message');Element.hide('account_loading')",
+        :class => "form"
         } do |f| -%>
 
       <% @user.errors.full_messages.each do |msg| %>
@@ -58,7 +59,7 @@
       <% if @clients %>
         <p>
           <%= f.label :client %><br />
-          <%= f.collection_select :client_id, @clients, :id, :company_name %>
+          <%= f.collection_select :client_id, @clients, :id, :company_name, {}, {class: "form-control"} %>
         </p>
       <% end %>
       
@@ -72,7 +73,9 @@
 
       <%= render :partial => 'form' , :locals => {:f => f}%>
      
-      <%= submit_tag "Submit" %>
+      <%= submit_tag "Submit", class: "btn" %>
+      <br />
+      <br />
 
       <div id="account_message"></div>
     <% end %>
@@ -94,15 +97,15 @@
         
        <p>
          <label for="user_password">New Password:</label><br />
-         <%= f.password_field :password %><br />
+         <%= f.password_field :password, class: "form-control" %><br />
        </p>
        
        <p>
          <label for="user_password_confirmation">Password Confirmation:</label><br />
-         <%= f.password_field :password_confirmation %><br />
+         <%= f.password_field :password_confirmation, class: "form-control" %><br />
        </p>
        
-       <%= submit_tag "Submit" %>
+       <%= submit_tag "Submit", class: "btn" %>
     
      <% end %>  
 
@@ -122,7 +125,8 @@
       <%= render :partial => 'layers' , :locals => {:f => f, :user => @user} %>
       <br />
       <%= f.hidden_field(:id) %>
-      <%= f.submit 'Update' %>
+      <br />
+      <%= f.submit 'Update', class: "btn" %>
       <span id='layer_loading' class='loader' style='display:none;'>Updating...</span>
       
       <div id="layer_message"></div>

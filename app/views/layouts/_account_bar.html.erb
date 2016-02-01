@@ -20,36 +20,35 @@
   <div id="#login">
   <% logout_user if @anonymous_user && !(controller.controller_name == 'maps' && controller.action_name == 'show') %>
 
-  <%= form_for @session, url: {controller: "sessions", action: "create"}, html: {:class => 'accountinfo'} do |f| %>
-
+  <%= form_for @session, url: {controller: "sessions", action: "create"}, html: {:class => "accountinfo form-inline"} do |f| %>
+  <div class="form-group">
     <%= f.text_field :username,
     :value => 'username',
     :onBlur => 'clearText(this);',
     :onFocus => 'clearText(this);',
-    :class => 'accountuser'
+    :class => "accountuser form-control input-sm"
     %>
-
-    <span id='pws'>
-      
+  </div>
+  <div class="form-group">
+    <span id='pws'> 
       <%= f.password_field :password,
       :value => 'password',
       :onBlur =>'clearText(this);',
       :onFocus => 'clearText(this);',
-      :class => 'accountpass'
-      %>
-
-      
+      :class => "accountpass form-control input-sm"
+      %>     
     </span>
-
-    <%= submit_tag "Log In" %>
+  </div>
+  <div class="form-group">
+    <%= submit_tag "Log In", {:class => "btn btn-primary"} %>
     <!-- (<%= link_to_function("I forgot", 
     "$(this).up('div').childElements().invoke('toggle');
     $('username').value = $('session_username').value;"
     ) %>) -->
     <a href="#" id="forgot">I forgot</a>
 
-  <% end %>
   </div>
+    <% end %>
 
   <span id="recover" style="display:none;">
     <%= form_tag({controller: "users", action: "recover"}, :class => "accountinfo", :update => "reset_message", :loading => "Element.show('reset_loading')", :complete => "Element.hide('reset_loading')") do %>
@@ -57,10 +56,10 @@
     <%= text_field_tag :username, 'username', 
     :onBlur => 'clearText(this);',
     :onFocus => 'clearText(this);',
-    :class => 'accountuser'
+    :class => 'accountuser form-control'
     %>
 
-    <%= submit_tag "Reset Password" %>
+    <%= submit_tag "Reset Password", {:class => "btn"} %>
 
     <a href="#" id="cancel">Cancel</a>
     <span id='reset_loading' style='color:red; display:none'>loading...</span>
