@@ -19,6 +19,9 @@ module Ddmap
 
     # config.gem "calendar_date_select"
 
+    # Version of your assets, change this if you want to expire all your assets
+    config.assets.version = '1.0'
+
     # config.gem "bj"
     # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
     # config.gem "sqlite3-ruby", :lib => "sqlite3"

@@ -1,2 +1,22 @@
-Rails.application.config.assets.precompile += %w( prototype.js )
-Rails.application.config.assets.precompile += %w( jquery.js )
+Rails.application.config.assets.precompile += [
+  'icons.js',
+  'window.js',
+  'slider.js',
+  'layer.js',
+  'map.js',
+  'livepipe.js',
+  'resizable.js',
+  'balloon_templates.js',
+  'markermanager.js',
+  'infobubble.js',
+  'prototype.js',
+  'jquery.js',
+  'reset.css',
+  'public.css',
+  'admin.css',
+  'application.css',
+  'info_window.css',
+  'private.css',
+  'scaffold.css',
+  'window.css'
+	]

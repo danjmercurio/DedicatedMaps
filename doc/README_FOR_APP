@@ -27,6 +27,8 @@ Then, add this line to the root crontab
 
 @hourly "sudo service feeds restart"
 
+3. Add any new pdfs to public/pdf, then cd to ddscripts/ (important) and from ddscripts run generate_pdf_images.py
+
 # Tests
 
 Just run rspec

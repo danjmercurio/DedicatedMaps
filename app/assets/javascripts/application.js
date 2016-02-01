@@ -18,3 +18,4 @@
 //= require effects
 //= require dragdrop
 //= require controls
+//= require calendar_date_select
