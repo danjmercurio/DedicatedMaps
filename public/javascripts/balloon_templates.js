@@ -63,6 +63,10 @@ var buildInfoTabContainer = function(json, marker) {
           jQuery(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> <a target='_blank' href='" + element.value.substr(1, element.value.length - 2) + "'>" + element.value.substr(1, element.value.length - 2) + "</a></span>");
 
       } 
+      else { // # This is super sloppy! Refactor!
+          if (element.name !== "pdf_1" && element.name !== "pdf_2") jQuery(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> " + element.value + "</span>");
+      }
+
     });
 
     // Filter images/pdfs out of staging area details
