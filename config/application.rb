@@ -45,6 +45,8 @@ module Ddmap
 
     # scrub passwords from log
     config.filter_parameters += [:password]
+
+    config.allow_all_parameters = true
   end
     Backburner.configure do |config|
         config.beanstalk_url       = ["beanstalk://127.0.0.1"]
@@ -63,5 +65,5 @@ module Ddmap
         config.reserve_timeout     = nil
     end
 
-    config.allow_all_parameters = true
+
 end
