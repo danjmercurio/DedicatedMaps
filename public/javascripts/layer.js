@@ -161,6 +161,7 @@ Layer.prototype.render = function(current) {
           },
           url: "/marker/" + name + "/" + marker.id + ".json",
           error: function(reqObject, textstatus, errorthrown) {
+            $('message').innerHTML = '<span style="color:red;">Connection Error!</span>';
             infoBubble.updateTab('0', 'Error', function(errorthrown) {
               return "ERROR: Resp code..." + errorthrown;
             });
