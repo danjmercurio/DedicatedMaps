@@ -17,8 +17,10 @@
 //= require prototype
 //= require prototype_ujs
 //= require effects
+//= require livepipe
 //= require dragdrop
 //= require controls
+//= require tabs
 //= require calendar_date_select
 
 
