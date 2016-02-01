@@ -67,37 +67,28 @@ var buildInfoTabContainer = function(json, marker) {
           if (element.name !== "pdf_1" && element.name !== "pdf_2") jQuery(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> " + element.value + "</span>");
       }
 
-      if (element.name == "pdf_1"){
+    });
 
-        // Insert a page break for good looks
-        div.appendChild(document.createElement('br'));
+    // Filter images/pdfs out of staging area details
+      var predicate = function(x) {
+        if (x.name.toLowerCase().startsWith("pdf") || 
+            x.name.toLowerCase().startsWith("image") || 
+            x.name.toLowerCase().startsWith("img")) {
+              if (typeof(parseInt(x.name[x.name.length-1])) === "number") {
+                return true;
+          }
+        }
+        return false;
+      };
+    var filtered = json.staging_area_details.filter(predicate);
+      
+      // The span that will hold GRP pdfs
+      var pdfspan = document.createElement('span'); 
 
-        // Eliminate any issues with case sensitivity
+      jQuery.each(filtered, function(index, element) {
         var label = element.value.substr(0, element.value.lastIndexOf('.')).toUpperCase();
 
-        // PDF icons for GRP layer
-        var pdf1 = createElement('a', element.value)
-        pdf1.setAttribute('href', "http://www.dedicatedmaps.com/pdf/" + label + ".pdf");
-        pdf1.setAttribute('target', '_new');
-
-        // Build thumbnail URL from PDF file path
-        var thumb = "http://www.dedicatedmaps.com/pdf/thumbs/" + label + ".png";
-
-        // Use document's createElement here since our createElement expects a text node
-        var pdfThumb1 = document.createElement('img');
-        pdfThumb1.setAttribute('src', thumb);
-        pdfThumb1.setAttribute('height', '150px');
-        pdfThumb1.setAttribute('width', '150px');
-        
-        pdf1.appendChild(pdfThumb1);
-        pdfspan.appendChild(pdf1);
-      }
-      if (element.name == "pdf_2"){
-        
-        // Eliminate any issues with case sensitivity
-        var label = element.value.substr(0, element.value.lastIndexOf('.')).toUpperCase();
-
-        //PDF icons for GRP layer
+        // Create a link and make it open in a new tab
         var pdf2 = createElement('a', element.value)
         pdf2.setAttribute('href', "http://www.dedicatedmaps.com/pdf/" + label + ".pdf");
         pdf2.setAttribute('target', '_new');
@@ -117,8 +108,7 @@ var buildInfoTabContainer = function(json, marker) {
         // Finally, append the PDF span to the div
 
         div.appendChild(pdfspan);
-      }     
-    });
+      });
   }
   return div;  
 }
