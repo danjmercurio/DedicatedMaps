@@ -1,2 +1,32 @@
 Use this README file to introduce your application and point to useful places in the API for learning more.
 Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+
+# Extra steps after normal deployment:
+
+1. Schedule the Backburner worker to start on boot. Add these lines to /etc/rc.local
+
+sh '/home/deploy/dedicatedmaps/start_worker.sh'
+exit 0
+
+2. Schedule the AIS feed to start on boot. Create the file feeds.service in /lib/systemd/system and save this inside. The path to ddscripts/ais/feeds.py must be valid.
+
+[Unit]
+Description=Job that runs the ais feeds daemon
+Documentation=man:foo(1)
+After=nginx.service
+Requires=networking.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python /home/deploy/dedicatedmaps/ddscripts/ais/feeds.py >> /home/deploy/dedicatedmaps/ddscripts/ais/aislog.txt
+
+[Install]
+WantedBy=multi-user.target
+
+Then, add this line to the root crontab
+
+@hourly "sudo service feeds restart"
+
+# Tests
+
+Just run rspec
