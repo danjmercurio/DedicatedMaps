@@ -58,17 +58,6 @@ var buildInfoTabContainer = function(json, marker) {
     var pdfspan = document.createElement('span'); 
 
 
-    jQuery.each(json.staging_area_details, function(index, element) { 
-      if (element.value.charAt(0) == '#') {
-          jQuery(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> <a target='_blank' href='" + element.value.substr(1, element.value.length - 2) + "'>" + element.value.substr(1, element.value.length - 2) + "</a></span>");
-
-      } 
-      else { // # This is super sloppy! Refactor!
-          if (element.name !== "pdf_1" && element.name !== "pdf_2") jQuery(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> " + element.value + "</span>");
-      }
-
-    });
-
     // Filter images/pdfs out of staging area details
       var predicate = function(x) {
         if (x.name.toLowerCase().startsWith("pdf") || 
@@ -81,6 +70,17 @@ var buildInfoTabContainer = function(json, marker) {
         return false;
       };
     var filtered = json.staging_area_details.filter(predicate);
+
+        jQuery.each(json.staging_area_details, function(index, element) { 
+      if (element.value.charAt(0) == '#') {
+          //jQuery(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> <a target='_blank' href='" + element.value.substr(1, element.value.length - 2) + "'>" + element.value.substr(1, element.value.length - 2) + "</a></span>");
+
+      } 
+      else { // # This is super sloppy! Refactor!
+          if (filtered.indexOf(element) == "-1") jQuery(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> " + element.value + "</span>");
+      }
+
+    });
       
       // The span that will hold GRP pdfs
       var pdfspan = document.createElement('span'); 
