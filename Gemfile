@@ -76,5 +76,6 @@ gem 'paperclip', git: "git://github.com/thoughtbot/paperclip.git"
 # adds annotate command
 # gem 'Annotate', github: 'ctran/annotate_models'
 
+gem 'delayed_job'
 
 

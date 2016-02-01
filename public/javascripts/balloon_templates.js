@@ -119,7 +119,7 @@ var buildInfoTabContainer = function(json, marker) {
                             jQuery.each(json, function(index, element){ 
                               if (index == 'image' && element != null && element != "null" && json.staging_area_asset_type.staging_area_company.layer.name) {
                                 jQuery(div).append("<br />");
-                                var url = 'http://174.143.157.90/asset_photos/' + json.staging_area_asset_type.staging_area_company.layer.name.toLowerCase() + '/' + encodeURIComponent(element);
+                                var url = 'http://dedicatedmaps.com/images/asset_photos/' + json.staging_area_asset_type.staging_area_company.layer.name.toLowerCase() + '/' + encodeURIComponent(element);
                                 console.log(url);
                                 var imglink = document.createElement('a');
                                 imglink.setAttribute('href', '#');

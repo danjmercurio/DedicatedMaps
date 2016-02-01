@@ -1,6 +1,6 @@
 // Handle icons for all of the map markers
 function icon_path(name) {
-  return 'http://174.143.157.90/' + name + '.png';
+  return 'http://dedicatedmaps.com/images/' + name + '.png';
 }
 
 // // Cache to reuse icon instances (careful with dynamic icons!)

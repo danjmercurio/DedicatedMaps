@@ -418,7 +418,7 @@ layer.updateEquipmentDetails = function(json) {
   if (info.image) {
     var image = document.createElement('img');
     image.setAttribute('class', 'image-thumb');
-    image.src = "http://174.143.157.90/asset_photos/" +
+    image.src = "http://dedicatedmaps.com/images/asset_photos/" +
       info.staging_area_asset_type.staging_area_company.layer.name.toLowerCase() +
       "/" + encodeURIComponent(info.image);
     div.appendChild(image);
