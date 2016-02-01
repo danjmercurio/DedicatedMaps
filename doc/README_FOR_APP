@@ -29,6 +29,8 @@ Then, add this line to the root crontab
 
 3. Add any new pdfs to public/pdf, then cd to ddscripts/ (important) and from ddscripts run generate_pdf_images.py
 
+4. run RAILS_ENV=production bin/rake assets:precompile (or add a capistrano task to do this)
+
 # Tests
 
 Just run rspec

@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 # Rails 4 stable
 gem 'rails' #, :git => 'git://github.com/rails/rails.git'
 
-
 # Rails 3.2 branch
 # gem 'rails', :github => 'rails/rails', :branch => '3-2-stable'
 
