@@ -1,7 +1,7 @@
 function createElement(elemName, text) {
   var element = document.createElement(elemName);
   if (typeof(text) == 'string') {
-    if (text != '') element.appendChild(document.createTextNode(text));
+    if (text !== '') element.appendChild(document.createTextNode(text));
   } else {
     element.appendChild(text);
   }
@@ -53,19 +53,67 @@ var buildInfoTabContainer = function(json, marker) {
     jQuery(div).append("<span class='label'>Email: <a href='" + linkify(json.email) + "'>" + json.email + "</a></span>");
   }
   if (json.staging_area_details && json.staging_area_details.length > 0) {
-    jQuery.each(json.staging_area_details, function(index, element) { 
-      if (element.value.charAt(0) == '#') {
-          jQuery(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> <a target='_blank' href='" + element.value.substr(1, element.value.length - 2) + "'>" + element.value.substr(1, element.value.length - 2) + "</a></span>");
+      
+    // The span that will hold GRP pdfs
+    var pdfspan = document.createElement('span'); 
 
-      } else {
-          jQuery(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> " + element.value + "</span>");
-        }          
+
+    // Filter images/pdfs out of staging area details
+      var predicate = function(x) {
+        if (x.name.toLowerCase().startsWith("pdf") || 
+            x.name.toLowerCase().startsWith("image") || 
+            x.name.toLowerCase().startsWith("img")) {
+              if (typeof(parseInt(x.name[x.name.length-1])) === "number") {
+                return true;
+          }
+        }
+        return false;
+      };
+    var filtered = json.staging_area_details.filter(predicate);
+
+        jQuery.each(json.staging_area_details, function(index, element) { 
+      if (element.value.charAt(0) == '#') {
+          //jQuery(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> <a target='_blank' href='" + element.value.substr(1, element.value.length - 2) + "'>" + element.value.substr(1, element.value.length - 2) + "</a></span>");
+
+      } 
+      else { // # This is super sloppy! Refactor!
+          if (filtered.indexOf(element) == "-1") jQuery(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> " + element.value + "</span>");
+      }
+
     });
+      
+      // The span that will hold GRP pdfs
+      var pdfspan = document.createElement('span'); 
+
+      jQuery.each(filtered, function(index, element) {
+        var label = element.value.substr(0, element.value.lastIndexOf('.')).toUpperCase();
+
+        // Create a link and make it open in a new tab
+        var pdf2 = createElement('a', element.value)
+        pdf2.setAttribute('href', "http://www.dedicatedmaps.com/pdf/" + label + ".pdf");
+        pdf2.setAttribute('target', '_new');
+
+        // Build thumbnail URL from PDF file path
+        var thumb = "http://www.dedicatedmaps.com/pdf/thumbs/" + label + ".png";
+
+        // Use document's createElement here since our createElement expects a text node
+        var pdfThumb2 = document.createElement('img');
+        pdfThumb2.setAttribute('src', thumb);
+        pdfThumb2.setAttribute('height', '150px');
+        pdfThumb2.setAttribute('width', '150px');
+
+        pdf2.appendChild(pdfThumb2);
+        pdfspan.appendChild(pdf2);
+
+        // Finally, append the PDF span to the div
+
+        div.appendChild(pdfspan);
+      });
   }
-  return div;
-  
+  return div;  
 }
- var buildEquipmentContainer = function(json, marker, infoBubble) {
+
+var buildEquipmentContainer = function(json, marker, infoBubble) {
 
               if (json.staging_area_assets && json.staging_area_assets.length > 0) {
                 var div = document.createElement('div');
@@ -119,7 +167,7 @@ var buildInfoTabContainer = function(json, marker) {
                             jQuery.each(json, function(index, element){ 
                               if (index == 'image' && element != null && element != "null" && json.staging_area_asset_type.staging_area_company.layer.name) {
                                 jQuery(div).append("<br />");
-                                var url = 'http://dedicatedmaps.com/images/asset_photos/' + json.staging_area_asset_type.staging_area_company.layer.name.toLowerCase() + '/' + encodeURIComponent(element);
+                                var url = 'http://174.143.157.90/asset_photos/' + json.staging_area_asset_type.staging_area_company.layer.name.toLowerCase() + '/' + encodeURIComponent(element);
                                 console.log(url);
                                 var imglink = document.createElement('a');
                                 imglink.setAttribute('href', '#');

@@ -306,7 +306,12 @@ function ajax_load(url, callback) {
       callback(data,status);
       ajax_calls_pop();
     }
-    jQuery.get(url, ajax_callback);
+    jQuery.get(url, ajax_callback).done(function() {
+      $('message').innerHTML = 'Done';
+      jQuery('span#message').fadeOut(1000);
+    }).error(function () {
+      $('message').innerHTML = '<span style="color:red;">Connection Error!</span>';
+    });
   }
 }
 

@@ -141,8 +141,8 @@ Layer.prototype.render = function(current) {
         infoBubble = new InfoBubble({
            maxHeight: 250,
             minHeight: 250,
-            maxWidth:400,
-            minWidth: 400,
+            maxWidth: 500,
+            minWidth: 500,
             marker: marker,
             map: layer.map,
             position: latlng,
@@ -154,17 +154,23 @@ Layer.prototype.render = function(current) {
         }
         jQuery.ajax({
           beforeSend: function() {
+            $('message').innerHTML = '<span style="color:red;">loading...</span>';
+            $('message').show();
             infoBubble.addTab('Loading...', loader);
             console.log("AJAX REQUEST: " + "/marker/" + name + "/" + marker.id + ".json");
           },
           url: "/marker/" + name + "/" + marker.id + ".json",
           error: function(reqObject, textstatus, errorthrown) {
+            $('message').innerHTML = '<span style="color:red;">Connection Error!</span>';
             infoBubble.updateTab('0', 'Error', function(errorthrown) {
               return "ERROR: Resp code..." + errorthrown;
             });
           },
           success: function(response, status, reqObject) {
-           
+
+            $('message').innerHTML = 'Done';
+            jQuery('span#message').fadeOut(1000);
+        
             //infoBubble.updateTab('0', 'JSON', reqObject.responseText.replaceAll(",", ",<br />") );
             var json = reqObject.responseJSON;
 
@@ -418,7 +424,7 @@ layer.updateEquipmentDetails = function(json) {
   if (info.image) {
     var image = document.createElement('img');
     image.setAttribute('class', 'image-thumb');
-    image.src = "http://dedicatedmaps.com/images/asset_photos/" +
+    image.src = "http://174.143.157.90/asset_photos/" +
       info.staging_area_asset_type.staging_area_company.layer.name.toLowerCase() +
       "/" + encodeURIComponent(info.image);
     div.appendChild(image);
