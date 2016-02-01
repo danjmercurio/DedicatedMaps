@@ -9,8 +9,9 @@
     <% end %>
     <%= link_to "Help", private_path('help') %> |
     <%= link_to "Sign Out", @application_session, :method => :delete %>
-  </span> 
-  
+
+
+    
 <% else %>
 
   <% flash.each do |key, value| %>
@@ -32,7 +33,8 @@
       
       <%= f.password_field :password,
       :value => 'password',
-      :onFocus => "$('pws').childElements().invoke('toggle'); $('session_password').focus();",
+      :onBlur =>'clearText(this);',
+      :onFocus => 'clearText(this);',
       :class => 'accountpass'
       %>
 

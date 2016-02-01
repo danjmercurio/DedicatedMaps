@@ -11,11 +11,18 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 
-//= require_tree .
+
 //= require jquery
+//= require jquery_ujs
 //= require prototype
 //= require prototype_ujs
 //= require effects
 //= require dragdrop
 //= require controls
 //= require calendar_date_select
+
+
+function clearText(field) {
+  if (field.defaultValue == field.value) field.value = '';
+  else if (field.value == '') field.value = field.defaultValue;
+}

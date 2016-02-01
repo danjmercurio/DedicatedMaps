@@ -7,6 +7,10 @@ class SessionsController < ApplicationController
     redirect_to :back
   end
 
+  def index
+    redirect_to :back
+  end
+
   def create
     @session = Session.new(user_params)
     if @session.save
@@ -36,6 +40,10 @@ class SessionsController < ApplicationController
     #called by public map only
     session[:target] = request.env['HTTP_REFERER']
     create
+  end
+
+  def delete
+    destroy
   end
 
   def destroy

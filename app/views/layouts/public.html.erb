@@ -8,16 +8,16 @@
 
 
 
-  <%= javascript_include_tag "jquery" %>
 
-  <!-- put jQuery in noConflict mode to use it with prototype.js -->
-  <script type='text/javascript'>$.noConflict();</script>
 
-  <%= javascript_include_tag "prototype" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tag %>
+
   <%= javascript_include_tag "slider" %>
   <%= javascript_include_tag "livepipe" %>
   <%= javascript_include_tag "resizable" %>
   <%= javascript_include_tag "window" %>
+
 
   </head>
   <!--//onload="initialize()"-->
