@@ -154,6 +154,8 @@ Layer.prototype.render = function(current) {
         }
         jQuery.ajax({
           beforeSend: function() {
+            $('message').innerHTML = '<span style="color:red;">loading...</span>';
+            $('message').show();
             infoBubble.addTab('Loading...', loader);
             console.log("AJAX REQUEST: " + "/marker/" + name + "/" + marker.id + ".json");
           },
@@ -164,7 +166,10 @@ Layer.prototype.render = function(current) {
             });
           },
           success: function(response, status, reqObject) {
-           
+
+            $('message').innerHTML = 'Done';
+            jQuery('span#message').fadeOut(1000);
+        
             //infoBubble.updateTab('0', 'JSON', reqObject.responseText.replaceAll(",", ",<br />") );
             var json = reqObject.responseJSON;
 
