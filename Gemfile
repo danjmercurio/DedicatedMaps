@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.22'
+gem 'rails', '3.2.22.1'
 
 # Bundle edge Rails instead:
 #gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -8,8 +8,8 @@ gem 'rails', '3.2.22'
 #gem 'rails', :github => 'rails/rails', :branch => '3-2-stable'
 
 # Important! mysql2 gem version must be 0.3.x && < 0.4 to work with rails 3.2!
-gem 'mysql2', '~> 0.3.18' #:git => 'git://github.com/brianmario/mysql2.git'
-# gem 'mysql2'
+gem 'mysql2', '0.3.20' #:git => 'git://github.com/brianmario/mysql2.git'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -32,6 +32,7 @@ end
 gem "pry-rails"
 
 gem 'backburner'
+gem 'god'
 
 # javascript
 # gem 'jquery-rails'

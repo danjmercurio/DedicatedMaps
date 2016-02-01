@@ -46,7 +46,7 @@ module Ddmap
     # scrub passwords from log
     config.filter_parameters += [:password]
   end
-        Backburner.configure do |config|
+    Backburner.configure do |config|
         config.beanstalk_url       = ["beanstalk://127.0.0.1"]
         config.tube_namespace      = "ddmaps.app.production"
         config.namespace_separator = "."
@@ -61,5 +61,5 @@ module Ddmap
         config.primary_queue       = "backburner-jobs"
         config.priority_labels     = { :custom => 50, :useless => 1000 }
         config.reserve_timeout     = nil
-        end
+    end
 end
