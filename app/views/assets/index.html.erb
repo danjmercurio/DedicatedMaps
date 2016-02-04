@@ -2,8 +2,7 @@
 <%= csrf_meta_tags %>
 <legend>Assets</legend>
   
-  <%= link_to 'Add new asset', new_asset_path %><br /><br />
-
+  <p><button class="btn"><%= link_to 'Add new asset', new_asset_path %></button></p>
   <% if @assets.nil? %>
 
     <br />You have no assets configured.

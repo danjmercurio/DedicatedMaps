@@ -2,104 +2,100 @@
 
 <br />
 
-<ul id="client_tabs" class="subsection_tabs">  
-  <li class="tab"><a href="#account_tab">Account</a></li>  
-  <li class="tab"><a href="#license_tab">Licenses</a></li>
-  <li class="tab"><a href="#layer_tab">Layers</a></li>  
-  <li class="tab"><a href="#sharing_tab">Sharing</a></li>  
+<ul data-tabs="tabs" id="clienttabs" class="nav nav-tabs">  
+  <li class="active" role="presentation"><a href="#account_tab" data-toggle="tab">Account</a></li>  
+  <li role="presentation"><a href="#license_tab" data-toggle="tab">Licenses</a></li>
+  <li role="presentation"><a href="#layer_tab" data-toggle="tab">Layers</a></li>  
+  <li role="presentation"><a href="#sharing_tab" data-toggle="tab">Sharing</a></li>  
 </ul>
 
-<div id="account_tab">
+<div class="tab-content">
+  <div class="tab-pane fade in active" id="account_tab">
 
-  <%= form_for(@client) do |f| %>
-     <% @client.errors.full_messages.each do |msg| %>
-        <p><%= msg %></p>
-      <% end %>
+    <%= form_for(@client) do |f| %>
+       <% @client.errors.full_messages.each do |msg| %>
+          <p><%= msg %></p>
+        <% end %>
 
-     <p>
-       <%= f.check_box :active %><label for="client_Account Active.">Account Active?</label>
-     </p>
+       <p>
+         <%= f.check_box :active %><label for="client_Account Active.">Account Active?</label>
+       </p>
 
-     <%= render :partial => 'account',
-               :locals  => {:client => @client, 
-                            :f => f 
-                            }
-     %>
-
-    <p>
-      <%= f.submit 'Update' %>
-    </p>
-  <% end %>
-
-</div>
-
-<div id="license_tab">
-
-  <br />
- 
-  <div id="licenses">
-    <% if @client.licenses.length() > 0 %>
-      <%= render :partial => 'licenses',
+       <%= render :partial => 'account',
                  :locals  => {:client => @client, 
-                              :licenses => @client.licenses
-      } %>
+                              :f => f 
+                              }
+       %>
+
+      <p>
+        <%= f.submit 'Update', class: "btn" %>
+      </p>
     <% end %>
+
   </div>
-  
-  <b>Add a license for this client</b>
-  
-  <p style="color: red"><%= flash[:error] %></p>
 
-  <%= form_for [@client, @license], url:licenses_path do |f| -%>
-      <%= hidden_field_tag('client_id', @client.id) %>
-      Expires: <%= f.date_select :expires %>
-      <%= f.submit 'Add' %>
-  <% end %>  
+  <div class="tab-pane fade" id="license_tab">
+   
+    <div id="licenses">
+      <% if @client.licenses.length() > 0 %>
+        <%= render :partial => 'licenses',
+                   :locals  => {:client => @client, 
+                                :licenses => @client.licenses
+        } %>
+      <% end %>
+    </div>
+    
+    <b>Add a license for this client</b>
+    
+    <p style="color: red"><%= flash[:error] %></p>
 
-</div>
+    <%= form_for [@client, @license], url:licenses_path do |f| -%>
+        <%= hidden_field_tag('client_id', @client.id) %>
+        Expires: <%= f.date_select :expires %>
+        <%= f.submit 'Add' %>
+    <% end %>  
 
-<div id="layer_tab">
+  </div>
 
-  Select layers this client will have access to.<br />
-  
-  <%= form_for @client, {
-        :loading => "Element.show('layer_loading')",
-        :complete => "Element.hide('layer_loading')"
-        } do |f| -%>
-    <% @layers.each do |layer| -%>
-      <% field_id = "layer_#{layer.id}" %>
+  <div class="tab-pane fade" id="layer_tab">
+
+    Select layers this client will have access to.<br />
+    
+    <%= form_for @client, {
+          :loading => "Element.show('layer_loading')",
+          :complete => "Element.hide('layer_loading')"
+          } do |f| -%>
+      <% @layers.each do |layer| -%>
+        <% field_id = "layer_#{layer.id}" %>
+        <br />
+        <%= check_box_tag "client[layer_ids][]", layer.id, @client.layers.include?(layer), {:id => field_id} %>
+        <%= label_tag field_id, h(layer.title) %>
+      <% end %>
       <br />
-      <%= check_box_tag "client[layer_ids][]", layer.id, @client.layers.include?(layer), {:id => field_id} %>
-      <%= label_tag field_id, h(layer.title) %>
+      <%= hidden_field_tag "layer_checkboxes", 1 %>
+      <%= f.submit 'Update', class: "btn" %>
     <% end %>
-    <br />
-    <%= hidden_field_tag "layer_checkboxes", 1 %>
-    <%= f.submit 'Update' %>
-  <% end %>
 
-</div>
+  </div>
 
-<div id="sharing_tab">
+  <div class="tab-pane fade" id="sharing_tab">
 
-	Select the clients this client may share assets with.<br />
+  	Select the clients this client may share assets with.<br />
 
-  <%= form_for @client, {
-        :loading => "Element.show('share_loading')",
-        :complete => "Element.hide('share_loading')"
-        } do |f| -%>
-    <% @clients.each do |client| -%>
-      <% field_id = "client_#{client.id}" %>
+    <%= form_for @client, {
+          :loading => "Element.show('share_loading')",
+          :complete => "Element.hide('share_loading')"
+          } do |f| -%>
+      <% @clients.each do |client| -%>
+        <% field_id = "client_#{client.id}" %>
+        <br />
+        <%= check_box_tag "client[client_ids][]", client.id, @client.clients.include?(client), {:id => field_id} %>
+        <%= label_tag field_id, h(client.company_name) %>
+      <% end %>
       <br />
-      <%= check_box_tag "client[client_ids][]", client.id, @client.clients.include?(client), {:id => field_id} %>
-      <%= label_tag field_id, h(client.company_name) %>
+      <%= hidden_field_tag "sharing_checkboxes", 1 %>
+      <%= f.submit 'Update', class: "btn" %>
     <% end %>
-    <br />
-    <%= hidden_field_tag "sharing_checkboxes", 1 %>
-    <%= f.submit 'Update' %>
-  <% end %>
 
+  </div>
 </div>
-
-<script type="text/javascript">
-  new Control.Tabs('client_tabs');
-</script> 

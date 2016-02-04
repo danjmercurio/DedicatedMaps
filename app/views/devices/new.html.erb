@@ -2,7 +2,7 @@
 
   <legend>New Tracking Device</legend>
   
-<%= collection_select :device, :device_type_id, @device_types, :id, :title, :prompt => "Select Type"%>
+<%= collection_select :device, :device_type_id, @device_types, :id, :title, {:prompt => "Select Type"}, {class: "form-control"} %>
 <%= observe_field('device_device_type_id', :function => "
   $('device_forms').childElements().invoke('hide');
   $('device_' + value).show();

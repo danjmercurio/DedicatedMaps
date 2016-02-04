@@ -2,15 +2,13 @@
 
 <legend>Layers</legend>
 
-<%= link_to 'Add new layer', new_layer_path %>
-<p>
-Title is what is displayed to the user. Name is used in the Rails and javascript code.
+<p><button class="btn"><%= link_to 'Add new layer', new_layer_path %></button></p>
+<blockquote>
+Title is what is displayed to the user. Name is used in the Rails and Javascript code.
 Description is an optional long description of what a layer is/does. It is not currently publically viewable.
-</p>
 
-<p>
 Destroying a layer will remove it from all maps that have it enabled.
-</p>
+</blockquote>
 
 <table class="index">
   <tr>

@@ -18,5 +18,6 @@ Rails.application.config.assets.precompile += [
   'info_window.css',
   'private.css',
   'scaffold.css',
-  'window.css'
+  'window.css',
+  'bootstrap_and_overrides.css'
 	]

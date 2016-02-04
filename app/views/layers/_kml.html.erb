@@ -29,10 +29,10 @@ input#kml_url {
         <td width="240"><%= kml.label %></td>
         <td width="240"><%= kml.url %></td>
         <td>
-          <%= button_to_function "Edit", "$('d#{kml.id}').childElements().invoke('toggle')"%>
+          <%= button_to_function "Edit", "$('d#{kml.id}').childElements().invoke('toggle')", {class: "btn"} %>
           <%= form_for(kml, {:method => :delete}) do |f| %>
             <%= hidden_field_tag('layer_id', @layer.id) %>
-            <%= f.submit 'Delete' %>
+            <%= f.submit 'Delete', {class: "btn"} %>
           <% end %>
         </td>
       </tr>
@@ -45,16 +45,16 @@ input#kml_url {
         <table>
           <tr>
             <td width="80"><%= f.check_box :active, :checked => (kml.active == 1) %></td>
-            <td width="240"><%= f.text_field :label, kml.label, {:class => "form-control"} %></td>
+            <td width="240"><%= f.text_field :label, {value: kml.label, class: "form-control"} %></td>
             <td width="240">
               <% if kml.kml_file.present? %>
-                  <%= f.text_field :url, :value=> kml.kml_file.url.force_encoding("UTF-8") %>
+                  <%= f.text_field :url, {value: kml.kml_file.url.force_encoding("UTF-8"), class: "form-control"} %>
               <% else %>
-                <%= f.text_field :url, kml.url.force_encoding("UTF-8"), {:class => "form-control"} %>
+                <%= f.text_field :url, {value: kml.url.force_encoding("UTF-8"), class: "form-control"} %>
               <% end %>
             </td>
             <td>
-              <%= button_to_function "Cancel", "$('d#{kml.id}').childElements().invoke('toggle')"%>
+              <%= button_to_function "Cancel", "$('d#{kml.id}').childElements().invoke('toggle')", {class: "btn"}%>
               <%= f.submit 'Save', class:"btn" %>
             </td>
           </tr>
@@ -75,14 +75,14 @@ input#kml_url {
         <%= f.check_box :active %>
       </td>
       <td width="80">
-        <%= f.text_field :label %>
+        <%= f.text_field :label, {class: "form-control"} %>
       </td>
       <td id="url_or_file" width="240">
-        <%= f.text_field :url %>
-        <%= f.file_field :kml_file, {:accept => 'application/vnd.google-earth.kmz, application/vnd.google-earth.kml+xml'} %>
+        <%= f.text_field :url, {class: "form-control"} %>
+        <%= f.file_field :kml_file, {accept: 'application/vnd.google-earth.kmz, application/vnd.google-earth.kml+xml', class: "form-control"} %>
       </td>
       <td>
-        <%= f.submit 'Add' %>
+        <%= f.submit 'Add', class: "btn" %>
         
       </td>
     </tr>

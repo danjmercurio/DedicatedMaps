@@ -18,18 +18,23 @@
       <br/>
     <% end %>
     <%= hidden_field_tag "device_checkboxes", 1 %>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Update', class: "btn" %>
   <% end %>
 
 <% end %>
  
 <hr />
 
-<p style="color: red"><%= flash[:error] %></p>
 
+<% if flash[:error] %>
+  <div class="alert alert-danger alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <%= flash[:error] %>
+  </div>
+<% end %>
 Add new device:
 
-  <%= collection_select :device, :device_type_id, @device_types, :id, :title, :prompt => "Select Type"%>
+  <%= collection_select :device, :device_type_id, @device_types, :id, :title, {:prompt => "Select Type"}, {class: "form-control"} %>
   <%= observe_field('device_device_type_id', :function => "
     $('device_forms').childElements().invoke('hide');
     $('device_' + value).show();
@@ -52,7 +57,7 @@ Add new device:
         <%= render :partial => 'devices/' + device_type.name,
                    :locals  => {:f => f}
                    %>
-        <%= f.submit 'Save' %><%= loader('device_saving', 'Saving...') %>
+        <%= f.submit 'Save', class: "btn" %>
       <% end %>
       
     <% end %>

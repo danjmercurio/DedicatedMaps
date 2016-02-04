@@ -4,14 +4,6 @@ layer.add = function(name, id, optsFn) {
   this[name] = new Layer(this.map, name, id, optsFn);
 };
 
-//move these to external file
-String.prototype.capitalizeFirstLetter = function() {
-    return this.charAt(0).toUpperCase() + this.slice(1);
-};
-String.prototype.replaceAll = function(str1, str2, ignore) {
-    return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g,"\\$&"),(ignore?"gi":"g")),(typeof(str2)=="string")?str2.replace(/\$/g,"$$$$"):str2);
-};
-
 /**
 * Superclass for handling "layers", lists of markers of a specific type
 * @class Markers 

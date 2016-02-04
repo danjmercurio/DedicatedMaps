@@ -18,19 +18,23 @@ gem 'responders'
 # source 'https://rails-assets.org' do
 #   gem 'rails-assets-tether', '>= 1.1.0'
 # end
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+#gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git' (no longer used, loaded in with MaxCDN)
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
+gem 'sass-rails'
+gem 'coffee-rails'
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+# gem 'therubyracer'
+gem 'uglifier'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
+# Gems for backward compatibility with rails 3
+gem 'protected_attributes'
+gem 'rails-observers'
+gem 'actionpack-page_caching'
+gem 'actionpack-action_caching'
+gem 'activerecord-deprecated_finders'
 
-  gem 'uglifier'
-end
 
 group :development, :test do
   gem "better_errors"
@@ -48,8 +52,8 @@ end
 # Backburner for asychronous job processing (XML POST to /staging_area_feeds)
 gem 'backburner'
 
-# Javascript
-gem 'jquery-rails'
+# Javascript (no longer used, loaded in with MaxCDN)
+#gem 'jquery-rails'
 
 gem 'prototype-rails', github: 'rails/prototype-rails', branch: '4.2'
 

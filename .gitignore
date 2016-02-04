@@ -10,6 +10,22 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 
-# Ignore all logfiles and tempfiles.
-/log/*.log
-/tmp
+log/*.log
+tmp/**/*
+db/*.sqlite3
+script
+public/dispatch.cgi
+public/dispatch.fcgi
+public/dispatch.rb
+public/Data-Bridge_inc
+public/DownWind
+public/ftp
+public/utils
+public/data_for_rails
+public/.htaccess
+public/maps
+public/testrails
+*.pyc
+*.pyo
+*.so
+*.swp

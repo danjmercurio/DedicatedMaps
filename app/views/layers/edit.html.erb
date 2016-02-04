@@ -1,71 +1,68 @@
 <h1>Edit Layer</h1>
 
-<br />
 
-<ul id="layer_tabs" class="subsection_tabs">  
-  <li class="tab"><a href="#layer_tab">Layer</a></li>
+<ul data-tabs="tabs" class="nav nav-tabs" id="subsectiontabs">  
+  <li class="active" role="presentation"><a href="#layer_tab" data-toggle="tab">Layer</a></li>  
   <% if @staging_area_company %>
-    <li class="tab"><a style="width:180px;"href="#staging_area_company_tab">Staging Area Company</a></li>
+    <li role="presentation"><a href="#staging_area_company_tab" data-toggle="tab">Staging Area Company</a></li>
   <% end %>
   <% if @kml %>
-    <li class="tab"><a href="#kmls">KML</a></li>  
+    <li role="presentation"><a href="#kmls" data-toggle="tab">KML</a></li>
   <% end %>
 </ul>
 
-<div id="layer_tab">
+<div class="tab-content">
+  <div class="tab-pane fade in active" id="layer_tab">
 
-  <%= form_for(@layer) do |f| %>
+    <%= form_for(@layer) do |f| %>
 
-    <%= render :partial => 'form',
-    :locals  => {:layer => @layer, 
-      :f => f 
-    }
-    %>
+      <%= render :partial => 'form',
+      :locals  => {:layer => @layer, 
+        :f => f 
+      }
+      %>
 
-    <p>
-      <%= f.submit 'Update', class: "btn" %>
-    </p>
-  
-  <% end %>
-
-</div>
-
-<% if @staging_area_company %>
-
-  <div id="staging_area_company_tab">
-  
-     <%= form_for(@staging_area_company) do |f| %>
-
-        <%= render :partial => 'staging_area_company',
-        :locals  => {:layer => @layer, 
-                     :f => f
-                     }
-        %>
-
-        <p>
-          <%= f.submit 'Update' %>
-        </p>
-
+      <p>
+        <%= f.submit 'Update', class: "btn" %>
+      </p>
+    
     <% end %>
 
   </div>
-  
-<% end %>
 
-<% if @kml %>
+  <% if @staging_area_company %>
 
-  <div id="kmls">
+    <div class="tab-pane fade" id="staging_area_company_tab">
     
-        <%= render :partial => 'kml',
-        :locals  => {:layer => @layer, 
-                     :kml => @kml
-                     }
-        %>
+       <%= form_for(@staging_area_company) do |f| %>
 
-  </div>
+          <%= render :partial => 'staging_area_company',
+          :locals  => {:layer => @layer, 
+                       :f => f
+                       }
+          %>
+
+          <p>
+            <%= f.submit 'Update', class: "btn" %>
+          </p>
+
+      <% end %>
+
+    </div>
     
-<% end %>
+  <% end %>
 
-<script type="text/javascript">
-  new Control.Tabs('layer_tabs');
-</script>
+  <% if @kml %>
+
+    <div class="tab-pane fade" id="kmls">
+      
+          <%= render :partial => 'kml',
+          :locals  => {:layer => @layer, 
+                       :kml => @kml
+                       }
+          %>
+
+    </div>
+      
+  <% end %>
+</div>

@@ -7,22 +7,22 @@
     <% if @clients #super users only%>
       <p>
         <%= f.label :client %><br />
-        <%= f.collection_select :client_id, @clients, :id, :company_name %>
+        <%= f.collection_select :client_id, @clients, :id, :company_name, {}, {class: "form-control"} %>
       </p>
     <% end %>
     
     <p>
       <%= f.label :asset_name %><br />
-      <%= f.text_field :common_name %>
+      <%= f.text_field :common_name, class: "form-control" %>
     </p>
     
     <p>
       <%= f.label :asset_type %><br />
-      <%= f.collection_select :asset_type_id, @asset_types, :id, :title %>
+      <%= f.collection_select :asset_type_id, @asset_types, :id, :title, {}, {class: "form-control"} %>
     </p>
 
     <p>
-      <%= f.submit 'Create' %>
+      <%= f.submit 'Create', class: "btn" %>
     </p>
     
   <% end %>

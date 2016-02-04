@@ -60,13 +60,13 @@ If you would like to display extra data for this asset, enter it here.
   <table>
     <tr>
       <td width="240">
-        <%= f.text_field :name %>
+        <%= f.text_field :name, class: "form-control" %>
       </td>
       <td width="240">
-        <%= f.text_field :value %>
+        <%= f.text_field :value, class: "form-control" %>
       </td>
       <td>
-        <%= f.submit 'Add' %>
+        <%= f.submit 'Add', class: "btn" %>
       </td>
     </tr>
   </table>

@@ -1,15 +1,15 @@
-<ul>
+<ul class="list-group">
 
 <% if @loggedin_user.super? %>
-  <li>
+  <li class="list-group-item">
     <%= link_to 'Clients', clients_path, :class => :section %>
   </li>
   
-  <li>
+  <li class="list-group-item">
     <%= link_to 'Layers', layers_path, :class => :section %>
   </li>
   
-  <li>
+  <li class="list-group-item">
     <%= link_to 'Public Maps', public_maps_path, :class => :section %>
   </li>
   
@@ -17,23 +17,17 @@
   
 <% if @loggedin_user.super? || @loggedin_user.admin? %>
       
-  <li>
+  <li class="list-group-item">
     <%= link_to 'Users', users_path, :class => :section %>
   </li>
 
-  <li>
+  <li class="list-group-item">
     <%= link_to 'Assets', assets_path, :class => :section %>
   </li>
  
-  <li>
+  <li class="list-group-item">
     <%= link_to 'Tracking Devices', devices_path, :class => :section %>
   </li>
-  
-  
-  <li>
-    <%#= link_to 'Site Stats', :action => 'stats' %>
-  </li>
-
 <% end %>
 
 </ul>

@@ -82,7 +82,7 @@ Ddmap::Application.configure do
   config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # Do not compress assets
-  config.assets.compress = true
+  config.assets.js_compressor = :uglifier
 
   # Choose the compressors to use (if any) config.assets.js_compressor  =
   # :uglifier config.assets.css_compressor = :yui

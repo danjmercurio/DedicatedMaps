@@ -35,7 +35,7 @@
   <hr />
   <%= render :partial => 'layers' , :locals => {:f => f, :user => @public_map} %>
   <br />
-  <%= f.submit 'Update' %>
+  <%= f.submit 'Update', class: "btn" %>
   <div id="layer_message"></div>
 
   <% end %>

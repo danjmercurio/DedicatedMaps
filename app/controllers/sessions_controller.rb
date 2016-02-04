@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
       else
        session[:id] = @session.id
        @session.user.update_attribute(:last_login, Time.now)
-       if session[:target]
+       if false #session[:target]
          redirect_to session[:target]
          session[:target] = nil
        else

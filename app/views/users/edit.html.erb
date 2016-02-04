@@ -1,123 +1,115 @@
 <h1><%= @user.first_name + ' ' +  @user.last_name%></h1>
 
-<br />
+<div>
 
-<ul id="user_tabs" class="subsection_tabs">  
-  <li class="tab"><a href="#account_tab">Account</a></li>  
-  <li class="tab"><a href="#layer_tab">Layers</a></li>  
+<ul data-tabs="tabs" class="nav nav-tabs" id="usertabs">  
+  <li class="active" role="presentation"><a href="#account" data-toggle="tab">Account</a></li>  
+  <li role="presentation"><a href="#layers" data-toggle="tab">Layers</a></li>  
 </ul>
 
-<div id="account_tab">
-  
-  <% if @privileges %>
-    <% # If privileges are enabled, then this is an admin or super user.  %>
+<div class="tab-content">
+  <div class="tab-pane fade in active" id="account">
+    <% if @privileges %>
+      <% # If privileges are enabled, then this is an admin or super user.  %>
 
-    <% if @loggedin_user.id != @user.id %>
-      <% # Users can't deactivate their own accounts. Supers do other supers, admins, and users.  %>
-      <% # Admins do other admins and users.  %>
-
-      <br/>
-    
-      <%= button_to_remote 'Enable/Disable Account', 
-        :url => { :action => 'activate', :id => @user.id },
-        :update => 'disable_message',
-        :loading => "Element.show('active_loading')",
-        :complete => "Element.hide('active_loading')"
-      %>
-
-      <% if @user.active %>
-        <span id="disable_message">This account is currently enabled.</span>
-      <% else %>
-        <span id="disable_message">This account is currently disabled.</span>
-      <% end %>
+      <% if @loggedin_user.id != @user.id %>
+        <% # Users can't deactivate their own accounts. Supers do other supers, admins, and users.  %>
+        <% # Admins do other admins and users.  %>
       
-      <br /><br />
-      
-       <%= button_to "Recover Password", {action: "recover/#{@user.id}"}  %>
+        <%= button_to 'Enable/Disable Account', 
+          :url => { :action => 'activate', :id => @user.id },
+          :update => 'disable_message',
+          :loading => "Element.show('active_loading')",
+          :complete => "Element.hide('active_loading')"
+        %>
 
+        <% if @user.active %>
+          <span id="disable_message">This account is currently enabled.</span>
+        <% else %>
+          <span id="disable_message">This account is currently disabled.</span>
+        <% end %>
         
-       
-       A new password will be emailed to this user.
-       <div id="reset_message"></div>
-      
-      <hr />
+         <%= button_to "Recover Password", {action: "recover/#{@user.id}"}  %>
+         
+         A new password will be emailed to this user.
+         <div id="reset_message"></div>
+        
+        <hr />
+      <% end %>
     <% end %>
-  <% end %>
-  
-  <div <%= "style='float:left;margin-right:10px; border-right:thin solid grey;'" if @loggedin_user.is?(@user) %> >
-    <%= form_for @user, {
-        :update => "account_message",
-        :loading => "Element.hide('account_message');Element.show('account_loading')",
-        :complete => "Element.show('account_message');Element.hide('account_loading')",
-        :class => "form"
-        } do |f| -%>
-
-      <% @user.errors.full_messages.each do |msg| %>
-        <p><%= msg %></p>
-      <% end %>
-        
-      <% if @clients %>
-        <p>
-          <%= f.label :client %><br />
-          <%= f.collection_select :client_id, @clients, :id, :company_name, {}, {class: "form-control"} %>
-        </p>
-      <% end %>
-      
-      <% if @privileges && !@loggedin_user.is?(@user) %>
-        <p>
-          <%= f.label :privilege %><br />
-          <%= f.collection_select :privilege_id, @privileges, :id, :name %>
-        </p>
-
-      <% end %>
-
-      <%= render :partial => 'form' , :locals => {:f => f}%>
-     
-      <%= submit_tag "Submit", class: "btn" %>
-      <br />
-      <br />
-
-      <div id="account_message"></div>
-    <% end %>
-  </div>
-  
-  <div>
-
-    <% # Reset password. Supers/admins can do an email reset for others. All can set their own password %>
-        
-    <% if @loggedin_user.is?(@user) %>
     
-      Change Password
-      
-      <%= form_for @user do |f| %>
-      
-       <% @user.errors.full_messages.each do |msg| %>
-        <p><%= msg %></p>
-      <% end %>
+    <div <%= "style='float:left;margin-right:10px; border-right:thin solid grey;'" if @loggedin_user.is?(@user) %> >
+      <%= form_for @user, {
+          :update => "account_message",
+          :loading => "Element.hide('account_message');Element.show('account_loading')",
+          :complete => "Element.show('account_message');Element.hide('account_loading')",
+          :class => "form"
+          } do |f| -%>
+
+        <% @user.errors.full_messages.each do |msg| %>
+          <p><%= msg %></p>
+        <% end %>
+          
+        <% if @clients %>
+          <p>
+            <%= f.label :client %>
+            <%= f.collection_select :client_id, @clients, :id, :company_name, {}, {class: "form-control"} %>
+          </p>
+        <% end %>
         
-       <p>
-         <label for="user_password">New Password:</label><br />
-         <%= f.password_field :password, class: "form-control" %><br />
-       </p>
+        <% if @privileges && !@loggedin_user.is?(@user) %>
+          <p>
+            <%= f.label :privilege %>
+            <%= f.collection_select :privilege_id, @privileges, :id, :name, {}, {class: "form-control"} %>
+          </p>
+
+        <% end %>
+
+        <%= render :partial => 'form' , :locals => {:f => f}%>
        
-       <p>
-         <label for="user_password_confirmation">Password Confirmation:</label><br />
-         <%= f.password_field :password_confirmation, class: "form-control" %><br />
-       </p>
-       
-       <%= submit_tag "Submit", class: "btn" %>
+        <%= submit_tag "Submit", class: "btn" %>
+
+        <div id="account_message"></div>
+      <% end %>
     
-     <% end %>  
+  
+    <div>
 
-    <% end %>
+      <% # Reset password. Supers/admins can do an email reset for others. All can set their own password %>
+          
+      <% if @loggedin_user.is?(@user) %>
+      
+        Change Password
+        
+        <%= form_for @user do |f| %>
+        
+         <% @user.errors.full_messages.each do |msg| %>
+          <p><%= msg %></p>
+        <% end %>
+          
+         <p>
+           <label for="user_password">New Password:</label><br />
+           <%= f.password_field :password, class: "form-control" %><br />
+         </p>
+         
+         <p>
+           <label for="user_password_confirmation">Password Confirmation:</label><br />
+           <%= f.password_field :password_confirmation, class: "form-control" %><br />
+         </p>
+         
+         <%= submit_tag "Submit", class: "btn" %>
+      
+       <% end %>  
 
+      <% end %>
+
+    </div>
   </div>
 
 </div>
-
-<div id="layer_tab">
+  <div class="tab-pane fade" id="layers">
    
-  <%= form_for @user, {
+    <%= form_for @user, {
     :loading => "Element.show('layer_loading')",
     :complete => "Element.hide('layer_loading')"
     } do |f| -%>
@@ -131,14 +123,13 @@
       
       <div id="layer_message"></div>
 
-  <% end %>
+    <% end %>
 
+  </div>
+  
 </div>
 
-
 <script type="text/javascript">
-  //tabs js
-  new Control.Tabs('user_tabs');
   //switch user in view when select element changes
   jQuery('select#user_client_id').change(function() {
     var opt = jQuery(this).val();

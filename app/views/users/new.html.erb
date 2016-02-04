@@ -9,10 +9,11 @@
 	<% if @clients %>
 		<p>
 			<%= f.label :client %><br />
-			<%= f.collection_select :client_id, @clients, :id, :company_name %>
-      Note: If the layers you select below are not enabled for this client, they'll
+			<%= f.collection_select :client_id, @clients, :id, :company_name, {}, {class: "form-control"} %>
+      <blockquote>Note: If the layers you select below are not enabled for this client, they'll
       be ignored for this user. To ensure the user's layers are correct, edit the user's
       settings after you've created the user here. (This situation only affects super users creating users for another client.)
+      </blockquote>
     </p>
   
 	<% end %>
@@ -20,7 +21,7 @@
 	<% if @privileges %>
 		<p>
 			<%= f.label :privilege %><br />
-			<%= f.collection_select :privilege_id, @privileges, :id, :name %>
+			<%= f.collection_select :privilege_id, @privileges, :id, :name, {}, {class: "form-control"} %>
 		</p>
 	<% end %>
 
@@ -31,7 +32,7 @@
   </div>
   
   <p>
-    <%= f.submit 'Create' %>
+    <%= f.submit 'Create', class: "btn" %>
   </p>
 
 <% end %>

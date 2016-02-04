@@ -1,14 +1,14 @@
 <p>
   <%= f.label :client %><br />
-  <%= f.collection_select :client_id, @clients, :id, :company_name %>
+  <%= f.collection_select :client_id, @clients, :id, :company_name, {}, {:class=> 'form-control'} %>
 </p>
 
 <p>
   <%= f.label :username, 'Subdomain'%> (e.g. http://subdomain.dedicatedmaps.com)<br />
-  <%= f.text_field :username %> 
+  <%= f.text_field :username, class: "form-control" %> 
 </p>
 
 <p>
-  <%= f.label :Timezone%><br />
-  <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones %>
+  <%= f.label :timezone%><br />
+  <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones, {default: "UTC"}, {:class => 'form-control'} %>
 </p>
