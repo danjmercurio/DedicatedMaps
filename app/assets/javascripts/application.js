@@ -10,8 +10,9 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+//= require jquery_ujs
 
-
+// Add some useful string methods to the string prototype
 String.prototype.capitalizeFirstLetter = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
 };
@@ -20,7 +21,18 @@ String.prototype.replaceAll = function(str1, str2, ignore) {
 };
 
 
+// JS Stuff for the login form (Public#index)
 function clearText(field) {
   if (field.defaultValue == field.value) field.value = '';
   else if (field.value == '') field.value = field.defaultValue;
 }
+jQuery(document).ready(function() {
+  jQuery('#forgot').click(function (){
+    jQuery('form#new_session').hide();
+    jQuery('#recover').show();
+  });
+  jQuery('#cancel').click(function() {
+    jQuery('#recover').hide();
+    jQuery('form#new_session').show();
+  });
+});

@@ -62,11 +62,6 @@ a:hover
   font-style: normal;
   color: black;
 }
-.accountinfo a, .accountinfo
-{
-  font-size: 0.9em;
-}
-
 .signout
 {
 	float: left;
@@ -631,22 +626,6 @@ footerleft.a
     margin: 0;
 }
 
-body
-{
-	color: #666666;
-	font-family: calibri, helvetica, tahoma, trebuchet ms, geneva, arial sans-serif;
-    font-size: 100.01%; /* This value makes all modern browsers display the same size text. */
-	text-align: center; /* This centers the wrapper in IE5.5 */
-}
-
-a
-{
-	color: #494646;
-	text-decoration: none;
-	font-family: calibri,helvetica, tahoma, trebuchet ms, geneva, arial sans-serif;
-    font-size: 1.2em;
-}
-
 a:hover
 {
 	color: #494646;
@@ -681,23 +660,11 @@ a:hover
     text-align: right;
 }
 
-.accountuser, .accountpass
-{
-    font-style: italic;
-    color: grey;
-    display: inline;
-	width: 108px;
-}
 .accountuser:focus, .accountpass:focus
 {
     font-style: normal;
     color: black;
 }
-.accountinfo a, .accountinfo
-{
-    font-size: 0.9em;
-}
-
 .signout
 {
 	float: left;

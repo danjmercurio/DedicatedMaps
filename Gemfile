@@ -53,7 +53,7 @@ end
 gem 'backburner'
 
 # Javascript (no longer used, loaded in with MaxCDN)
-#gem 'jquery-rails'
+gem 'jquery-rails'
 
 gem 'prototype-rails', github: 'rails/prototype-rails', branch: '4.2'
 

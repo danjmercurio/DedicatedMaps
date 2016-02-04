@@ -17,30 +17,30 @@ class ApplicationController < ActionController::Base
   def ensure_login
     unless @loggedin_user
       session[:target] = params
-      flash[:notice] = "Please login to continue"
-      redirect_to('/public/index')
+      flash[:notice] = "Please login to continue."
+      redirect_to('/')
     end
   end
 
   def ensure_logout
     if @loggedin_user
       flash[:notice] = "You must logout before you can login or register"
-      redirect_to('/public/index')
+      redirect_to('/')
     end
   end
 
   def ensure_super
     unless @loggedin_user && @loggedin_user.super?
       session[:target] = params
-      flash[:notice] = "Please login to continue"
-      redirect_to('/public/index')
+      flash[:notice] = "Please login to continue."
+      redirect_to('/')
     end
   end
   
   def logout_user
-    # Session.destroy(@application_session)
-    Session.destroy(params[:id]) if params[:id]
-    session[:id] = @loggedin_user = @anonymous_user = nil
+    Session.destroy(@application_session)
+    #Session.destroy(params[:id]) if params[:id]
+    session[:id] = @loggedin_user = @anonymous_user = @application_session = nil
   end
   helper_method :logout_user
 
@@ -71,7 +71,7 @@ class ApplicationController < ActionController::Base
 
   def maintain_session_and_user
     if session[:id]
-      if @application_session = Session.find_by_id(session[:id])
+      if @application_session = Session.find_by_id(session[:id]) #Session.find_by_id returns nil if nothing found, Session.find raises exception
         @application_session.update_attributes(:ip_address => request.remote_addr, :path => request.path_info)
         @loggedin_user = @application_session.user
         Time.zone = @loggedin_user.time_zone
@@ -81,7 +81,7 @@ class ApplicationController < ActionController::Base
         end
       else
         session[:id] = nil
-        redirect_to('/public/index')
+        redirect_to('/')
       end
     else
       @session = Session.new

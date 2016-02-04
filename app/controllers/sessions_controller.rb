@@ -49,7 +49,7 @@ class SessionsController < ApplicationController
   def destroy
     logout_user
     # flash[:notice] = "You are now logged out"
-    redirect_to :back
+    redirect_to '/'
   end
   
   def recovery
@@ -62,7 +62,7 @@ class SessionsController < ApplicationController
       redirect_to(edit_user_path(@user))
     rescue ActiveRecord::RecordNotFound
       flash[:notice] = "The recovery link given is not valid"
-      redirect_to(root_url)
+      redirect_to '/'
     end
 end
 

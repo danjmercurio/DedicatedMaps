@@ -41,6 +41,9 @@ Ddmap::Application.configure do
   #debug remote javascript
   #config.action_view.debug_rjs = true
 
+  # Raise an exception on all callbacks
+  config.active_record.raise_in_transactional_callbacks = true
+
   #eager loading
   config.eager_load = false
 
