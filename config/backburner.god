@@ -4,9 +4,8 @@ God.watch do |w|
   w.env = { 'PADRINO_ENV' => 'production', 'QUEUES' => 'backburner-jobs' }
   w.group    = 'backburner-workers'
   w.interval = 30.seconds
-  w.start = "rake backburner:work"
-  w.log = '/home/deploy/dedicatedmaps/log/backburner.log'
-  
+  w.start = "backburner -l /home/deploy/dedicatedmaps/log/backburner.log"
+    
   # determine the state on startup
   w.transition(:init, { true => :up, false => :start }) do |on|
     on.condition(:process_running) do |c|
