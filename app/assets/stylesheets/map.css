@@ -4,3 +4,14 @@ div#map_div {
 	width:100%;
 	float:right;
 }
+#footer{clear:both;	width:100%;	background:white; color:black; text-align:right; padding:4px 0;}
+.layer{background:#fff; border:thin solid grey; border-bottom-style:hidden;}
+.layer_checkbox{float:left;}
+.layer_checkbox img{height:10px; width:auto;}
+.layer_expand{margin:3px 0 0 178px; height:24px;}
+.sublayer{padding:4px 0 4px 6px;}
+
+.client{margin-right:100px; font-size:1.1em; font-weight:bold;}
+.header{text-align:right;margin:10px 10px;}
+.logo{float:left;}
+.accountinfo{display:inline;}
