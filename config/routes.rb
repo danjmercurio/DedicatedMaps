@@ -64,7 +64,6 @@ Ddmap::Application.routes.draw do
   # get 'shared_items/:id.:format' => 'assets#show', :as => :shared_items
   # get 'public_items/:id.:format' => 'assets#show', :as => :public_items
   resources :maps
-
  
   get '/:controller(/:action(/:id))'
 

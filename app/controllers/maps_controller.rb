@@ -1,7 +1,7 @@
 class MapsController < ApplicationController
   # skip_before_filter :subdomain_redirect
   before_filter :handle_public_map, :only => [:show, :update]
-  before_filter :ensure_login, :only => [:show, :update]
+  before_filter :ensure_login, :only => [:show, :update, :currentlayers]
 
 
   # GET /maps/1
@@ -51,6 +51,7 @@ class MapsController < ApplicationController
       format.html
     end
   end
+
 
   # PUT /maps/1
   def update

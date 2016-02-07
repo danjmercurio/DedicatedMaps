@@ -29,20 +29,19 @@
             </div>   
         <% if @layers.empty? %>      
           No layers are enabled for this account.
-        <% else %>      
-                    
-          <% @layers.each do |layer| %>
-            
-            <% id = layer.id %>
-            
-            
-            <div class="layer" id="layer<%=id%>">
-              
+        <% else %>                         
+          <% @layers.each do |layer| %>            
+            <% id = layer.id %>            
+            <div class="layer" id="layer<%=id%>">              
               <div class="layer_checkbox">
-                
-                <%= check_box_tag layer.name, 1, false,
-                  :onclick => "(this.checked) ? layer.#{layer.name}.on() : layer.#{layer.name}.off()" %>
-                <%= label_tag layer.name, layer.title %>
+                <%= check_box_tag layer.name, 1, false %>
+                <script type="text/javascript">
+                $("#<%= layer.name %>").click(function() {
+                  var layerName = "";
+                  this.checked ? ddmaps.layers.<%= layer.name %>.on() : ddmaps.layers.<%= layer.name %>.off()
+                });
+                </script>
+                 <%= label_tag layer.name, layer.title %>
                 
                 <% if layer.icon %>
                   <%= "<img id='#{layer.name}_icon'/>".html_safe %>

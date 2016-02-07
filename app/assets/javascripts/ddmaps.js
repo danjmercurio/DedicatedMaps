@@ -12,7 +12,20 @@ var ddmaps = (function() {
 
 	app.getVersion = function() {
 		console.log(this.version); 
-	};
+	}
+
+	// Route Ajax calls through this function to pair them with the UI notification
+	app.ajax_load = function(ajaxRequestObject) {
+		$('#message').html('<span style="color:red;">loading...</span>');
+        $('#message').show();
+        console.log("app.ajax_load(" + ajaxRequestObject.url + ")");
+		return $.ajax(ajaxRequestObject).fail(function(reqObject, textstatus, errorthrown) {
+            $('message').html('<span style="color:red;">Connection Error!</span>');
+       	}).done(function() {
+            $('#message').text('Done');
+            $('#message').fadeOut(1000);  
+       	});
+	}
 
 	// Set options on the map and display it after page load
 	app.initializeMap = function() {
@@ -65,6 +78,7 @@ var ddmaps = (function() {
           save_map_timer = setTimeout(save_map, 2000);
       }
 
+    // A helper for loading in icons
 	app.icons = {
 		image_directory: "http://dedicatedmaps.com/images/",
 		getIconPath: function(name) {
@@ -75,10 +89,165 @@ var ddmaps = (function() {
 		}
 	}
 
+	// A spinning loading indicator for the DOM
+	app.loader = function() {
+	    var div = document.createElement(div);
+	    div.id = "loading";
+	    div.setAttribute("style","margin-top:10px; text-align: center;");
+	    var spinner = document.createElement('img');
+	    spinner.setAttribute("src","/images/ajax-loader.gif");
+	    div.appendChild(spinner);
+	    return(div);
+	}
+
+	// Our main layer prototype
+	app.Layer = function (map, name, id, type) {
+	  this.id = id;
+	  this.name = name;
+	  this.loaded = false;
+	  this.list = {};
+	  this.map = map;
+	  this.type = type;
+	  app.layers += this;
+	  return this;
+	}
+
+	app.Layer.prototype.on = function() {
+  		if (!this.loaded) {
+	    	var name = this.name;
+	    	app.ajax_load("/" + name + ".json", function(data){layer.name.load(data);});
+  		}
+  		this.show();
+	};
+	app.Layer.prototype.off = function() {
+  		this.hide();
+	};
+
+	app.Layer.prototype.load = function (data) {
+	  //var data = eval('(' + dataStr + ')');
+	  for (var i = 0; i < data.length; i++) {
+	    var current = data[i];
+	    var marker = this.render(current);
+	    //this.list[current[this.id]] = marker;
+	  	this.list.push(marker);
+	  }
+	  this.loaded = true;
+	  this.load_callback();
+	  this.load_callback = function() {};
+};
+	// Called by the refresh button if the layer is checked.
+	app.Layer.prototype.reload = function() {
+  		if (this.loaded) {
+		    this.clear_markers();
+		    this.loaded = false;
+		    this.on();
+  		}
+	};
+
+	app.Layer.prototype.refresh = function() {};
+	app.Layer.prototype.load_callback = function() {};
+
+	app.Layer.prototype.render = function(current) {
+		var latlng = new google.maps.LatLng(current.lat, current.lon);
+		var marker = new google.maps.Marker({
+		position: latlng,
+		title: title,
+		icon: current.icon
+	  });
+		marker.id = current[this.id];
+  
+		var name = this.name;
+  
+    }
+
+    app.Layer.prototype.addBubble = function(marker) {
+    	google.maps.event.addListener(marker, 'click', function(){
+			// Marker has been clicked
+			if (infoBubble && infoBubble.isOpen()) {
+				infoBubble.close();
+			}
+	      	
+	        // Initialize the infoBubble for each marker
+	        infoBubble = new InfoBubble({
+	           maxHeight: 250,
+	            minHeight: 250,
+	            maxWidth: 500,
+	            minWidth: 500,
+	            marker: marker,
+	            map: layer.map,
+	            position: latlng,
+	            disableAutoPan: false
+	          });
+
+	        // Open the bubble
+	        if (infoBubble && !infoBubble.isOpen()) {
+	          infoBubble.open();
+	        }
+
+	        // Set up an Ajax request object
+	        var ajax = {
+				beforeSend: function() {
+					infoBubble.addTab('Loading...', app.loader);
+				},
+				url: "/marker/" + name + "/" + marker.id + ".json",
+				error: function() {
+					infoBubble.updateTab('0', 'Error', function(errorthrown) {
+						return "ERROR: Resp code..." + errorthrown;
+					});
+				},
+				success: function(response, status, reqObject) {
+		          	//infoBubble.updateTab('0', 'JSON', reqObject.responseText.replaceAll(",", ",<br />") );
+		            var json = reqObject.responseJSON;
+
+		            //if the bubble is for public_ships
+		            if (name == 'public_ships') {
+		              infoBubble.updateTab('0', 'Info', layer.shipInfo(json, 'public_ships'));
+		            } else {
+		            
+		            //build the info tab
+		            infoBubble.updateTab('0', 'Info', buildInfoTabContainer(json, marker)); 
+
+		            //build equipment tab           
+		            //if there is equipment in the json, tell us about it
+		            if (json.staging_area_assets && json.staging_area_assets.length > 0) {
+		              infoBubble.addTab('Equip', buildEquipmentContainer(json, marker, infoBubble));
+			            }
+		        	} 
+		        }
+		  	}
+
+	  		// The actual call
+	        ajax_load(ajax);
+
+
+		    // Close the bubble if user clicks outside the bubble
+		    google.maps.event.addListener(app.map, 'click', function() {
+		    	if (infoBubble && infoBubble.isOpen()) {
+		        	infoBubble.close();
+		      		}
+		    	});
+
+			marker.hidden = false;
+	  		marker.refresh = this.refresh;
+	  		if (this.properties) {
+			    for (var i = 0; i < this.properties.length; i++) {
+			      var prop = this.properties[i];
+			      marker[prop] = current[prop];
+	    			}
+	  			}
+	  		}); 
+		return marker
+}
+		
+	
+ 
+
+
 	app.layers = {
 		pinpoint: {
+			name: "pinpoint",
 			on: function() {
-				app.layers.pinpoint.listener = google.maps.event.addDomListener(app.map, "click", function(e) {
+				app.layers.pinpoint.listener = google.maps.event.addListener(app.map, "click", function(e) {
 					$('#pinpoint_data').text(e.latLng.lat() + "," + e.latLng.lng());
 					// Handle browser <IE8 here
 				});	
@@ -89,7 +258,8 @@ var ddmaps = (function() {
 			copyToClipboard: function() {
   				window.prompt("Copy to clipboard: Ctrl+C, Enter", $('#pinpoint_data').val());
 			}
-		}
+		},
+		grp: new app.Layer(app.map, "newlayer", 5, "grp")
 	}
 
 	app.initializeMap();
