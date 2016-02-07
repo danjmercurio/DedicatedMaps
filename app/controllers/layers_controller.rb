@@ -51,7 +51,9 @@ class LayersController < ApplicationController
   # POST /layer
   def create
     @layer = Layer.new(params[:layer])
-    if !@layer.save
+    if @layer.save
+      #
+    else
       render :action => "new"
       return
     end

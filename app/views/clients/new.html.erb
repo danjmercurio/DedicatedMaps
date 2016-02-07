@@ -2,7 +2,7 @@
 
   <legend>New Client</legend>
 
-  <% form_for(@client) do |f| %>
+  <%= form_for(@client) do |f| %>
 
     <% @client.errors.full_messages.each do |msg| %>
         <p><%= msg %></p>
@@ -13,11 +13,8 @@
                             :f => f 
                             }
      %>
-   
-    <p>
-      <%= f.submit 'Create', class: "btn" %>
-    </p>
-  
+
+
   <% end %>
 
 </fieldset>

@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
 
   def ensure_logout
     if @loggedin_user
-      flash[:notice] = "You must logout before you can login or register"
+      flash[:notice] = "You must logout before you can login or register."
       redirect_to('/')
     end
   end
@@ -71,7 +71,7 @@ class ApplicationController < ActionController::Base
 
   def maintain_session_and_user
     if session[:id]
-      if @application_session = Session.find_by_id(session[:id]) #Session.find_by_id returns nil if nothing found, Session.find raises exception
+      if (@application_session = Session.find_by_id(session[:id])) #Session.find_by_id returns nil if nothing found, Session.find raises exception
         @application_session.update_attributes(:ip_address => request.remote_addr, :path => request.path_info)
         @loggedin_user = @application_session.user
         Time.zone = @loggedin_user.time_zone

@@ -69,6 +69,8 @@ Ddmap::Application.routes.draw do
   get '/:controller(/:action(/:id))'
 
 
+  post '/license/activate' => 'licenses#activate'
+
   #match '/' => 'maps#show'
   get '/' => 'public#index'
   get ':page' => 'public#show', :as => :public, :page => /about|contact|products|services|contact|success|ie8/

@@ -26,10 +26,6 @@
                               :f => f 
                               }
        %>
-
-      <p>
-        <%= f.submit 'Update', class: "btn" %>
-      </p>
     <% end %>
 
   </div>
@@ -37,7 +33,7 @@
   <div class="tab-pane fade" id="license_tab">
    
     <div id="licenses">
-      <% if @client.licenses.length() > 0 %>
+      <% if @client.licenses.length > 0 %>
         <%= render :partial => 'licenses',
                    :locals  => {:client => @client, 
                                 :licenses => @client.licenses
@@ -51,8 +47,8 @@
 
     <%= form_for [@client, @license], url:licenses_path do |f| -%>
         <%= hidden_field_tag('client_id', @client.id) %>
-        Expires: <%= f.date_select :expires %>
-        <%= f.submit 'Add' %>
+        Expires: <%= f.date_select :expires, {}, {} %>
+        <%= f.submit 'Add', class: "btn" %>
     <% end %>  
 
   </div>
@@ -60,11 +56,8 @@
   <div class="tab-pane fade" id="layer_tab">
 
     Select layers this client will have access to.<br />
-    
-    <%= form_for @client, {
-          :loading => "Element.show('layer_loading')",
-          :complete => "Element.hide('layer_loading')"
-          } do |f| -%>
+
+    <%= form_for @client, {} do |f| -%>
       <% @layers.each do |layer| -%>
         <% field_id = "layer_#{layer.id}" %>
         <br />
@@ -82,10 +75,7 @@
 
   	Select the clients this client may share assets with.<br />
 
-    <%= form_for @client, {
-          :loading => "Element.show('share_loading')",
-          :complete => "Element.hide('share_loading')"
-          } do |f| -%>
+    <%= form_for @client, {} do |f| -%>
       <% @clients.each do |client| -%>
         <% field_id = "client_#{client.id}" %>
         <br />

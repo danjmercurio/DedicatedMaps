@@ -11,7 +11,7 @@ class AssetsController < ApplicationController
       @assets = Asset.where('client_id IS NOT NULL').order('client_id DESC')
      elsif @loggedin_user.admin?
       # Can only list users with the same client
-      @assets = Asset.find(:all, :conditions => {:client_id => @loggedin_user.client_id} )
+       @assets = Asset.where(:client_id => @loggedin_user.client_id)
     else 
       # standard users can't view assets list
       error_404
@@ -54,16 +54,19 @@ class AssetsController < ApplicationController
     @asset = Asset.find(params[:id])
     @client = @asset.client
     @custom_field = CustomField.new
-    @icons = Icon.where('asset_type_id', {asset_type_id: @asset.asset_type_id})      
+    @icons = Icon.where(:asset_type_id => @asset.asset_type_id)
     @visibilities = Visibility.all
     @device = Device.new
     @device_types = DeviceType.all
     if @asset.asset_type.name == 'fishing_vessel'
       @fishing_trip = FishingTrip.new
-      @fishing_trips = FishingTrip.find_all_by_fishing_vessel_id(
-        @asset.fishing_vessel.id, :order=>"created_at DESC",
-        :include => [:fishermen, :fish, :real_fish, :fishing_gear]
-      )
+      # @fishing_trips = FishingTrip.find_all_by_fishing_vessel_id(
+      #   @asset.fishing_vessel.id, :order=>"created_at DESC",
+      #   :include => [:fishermen, :fish, :real_fish, :fishing_gear]
+      # )
+      @fishing_trips = FishingTrip.includes([:fishermen, :fish, :real_fish, :fishing_gear]).
+          where(:fishing_vessel_id => @asset.fishing_vessel.id).
+          order('created_at DESC')
       @fishing_gear = FishingGear.all
       @fish = Fish.all
       @fishermen = @asset.client.fishermen.all(:order => :last_name)
@@ -73,9 +76,8 @@ class AssetsController < ApplicationController
   # POST /assets
   def create
     @asset = Asset.new(params[:asset])
-    if !@asset.client_id
-      @asset.client_id = @loggedin_user.client_id
-    end
+
+    @asset.client_id ||= @loggedin_user.client_id
     
     respond_to do |format|
       if @asset.save
@@ -89,6 +91,8 @@ class AssetsController < ApplicationController
             @fishing_vessel = FishingVessel.create(:asset_id => @asset.id)
           when 'other'
             @other = Other.create(:asset_id => @asset.id)
+          else
+
         end
         
         flash[:notice] = 'Asset was successfully created.'

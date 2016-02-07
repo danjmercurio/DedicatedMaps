@@ -50,13 +50,14 @@ class PublicMapsController < ApplicationController
     @public_map.email = "#{pword}@dedicatedmaps.com"
     @public_map.eula = true
     @public_map.privilege = Privilege.find_by_name('public')
-    # @public_map.save_without_validation
-    if @public_map.save
+    begin
+      @public_map.save!
       @map = Map.new(:user_id => @public_map.id)
       @map.save!
       flash[:notice] = "Map successfully created."
       redirect_to(:action => 'edit', :id => @public_map.id)
-    else
+    rescue Exception => e
+      flash[:error] = e.message
       @clients = Client.all
       render :action => "new"
     end

@@ -7,7 +7,7 @@ class LicensesController < ApplicationController
   # POST /licenses.xml
   def create
   @client = Client.find(params[:client_id])
-  @license = @client.licenses.build(user_params)
+  @license = @client.licenses.build(params[:license])
   @license.user_id = @loggedin_user.id
   
       if @license.save
@@ -43,13 +43,14 @@ class LicensesController < ApplicationController
      
     respond_to do |format|
       format.js { render :text =>  message }
+      format.html { redirect_to :back }
     end
   end 
 
 private
 
 def user_params
-  params.require(:license).permit(:expires(1i), :expires(2i), :expires(3i))
+  #params.require(:license).permit(:expires(1i), :expires(2i), :expires(3i))
 end
 
 end

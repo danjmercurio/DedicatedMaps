@@ -15,4 +15,16 @@
 class License < ActiveRecord::Base
   belongs_to :client
   belongs_to :user
+
+  attr_accessible :deactivated
+  attr_accessible :expires
+  attr_accessible :client_id
+
+  def deactivated?
+    self.deactivated
+  end
+
+  def activated?
+    !self.deactivated?
+  end
 end

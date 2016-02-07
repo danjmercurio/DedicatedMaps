@@ -22,7 +22,7 @@ class DevicesController < ApplicationController
       @devices = Device.where('client_id IS NOT NULL')
     elsif @loggedin_user.admin?
       # Can only list devices with the same client
-      @devices = Device.find(:all, :conditions => {:client_id => @loggedin_user.client_id} )
+      @devices = Device.where(:client_id, @loggedin_user.client_id)
     else
       # standard users can't view devices list
       error_404

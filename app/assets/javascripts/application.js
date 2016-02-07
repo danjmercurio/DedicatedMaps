@@ -10,6 +10,7 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+// Don't include regular jQuery as we are loading it in the view from MaxCDN. Just include jquery_ujs library after.
 //= require jquery_ujs
 
 // Add some useful string methods to the string prototype
