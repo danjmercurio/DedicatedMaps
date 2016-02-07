@@ -1,25 +1,7 @@
 <script type="text/javascript">
 
   var layer_config = <%= @layer_config.to_json.to_s.html_safe %>;
-  
-  google.maps.event.addDomListener(window, "load", function() {
 
-    initialize(<%= @map.to_json(:only=>[:lat,:lon,:zoom,:map_type]).to_s.html_safe %>);
-  
-    save_map = function() {
-      <%= remote_function(
-        :update => "message",
-        :complete => "$('message').show()",
-        :url => map_url(:id => @map),
-        :method => :put,
-        :with => "
-          'map[zoom]=' + map.getZoom() +
-          '&map[lat]=' + map.getCenter().lat() +
-          '&map[lon]=' + map.getCenter().lng() +
-          '&map[map_type]=' + map.getMapTypeId()
-        "
-      )%>
-    };
         
     <% if @owner_viewing %>
       // Save the map zoom, center, and map_type 2 seconds after the user has stopped moving it.
@@ -28,40 +10,25 @@
           if (typeof(save_map_timer) == 'number') clearTimeout(save_map_timer);
           save_map_timer = setTimeout(save_map, 2000);
       }
-      google.maps.event.addDomListener(layer.map, "dragend", cue_save_map);
-      google.maps.event.addDomListener(layer.map, "maptypeid_changed", cue_save_map);
+      google.maps.event.addDomListener(ddmaps.map, "dragend", ddmaps.cue_save_map);
+      google.maps.event.addDomListener(ddmaps.map, "maptypeid_changed", ddmaps.cue_save_map);
       var save_delay = 0;
     <% end %>
-    });
+
     
 </script>
 
-<div id="maincontainer">
-
-  <div id="contentwrapper" style="height:1px;">
-    <div id="contentcolumn">
-      <div class="innertube">
-        <div id="map_div" style="width: 100%; height: 800px"></div>
-      </div>
-    </div>
-  </div>
-
-  <div id="leftcolumn">
-
-    <div class="innertube">
-
-      <div id="layer_panel">
-
-        <div id="refresh">
-          <span id="message">&nbsp;</span>
-          <%= check_box_tag("auto-refresh", '', false, :title => 'Auto Refresh (60 sec)', :onclick => "auto_refresh(this.checked)" ) %>
-          <%= link_to_function("<img src='/images/view-refresh.png' title='Refresh' border='0'/>".html_safe,"refresh()") %>
-        </div>
-        
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+          <div id="layer_panel">
+            <div id="refresh">
+              <span id="message">&nbsp;</span>
+              <%= check_box_tag("auto-refresh", '', false, :title => 'Auto Refresh (60 sec)', :onclick => "auto_refresh(this.checked)" ) %>
+              <%= link_to_function("<img src='/images/view-refresh.png' title='Refresh' border='0'/>".html_safe,"refresh()") %>
+            </div>   
         <% if @layers.empty? %>      
-          
           No layers are enabled for this account.
-            
         <% else %>      
                     
           <% @layers.each do |layer| %>
@@ -108,11 +75,8 @@
           <%#= render :partial=>"incident" %>
 
         <% end %>
-
       </div>
-
-    </div>
-
-  </div>
- 
-</div>
+        </div>
+        <div class="col-md-10"><div id="map_div"></div></div>
+      </div>
+    </div><!-- /.container-fluid -->

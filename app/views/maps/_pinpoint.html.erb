@@ -6,23 +6,7 @@ Lng
 <%= text_area_tag 'pinpoint_data', nil, :id => "pinpoint_data", :style => "width:160px; height:30px;	border: 1px solid #cccccc; font-size:0.9em;" %>
 
 <br class="brclear" />
-<a onClick="copyToClipboard()">Copy to clipboard</a>
+<a onClick="ddmaps.layers.pinpoint.copyToClipboard()">Copy to clipboard</a>
 <script type="text/javascript">
-function copyToClipboard(text) {
-  window.prompt("Copy to clipboard: Ctrl+C, Enter", jQuery('#pinpoint_data').val());
-}
-</script>
 
-<%= javascript_tag :defer => 'defer' do -%>
-    layer.pinpoint = {};
-    layer.pinpoint.on = function() {
-      layer.pinpoint.listener = google.maps.event.addDomListener(layer.map, "click", function(e) {
-          $('pinpoint_data').value = e.latLng.lat() + "," + e.latLng.lng();
-          if (Prototype.Browser.IE) window.clipboardData.setData('Text', point.A + "," + point.F);
-        }
-      );
-    }
-    layer.pinpoint.off = function() {
-      google.maps.event.removeListener(layer.pinpoint.listener);
-    }
-<% end -%>
+</script>

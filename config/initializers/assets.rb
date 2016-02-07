@@ -19,5 +19,7 @@ Rails.application.config.assets.precompile += [
   'private.css',
   'scaffold.css',
   'window.css',
-  'bootstrap_and_overrides.css'
+  'bootstrap_and_overrides.css',
+  'ddmaps.js',
+  'map.css'
 	]

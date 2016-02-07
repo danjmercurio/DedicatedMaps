@@ -21,39 +21,17 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-  
+ 
 
-  <%= stylesheet_link_tag "private" %>
-  <%= stylesheet_link_tag "info_window" %>
-  <%= stylesheet_link_tag "window" %>
-
-  <!--[if lt IE 8]>
-    <% javascript_tag do -%>
-      window.location="/ie8";
-    <% end %>
-  <![endif]-->
+<%= stylesheet_link_tag "map" %>
  
 
 
 <!-- latest google maps javascript API with dan's API key -->
   <script src="https://maps.googleapis.com/maps/api/js?v=3.21&key=AIzaSyBePgQ3O-hy_QqA0lDdd8IDkGYPrMBp7b4"></script>
   <%= javascript_include_tag "application" %>
-  <%= javascript_include_tag "markermanager" %>
-  <%= javascript_include_tag "icons" %>
-  <%= javascript_include_tag "layer" %>
-  <%= javascript_include_tag "map" %>
-  <%= javascript_include_tag "balloon_templates" %>
-  <%= javascript_include_tag "infobubble" %>
 
 
-  <!-- put jQuery in noConflict mode to use it with prototype.js -->
-  <script type='text/javascript'>$.noConflict();</script>
-
-  <%= javascript_include_tag "prototype" %>
-  <%= javascript_include_tag "slider" %>
-  <%= javascript_include_tag "livepipe" %>
-  <%= javascript_include_tag "resizable" %>
-  <%= javascript_include_tag "window" %>
   <%= csrf_meta_tag %>
   
 </head>
@@ -86,6 +64,7 @@
    &#169;<%= Time.now.year %> Dedicated Maps, Inc. All rights reserved.
   </div>
   
+ <%= javascript_include_tag "ddmaps" %>
 </body>
 
 </html>
