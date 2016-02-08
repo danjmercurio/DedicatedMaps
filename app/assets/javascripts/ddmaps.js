@@ -14,7 +14,7 @@ var ddmaps = (function() {
 		console.log(this.version); 
 	}
 
-	// Route Ajax calls through this function to pair them with the UI notification
+
 	app.ajax_load = function(ajaxRequestObject) {
 		$('#message').html('<span style="color:red;">loading...</span>');
         $('#message').show();

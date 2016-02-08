@@ -22,8 +22,9 @@ gem 'responders'
 
 # Gems used only for assets and not required
 # in production environments by default.
-gem 'sass-rails'
+# gem 'sass-rails' Not using sass
 gem 'coffee-rails'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer'
 gem 'uglifier'
@@ -53,12 +54,12 @@ end
 gem 'backburner'
 
 # Javascript (no longer used, loaded in with MaxCDN)
-gem 'jquery-rails'
+# gem 'jquery-rails'
 
-gem 'prototype-rails', github: 'rails/prototype-rails', branch: '4.2'
+# gem 'prototype-rails', github: 'rails/prototype-rails', branch: '4.2' # Not using prototype anymore
 
 # support for legacy (Rails 2) prototype helper methods
-gem 'prototype_legacy_helper', '0.0.0', :git => 'git://github.com/rails/prototype_legacy_helper.git'
+# gem 'prototype_legacy_helper', '0.0.0', :git => 'git://github.com/rails/prototype_legacy_helper.git'
 
 # Nokogiri for XML parsing
 gem 'nokogiri'
@@ -89,6 +90,6 @@ gem 'paperclip', git: "git://github.com/thoughtbot/paperclip.git"
 
 gem 'delayed_job'
 
-gem 'god'
+gem 'god' # Used to daemonize Backburner process
 
 
