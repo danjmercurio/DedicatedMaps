@@ -26,7 +26,8 @@
               <span id="message">&nbsp;</span>
               <%= check_box_tag("auto-refresh", '', false, :title => 'Auto Refresh (60 sec)', :onclick => "auto_refresh(this.checked)" ) %>
               <%= link_to_function("<img src='/images/view-refresh.png' title='Refresh' border='0'/>".html_safe,"refresh()") %>
-            </div>   
+            </div>
+            <div id="message"></div>
         <% if @layers.empty? %>      
           No layers are enabled for this account.
         <% else %>                         

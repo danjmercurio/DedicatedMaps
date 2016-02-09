@@ -25,6 +25,8 @@ gem 'responders'
 # gem 'sass-rails' Not using sass
 gem 'coffee-rails'
 
+gem 'execjs'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer'
 gem 'uglifier'
@@ -53,12 +55,12 @@ end
 # Backburner for asychronous job processing (XML POST to /staging_area_feeds)
 gem 'backburner'
 
-# Javascript (no longer used, loaded in with MaxCDN)
-# gem 'jquery-rails'
+# Javascript (no longer used, loaded in with MaxCDN, but keep it for jquery_ujs
+gem 'jquery-rails'
 
 # gem 'prototype-rails', github: 'rails/prototype-rails', branch: '4.2' # Not using prototype anymore
-
-# support for legacy (Rails 2) prototype helper methods
+#
+# # support for legacy (Rails 2) prototype helper methods
 # gem 'prototype_legacy_helper', '0.0.0', :git => 'git://github.com/rails/prototype_legacy_helper.git'
 
 # Nokogiri for XML parsing

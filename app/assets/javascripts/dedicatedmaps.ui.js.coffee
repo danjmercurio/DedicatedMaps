@@ -4,51 +4,36 @@ dedicatedmaps.ui = (->
 
   ui.map_div = ->
     $('div#map_div')
-  message_div: ->
+
+  ui.message_div = ->
     $('div#message')
 
     # Route Ajax calls through this function to pair them with the UI notification
   ui.ajax_load = (ajaxRequestObject) ->
-    message_div.html('<span style="color:red;">loading...</span>')
-    message_div.show()
+    ui.message_div.html("<span style=\"color:red;\">loading...</span>")
+    ui.message_div.show()
     console.log("ajax_load(" + ajaxRequestObject.url + ")")
-    $.ajax(ajaxRequestObject).fail((reqObject, textstatus, errorthrown) ->
-        message_div.html('<span style="color:red;">Connection Error!</span>')
+    $.ajax(ajaxRequestObject).fail(->
+        ui.message_div.html("<span style=\"color:red;\">Connection Error!</span>")
       ).done(->
-        message_div.text('Done')
-        message_div.fadeOut(1000)
+        ui.message_div.text('Done')
+        ui.message_div.fadeOut(1000)
       )
 
     # Set options on the map and display it after page load
   ui.initializeMap = ->
-    layer_config = {"grpboom":{"type":"KML","icon":"alphabet/blue_A"},
-      "GrpNT":{"type":"StagingArea","icon":"square_mini/purple"},
-      "grp2016":{"type":"StagingArea","icon":"square_mini/yellow"},
-      "grpBL":{"type":"StagingArea","icon":"square_mini/yellow"},
-      "grpWDOE":{"type":"KML","icon":""},
-      "grpsa":{"type":"StagingArea","icon":"square_mini/blue"},
-      "kml_test":{"type":"KML","icon":""},
-      "astoria_marine_map":{"type":"Custom","icon":null},
-      "pinpoint":{"type":"Custom","icon":null},
-      "wrrls":{"type":"StagingArea","icon":"teardrop_mini/alphabet/green_W"},
-      "iess":{"type":"StagingArea","icon":"custom/water"},
-      "ccss":{"type":"StagingArea","icon":"square_mini/purple"},
-      "AIS_Towersa":{"type":"StagingArea","icon":"square/misc/wifi"},
-      "cics":{"type":"StagingArea","icon":"teardrop_mini/alphabet/yellow_M"},
-      "bcos":{"type":"StagingArea","icon":"teardrop_mini/alphabet/brown_D"},
-      "nrcs":{"type":"StagingArea","icon":"teardrop_mini/green"},
-      "public_ships":{"type":"Custom","icon":null},
-      "pois":{"type":"StagingArea","icon":"teardrop_mini/green"},
-      "mfsas":{"type":"StagingArea","icon":"teardrop/purple"},
-      "crc":{"type":"StagingArea","icon":"teardrop_mini/blue"}}
 
-    google.maps.event.addDomListener(window, "load", ->
-      map_state = {"zoom":7,
-      "lon":-123.391,
-      "lat":47.8933,
-      "map_type":"roadmap"
-      # TODO: Load these in via Ajax
-    )
+
+    loadCallback = ->
+    # TODO: Load these in via Ajax from the user
+      map_state = {
+        "zoom": 7,
+        "lon": -123.391,
+        "lat": 47.8933,
+        "map_type": 'roadmap'
+      }
+
+    google.maps.event.addDomListener(window, 'load', loadCallback)
 
     center = google.maps.LatLng(map_state.lat, map_state.lon)
     map_types = {
