@@ -9,4 +9,5 @@ Rails.application.config.assets.precompile += [
     'bootstrap_and_overrides.css',
     'dedicatedmaps.js.coffee',
     'dedicatedmaps.ui.js.coffee',
+    'dedicatedmaps.layer.js.coffee',
     'map.css']

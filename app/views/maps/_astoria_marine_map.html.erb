@@ -1,5 +1,6 @@
-<%= button_to_function "Locate", "map.setCenter(new GLatLng(46.13417004624326, -124.0576171875), 6);
-  layer.astoria_marine_map.setOpacity()" %>
+<button class="btn" onclick="dedicatedmaps.ui.map.setCenter(new google.maps.LatLng(46.13417004624326, -124.0576171875), 6);
+    dedicatedmaps.layerList.astoria_marine_map.setOpacity()">Locate
+</button>
 
   Opacity: <span id="astoria_opacity">100</span>
   <br />

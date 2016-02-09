@@ -11,8 +11,8 @@ var ddmaps = (function() {
 
 
 	app.getVersion = function() {
-		console.log(this.version); 
-	}
+		console.log(this.version);
+    };
 
 
 	app.ajax_load = function(ajaxRequestObject) {
@@ -25,7 +25,7 @@ var ddmaps = (function() {
             $('#message').text('Done');
             $('#message').fadeOut(1000);  
        	});
-	}
+    };
 
 	// Set options on the map and display it after page load
 	app.initializeMap = function() {
@@ -36,7 +36,7 @@ var ddmaps = (function() {
 			"lon":-123.391,
 			"lat":47.8933,
 			"map_type":"roadmap"
-			} //TODO: Load these in via Ajax
+            }; //TODO: Load these in via Ajax
 
 			var center = new google.maps.LatLng(map_state.lat, map_state.lon);
 			var map_types = {
@@ -61,46 +61,18 @@ var ddmaps = (function() {
 
 	};
 
-	// Does not work!
-	app.saveMap = function() {
-      new Ajax.Updater('message', 'http://localhost:3000/maps/6', {asynchronous:true, evalScripts:true, method:'put', onComplete:function(request){$('message').show()}, parameters:
-          'map[zoom]=' + map.getZoom() +
-          '&map[lat]=' + map.getCenter().lat() +
-          '&map[lon]=' + map.getCenter().lng() +
-          '&map[map_type]=' + map.getMapTypeId()
-         + '&authenticity_token=' + encodeURIComponent('UM5PoKV0FSPqQpuhRn2wBL13pxoAzZq2hz6MiqNnlrDKmeNAThEmxlHrv4njzJeJDiP5oelgKxL814/zpBlAzQ==')})
-    };
 
     // Save the map zoom, center, and map_type 2 seconds after the user has stopped moving it.
     app.cue_save_map = function() {
           console.log("caught signal to save map");
           if (typeof(save_map_timer) == 'number') clearTimeout(save_map_timer);
           save_map_timer = setTimeout(save_map, 2000);
-      }
+    };
 
     // A helper for loading in icons
-	app.icons = {
-		image_directory: "http://dedicatedmaps.com/images/",
-		getIconPath: function(name) {
-			return this.image_directory + name + '.png';
-		},
-		getIcon: function(name) {
-			return this.getIconPath(name);
-		}
-	}
 
-	// A spinning loading indicator for the DOM
-	app.loader = function() {
-	    var div = document.createElement(div);
-	    div.id = "loading";
-	    div.setAttribute("style","margin-top:10px; text-align: center;");
-	    var spinner = document.createElement('img');
-	    spinner.setAttribute("src","/images/ajax-loader.gif");
-	    div.appendChild(spinner);
-	    return(div);
-	}
 
-	// Our main layer prototype
+    // Our main layer prototype
 	app.Layer = function (map, name, id, type) {
 	  this.id = id;
 	  this.name = name;
@@ -110,7 +82,7 @@ var ddmaps = (function() {
 	  this.type = type;
 	  app.layers += this;
 	  return this;
-	}
+    };
 
 	app.Layer.prototype.on = function() {
   		if (!this.loaded) {
@@ -157,8 +129,8 @@ var ddmaps = (function() {
 		marker.id = current[this.id];
   
 		var name = this.name;
-  
-    }
+
+    };
 
     app.Layer.prototype.addBubble = function(marker) {
     	google.maps.event.addListener(marker, 'click', function(){
@@ -214,7 +186,7 @@ var ddmaps = (function() {
 			            }
 		        	} 
 		        }
-		  	}
+            };
 
 	  		// The actual call
 	        ajax_load(ajax);
@@ -237,7 +209,7 @@ var ddmaps = (function() {
 	  			}
 	  		}); 
 		return marker
-}
+    };
 		
 	
  
@@ -260,7 +232,7 @@ var ddmaps = (function() {
 			}
 		},
 		grp: new app.Layer(app.map, "newlayer", 5, "grp")
-	}
+    };
 
 	app.initializeMap();
 	return app

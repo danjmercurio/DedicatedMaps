@@ -13,6 +13,7 @@
 // Don't include regular jQuery as we are loading it in the view from MaxCDN. Just include jquery_ujs library after.
 //= require jquery_ujs
 
+
 // Add some useful string methods to the string prototype
 String.prototype.capitalizeFirstLetter = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);

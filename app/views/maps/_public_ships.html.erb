@@ -16,16 +16,14 @@
     
     <td>
         <%= check_box_tag(icon.id, icon.id, false, :id=>"hide_icon#{icon.id}") %>
-        <%= observe_field("hide_icon#{icon.id}", :function => "
-          layer.public_ships.set('#{icon.suffix}', 'hidden', element.checked);
-          ") %>
+
+      <!-- field: hide_icon#{icon.id} function layer.public_ships.set('#{icon.suffix}', 'hidden', element.checked); -->
+
     </td>
   
     <td>
         <%= check_box_tag(icon.id, icon.id, false, :id=>"dim_icon#{icon.id}") %>
-        <%= observe_field("dim_icon#{icon.id}", :function => "
-          layer.public_ships.set('#{icon.suffix}', 'dim', element.checked);
-          ") %>
+      <!-- field: dim_icon#{icon.id} function: layer.public_ships.set('#{icon.suffix}', 'dim', element.checked); -->
     </td>
   </tr>
 <% end %>

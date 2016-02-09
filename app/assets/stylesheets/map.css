@@ -16,3 +16,7 @@ div#map_div {
 .logo{float:left;}
 .accountinfo{display:inline;}
 div.titlebar{display:flex;}
+
+div#message {
+    float: right;
+}

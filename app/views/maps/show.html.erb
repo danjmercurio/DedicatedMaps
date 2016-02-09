@@ -1,21 +1,5 @@
 <script type="text/javascript">
-
   var layer_config = <%= @layer_config.to_json.to_s.html_safe %>;
-
-        
-    <% if @owner_viewing %>
-      // Save the map zoom, center, and map_type 2 seconds after the user has stopped moving it.
-      cue_save_map = function() {
-          console.log("caught signal to save map");
-          if (typeof(save_map_timer) == 'number') clearTimeout(save_map_timer);
-          save_map_timer = setTimeout(save_map, 2000);
-      }
-      google.maps.event.addDomListener(ddmaps.map, "dragend", ddmaps.cue_save_map);
-      google.maps.event.addDomListener(ddmaps.map, "maptypeid_changed", ddmaps.cue_save_map);
-      var save_delay = 0;
-    <% end %>
-
-    
 </script>
 
     <div class="container-fluid">
@@ -35,13 +19,7 @@
             <% id = layer.id %>            
             <div class="layer" id="layer<%=id%>">              
               <div class="layer_checkbox">
-                <%= check_box_tag layer.name, 1, false %>
-                <script type="text/javascript">
-                $("#<%= layer.name %>").click(function() {
-                  var layerName = "";
-                  this.checked ? ddmaps.layers.<%= layer.name %>.on() : ddmaps.layers.<%= layer.name %>.off()
-                });
-                </script>
+                <%= check_box_tag layer.name, 1, false, data: {:layer => layer.name} %>
                  <%= label_tag layer.name, layer.title %>
                 
                 <% if layer.icon %>

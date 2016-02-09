@@ -21,6 +21,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+
  
 
 <%= stylesheet_link_tag "map" %>
@@ -31,8 +32,14 @@
   <script src="https://maps.googleapis.com/maps/api/js?v=3.21&key=AIzaSyBePgQ3O-hy_QqA0lDdd8IDkGYPrMBp7b4"></script>
   <%= javascript_include_tag "application" %>
 
+    <%= javascript_include_tag 'dedicatedmaps' %>
+    <%= javascript_include_tag 'dedicatedmaps.ui' %>
+    <script type="text/javascript">
 
-  <%= csrf_meta_tag %>
+    </script>
+
+
+    <%= csrf_meta_tag %>
   
 </head>
 
@@ -63,9 +70,6 @@
   <div class="footer" style="text-align:right; margin: 10px 10px;">
    &#169;<%= Time.now.year %> Dedicated Maps, Inc. All rights reserved.
   </div>
-  
- <%= javascript_include_tag 'dedicatedmaps' %>
-  <%= javascript_include_tag 'dedicatedmaps.ui' %>
 </body>
 
 </html>
