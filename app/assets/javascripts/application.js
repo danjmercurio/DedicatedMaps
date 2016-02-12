@@ -28,13 +28,13 @@ function clearText(field) {
   if (field.defaultValue == field.value) field.value = '';
   else if (field.value == '') field.value = field.defaultValue;
 }
-jQuery(document).ready(function() {
-  jQuery('#forgot').click(function (){
-    jQuery('form#new_session').hide();
-    jQuery('#recover').show();
+$(document).ready(function() {
+  $('#forgot').click(function (){
+    $('form#new_session').hide();
+    $('#recover').show();
   });
-  jQuery('#cancel').click(function() {
-    jQuery('#recover').hide();
-    jQuery('form#new_session').show();
+  $('#cancel').click(function() {
+    $('#recover').hide();
+    $('form#new_session').show();
   });
 });

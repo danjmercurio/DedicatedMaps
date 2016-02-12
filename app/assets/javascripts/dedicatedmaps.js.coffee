@@ -44,7 +44,7 @@ class DedicatedMaps
     console.log("Caught signal to save map...")
   # TODO: Save map state
 
-  this.getVersion = (version) ->
+  getVersion: (version) ->
     console.log(version)
 
   # A generic observer for a DOM element
@@ -58,7 +58,7 @@ class UserInterface extends DedicatedMaps
   constructor: () ->
     super(DedicatedMaps)
     @message_div = this.getMessageDiv()
-    @image_directory = "http://www.dedicatedmaps.com/images"
+    @image_directory = ""
 
 # A spinning loading indicator for the DOM (returns an element)
   loader: ->
@@ -80,7 +80,7 @@ class UserInterface extends DedicatedMaps
   getIcon: (name) ->
     this.ajaxLoad({url: this.getIconPath(name)}).responseText
 
-# Route Ajax calls through this function to pair them with the UI notification
+# Route Ajax calls through this function to activate UI loading response to AJAX call
   ajaxLoad: (ajaxRequestObject, optionalCallbackOnSuccess) ->
     message_div = this.getMessageDiv()
     message_div.html("<span style=\"color:red;\">loading...</span>")
@@ -95,7 +95,7 @@ class UserInterface extends DedicatedMaps
       message_div.text('Done')
       message_div.fadeOut(1000)
       console.log(response)
-      optionalCallbackOnSuccess()
+      optionalCallbackOnSuccess() if (optionalCallbackOnSuccess)
     )
   saveMap: ->
     this.ajaxLoad({
@@ -111,7 +111,77 @@ class UserInterface extends DedicatedMaps
       this.getMessageDiv().text("Map saved @ #{Date.now()}").fade(1000)
     )
 
+class LayerManager extends DedicatedMaps
+
+  constructor: (layerList, map)->
+    super(DedicatedMaps)
+    @map = map
+    @list = layerList
+    this.loadLayers(@list)
+
+  loadLayers: (@list) ->
+    tempInstance = this
+    $.each(@list, (name, obj) ->
+      layer = new Layer(name, false, @map)
+      layer.on()
+      tempInstance.list[layer.name] = layer
+    )
+
+class Layer extends DedicatedMaps
+
+  constructor: (@name, @loaded = false, @map, @icon = null, @type = null) ->
+    @markerList = []
+
+
+  on: ->
+    tempInstance = this
+    if (!this.loaded)
+      renderCallback = (data) =>
+        $.each(data, ->
+          marker = tempInstance.render(this)
+          tempInstance.markerList.push
+        )
+      if (@type) == 'StagingArea'
+        url = "/staging_areas_company/#{@name}.json"
+
+        data = dedicatedmaps.ui.ajaxLoad({
+          url: url
+          success: renderCallback
+        })
+        console.log(data)
+#this.show()
+
+  off: ->
+    this.hide()
+
+  render: (data) ->
+#access_id: 24
+#address: "12800 NW Marina Way"
+#city: "Portland"
+#contact: "Habor master"
+#email: "N/A"
+#fax: null
+#icon: null
+#id: 71017
+#lat: "45.6176109"
+#lon: "-122.8033752"
+#name: "Freds Marina"
+#phone: "503-286-5537"
+#staging_area_company_id: 1
+#state: "OR"
+#zip: "97231-2321"
+    icon = super.ui.getIconPath(@icon)
+    title = "TempTitle"
+    latlng = new google.maps.LatLng(data.lat, data.lon)
+    marker = new google.maps.Marker({
+      position: latlng,
+      icon: icon,
+      title: title
+    })
+    marker.id = data.id
+    return marker
 
 $(document).ready ->
   window.dedicatedmaps = new DedicatedMaps(window)
-  window.dedicatedmaps.ui = new UserInterface(window.dedicatedmaps.getMap())
+  window.dedicatedmaps.ui = new UserInterface()
+  window.dedicatedmaps.layers = new LayerManager(layer_config, dedicatedmaps.getMap())

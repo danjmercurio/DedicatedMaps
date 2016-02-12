@@ -64,7 +64,9 @@ class SessionsController < ApplicationController
       flash[:notice] = "The recovery link given is not valid"
       redirect_to '/'
     end
-end
+  end
+
+  # TODO: No route matches [PATCH] /sessions
 
 private
 

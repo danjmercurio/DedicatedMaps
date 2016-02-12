@@ -7,7 +7,5 @@ Rails.application.config.assets.precompile += [
     'info_window.css',
     'private.css',
     'bootstrap_and_overrides.css',
-    'dedicatedmaps.js.coffee',
-    'dedicatedmaps.ui.js.coffee',
-    'dedicatedmaps.layer.js.coffee',
+    'dedicatedmaps.js',
     'map.css']

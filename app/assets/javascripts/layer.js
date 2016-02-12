@@ -27,11 +27,13 @@ Layer.prototype.refresh = function() {};
 Layer.prototype.load_callback = function() {};
 
 Layer.prototype.on = function() {
-  if (!this.loaded) {
-    var name = this.name;
-    ajax_load("/" + name + ".json", function(data){layer[name].load(data);});
-  }
-  this.show();
+    if (!this.loaded) {
+        var name = this.name;
+        ajax_load("/" + name + ".json", function(data){
+            layer[name].load(data);
+        });
+    }
+    this.show();
 };
 
 Layer.prototype.off = function() {
