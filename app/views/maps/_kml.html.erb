@@ -1,7 +1,7 @@
 <% layer.kmls.each do |kml| %>
   <% kml.url = "http://#{request.host_with_port}#{kml.kml_file.url}" if kml.kml_file.present? %>
   <%= check_box_tag "kml_#{kml.id}", 1, false,
-  :onclick   => "(this.checked) ? dedicatedmaps.layer.layers.#{layer.name}.kml.kmlLayerOn(#{kml.id},'#{kml.url}') : dedicatedmaps.layer.layers.#{layer.name}.kml.kmlLayerOff(#{kml.id})" %>
+  :onclick   => "(this.checked) ? dedicatedmaps.layer.layers.#{layer.name}.kml.kmlLayerOn(#{kml.id},'#{kml.url}') : dedicatedmaps.layer.layers.#{layer.name}.kml.kmlLayerOff(#{kml.id})", class: 'kmlsubbox' %>
   <%= label_tag "kml_#{kml.id}", kml.label %>
   <br />
 <% end %>

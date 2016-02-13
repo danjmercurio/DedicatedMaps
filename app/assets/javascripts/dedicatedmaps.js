@@ -181,7 +181,7 @@ var dedicatedmaps = (function() {
             // Determine the correct URL to load this Layer's markers
             switch (layer.type) {
                 case 'StagingArea':
-                    if (!this.loaded) {
+                    if (!layer.loaded) {
                         var url = ['/', 'staging_areas_company', '/', layer.name, '.json'].join('');
                         // Load JSON marker list
                         app.ui.ajaxLoad({
@@ -219,6 +219,33 @@ var dedicatedmaps = (function() {
                             layer.isOn = true;
 
                             break;
+                        case 'public_ships':
+                            if (!layer.loaded) {
+                                var url = ['/', 'public_ships', '.json'].join('');
+                                // Load JSON marker list
+                                app.ui.ajaxLoad({
+                                    url: url,
+                                    success: function(data) {
+                                        $.each(data, function(key, value){
+                                            app.publicShips.render(value);
+                                        });
+                                        layer.isOn = true;
+                                        layer.show();
+                                    },
+                                    error: function() {
+                                        throw new Error("Unable to load layer: " + name + "!");
+                                    }
+                                });
+                            } else {
+                                layer.show();
+                            }
+                            break;
+
+                            break;
+                        case 'my_ships':
+                            break;
+                        case 'shared_ships':
+                            break;
                     }
                     break;
                 case 'KML': // KML layers have special properties so defaults are overridden here
@@ -255,6 +282,14 @@ var dedicatedmaps = (function() {
                         layer.kml.geoxmls[id] = geoXml;
                     };
                     layer.off = function() {
+                        layer.kml.geoxmls.forEach(function(item) {
+                            item.setMap(null)
+                        });
+                        // Uncheck all boxes
+                        $('.kmlsubbox').each(function(index, elem) {
+                            elem.checked = false;
+                        });
+                        // Turn layer state off
                         layer.isOn = false;
                     };
                     layer.isOn = true;
@@ -693,56 +728,69 @@ var dedicatedmaps = (function() {
         return div;
     };
 
-    app.layer.Layer.prototype.addBubble = function(marker) {
-        google.maps.event.addListener(marker, 'click', function(){
-            // Marker has been clicked
-            if (infoBubble && infoBubble.isOpen()) {
-                infoBubble.close();
-            }
 
-            // Initialize the infoBubble for each marker
-            infoBubble = new InfoBubble({
-                maxHeight: 250,
-                minHeight: 250,
-                maxWidth: 500,
-                minWidth: 500,
-                marker: marker,
-                map: layer.map,
-                position: latlng,
-                disableAutoPan: false
-            });
+    // Public Ships namespace
+    app.publicShips = {};
 
+    app.publicShips.shipDraw = function shipDraw(LinColor,FilColor,mlat,mlng,cog,dim2bow,dim2stern,dim2port,dim2starboard) {
 
+        // direction of ship degrees from true north clockwise (input variable) (converted to radian measure by * Pi/180)
+        var shipAngle = cog * Math.PI / 180;
 
-            var ajax = {
-                beforeSend: function() {
-                    infoBubble.addTab('Loading...', app.loader);
-                },
-                url: "/marker/" + name + "/" + marker.id + ".json",
-                error: function() {
-                    infoBubble.updateTab('0', 'Error', function(errorthrown) {
-                        return "ERROR: Resp code..." + errorthrown;
-                    });
-                },
+        var OS = .0000125;           //google earth scaling factor meters to lat/long offset
+        var shipLen = (dim2bow+dim2stern) *OS;  // vessel length in meters(input variable)
+        var shipWid = ((dim2port+dim2starboard) *OS)/2; // vessel width in meters(input variable)
+        var shipFront = dim2bow *OS;  // distance in meters from transmitter on vessel to front of vessel (input variable)
+        var idim2port = dim2port * OS;
+        var idim2starboard = dim2starboard * OS;
 
-            };
+        // Center point of beacon  0 = A, ... 1 = B
+        var pointa = new google.maps.LatLng(mlat, mlng);
 
-            // The actual call
-            ajax_load(ajax);
+        //create an array 'points' holding the polygon end points for the outline of the vessel
+        var points = [];
 
+        p_Lint(((-shipLen)*.9)+shipFront,-idim2port);
+        p_Lint(((-shipLen)*.3)+shipFront,-idim2port);
+        p_Lint(((-shipLen)*.18)+shipFront,-idim2port*.8);
+        p_Lint(shipFront,idim2starboard-shipWid);
+        p_Lint(((-shipLen)*.18)+shipFront,(idim2starboard*.8));
+        p_Lint(((-shipLen)*.3)+shipFront,idim2starboard);
+        p_Lint(((-shipLen)*.9)+shipFront,idim2starboard,7);
+        p_Lint(((-shipLen)*1)+shipFront,idim2starboard*.8);
+        p_Lint(((-shipLen)*1)+shipFront,-idim2port*.8);
+        p_Lint(((-shipLen)*.9)+shipFront,-idim2port);
 
+        var polygon = new GPolygon(points,LinColor , 2, 1, FilColor, 0.3);
 
+        app.ui.getMap().addOverlay(polygon);
 
-            marker.hidden = false;
-            marker.refresh = this.refresh;
-            if (this.properties) {
-                for (var i = 0; i < this.properties.length; i++) {
-                    var prop = this.properties[i];
-                    marker[prop] = current[prop];
-                }
-            }
-        });
-        return marker
+        function p_Lint(tpos,gpos){
+            var nlat = mlat+(tpos * Math.cos(shipAngle) - gpos * Math.sin(shipAngle));
+            var nlng = mlng+ (gpos * Math.cos(shipAngle) + tpos * Math.sin(shipAngle))/.69;
+            var pint = new GLatLng(nlat,nlng);
+            points.push(pint);
+        }
+    };
+
+    app.publicShips.ship_icon = function(item) {
+        var icon_sizes = {"AIR":27, "APE":30, "Car":36, "Drg":36, "Fsh":29, "HSC":30, "Mil":34, "Pas":28 ,"Plt":29, "Tan":36, "Tow":27, "Tug":28, "UCG":30, "Uns":28, "Yct":30};
+        var image = this.image(item);
+
+        // If we don't have an icon for this particular ship type + angle yet, make one.
+        if ((icons[image]) == null ) {
+            var url = app.ui.icons.getIconPath("/images/markers/ships/" + image + ".png")
+            var icon = {url: url,
+                name: image};
+            var size = icon_sizes[item.suffix];
+            icon.iconSize = new google.maps.Size(size,size);
+            icons[image] = icon;
+            // icons.ship_uns,
+        }
+        return icons[image];
+    };
+    app.publicShips.render = function(data) {
+
     };
 
 
