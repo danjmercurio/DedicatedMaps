@@ -2,59 +2,49 @@
   var layer_config = <%= @layer_config.to_json.to_s.html_safe %>;
 </script>
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-2">
-          <div id="layer_panel">
-            <div id="refresh">
-              <span id="message">&nbsp;</span>
-              <%= check_box_tag("auto-refresh", '', false, :title => 'Auto Refresh (60 sec)', :onclick => "auto_refresh(this.checked)" ) %>
-              <%= link_to_function("<img src='/images/view-refresh.png' title='Refresh' border='0'/>".html_safe,"refresh()") %>
-            </div>
-            <div id="message"></div>
-        <% if @layers.empty? %>      
-          No layers are enabled for this account.
-        <% else %>                         
-          <% @layers.each do |layer| %>            
-            <% id = layer.id %>            
-            <div class="layer" id="layer<%=id%>">              
+<div class="container">
+  <div class="layerPanel">
+    <span id="message">&nbsp;</span><div id="message"></div>
+    <%= check_box_tag("auto-refresh", '', false, :title => 'Auto Refresh (60 sec)', :onclick => "auto_refresh(this.checked)" ) %>
+    <%= link_to_function("<img src='/images/view-refresh.png' title='Refresh' border='0'/>".html_safe,"refresh()") %>
+    <% if @layers.empty? %>
+        No layers are enabled for this account.
+    <% else %>
+        <% @layers.each do |layer| %>
+            <% id = layer.id %>
+            <div class="layer" id="layer<%=id%>">
               <div class="layer_checkbox">
-                <%= check_box_tag layer.name, 1, false, data: {:layer => layer.name} %>
-                 <%= label_tag layer.name, layer.title %>
-                
+                <%= check_box_tag layer.name, 1, false, data: {:layer => layer.name, :id => layer.id} %>
+                <%= label_tag layer.name, layer.title %>
+
                 <% if layer.icon %>
-                  <%= "<img id='#{layer.name}_icon'/>".html_safe %>
+                    <%= "<img id='#{layer.name}_icon'/>".html_safe %>
                 <% end %>
-                
               </div>
-              
+
               <% plus = "<img id='plus#{id}'src='/images/list-add.png' border='0'/>".html_safe %>
               <% minus = "<img id='minus#{id}' style='display:none;' src='/images/list-remove.png' border='0'/>".html_safe %>
-              
-              <div class="layer_expand"> 
-                <%= javascript_tag "flip#{id} = function(){jQuery('#plus#{id}').toggle(); jQuery('#minus#{id}').toggle(); jQuery('#sub#{id}').toggle();}" %>
+
+              <div class="layer_expand">
+                <%= javascript_tag "flip#{id} = function(){$('#plus#{id}').toggle(); $('#minus#{id}').toggle(); $('#sub#{id}').toggle();}" %>
                 <%= link_to_function(plus,"flip#{id}()") %>
                 <%= link_to_function(minus,"flip#{id}()") %>
               </div>
-              
+
               <div class="sublayer" id="sub<%=id%>" style="display:none;">
                 <% if layer.category == "StagingArea" %>
-                  <%= render :partial => 'staging_area' , :locals => {:layer => layer, :icon => layer.icon }%>
+                    <%= render :partial => 'staging_area' , :locals => {:layer => layer, :icon => layer.icon }%>
                 <% elsif layer.category == "KML" %>
-                  <%= render :partial => 'kml' , :locals => {:layer => layer }%>
+                    <%= render :partial => 'kml' , :locals => {:layer => layer }%>
                 <% else %>
-                  <%= render :partial => layer.name , :locals => {:layer => layer}%>
+                    <%= render :partial => layer.name , :locals => {:layer => layer}%>
                 <% end %>
               </div>
             </div>
-          <% end %>
-          
-          <!-- ************* Incident layer ***********-->
-          <%#= render :partial=>"incident" %>
-
         <% end %>
-      </div>
-        </div>
-        <div class="col-md-10"><div id="map_div"></div></div>
-      </div>
-    </div><!-- /.container-fluid -->
+        <!-- ************* Incident layer ***********-->
+        <%#= render :partial=>"incident" %>
+    <% end %>
+  </div>
+  <div id="map_div"></div>
+</div>

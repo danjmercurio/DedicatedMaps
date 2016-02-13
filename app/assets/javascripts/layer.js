@@ -530,37 +530,7 @@ layer.itemInfo = function(item, layer_name) {
   return(div);
 };
 
-layer.shipInfo = function(ship,layer_name) {
-  var div = document.createElement(div);
-  div.setAttribute('class','info_window');
-  var title = createElement(div, ship.name);
-  title.className = 'balloon_title';   
-    // Center here image
-    var a = document.createElement('a');
-    a.setAttribute("title","Center map here.");
-    a.href = "javascript:map.panTo(layer." + layer_name + ".list[" + ship.asset_id + "].center())";
-      var image = document.createElement('img');
-      image.src = "/images/crosshairs.png";
-      image.setAttribute("alt","Center map here.");
-      image.setAttribute("class","crosshairs");
-      a.appendChild(image);
-    title.appendChild(a);
-  div.appendChild(title);
-  if (ship.owner)       div.appendChild(createNameValueDiv('Owner: ', ship.owner)); 
-  if (ship.icon.name)   div.appendChild(createNameValueDiv('Type: ', ship.icon.name));
-  if (ship.dim_bow)     div.appendChild(createNameValueDiv('Size: ', (
-      ship.dim_bow + ship.dim_stern) + 'm x ' + (ship.dim_port + ship.dim_starboard) + 'm')
-  );
-  if (ship.speed)       div.appendChild(createNameValueDiv('Speed/Course: ', ship.speed + ' nm / ' + ship.cog + ' deg'));
-  if (ship.draught)     div.appendChild(createNameValueDiv('Draught: ', ship.draught / 10 + ' m'));
-  if (ship.status)      div.appendChild(createNameValueDiv('Status: ', ship.status));
-  if (ship.destination) div.appendChild(createNameValueDiv('Destination: ', ship.destination));
-  if (ship.age) {div.appendChild(createNameValueDiv('Received: ', ship.age))};  
-  if (ship.MMSI)  div.appendChild(createNameValueDiv('MMSI: ', ship.MMSI));
-  if (ship.lon)  div.appendChild(createNameValueDiv('Long: ', ship.lon));
-  if (ship.lat)  div.appendChild(createNameValueDiv('Lat: ', ship.lat)); 
-  return(div);
-};
+
 
 layer.tripInfo = function(info) {
   var div = document.createElement(div);
@@ -739,7 +709,7 @@ kml_on = function(id, url) {
   if ($(this.name).checked) {
     this.kml_load(id, url);
   }
-}
+};
 
 kml_off = function(id) {
   if (layer[this.name].geoxmls[id]) {

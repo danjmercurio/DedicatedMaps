@@ -1,5 +1,4 @@
 Rails.application.config.assets.precompile += [
-    'balloon_templates.js',
     'infobubble.js',
     'public.css',
     'admin.css',

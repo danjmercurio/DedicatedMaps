@@ -1,12 +1,12 @@
 <% if @loggedin_user && !@anonymous_user %>  
     <% if controller.controller_name != "public" %>
-      <li><%= link_to "My Map", map_path(@loggedin_user.map) %></li>
-      <li><%= link_to "My Account", edit_user_path(@loggedin_user.id) %></li>
+        <%= link_to "My Map", map_path(@loggedin_user.map), class: 'button' %>
+        <%= link_to "My Account", edit_user_path(@loggedin_user.id), class: 'button' %>
       <% if @loggedin_user.super? || @loggedin_user.admin? %>
-            <li><%= link_to "Admin", private_path('admin') %></li>  
+            <%= link_to "Admin", private_path('admin'), class: 'button' %>
       <% end %>
-      <li><%= link_to "Help", private_path('help') %></li>
-      <li><%= link_to "Sign Out", @application_session, :method => :delete %></li>
+      <%= link_to "Help", private_path('help'), class: 'button' %>
+      <%= link_to "Sign Out", @application_session, :method => :delete, class: 'button' %>
     <% else %>
       <span class='accountinfo'>
         Welcome <%= @loggedin_user.first_name %> <%= @loggedin_user.last_name %> |
@@ -20,7 +20,7 @@
       </span> 
     <% end %>
 <% else %>
-  <div id="#login">
+  <div id="login">
   <% logout_user if @anonymous_user && !(controller.controller_name == 'maps' && controller.action_name == 'show') %>
 
   <%= form_for @session, url: {controller: "sessions", action: "create"}, html: {:class => "accountinfo form-inline"} do |f| %>

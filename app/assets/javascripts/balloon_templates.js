@@ -1,11 +1,11 @@
 function createElement(elemName, text) {
-  var element = document.createElement(elemName);
-  if (typeof(text) == 'string') {
-    if (text !== '') element.appendChild(document.createTextNode(text));
-  } else {
-    element.appendChild(text);
-  }
-  return(element); 
+    var element = document.createElement(elemName);
+    if (typeof(text) == 'string') {
+        if (text !== '') element.appendChild(document.createTextNode(text));
+    } else {
+        element.appendChild(text);
+    }
+    return(element);
 }
 
 function createNameValueDiv(name, value) {
@@ -37,180 +37,83 @@ function linkify(email_or_hlink) {
   return a;
 }
 var buildInfoTabContainer = function(json, marker) {
-  var div = document.createElement('div');
-  if (json.staging_area_company) {
-    jQuery(div).append(layer.set_staging_area_container(json));
-  }
-  jQuery(div).append("<br /><br />");
-  if (json.contact) div.appendChild(createElement('div', json.contact));
-  if (json.address) div.appendChild(createElement('div', json.address));
-  if (json.city )   div.appendChild(createElement('span', json.city + ', '));
-  if (json.state)   div.appendChild(createElement('span', json.state + ' '));
-  if (json.zip)     div.appendChild(createElement('span', json.zip));
-  if (json.phone)   div.appendChild(createNameValueDiv('Phone: ', json.phone));
-  if (json.fax)     div.appendChild(createNameValueDiv('Fax: ', json.fax));
-  if (json.email && json.email != "N/A")   {      
-    jQuery(div).append("<span class='label'>Email: <a href='" + linkify(json.email) + "'>" + json.email + "</a></span>");
-  }
-  if (json.staging_area_details && json.staging_area_details.length > 0) {
-      
-    // The span that will hold GRP pdfs
-    var pdfspan = document.createElement('span'); 
+    var div = document.createElement('div');
+    if (json.staging_area_company) {
+        jQuery(div).append(layer.set_staging_area_container(json));
+    }
+    jQuery(div).append("<br /><br />");
+    if (json.contact) div.appendChild(createElement('div', json.contact));
+    if (json.address) div.appendChild(createElement('div', json.address));
+    if (json.city )   div.appendChild(createElement('span', json.city + ', '));
+    if (json.state)   div.appendChild(createElement('span', json.state + ' '));
+    if (json.zip)     div.appendChild(createElement('span', json.zip));
+    if (json.phone)   div.appendChild(createNameValueDiv('Phone: ', json.phone));
+    if (json.fax)     div.appendChild(createNameValueDiv('Fax: ', json.fax));
+    if (json.email && json.email != "N/A")   {
+        jQuery(div).append("<span class='label'>Email: <a href='" + linkify(json.email) + "'>" + json.email + "</a></span>");
+    }
+    if (json.staging_area_details && json.staging_area_details.length > 0) {
+
+        // The span that will hold GRP pdfs
+        var pdfspan = document.createElement('span');
 
 
-    // Filter images/pdfs out of staging area details
-      var predicate = function(x) {
-        if (x.name.toLowerCase().startsWith("pdf") || 
-            x.name.toLowerCase().startsWith("image") || 
-            x.name.toLowerCase().startsWith("img")) {
-              if (typeof(parseInt(x.name[x.name.length-1])) === "number") {
-                return true;
-          }
-        }
-        return false;
-      };
-    var filtered = json.staging_area_details.filter(predicate);
+        // Filter images/pdfs out of staging area details
+        var predicate = function(x) {
+            if (x.name.toLowerCase().startsWith("pdf") ||
+                x.name.toLowerCase().startsWith("image") ||
+                x.name.toLowerCase().startsWith("img")) {
+                if (typeof(parseInt(x.name[x.name.length-1])) === "number") {
+                    return true;
+                }
+            }
+            return false;
+        };
+        var filtered = json.staging_area_details.filter(predicate);
 
-        jQuery.each(json.staging_area_details, function(index, element) { 
-      if (element.value.charAt(0) == '#') {
-          //jQuery(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> <a target='_blank' href='" + element.value.substr(1, element.value.length - 2) + "'>" + element.value.substr(1, element.value.length - 2) + "</a></span>");
+        jQuery.each(json.staging_area_details, function(index, element) {
+            if (element.value.charAt(0) == '#') {
+                //jQuery(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> <a target='_blank' href='" + element.value.substr(1, element.value.length - 2) + "'>" + element.value.substr(1, element.value.length - 2) + "</a></span>");
 
-      } 
-      else { // # This is super sloppy! Refactor!
-          if (filtered.indexOf(element) == "-1") jQuery(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> " + element.value + "</span>");
-      }
+            }
+            else { // # This is super sloppy! Refactor!
+                if (filtered.indexOf(element) == "-1") jQuery(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> " + element.value + "</span>");
+            }
 
-    });
-      
-      // The span that will hold GRP pdfs
-      var pdfspan = document.createElement('span'); 
+        });
 
-      jQuery.each(filtered, function(index, element) {
-        var label = element.value.substr(0, element.value.lastIndexOf('.')).toUpperCase();
+        // The span that will hold GRP pdfs
+        var pdfspan = document.createElement('span');
 
-        // Create a link and make it open in a new tab
-        var pdf2 = createElement('a', element.value)
-        pdf2.setAttribute('href', "http://www.dedicatedmaps.com/pdf/" + label + ".pdf");
-        pdf2.setAttribute('target', '_new');
+        jQuery.each(filtered, function(index, element) {
+            var label = element.value.substr(0, element.value.lastIndexOf('.')).toUpperCase();
 
-        // Build thumbnail URL from PDF file path
-        var thumb = "http://www.dedicatedmaps.com/pdf/thumbs/" + label + ".png";
+            // Create a link and make it open in a new tab
+            var pdf2 = createElement('a', element.value)
+            pdf2.setAttribute('href', "http://www.dedicatedmaps.com/pdf/" + label + ".pdf");
+            pdf2.setAttribute('target', '_new');
 
-        // Use document's createElement here since our createElement expects a text node
-        var pdfThumb2 = document.createElement('img');
-        pdfThumb2.setAttribute('src', thumb);
-        pdfThumb2.setAttribute('height', '150px');
-        pdfThumb2.setAttribute('width', '150px');
+            // Build thumbnail URL from PDF file path
+            var thumb = "http://www.dedicatedmaps.com/pdf/thumbs/" + label + ".png";
 
-        pdf2.appendChild(pdfThumb2);
-        pdfspan.appendChild(pdf2);
+            // Use document's createElement here since our createElement expects a text node
+            var pdfThumb2 = document.createElement('img');
+            pdfThumb2.setAttribute('src', thumb);
+            pdfThumb2.setAttribute('height', '150px');
+            pdfThumb2.setAttribute('width', '150px');
 
-        // Finally, append the PDF span to the div
+            pdf2.appendChild(pdfThumb2);
+            pdfspan.appendChild(pdf2);
 
-        div.appendChild(pdfspan);
-      });
-  }
-  return div;  
+            // Finally, append the PDF span to the div
+
+            div.appendChild(pdfspan);
+        });
+    }
+    return div;
 }
 
 var buildEquipmentContainer = function(json, marker, infoBubble) {
-
-              if (json.staging_area_assets && json.staging_area_assets.length > 0) {
-                var div = document.createElement('div');
-                jQuery(div).append(layer.set_staging_area_container(json));
-                jQuery(div).append("<br /><br />");
-                jQuery.each(json.staging_area_assets, function(name, el) { 
-                  //for each piece of equipment...
-                  var link = document.createElement('a');
-                  link.setAttribute('style', 'display:block;');
-                  link.innerHTML = el.description;
-                  jQuery(div).append(link);
-                  jQuery(link).click(function() {
-                    var id = el.id;
-                    jQuery.ajax({
-                        beforeSend: function() {
-                          console.log("AJAX REQUEST: " + "/staging_area_assets/" + id + ".json");
-                        },
-                        url: "/staging_area_assets/" + id + ".json",
-                        error: function(reqObject, textstatus, errorthrown) {
-                            console.log("ERROR: Resp code..." + errorthrown);
-  
-                        },
-                        success: function(response, status, reqObject) {
-                          var json = reqObject.responseJSON;
-                          var getAssetDetailsContainer = function(json) {
-                            var div = document.createElement(div);
-                            jQuery(div).append("<b><span style='color:#2C89F0;'>" + json.description + "</b>");
-                            jQuery(div).append('<br />');
-                            jQuery.each(json.staging_area_asset_details, function(index, element) {
-                            if (element.name == "Specification") {
-                              jQuery(div).append("<ul><span style='color:#2C87F0;'>" + element.name + ": </span>" + element.value + "</ul>");
-                            }
-                            else if (element.name == "Serial_Number") {
-                              jQuery(div).append("<ul><span style='color:#2C87F0;'>" + "Serial Number" + ": </span>" + element.value + "</ul>");
-                            }
-                            else if (element.name == "Manufacture") {
-                              jQuery(div).append("<ul><span style='color:#2C87F0;'>" + element.name + ": </span>" + element.value + "</ul>");
-                            }
-                            else if (element.name == "Model") {
-                              jQuery(div).append("<ul><span style='color:#2C87F0;'>" + element.name + ": </span>" + element.value + "</ul>");
-                            }
-                            else if (element.name == "Manufacture_Year") {
-                              jQuery(div).append("<ul><span style='color:#2C87F0;'>" + "Manufacture Year" + ": </span>" + element.value + "</ul>");
-                            }
-                          });
-                          jQuery.each(json.staging_area_asset_details, function(index, element) {
-                            if (["Specification", "Serial_Number", "Manufacture", "Model", "Manufacture_Year"].indexOf(element.name) == -1) {
-                              jQuery(div).append("<ul><span style='color:#2C87F0;'>" + element.name + ":</span> " + element.value + "</ul>");
-                            }                           
-                          });
-                            jQuery.each(json, function(index, element){ 
-                              if (index == 'image' && element != null && element != "null" && json.staging_area_asset_type.staging_area_company.layer.name) {
-                                jQuery(div).append("<br />");
-                                var url = 'http://174.143.157.90/asset_photos/' + json.staging_area_asset_type.staging_area_company.layer.name.toLowerCase() + '/' + encodeURIComponent(element);
-                                console.log(url);
-                                var imglink = document.createElement('a');
-                                imglink.setAttribute('href', '#');
-                                var img = document.createElement('img');
-                                img.setAttribute('height', '75px');
-                                img.setAttribute('src', url);
-                                img.setAttribute('target', '_blank');
-                                jQuery(imglink).click(function() {
-                                  var strWindowFeatures = "location=yes,height=570,width=520,scrollbars=yes,status=yes";                                  
-                                  var win = window.open(url, "_blank", strWindowFeatures);
-                                });
-                                jQuery(imglink).append(img);
-                                jQuery(div).append(imglink);
-                                jQuery(div).append("<br /><br />");
-                              }                             
-                            });
-                          var children = json.staging_area_assets;
-                          if (children.length > 0) {
-                              jQuery(div).append("<span style='display:block;'>Attached Assets</span>");
-                              jQuery.each(children, function(index, element) {
-                                var newelem = document.createElement('span');
-                                newelem.innerHTML = element.description;
-                                jQuery(div).append(newelem);
-                                jQuery(div).append("<br />");
-                              });
-                          }
-                          
-                          return div;
-                          }
-                          //if infoBubble.tabs_ contains a 'Detail' tab, update it, else, add a new tab
-                          if (infoBubble.tabs_.length >= 3) {
-                            infoBubble.updateTab('2', 'Detail', getAssetDetailsContainer(reqObject.responseJSON));
-                            infoBubble.setTabActive_(infoBubble.tabs_[2].tab);
-                          } else {
-                            infoBubble.addTab('Detail', getAssetDetailsContainer(reqObject.responseJSON));
-                            infoBubble.setTabActive_(infoBubble.tabs_[2].tab);
-                          }                                                                
-                        }
-                      });
-                  });
-                });                              
-              }
-              return div;
             }
 var buildShipInfoContainer = function(json, marker) {
   var div = document.createElement('div');
