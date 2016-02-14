@@ -499,7 +499,7 @@ var dedicatedmaps = (function() {
         if (json.staging_area_company) {
             $(div).append(app.balloons.set_staging_area_container(json));
         }
-        $(div).append("<br /><br />");
+        //$(div).append("<br /><br />");
         if (json.contact) div.appendChild(app.balloons.dom.createElement('div', json.contact));
         if (json.address) div.appendChild(app.balloons.dom.createElement('div', json.address));
         if (json.city )   div.appendChild(app.balloons.dom.createElement('span', json.city + ', '));
@@ -577,7 +577,7 @@ var dedicatedmaps = (function() {
         if (json.staging_area_assets && json.staging_area_assets.length > 0) {
             var div = document.createElement('div');
             $(div).append(app.balloons.set_staging_area_container(json));
-            $(div).append("<br /><br />");
+            //$(div).append("<br /><br />");
             $.each(json.staging_area_assets, function(name, el) {
                 // For each piece of equipment...
                 var link = document.createElement('a');
@@ -630,7 +630,7 @@ var dedicatedmaps = (function() {
         title.appendChild(header);
         container.appendChild(title);
         var div = document.createElement('div');
-        div.setAttribute('class','info_window');
+        //div.setAttribute('class','info_window');
         container.appendChild(div);
         return container;
     };
@@ -664,7 +664,7 @@ var dedicatedmaps = (function() {
         jQuery.each(json, function(index, element){
             if (index == 'image' && element != null && element != "null" && json.staging_area_asset_type.staging_area_company.layer.name) {
                 jQuery(div).append("<br />");
-                var url = app.ui.icons.getIconPath('asset_pictures') + json.staging_area_asset_type.staging_area_company.layer.name.toLowerCase() + '/' + encodeURIComponent(element);
+                var url = "http://dedicatedmaps.com/images/asset_photos/" + json.staging_area_asset_type.staging_area_company.layer.name.toLowerCase() + '/' + encodeURIComponent(element);
                 console.log(url);
                 var imglink = document.createElement('a');
                 imglink.setAttribute('href', '#');
@@ -698,7 +698,7 @@ var dedicatedmaps = (function() {
     // Renders DOM to display Public Ship info
     app.balloons.shipInfo = function(ship, layer_name) {
         var div = document.createElement('div');
-        div.setAttribute('class', 'info_window');
+        //div.setAttribute('class', 'info_window');
         var title = createElement(div, ship.name);
         title.className = 'balloon_title';
         // Center here image

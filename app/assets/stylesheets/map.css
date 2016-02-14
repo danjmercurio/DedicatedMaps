@@ -155,3 +155,98 @@ div#message {
 .play:before {
     content: "\25B6";
 }
+/*
+Info window styles
+*/
+
+.balloon {
+    /*height:95%;*/
+    /*height:350px;*/
+    /*width:450px;*/
+    margin-bottom:5px;
+}
+
+.info_window {
+    background-color: #FFF;
+    overflow:auto;
+    height:100%;
+    min-width:300px;
+    margin-right:16px;
+}
+
+.info_window table th{
+    font-weight: bold;
+    padding-right: 6px;
+}
+
+.info_window table td{
+    padding-right: 4px;
+}
+
+.info_window .label{
+    font-weight: bold;
+}
+
+.balloon_title{
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    background-image: url(../images/info_window/top_gradient.gif);
+    background-repeat: repeat-x;
+    padding: 2px;
+    margin-right:16px;
+}
+
+.balloon_company{
+    font-size: .9em;
+    color: #333;
+    float:right;
+    margin-right: 10px;
+}
+
+.crosshairs{
+    float:left;
+}
+
+.info_window .pic{
+    color:#FF0000;
+    width: 159px;
+    float:left;
+    padding-top: 5px;
+}
+
+/*
+.info_window .backgroundPic{
+	width:inherit;
+	background-image: url(../images/info_window/shadow.png);
+	background-repeat: repeat;
+	height: 150px;
+}
+*/
+
+.info_window .text{
+    color:#000000;
+    float:left;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+.infoRedText {color: #FF0000}
+
+#controls {
+    margin-top:30px;
+    color: #0000FF;
+}
+
+.children-heading {
+    margin: 10px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.image-thumb {
+    width: 100px;
+}
+span.itemprop {
+    display: block;
+}
