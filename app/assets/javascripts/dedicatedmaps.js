@@ -190,6 +190,27 @@ var dedicatedmaps = (function() {
                                 $.each(data, function(key, value){
                                     layer.load(value);
                                 });
+
+                                // Convenience methods that extend the Marker prototype for what we are about to do
+                                google.maps.Marker.prototype.center = function () {
+                                    app.ui.getMap().panTo(this.getPosition());
+                                };
+
+                                google.maps.Marker.prototype.centerOpen = function () {
+                                    this.center();
+                                    google.maps.event.trigger(this, "click");
+                                };
+
+                                // Staging areas have locator select tags that need a jquery change event handler assigned to them
+                                layer.layerLocatorElement = $('#' + layer.name + "_locate");
+                                layer.layerLocatorElement.change(function () {
+                                    var target = layer.layerLocatorElement.val();
+                                    $('#' + layer.name)[0].checked ? layer.getMarkerByID(target).centerOpen() : layer.load_callback = function () {
+                                        layer.getMarkerByID(target).centerOpen()
+                                    }
+                                });
+
+                                // Set layer status to on
                                 layer.isOn = true;
                                 layer.show();
                             },
@@ -308,6 +329,21 @@ var dedicatedmaps = (function() {
     app.layer.Layer.prototype.off = function() {
         this.clearMarkers();
         this.isOn = false;
+    };
+
+    app.layer.Layer.prototype.getMarkerByID = function (id) {
+        var ret, intID = parseInt(id);
+        this.forEachMarker(function (index, element) {
+            console.log(element.id, intID, element.id == intID);
+            if (element.id == intID) {
+                ret = element;
+            }
+        });
+        if (ret) {
+            return ret;
+        } else {
+            throw new Error('Could not find a marker with id: ' + id);
+        }
     };
 
     // This calls Layer.render, so don't worry about calling it manually.
@@ -721,7 +757,9 @@ var dedicatedmaps = (function() {
         if (ship.draught)     div.appendChild(createNameValueDiv('Draught: ', ship.draught / 10 + ' m'));
         if (ship.status)      div.appendChild(createNameValueDiv('Status: ', ship.status));
         if (ship.destination) div.appendChild(createNameValueDiv('Destination: ', ship.destination));
-        if (ship.age) {div.appendChild(createNameValueDiv('Received: ', ship.age))};
+        if (ship.age) {
+            div.appendChild(createNameValueDiv('Received: ', ship.age))
+        }
         if (ship.MMSI)  div.appendChild(createNameValueDiv('MMSI: ', ship.MMSI));
         if (ship.lon)  div.appendChild(createNameValueDiv('Long: ', ship.lon));
         if (ship.lat)  div.appendChild(createNameValueDiv('Lat: ', ship.lat));
@@ -779,7 +817,7 @@ var dedicatedmaps = (function() {
 
         // If we don't have an icon for this particular ship type + angle yet, make one.
         if ((icons[image]) == null ) {
-            var url = app.ui.icons.getIconPath("/images/markers/ships/" + image + ".png")
+            var url = app.ui.icons.getIconPath("/images/markers/ships/" + image + ".png");
             var icon = {url: url,
                 name: image};
             var size = icon_sizes[item.suffix];
@@ -792,7 +830,6 @@ var dedicatedmaps = (function() {
     app.publicShips.render = function(data) {
 
     };
-
 
     // Start everything
     app.initializeMap();

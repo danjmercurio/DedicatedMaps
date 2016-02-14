@@ -4,9 +4,11 @@
 
 <div class="container">
   <div class="layerPanel">
-    <span id="message">&nbsp;</span><div id="message"></div>
+    <!-- TODO: implement refresh -->
     <%= check_box_tag("auto-refresh", '', false, :title => 'Auto Refresh (60 sec)', :onclick => "auto_refresh(this.checked)" ) %>
     <%= link_to_function("<img src='/images/view-refresh.png' title='Refresh' border='0'/>".html_safe,"refresh()") %>
+    <span id="message">&nbsp;</span>
+    <div id="message"></div>
     <% if @layers.empty? %>
         No layers are enabled for this account.
     <% else %>
