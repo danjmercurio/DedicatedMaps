@@ -28,6 +28,4 @@
   <% end %>
 
   <%= select_tag "Locate My Items", options, :id=>"my_item_locate" %>
-  <%= observe_field('my_item_locate', :function => 'layer.my_items.list[value].centerOpen()')%>
-
 <% end %>

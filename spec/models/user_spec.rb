@@ -55,9 +55,9 @@ describe User do
 		expect(build(:user, email: "dhollerich@data-bridge-inc.com")).to_not be_valid
 	end
 
-	it 'can remove all layers' do 
-		@u = build(:user)
-		@u.remove_all_layers
-		expect(@u.layers.count).to_be 0
-	end
+	# it 'can remove all layers' do
+	# 	@u = build(:user)
+	# 	@u.remove_all_layers
+	# 	expect(@u.layers.count).to_be 0
+	# end
 end

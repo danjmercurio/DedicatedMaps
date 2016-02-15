@@ -1,70 +1,70 @@
-<% if @loggedin_user && !@anonymous_user %>  
+<% if @loggedin_user && !@anonymous_user %>
     <% if controller.controller_name != "public" %>
         <%= link_to "My Map", map_path(@loggedin_user.map), class: 'button' %>
         <%= link_to "My Account", edit_user_path(@loggedin_user.id), class: 'button' %>
-      <% if @loggedin_user.super? || @loggedin_user.admin? %>
-            <%= link_to "Admin", private_path('admin'), class: 'button' %>
-      <% end %>
-      <%= link_to "Help", private_path('help'), class: 'button' %>
-      <%= link_to "Sign Out", @application_session, :method => :delete, class: 'button' %>
-    <% else %>
-      <span class='accountinfo'>
-        Welcome <%= @loggedin_user.first_name %> <%= @loggedin_user.last_name %> |
-        <%= link_to "My Map", map_path(@loggedin_user.map) %> |
-        <%= link_to "My Account", edit_user_path(@loggedin_user.id) %> |
         <% if @loggedin_user.super? || @loggedin_user.admin? %>
-        <%= link_to "Admin", private_path('admin') %> | 
+            <%= link_to "Admin", private_path('admin'), class: 'button' %>
         <% end %>
-        <%= link_to "Help", private_path('help') %> |
-        <%= link_to "Sign Out", @application_session, :method => :delete %>
-      </span> 
+        <%= link_to "Help", private_path('help'), class: 'button' %>
+        <%= link_to "Sign Out", @application_session, :method => :delete, class: 'button' %>
+    <% else %>
+        <span class='accountinfo'>
+        Welcome <%= @loggedin_user.first_name %> <%= @loggedin_user.last_name %> |
+          <%= link_to "My Map", map_path(@loggedin_user.map) %> |
+          <%= link_to "My Account", edit_user_path(@loggedin_user.id) %> |
+          <% if @loggedin_user.super? || @loggedin_user.admin? %>
+        <%= link_to "Admin", private_path('admin') %> |
+        <% end %>
+          <%= link_to "Help", private_path('help') %> |
+          <%= link_to "Sign Out", @application_session, :method => :delete %>
+      </span>
     <% end %>
 <% else %>
-  <div id="login">
-  <% logout_user if @anonymous_user && !(controller.controller_name == 'maps' && controller.action_name == 'show') %>
+    <div id="login">
+      <% logout_user if @anonymous_user && !(controller.controller_name == 'maps' && controller.action_name == 'show') %>
 
-  <%= form_for @session, url: {controller: "sessions", action: "create"}, html: {:class => "accountinfo form-inline"} do |f| %>
-  <div class="form-group">
-    <%= f.text_field :username,
-    :value => 'username',
-    :onBlur => 'clearText(this);',
-    :onFocus => 'clearText(this);',
-    :class => "accountuser form-control input-sm"
-    %>
-  </div>
-  <div class="form-group">
-    <span id='pws'> 
+      <%= form_for @session, url: {controller: "sessions", action: "create"}, html: {:class => "accountinfo form-inline"} do |f| %>
+          <div class="form-group">
+            <%= f.text_field :username,
+                             :value => 'username',
+                             :onBlur => 'clearText(this);',
+                             :onFocus => 'clearText(this);',
+                             :class => "accountuser form-control input-sm"
+            %>
+          </div>
+          <div class="form-group">
+    <span id='pws'>
       <%= f.password_field :password,
-      :value => 'password',
-      :onBlur =>'clearText(this);',
-      :onFocus => 'clearText(this);',
-      :class => "accountpass form-control input-sm"
-      %>     
+                           :value => 'password',
+                           :onBlur =>'clearText(this);',
+                           :onFocus => 'clearText(this);',
+                           :class => "accountpass form-control input-sm"
+      %>
     </span>
-  </div>
-  <div class="form-group">
-    <%= submit_tag "Log In", {:class => "btn btn-primary"} %>
-    <!-- (<%= link_to_function("I forgot", 
-    "$(this).up('div').childElements().invoke('toggle');
+          </div>
+          <div class="form-group">
+            <%= submit_tag "Log In", {:class => "btn btn-primary"} %>
+            <!-- (<%= link_to_function("I forgot",
+                                       "$(this).up('div').childElements().invoke('toggle');
     $('username').value = $('session_username').value;"
-    ) %>) -->
-    <a href="#" id="forgot">I forgot</a>
+                      ) %>) -->
+            <a href="#" id="forgot">I forgot</a>
 
-  </div>
-    <% end %>
+          </div>
+      <% end %>
 
-  <span id="recover" style="display:none;">
+      <span id="recover" style="display:none;">
     <%= form_tag({controller: "users", action: "recover"}, :class => "accountinfo", :update => "reset_message", :loading => "Element.show('reset_loading')", :complete => "Element.hide('reset_loading')") do %>
 
-    <%= text_field_tag :username, 'username', 
-    :onBlur => 'clearText(this);',
-    :onFocus => 'clearText(this);',
-    :class => 'accountuser form-control'
+    <%= text_field_tag :username, 'username',
+                       :onBlur => 'clearText(this);',
+                       :onFocus => 'clearText(this);',
+                       :class => 'accountuser form-control'
     %>
 
-    <%= submit_tag "Reset Password", {:class => "btn"} %>
+            <%= submit_tag "Reset Password", {:class => "btn"} %>
 
-    <a href="#" id="cancel">Cancel</a>
+            <a href="#" id="cancel">Cancel</a>
     <span id='reset_loading' style='color:red; display:none'>loading...</span>
     <span id='reset_message' style='color:red'></span>
     <% end %>

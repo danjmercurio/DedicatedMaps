@@ -30,7 +30,8 @@ class User < ActiveRecord::Base
   
     validates_format_of :password, :with => /\A([\x20-\x7E]){4,26}\z/,
                         :message => "must be 4 to 26 characters",
-                        :unless => :password_is_not_being_updated?  
+                        :unless => :password_is_not_being_updated?
+    validates_format_of :password, :with => /\A\S*\z/, :message => 'must not contain spaces'
     validates_format_of :email, :with => /\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\z/i,
                         :message => "must be a valid email address."
     

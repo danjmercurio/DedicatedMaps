@@ -7,7 +7,7 @@ Ddmap::Application.configure do
   # and recreated between test runs.  Don't rely on the data there!
   config.cache_classes = true
 
-  config.serve_static_assets = true
+  config.serve_static_files = true
 
   # Show full error reports and disable caching
   #config.action_controller.consider_all_requests_local = true
@@ -34,4 +34,7 @@ Ddmap::Application.configure do
   # This is necessary if your schema can't be completely dumped by the schema dumper,
   # like if you have constraints or database-specific column types
   # config.active_record.schema_format = :sql
+
+  config.active_record.raise_in_transactional_callbacks = true
+
 end
