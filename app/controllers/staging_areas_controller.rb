@@ -35,15 +35,19 @@ class StagingAreasController < ApplicationController
     # Deprecated finder
     # @all = StagingArea.find_all_by_staging_area_company_id(@company.id)
 
-    @all = StagingArea.where(:staging_area_company_id => @company.id)
-    @staging_areas = @all.joins(:staging_area_assets)
-                         .where("staging_area_assets.staging_area_asset_type_id = ?", params[:id])
-                         .each { |s| s.icon = 'teardrop/red-dot' }
+    @staging_areas = StagingArea.joins(:staging_area_assets)
+                         .where('staging_area_assets.staging_area_asset_type_id = ? AND staging_area_company_id = ?', params[:id], @company.id)
 
-    @all = (@all - @staging_areas) + @staging_areas
+    @staging_areas.each {|s| s.icon = 'teardrop/red-dot'}
+
+    # @all = StagingArea.where(:staging_area_company_id => @company.id)
+    #
+    #
+    # @all = (@all - @staging_areas) + @staging_areas
 
     respond_to do |format|
-      format.json  { render :json => @all }
+      format.json  { render :json => @staging_areas
+      }
     end
   end
  

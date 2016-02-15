@@ -210,6 +210,35 @@ var dedicatedmaps = (function() {
                                     }
                                 });
 
+                                // Staging areas also have a similar equipment search function
+                                layer.search_filter = function(arg) {
+                                    if (arg != "0" && arg != 0) {
+                                        app.ui.ajaxLoad({
+                                            url: ['/search', 'staging_areas', layer.name, arg + '.json'].join('/'),
+                                            success: function(data) {
+                                                //in this context, this refers to the jQuery ajax request object
+                                                layer.clearMarkers();
+                                                $.each(data, function(index, element) {
+                                                    layer.load(element);
+                                                });
+                                                layer.show();
+                                            },
+                                            error: function() {
+                                                alert("Error processing search. Please try later.");
+                                            }
+                                        });
+                                    } else {
+                                        layer.off()
+                                        layer.on();
+                                        $(layer.equipmentLocatorElement).val(-1);
+                                    }
+                                };
+                                layer.equipmentLocatorElement = $('#' + layer.name + "_gear");
+                                layer.equipmentLocatorElement.change(function () {
+                                    var target = layer.equipmentLocatorElement.val();
+                                    layer.search_filter(target);
+                                });
+
                                 // Set layer status to on
                                 layer.isOn = true;
                                 layer.show();
@@ -329,6 +358,7 @@ var dedicatedmaps = (function() {
     app.layer.Layer.prototype.off = function() {
         this.clearMarkers();
         this.isOn = false;
+        this.loaded = false;
     };
 
     app.layer.Layer.prototype.getMarkerByID = function (id) {
@@ -354,7 +384,7 @@ var dedicatedmaps = (function() {
         // address: "2211 St. Francis Lane"
         // ...
         // }
-        var marker = this.render(data);
+        var marker = this.render(data) || function() {throw new Error("Unable to render marker");};
         this.markers.push(marker);
         this.loaded = true;
         this.load_callback();
@@ -376,11 +406,12 @@ var dedicatedmaps = (function() {
     };
 
     app.layer.Layer.prototype.clearMarkers = function() {
-        this.setMapOnAll(null);
+        this.hide();
+        this.markers = [];
     };
 
     app.layer.Layer.prototype.hide = function() {
-        this.clearMarkers();
+        this.setMapOnAll(null);
     };
 
     app.layer.Layer.prototype.show = function() {
@@ -408,6 +439,7 @@ var dedicatedmaps = (function() {
         var marker = new google.maps.Marker({
             position: latLng,
             icon: iconPath,
+            map: app.ui.getMap()
         });
         marker.id = current.id;
         app.balloons.addBubble(marker, this.name);

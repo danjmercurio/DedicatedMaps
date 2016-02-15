@@ -46,12 +46,12 @@ Layer.prototype.hide = function() {this.mgr.hide();};
 Layer.prototype.visible = function() {this.mgr.visible();};
 
 google.maps.Marker.prototype.center = function() {
-  map.panTo(this.getPosition());
+    map.panTo(this.getPosition());
 };
 
 google.maps.Marker.prototype.centerOpen = function() {
-  this.center();
-  google.maps.event.trigger(this, "click"); 
+    this.center();
+    google.maps.event.trigger(this, "click");
 };
 
 // Called by the refresh button if the layer is checked.
