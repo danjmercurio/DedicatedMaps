@@ -78,8 +78,12 @@
       <% end %>
 
       <div class="row">
-        <div class="col-md-2"><%= render :partial=>"layouts/admin_bar" %></div>
-        <div class="col md-10" id="main"><%= yield %></div>
+        <div class="col-md-2">
+          <%= render :partial => "layouts/admin_bar" %>
+        </div>
+        <div class="col-md-10" id="main">
+          <%= yield %>
+        </div>
       </div>
 
 

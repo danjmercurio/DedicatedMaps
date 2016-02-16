@@ -1,6 +1,7 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+    background: url(http://dedicatedmaps.com/images/bg-body.jpg);
 }
 
 .navbar {
@@ -62,4 +63,9 @@ div#footer {
 /* Padding for the inside of tab panes on edit actions */
 div.tab-pane {
 	padding: 10px;
+}
+
+div.col-md-10 {
+    background-color: white;
+    padding: 10px;
 }
