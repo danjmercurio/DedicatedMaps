@@ -34,7 +34,7 @@ class OthersController < ApplicationController
           :conditions => ["visibility_id >= ? AND shared_assets.client_id = ?", @min_visibility.id, @loggedin_user.client.id]
         )
 
-        @shared = "0" if @shared.length() == 0 
+        @shared = "0" if @shared.length == 0
         
         @min_visibility = Visibility.find_by_name("Public")
         @assets = Asset.find_all_by_asset_type_id(
@@ -65,7 +65,7 @@ class OthersController < ApplicationController
     }
 
     respond_to do |format|
-      format.json  { render :json => @results.to_json() }
+      format.json { render :json => @results.to_json }
     end
   end  
    

@@ -47,10 +47,11 @@ class AisFeed < ActiveRecord::Base
       logger.info "AIS 1 Feed: " + data.length.to_s if DEBUG
       data.each do |mmsi, ship_data|
         ship_data['mmsi'] = mmsi
-        device = Device.find_by_serial_number(mmsi)
+        device = Device.where(:serial_number => mmsi)
         if device
           # Handle case where user creates AIS device but doesn't tether to a ship?
-          asset = device.assets.first
+          #asset = device.assets.first
+          asset = device.first.assets.first
           # If there's an asset on the device, and it's tagged or owned by a client, and not at port, then we record its history
           if asset && (asset.tag || asset.client) && !is_at_port?(ship_data) 
             logger.info 'Saving history: ' + mmsi if DEBUG
@@ -64,15 +65,20 @@ class AisFeed < ActiveRecord::Base
         self.update_ship_location(asset, ship_data) if asset
         logger.info 'Updated: ' + mmsi if DEBUG
       end
-      
+
       # Clear old ships:
       # If a ship is public, not tagged, and hasn't updated in 24 hours, remove it from the database.
       # i.e. Ships.public.not_tagged.not_at_port.last_update > 24 hours
-      assets_to_delete = Asset.find_all_by_client_id(nil).select {|a| 
-         a.tag.nil? && !a.current_location.timestamp.nil? && (a.current_location.timestamp < Time.zone.now - 1.day)
-      }
-      logger.info ["Deleting ships: "] + assets_to_delete.map {|a| "MMSI: " + a.devices.first.serial_number + " Name: " + (a.common_name || "")} if DEBUG
-      assets_to_delete.each {|asset| asset.devices.each(&:destroy); asset.destroy}
+      # assets_to_delete = Asset.joins(:current_location).all.map {|a|
+      #    a.tag.nil? && !a.current_location.timestamp.nil? && (a.current_location.timestamp < Time.zone.now - 1.day)
+      # }
+      assets_to_delete = Asset.joins(:current_location).where(:asset_type_id => 1).select { |a|
+        a.tag.nil? && !a.current_location.timestamp.nil? && (a.current_location.timestamp < Time.zone.now - 1.day) }
+      logger.info ["Deleting ships: "] + assets_to_delete
+      #assets_to_delete.each {|asset| asset.devices.each(&:destroy); asset.destroy}
+      assets_to_delete.each do |x|
+        x.delete
+      end
       feed.destroy
     end
 
@@ -89,7 +95,7 @@ class AisFeed < ActiveRecord::Base
         end
         ship_data['mmsi'] = mmsi
         logger.info ship_data["name"] + " Destination: " + ship_data["destination"]
-        device = Device.find_by_serial_number(mmsi)
+        device = Device.where(:serial_number => mmsi)
         if device # we only fill in AIS 5 data if a ship alread exists via its AIS 1 feed.
           asset = device.assets.first # AIS ships will have one and only device
           asset && self.record_ship_specs(asset, ship_data)

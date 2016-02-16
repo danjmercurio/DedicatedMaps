@@ -8,7 +8,7 @@
 <link href="lib_styles.1.css" rel="stylesheet" type="text/css" />  <!-- page styles -->
 <SCRIPT language=JavaScript src="lib_validate.js" type=text/javascript></SCRIPT>
 <SCRIPT language=JavaScript src="javascripts/prototype.js" type=text/javascript></SCRIPT>
-<SCRIPT language=JavaScript>
+	<script type="text/javascript" language=JavaScript>
 	function validate() {
 		var c = 0;		
 		c += valDate( "1","2","year" );
@@ -30,7 +30,7 @@
 	function ShowInstructions() {
 		window.open( 'form.ner.mults_catch_info.html', 'Instructions', 'resizable=no, scrollbars=no');
 	}
-</SCRIPT>
+	</script>
 </head>
 
 <body bgcolor="#eeeeef">
@@ -93,8 +93,8 @@
     cue_status = function() {
         if (typeof(cue_timer) == 'number') clearTimeout(cue_timer);
         cue_timer = setTimeout(update_status, 3000);
-    }
-    update_status = function() {
+	};
+	update_status = function () {
       $('loader').toggle();
       $('delivered').toggle();
     }
@@ -102,11 +102,11 @@
 
   <button onclick="$('loader').toggle(); cue_status();">Submit</button>
 
-  <div id="loader" style="display:none">
+	<div id="loader" alt="Sending" style="display:none">
     <img src="faria_sending.gif"/>
   </div>
 
-  <div id="delivered" style="display:none">
+	<div id="delivered" alt="Delivered" style="display:none">
    <img src="faria_delivered.gif"/>
   </div>
 

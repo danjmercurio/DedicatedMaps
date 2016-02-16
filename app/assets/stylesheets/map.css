@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 * {
     font-family: 'Droid Sans', sans-serif;
-    margin: 0px;
+    margin: 0;
 }
 body {
 
@@ -10,9 +10,9 @@ body {
 
 div.header {
     box-shadow:0 0 5px rgba(57,70,78,.2);
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-left: 0px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
     height: 50px;
 }
 div.container {

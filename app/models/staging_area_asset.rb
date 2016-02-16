@@ -31,7 +31,7 @@ class StagingAreaAsset < ActiveRecord::Base
   # TODO: This is much less effecient than a dynamic has_many :condition
   def children_assets_filter
     staging_area_assets.each_with_index do |child, i|
-      if child.staging_area_id != staging_area_id then 
+      if child.staging_area_id != staging_area_id
         staging_area_assets.delete_at(i);
       end
     end 

@@ -33,7 +33,7 @@ class FishingTripsController < ApplicationController
         @asset = @vessel.asset
         @fish = Fish.all
         @fishing_gear = FishingGear.all
-        @fishermen = @vessel.asset.client.fishermen.all(:order => :last_name)
+        @fishermen = @vessel.asset.client.fishermen.all.order(:last_name)
         
         format.js  {render :partial => 'assets/fishing_trip',
                          :locals  => {

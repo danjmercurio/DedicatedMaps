@@ -1,6 +1,6 @@
 class AisFeedsController < ApplicationController
 
-  #skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token
   #  Test locally:
   #  curl http://localhost:3000/ais_feeds/ais1 -H "Content-type: application/json" -d "@test/files/ais/ais1.json"
   #  curl http://localhost:3000/ais_feeds/ais5 -H "Content-type: application/json" -d "@test/files/ais/ais5.json"

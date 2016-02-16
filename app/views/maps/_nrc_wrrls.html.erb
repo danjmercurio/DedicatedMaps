@@ -1,7 +1,7 @@
 <% @nrc_wrrl = StagingAreaCompany.find_by_layer_id(layer) %>
 
 <% options = "<option value='0'>Location</option>".html_safe %>
-<% @nrc_wrrl.staging_areas.all(:order => :name).select {|c| c.lat && c.lon}.each do |f| %>
+<% @nrc_wrrl.staging_areas.all.order(:name).select { |c| c.lat && c.lon }.each do |f| %>
     <% options.concat("<option value=#{f.id}>#{f.name[0..19]}</option>".html_safe) %>
 <% end %>
 
@@ -12,7 +12,7 @@
 
 <% options = "<option value='-1'>Equipment</option>".html_safe %>
 <% options += "<option value='0'>-=Clear All=-</option>".html_safe %>
-<% @nrc_wrrl.staging_area_asset_types.all(:order => :name).each do |f| %>
+<% @nrc_wrrl.staging_area_asset_types.all.order(:name).each do |f| %>
     <% options.concat("<option value=#{f.id}>#{f.name[0..19]}</option>".html_safe) %>
 <% end %>
 

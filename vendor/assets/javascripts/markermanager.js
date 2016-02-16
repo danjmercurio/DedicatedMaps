@@ -390,6 +390,7 @@ MarkerManager.prototype.removeMarker = function (marker) {
 };
 
 
+//noinspection JSClosureCompilerSyntax
 /**
  * Add many markers at once.
  * Does not actually update the map, just the internal grid.

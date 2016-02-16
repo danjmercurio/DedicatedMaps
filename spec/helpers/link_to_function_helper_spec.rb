@@ -16,7 +16,8 @@ RSpec.describe LinkToFunctionHelper, type: :helper do
   end
   it "requires an argument" do
     expect {
-      helper.link_to_function()
+      # noinspection RubyArgCount
+      helper.link_to_function
     }.to raise_error(ArgumentError)
   end
 end

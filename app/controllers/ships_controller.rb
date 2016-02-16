@@ -148,7 +148,7 @@ class ShipsController < ApplicationController
     }
 
     respond_to do |format|
-      format.json  { render :json => @results.to_json() }
+      format.json { render :json => @results.to_json }
     end
   end  
    

@@ -69,7 +69,7 @@ class AssetsController < ApplicationController
           order('created_at DESC')
       @fishing_gear = FishingGear.all
       @fish = Fish.all
-      @fishermen = @asset.client.fishermen.all(:order => :last_name)
+      @fishermen = @asset.client.fishermen.all.order(:last_name)
     end
   end
 

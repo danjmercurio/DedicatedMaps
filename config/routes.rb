@@ -25,6 +25,9 @@ Ddmap::Application.routes.draw do
   resources :points
   resources :fishing_areas
   resources :area_categories
+
+  #post 'ais_feeds/ais1' => 'aisFeeds#ais1'
+
   resources :sessions do
 
     member do
@@ -67,6 +70,10 @@ Ddmap::Application.routes.draw do
  
   get '/:controller(/:action(/:id))'
 
+  post '/:controller(/:action(/:id))'
+
+
+  #post '/ais_feeds/ais5', to: 'AisFeeds#ais5'
 
   post '/license/activate' => 'licenses#activate'
 

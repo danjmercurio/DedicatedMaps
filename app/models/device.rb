@@ -84,7 +84,7 @@ class Device < ActiveRecord::Base
     doc = Nokogiri::XML(xml) { |config| config.strict.noblanks }
     return if doc.nil?
     node = doc.css('message')
-    return if node.nil? || node.empty?()
+    return if node.nil? || node.empty?
     node = node.first
     {:lat =>  node.css('latitude').text, :lon => node.css('longitude').text, :timestamp => DateTime.parse(node.css('timestamp').text)}
   end

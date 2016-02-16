@@ -38,7 +38,7 @@ a:hover
 	margin-right: auto;
 	/*text-align: left;*/
 	position: relative;
-	padding: 0px 0px 0 0px
+    padding: 0 0 0 0
 }
 
 
@@ -120,7 +120,7 @@ a:hover
 	margin: 0 auto;
 	text-align: left;
 	position: relative;
-	padding: 0px 0px 0px 0px;
+    padding: 0 0 0 0;
 }
 
 .menu 
@@ -328,7 +328,7 @@ ul.menu li a:hover
 	margin: 0 auto;
 	text-align: left;
 	position: relative;
-	padding: 20px 0px 0px 0px;
+    padding: 20px 0 0 0;
 }
 
 .homecontentheader
@@ -346,13 +346,13 @@ ul.menu li a:hover
 .contentpressrelease
 {
 	position: absolute;
-	padding: 190px 0px 0px 276px;
+    padding: 190px 0 0 276px;
 }
 
 .contentdemo
 {
 	position: absolute;
-	padding: 190px 0px 0 531px;
+    padding: 190px 0 0 531px;
 }
 
 
@@ -388,7 +388,7 @@ ul.menu li a:hover
 	margin: 0 auto;
 	text-align: left;
 	position: relative;
-	padding: 20px 0px 0 0px;
+    padding: 20px 0 0 0;
 }
 
 .contentbody a
@@ -596,7 +596,7 @@ li {
 	margin: 0 auto;
 	text-align: left;
 	position: relative;
-	padding: 22px 0px 0px 0px;
+    padding: 22px 0 0 0;
 	font-size: 0.8em;
 }
 
@@ -648,7 +648,7 @@ a:hover
 	margin-right: auto;
 	/*text-align: left;*/
 	position: relative;
-	padding: 0px 0px 0 0px
+    padding: 0 0 0 0
 }
 
 
@@ -723,7 +723,7 @@ a:hover
 	margin: 0 auto;
 	text-align: left;
 	position: relative;
-	padding: 0px 0px 0px 0px;
+    padding: 0 0 0 0;
 }
 
 .menu 
@@ -931,7 +931,7 @@ ul.menu li a:hover
 	margin: 0 auto;
 	text-align: left;
 	position: relative;
-	padding: 20px 0px 0px 0px;
+    padding: 20px 0 0 0;
 }
 
 .homecontentheader
@@ -949,13 +949,13 @@ ul.menu li a:hover
 .contentpressrelease
 {
 	position: absolute;
-	padding: 190px 0px 0px 276px;
+    padding: 190px 0 0 276px;
 }
 
 .contentdemo
 {
 	position: absolute;
-	padding: 190px 0px 0 531px;
+    padding: 190px 0 0 531px;
 }
 
 
@@ -991,7 +991,7 @@ ul.menu li a:hover
 	margin: 0 auto;
 	text-align: left;
 	position: relative;
-	padding: 20px 0px 0 0px;
+    padding: 20px 0 0 0;
 }
 
 .contentbody a
@@ -1192,7 +1192,7 @@ ul.menu li a:hover
 	margin: 0 auto;
 	text-align: left;
 	position: relative;
-	padding: 22px 0px 0px 0px;
+    padding: 22px 0 0 0;
 	font-size: 0.8em;
 }
 
