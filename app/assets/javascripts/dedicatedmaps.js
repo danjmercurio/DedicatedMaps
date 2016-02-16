@@ -270,6 +270,7 @@ var dedicatedmaps = (function() {
 
                             break;
                         case 'public_ships':
+                            layer.render = app.publicShips.render;
                             if (!layer.loaded) {
                                 var url = ['/', 'public_ships', '.json'].join('');
                                 // Load JSON marker list
@@ -277,9 +278,10 @@ var dedicatedmaps = (function() {
                                     url: url,
                                     success: function(data) {
                                         $.each(data, function(key, value){
-                                            app.publicShips.render(value);
+                                            layer.load(value);
                                         });
                                         layer.isOn = true;
+                                        this.loaded = true;
                                         layer.show();
                                     },
                                     error: function() {
@@ -386,7 +388,6 @@ var dedicatedmaps = (function() {
         // }
         var marker = this.render(data) || function() {throw new Error("Unable to render marker");};
         this.markers.push(marker);
-        this.loaded = true;
         this.load_callback();
         this.load_callback = function() {};
     };
@@ -541,7 +542,7 @@ var dedicatedmaps = (function() {
                 url: ["/marker/", layerName, "/", marker.id, ".json"].join(''),
                 success: function(json) {
                     // If the bubble is for public ships layer, use a different balloon loader
-                    if (name == 'public_ships') {
+                    if (layerName == 'public_ships') {
                         infoBubble.updateTab('0', 'Info', app.balloons.shipInfo(json, 'public_ships'));
                     } else {
                         // Build the info tab
@@ -767,7 +768,7 @@ var dedicatedmaps = (function() {
     app.balloons.shipInfo = function(ship, layer_name) {
         var div = document.createElement('div');
         //div.setAttribute('class', 'info_window');
-        var title = createElement(div, ship.name);
+        var title = app.balloons.dom.createElement('div', ship.name);
         title.className = 'balloon_title';
         // Center here image
         var a = document.createElement('a');
@@ -780,27 +781,29 @@ var dedicatedmaps = (function() {
         a.appendChild(image);
         title.appendChild(a);
         div.appendChild(title);
-        if (ship.owner)       div.appendChild(createNameValueDiv('Owner: ', ship.owner));
-        if (ship.icon.name)   div.appendChild(createNameValueDiv('Type: ', ship.icon.name));
-        if (ship.dim_bow)     div.appendChild(createNameValueDiv('Size: ', (
+        if (ship.owner)       div.appendChild(app.balloons.dom.createNameValueDiv('Owner: ', ship.owner));
+        if (ship.icon.name)   div.appendChild(app.balloons.dom.createNameValueDiv('Type: ', ship.icon.name));
+        if (ship.dim_bow)     div.appendChild(app.balloons.dom.createNameValueDiv('Size: ', (
             ship.dim_bow + ship.dim_stern) + 'm x ' + (ship.dim_port + ship.dim_starboard) + 'm')
         );
-        if (ship.speed)       div.appendChild(createNameValueDiv('Speed/Course: ', ship.speed + ' nm / ' + ship.cog + ' deg'));
-        if (ship.draught)     div.appendChild(createNameValueDiv('Draught: ', ship.draught / 10 + ' m'));
-        if (ship.status)      div.appendChild(createNameValueDiv('Status: ', ship.status));
-        if (ship.destination) div.appendChild(createNameValueDiv('Destination: ', ship.destination));
+        if (ship.speed)       div.appendChild(app.balloons.dom.createNameValueDiv('Speed/Course: ', ship.speed + ' nm / ' + ship.cog + ' deg'));
+        if (ship.draught)     div.appendChild(app.balloons.dom.createNameValueDiv('Draught: ', ship.draught / 10 + ' m'));
+        if (ship.status)      div.appendChild(app.balloons.dom.createNameValueDiv('Status: ', ship.status));
+        if (ship.destination) div.appendChild(app.balloons.dom.createNameValueDiv('Destination: ', ship.destination));
         if (ship.age) {
-            div.appendChild(createNameValueDiv('Received: ', ship.age))
+            div.appendChild(app.balloons.dom.createNameValueDiv('Received: ', ship.age))
         }
-        if (ship.MMSI)  div.appendChild(createNameValueDiv('MMSI: ', ship.MMSI));
-        if (ship.lon)  div.appendChild(createNameValueDiv('Long: ', ship.lon));
-        if (ship.lat)  div.appendChild(createNameValueDiv('Lat: ', ship.lat));
+        if (ship.MMSI)  div.appendChild(app.balloons.dom.createNameValueDiv('MMSI: ', ship.MMSI));
+        if (ship.lon)  div.appendChild(app.balloons.dom.createNameValueDiv('Long: ', ship.lon.toString()));
+        if (ship.lat)  div.appendChild(app.balloons.dom.createNameValueDiv('Lat: ', ship.lat.toString()));
         return div;
     };
 
 
     // Public Ships namespace
     app.publicShips = {};
+
+    app.publicShips.shipIcons = {};
 
     app.publicShips.shipDraw = function shipDraw(LinColor,FilColor,mlat,mlng,cog,dim2bow,dim2stern,dim2port,dim2starboard) {
 
@@ -843,24 +846,40 @@ var dedicatedmaps = (function() {
         }
     };
 
+    app.publicShips.image = function(ship) {
+        var roundedCog = Math.round(ship.cog/10)*10;
+        return ship.suffix + "/" + ship.suffix + "_" + ((roundedCog == 0 || roundedCog == 360) ? "00" : roundedCog);
+    };
+
     app.publicShips.ship_icon = function(item) {
         var icon_sizes = {"AIR":27, "APE":30, "Car":36, "Drg":36, "Fsh":29, "HSC":30, "Mil":34, "Pas":28 ,"Plt":29, "Tan":36, "Tow":27, "Tug":28, "UCG":30, "Uns":28, "Yct":30};
-        var image = this.image(item);
+        var image = app.publicShips.image(item);
 
         // If we don't have an icon for this particular ship type + angle yet, make one.
-        if ((icons[image]) == null ) {
-            var url = app.ui.icons.getIconPath("/images/markers/ships/" + image + ".png");
+        if ((app.publicShips.shipIcons[image]) == null ) {
+            var url = app.ui.icons.getIconPath("markers/ships/" + image);
             var icon = {url: url,
                 name: image};
             var size = icon_sizes[item.suffix];
             icon.iconSize = new google.maps.Size(size,size);
-            icons[image] = icon;
+            app.publicShips.shipIcons[image] = icon;
             // icons.ship_uns,
         }
-        return icons[image];
+        return app.publicShips.shipIcons[image];
     };
-    app.publicShips.render = function(data) {
-
+    // {id: 285940, name: "SEA CLIPPER", suffix: "Car", cog: 292, lat: 46.9062…}
+    app.publicShips.render = function(ship) {
+        var icon = app.publicShips.ship_icon(ship);
+        var position = new google.maps.LatLng(ship.lat, ship.lon);
+        var marker = new google.maps.Marker({
+            map: app.ui.getMap(),
+            title: ship.name,
+            icon: icon.url,
+            position: position
+        });
+        marker.id = ship.id;
+        app.balloons.addBubble(marker, 'public_ships');
+        return marker;
     };
 
     // Start everything

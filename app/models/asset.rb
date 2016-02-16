@@ -43,13 +43,24 @@ class Asset < ActiveRecord::Base
     # Return an object that will be shown in a balloon for this type of asset.
     case self.asset_type.name
       when "ship"
-        ship_detail = self.ship
-        binding.pry
+        # ship_detail = self.ship
+        # binding.pry
+        # ship_detail['name'] = self.common_name
+        # ship_detail['owner'] = self.client.company_name if self.client != nil
+        # ship_detail['icon'] = self.ship.icon
+        # ship_detail['age'] = age(self.current_location.timestamp) + ' ago'
+        # ship_detail
+
+        ship_detail = {}
+        self.ship.attributes.each do |key, item|
+          ship_detail[key] = item
+        end
         ship_detail['name'] = self.common_name
         ship_detail['owner'] = self.client.company_name if self.client != nil
         ship_detail['icon'] = self.ship.icon
         ship_detail['age'] = age(self.current_location.timestamp) + ' ago'
         ship_detail
+
       when "fishing_vessel"
         #Boat info
         ship_detail = self.fishing_vessel
