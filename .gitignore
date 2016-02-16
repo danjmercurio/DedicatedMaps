@@ -25,6 +25,7 @@ public/data_for_rails
 public/.htaccess
 public/maps
 public/testrails
+public/assets
 *.pyc
 *.pyo
 *.so
