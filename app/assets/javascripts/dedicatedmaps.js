@@ -782,7 +782,7 @@ var dedicatedmaps = (function() {
         title.appendChild(a);
         div.appendChild(title);
         if (ship.owner)       div.appendChild(app.balloons.dom.createNameValueDiv('Owner: ', ship.owner));
-        if (ship.icon.name)   div.appendChild(app.balloons.dom.createNameValueDiv('Type: ', ship.icon.name));
+        if (ship.icon && ship.icon.name)   div.appendChild(app.balloons.dom.createNameValueDiv('Type: ', ship.icon.name));
         if (ship.dim_bow)     div.appendChild(app.balloons.dom.createNameValueDiv('Size: ', (
             ship.dim_bow + ship.dim_stern) + 'm x ' + (ship.dim_port + ship.dim_starboard) + 'm')
         );
