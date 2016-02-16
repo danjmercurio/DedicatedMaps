@@ -228,7 +228,7 @@ var dedicatedmaps = (function() {
                                             }
                                         });
                                     } else {
-                                        layer.off()
+                                        layer.off();
                                         layer.on();
                                         $(layer.equipmentLocatorElement).val(-1);
                                     }
@@ -498,7 +498,7 @@ var dedicatedmaps = (function() {
             return ['/', app.balloons.pdf.pdfPath, '/', name, ".pdf"].join('');
         },
         getPDFThumbPath: function(name) {
-            return ['/', app.balloons.pdf.pdfPath, '/thumb/', name, ".png"].join('');
+            return ['/', app.balloons.pdf.pdfPath, '/thumbs/', name, ".png"].join('');
         }
     };
 
