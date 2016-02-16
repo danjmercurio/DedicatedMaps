@@ -13,7 +13,13 @@ form.accountinfo {
     padding: 10px;
 }
 
+#forgot, #cancel {
+    padding: 5px;
+}
 
+div.logo {
+    font-size: 10px;
+}
 div.header {
     box-shadow:0 0 5px rgba(57,70,78,.2);
     margin-top: 0;

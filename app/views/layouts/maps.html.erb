@@ -30,7 +30,7 @@
     <div class="logo">
       <span class='client'><%= @map.user.client.company_name %></span>      
       <% if @admin_viewing %>
-        <%= button_to_function 'Save Current View', 'save_map();' , {:title => 'This will save the current map location and setting for the next viewer.'}%>
+          <%= link_to_function 'Save Current View', 'save_map();', {:title => 'This will save the current map location and setting for the next viewer.'} %>
         <%= 'Map owner: ' + @map.user.first_name + ' ' + @map.user.last_name %>
       <% end %>
     </div>

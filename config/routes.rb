@@ -28,6 +28,8 @@ Ddmap::Application.routes.draw do
 
   #post 'ais_feeds/ais1' => 'aisFeeds#ais1'
 
+  patch '/sessions' => 'sessions#update'
+
   resources :sessions do
 
     member do

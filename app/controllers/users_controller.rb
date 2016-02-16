@@ -56,12 +56,15 @@ class UsersController < ApplicationController
     pub = Privilege.find_by_name('public')
     if @loggedin_user.super?
       # RAILS 3 @users = User.all(:order => "client_id, last_name", :conditions => ['privilege_id <> ?', pub.id])
-      @users = User.where('privilege_id <> :privilege_id', {privilege_id: pub.id})
+      @users = User.where("privilege_id <> ?", pub.id)
     elsif @loggedin_user.admin?
       # Can only list users with the same client
-      @users = User.find(:all,
-      :conditions => [ "client_id = ? AND privilege_id <> ?", @loggedin_user.client_id, pub.id ],
-      :order => "client_id, last_name")
+      # @users = User.find(:all, (rails 2 deprecated  finder)
+      # :conditions => [ "client_id = ? AND privilege_id <> ?", @loggedin_user.client_id, pub.id ],
+      # :order => "client_id, last_name")
+
+      @users = User.where("client_id = ? AND privilege_id <> ?", @loggedin_user.client_id, pub.id)
+                   .order(:client_id, :last_name)
     else 
       # standard users can't view user list
       error_404

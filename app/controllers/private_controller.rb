@@ -7,7 +7,14 @@ class PrivateController < ApplicationController
   end
 
   def show
-    render :action => params[:page]
+    # Non-superusers are not allowed to view admin page
+    if params[:page] == "admin" && !@loggedin_user.super?
+      logout_user
+      redirect_to '/'
+      flash[:error] = 'Please login to continue'
+    else
+      render :action => params[:page]
+    end
   end
 
   #GET /home/stats
