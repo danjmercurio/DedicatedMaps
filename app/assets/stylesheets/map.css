@@ -8,6 +8,12 @@ body {
 
 }
 
+form.accountinfo {
+    display: flex;
+    padding: 10px;
+}
+
+
 div.header {
     box-shadow:0 0 5px rgba(57,70,78,.2);
     margin-top: 0;
