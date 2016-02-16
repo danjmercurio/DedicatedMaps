@@ -6,44 +6,45 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="Dedicated Maps Mapping Platform">
     <meta name="author" content="Dan Mercurio">
+    <title>Dedicated Maps - Map</title>
 
-   <title>Dedicated Maps - Map</title>
+    <%= stylesheet_link_tag "map" %> <!-- app/assets/stylesheets/map.css -->
 
-    <!-- jQuery from MaxCDN -->
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-    <%= stylesheet_link_tag "map" %>
- 
+    <!-- jQuery 2.2.0 from MaxCDN -->
+    <script src='https://code.jquery.com/jquery-2.2.0.min.js' type="text/javascript"></script>
+    <!-- Google Maps JS API unstable -->
+    <script id="googleMaps" async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= @api_key %>"></script>
 
-
-
-  <script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBePgQ3O-hy_QqA0lDdd8IDkGYPrMBp7b4"></script>
-  <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag 'infobubble' %>
-
-    <%= javascript_include_tag 'dedicatedmaps' %>
+    <%= javascript_include_tag 'application' %> <!-- app/assets/javascripts/application.js -->
+    <%= javascript_include_tag 'infobubble' %> <!-- vendor/assets/javascripts/infobubble.js -->
+    <%= javascript_include_tag 'dedicatedmaps' %> <!-- app/assets/javascripts/dedicatedmaps.js -->
 
     <%= csrf_meta_tag %>
-  
-</head>
-<body>
+  </head>
+  <body>
   <div class="header">
     <div class="logo">
-      <span class='client'><%= @map.user.client.company_name %></span>      
+        <span class='client'>
+          <%= @map.user.client.company_name %>
+        </span>
       <% if @admin_viewing %>
-          <%= link_to_function 'Save Current View', 'save_map();', {:title => 'This will save the current map location and setting for the next viewer.'} %>
-        <%= 'Map owner: ' + @map.user.first_name + ' ' + @map.user.last_name %>
+          <%= link_to_function 'Save Current View', 'save_map();',
+                               {:title => 'This will save the current map location and setting for the next viewer.'} %>
+          <%= 'Map owner: ' + @map.user.first_name + ' ' + @map.user.last_name %>
       <% end %>
     </div>
     <div class="messages" style="text-align:right">
-      <span style="color:red;">
-      	<%= flash[:notice] %>
-      </span>
+        <span style="color:red;">
+          <%= flash[:notice] %>
+        </span>
     </div>
-    <div class="menuTray"><%= render :partial=>"layouts/account_bar" %></div>
-  </div>
+    <div class="menuTray">
+      <%= render :partial => "layouts/account_bar" %>
+    </div>
+    </div>
   <%= yield %>
   <div class="footer" style="text-align:right; margin: 10px 10px;">
-   &#169;<%= Time.now.year %> Dedicated Maps, Inc. All rights reserved.
-  </div>
-</body>
+    &#169;<%= Time.now.year %> Dedicated Maps, Inc. All rights reserved.
+    </div>
+  </body>
 </html>

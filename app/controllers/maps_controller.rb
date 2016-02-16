@@ -6,36 +6,29 @@ class MapsController < ApplicationController
 
   # GET /maps/1
   def show
-
     if !@map
       error_404
       return
     end
 
-    # if the public map user is deactivated, go to a 404. deactivated private map user accounts won't get this far as they are not allowed to log in
+    # Of the public map user is deactivated, go to a 404.
+    # Deactivated private map user accounts won't get this far as they are not allowed to log in.
     if !@map.user.active
       error_404
       return
     end
 
-    # only show private maps to owners and admins/supers
+    # Only show private maps to owners and admins/supers.
     if (@map.user.privilege.name != 'public') && !(@owner_viewing || @admin_viewing)
       error_404
       return
     end
 
-    case request.host
-      when /dedicatedmaps\.com/
-        @api_key = "ABQIAAAA6xOuv2QGCSYzQgWeyPIjOhRr3Xd4xZjf5YJPmwPMH3QxtdHmFxRs3Npod161i9oJvt4kMesPdIAMAw"
-      when "ddstaging.heroku.com"
-        @api_key = "ABQIAAAAy69Odjt6Lf7nfkVr1cc4RhSzNMyMG7jfrbNscvFG6hBDZlGADBRNwLOAGfXhUYgql8jmNsoBOFVj9g"
-      when "ddmaps.heroku.com"
-        @api_key = "ABQIAAAA6xOuv2QGCSYzQgWeyPIjOhTb1qRTpUuSAcKQhdyRJya1egF_zRSqOHrCfMTmOB1ZLxuSchOtrDMxlQ"
-      else
-        # @api_key = "ABQIAAAAy69Odjt6Lf7nfkVr1cc4RhTxgN00p8rVxP_i_AEKnk5cI5RjvBTIchKMP8bzQ5HpOlpV9TiYOs9K5w"
-        @api_key = "AIzaSyDtLnlTZWqr9flex2_9RZD9HuZy0kNnI78" # Updated development key -ds
-    end
-    
+    # API key for Google Maps JS API
+    # Manage this key: no-reply@dedicatedmaps.com:dmaps_email @ cloud.google.com
+    # Statistics: https://console.cloud.google.com/apis/api/maps_backend/usage?project=hazel-logic-122319&duration=PT1H
+    @api_key = 'AIzaSyCXWCJQoRqKt74nUWgvJBmk_naVR-TbeBg'
+
     # Restrict layers to those enabled by both client and user.
     @layers = @map.user.client.layers.all.order('created_at DESC') & @map.user.layers.all
 

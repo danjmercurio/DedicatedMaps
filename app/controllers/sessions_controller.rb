@@ -48,8 +48,8 @@ class SessionsController < ApplicationController
 
   def destroy
     logout_user
-    # flash[:notice] = "You are now logged out"
     redirect_to '/'
+    flash[:notice] = 'You are now logged out.'
   end
   
   def recovery
@@ -66,12 +66,9 @@ class SessionsController < ApplicationController
     end
   end
 
-  # TODO: No route matches [PATCH] /sessions
+  private
 
-private
-
-def user_params
-  params.require(:session).permit(:username, :password)
-end
-  
+  def user_params
+    params.require(:session).permit(:username, :password)
+  end
 end
