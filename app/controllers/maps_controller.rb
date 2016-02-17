@@ -11,7 +11,7 @@ class MapsController < ApplicationController
       return
     end
 
-    # Of the public map user is deactivated, go to a 404.
+    # If the public map user is deactivated, go to a 404.
     # Deactivated private map user accounts won't get this far as they are not allowed to log in.
     if !@map.user.active
       error_404

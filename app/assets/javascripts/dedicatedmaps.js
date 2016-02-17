@@ -256,7 +256,7 @@ var dedicatedmaps = (function() {
                         case 'pinpoint':
                             layer.textArea = $('#pinpoint_data');
                             layer.copyButton = $("a[data-role='pinpoint_data']");
-                            layer.copyButton.click(function() {
+                            layer.copyButton.bind('click', function () {
                                     window.prompt("Copy to clipboard: Ctrl+C, Enter", layer.textArea.text());
                             });
                             layer.listener = google.maps.event.addDomListener(app.ui.getMap(), "click", function (e) {
