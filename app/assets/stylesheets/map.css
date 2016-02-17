@@ -1,15 +1,25 @@
 /* Style for main map interface page */
 @import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
-* {
+
+html, body {
+    height: 100%;
+    width: 100%;
     font-family: 'Droid Sans', sans-serif;
     margin: 0;
 }
 body {
+    display: table;
+}
 
+div.row {
+    width: 100%;
+}
+
+div.account {
+    float: right;
 }
 
 form.accountinfo {
-    display: flex;
     padding: 10px;
 }
 
@@ -21,6 +31,7 @@ div.logo {
     font-size: 10px;
 }
 div.header {
+    width: 100%;
     box-shadow:0 0 5px rgba(57,70,78,.2);
     margin-top: 0;
     margin-right: 0;
@@ -28,15 +39,18 @@ div.header {
     height: 50px;
 }
 div.container {
-    display: flex;
+    height: 100%;
 }
 div.menuTray {
     float:right;
 }
-div#map_div {
-	height: 800px;
-	width:100%;
-	float:right;
+
+#map_div {
+    position: absolute;
+    top: 50px;
+    left: 225px;
+    bottom: 0;
+    right: 0;
 }
 div#footer {
     clear:both;
@@ -45,6 +59,7 @@ div#footer {
     color:black;
     text-align:right;
     padding:4px 0;
+    margin: 10px 10px;
 }
 div.layerPanel {
     padding: 15px;

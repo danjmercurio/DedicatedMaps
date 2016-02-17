@@ -22,29 +22,37 @@
     <%= csrf_meta_tag %>
   </head>
   <body>
-  <div class="header">
-    <div class="logo">
-        <span class='client'>
-          <%= @map.user.client.company_name %>
-        </span>
-      <% if @admin_viewing %>
-          <%= link_to_function 'Save Current View', 'save_map();',
-                               {:title => 'This will save the current map location and setting for the next viewer.'} %>
-          <%= 'Map owner: ' + @map.user.first_name + ' ' + @map.user.last_name %>
-      <% end %>
+  <div class="container">
+
+    <div class="row">
+      <div class="header">
+        <div class="logo"><span class="client"><%= @map.user.client.company_name %></span></div>
+        <div class="adminMenu">
+          <% if @admin_viewing %>
+              <%= link_to_function 'Save Current View', 'save_map();',
+                                   {:title => 'This will save the current map location and setting for the next viewer.'} %>
+              <%= 'Map owner: ' + @map.user.first_name + ' ' + @map.user.last_name %>
+          <% end %>
+        </div>
+        <div class="account"><%= render :partial => "layouts/account_bar" %></div>
+      </div>
     </div>
-    <div class="messages" style="text-align:right">
-        <span style="color:red;">
-          <%= flash[:notice] %>
-        </span>
+
+    <div class="row">
+      <%= yield %>
+      <noscript>
+        <div id="no-script">
+          <div class="no-script-message">
+            <div>You are either using a very old browser, or you have <strong>JavaScript</strong> disabled.</div>
+            <a class="no-script-help-link" href="//support.google.com/maps/?hl=en&amp;authuser=0&amp;p=no_javascript" target="_blank">Enable
+              JavaScript to use Dedicated Maps</a>
+          </div>
+        </div>
+      </noscript>
     </div>
-    <div class="menuTray">
-      <%= render :partial => "layouts/account_bar" %>
+    <div class="row">
+      <div id="footer">&#169;<%= Time.now.year %> Dedicated Maps, Inc. All rights reserved.</div>
     </div>
-    </div>
-  <%= yield %>
-  <div class="footer" style="text-align:right; margin: 10px 10px;">
-    &#169;<%= Time.now.year %> Dedicated Maps, Inc. All rights reserved.
     </div>
   </body>
 </html>
