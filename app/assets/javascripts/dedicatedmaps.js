@@ -78,39 +78,39 @@ var dedicatedmaps = (function() {
 
     // Set options on the map and display it after page load. The main init function.
     app.initializeMap = function() {
-        $(document).ready(function() {
-            google.maps.event.addDomListener(window, "load", function() {
-                var map_state = {"zoom":7,
-                    "lon":-123.391,
-                    "lat":47.8933,
-                    "map_type":"roadmap"
-                }; //TODO: Load this in via Ajax
+        google.maps.event.addDomListener(window, "load", function () {
+            var map_state = {
+                "zoom": 7,
+                "lon": -123.391,
+                "lat": 47.8933,
+                "map_type": "roadmap"
+            }; //TODO: Load this in via Ajax
 
-                var center = new google.maps.LatLng(map_state.lat, map_state.lon);
-                var map_types = {
-                    "hybrid":google.maps.MapTypeId.HYBRID,
-                    "satellite":google.maps.MapTypeId.SATELLITE,
-                    "roadmap":google.maps.MapTypeId.ROADMAP,
-                    "terrain":google.maps.MapTypeId.TERRAIN
-                };
-                var mapOptions = {
-                    center: center,
-                    zoom: map_state.zoom,
-                    mapTypeId: map_types[map_state.map_type.toLowerCase()]
-                };
-                var map = new google.maps.Map(app.ui.getMapDiv(), mapOptions);
-                app.ui.setMap(map);
+            var center = new google.maps.LatLng(map_state.lat, map_state.lon);
+            var map_types = {
+                "hybrid": google.maps.MapTypeId.HYBRID,
+                "satellite": google.maps.MapTypeId.SATELLITE,
+                "roadmap": google.maps.MapTypeId.ROADMAP,
+                "terrain": google.maps.MapTypeId.TERRAIN
+            };
+            var mapOptions = {
+                center: center,
+                zoom: map_state.zoom,
+                mapTypeId: map_types[map_state.map_type.toLowerCase()]
+            };
+            var map = new google.maps.Map(app.ui.getMapDiv(), mapOptions);
+            app.ui.setMap(map);
 
-                // Not implemented yet
-                google.maps.event.addDomListener(app.map, "dragend", function() {
-                    app.ui.cue_save_map();
-                });
-                google.maps.event.addDomListener(app.map, "maptypeid_changed", function() {
-                    app.ui.cue_save_map();
-                });
-                // Set event handlers on left-hand checkboxes so layers appear when we check them
-                app.ui.setCheckboxHandlers();
+            // Not implemented yet
+            google.maps.event.addDomListener(app.map, "dragend", function () {
+                app.ui.cue_save_map();
             });
+            google.maps.event.addDomListener(app.map, "maptypeid_changed", function () {
+                app.ui.cue_save_map();
+            });
+            // Set event handlers on left-hand checkboxes so layers appear when we check them
+            app.ui.setCheckboxHandlers();
+
         });
     };
 
