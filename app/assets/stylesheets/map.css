@@ -36,7 +36,8 @@ body {
     margin-left: 2px;
 }
 #layers {
-    width: 20%;
+    font-size: small;
+    margin: 5px;
     -webkit-box-ordinal-group: 1;
     -moz-box-ordinal-group: 1;
     -ms-flex-order: 1;
@@ -102,6 +103,15 @@ body {
     margin: 10px 10px;
 }
 
+.layer {
+    border: 2px;
+    border-style: groove;
+    margin: 2px;
+}
+
+.layer img {
+    margin: 2px;
+}
 .layer_checkbox{
     float:left;
 }
