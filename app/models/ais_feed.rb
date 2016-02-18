@@ -46,7 +46,8 @@ class AisFeed < ActiveRecord::Base
       data = ActiveSupport::JSON.decode(feed.text_data)
       logger.info "AIS 1 Feed: " + data.length.to_s if DEBUG
       data.each do |mmsi, ship_data|
-        ship_data['mmsi'] = mmsi.to_i
+        mmsi = mmsi.to_i
+        ship_data['mmsi'] = mmsi
         device = Device.where(:serial_number => mmsi)
         if device
           # Handle case where user creates AIS device but doesn't tether to a ship?
@@ -63,7 +64,7 @@ class AisFeed < ActiveRecord::Base
           logger.info "New ship: " + asset.id.to_s if DEBUG
         end
         self.update_ship_location(asset, ship_data) if asset
-        logger.info 'Updated: ' + mmsi if DEBUG
+        logger.info 'Updated: ' + mmsi.to_s if DEBUG
       end
 
       # Clear old ships:
