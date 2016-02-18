@@ -7,13 +7,13 @@
 
 <div class="tab-content">
   <div class="tab-pane fade in active" id="account">
-    <h4>Administrator Options</h4>
     <% if @privileges %>
       <% # If privileges are enabled, then this is an admin or super user.  %>
 
       <% if @loggedin_user.id != @user.id %>
         <% # Users can't deactivate their own accounts. Supers do other supers, admins, and users.  %>
         <% # Admins do other admins and users.  %>
+            <h4>Administrator Options</h4>
       
         <%= button_to 'Enable/Disable Account', 
           :url => { :action => 'activate', :id => @user.id },
