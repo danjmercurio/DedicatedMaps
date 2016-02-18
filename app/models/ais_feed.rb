@@ -46,7 +46,7 @@ class AisFeed < ActiveRecord::Base
       data = ActiveSupport::JSON.decode(feed.text_data)
       logger.info "AIS 1 Feed: " + data.length.to_s if DEBUG
       data.each do |mmsi, ship_data|
-        ship_data['mmsi'] = mmsi
+        ship_data['mmsi'] = mmsi.to_i
         device = Device.where(:serial_number => mmsi)
         if device
           # Handle case where user creates AIS device but doesn't tether to a ship?
@@ -149,9 +149,9 @@ class AisFeed < ActiveRecord::Base
     end
 
     def update_ship_location(asset, ship_data)
-      if (ship_data['lat'].to_f == 0 || ship_data['long'].to_f == 0)
+      if ship_data['lat'].to_f == 0 || ship_data['long'].to_f == 0
         logger.info 'Invalid lat/long: %s' % ship_data.inspect if DEBUG
-        return 
+        return
       end
       cur_loc = asset.current_location
       cur_loc.lat = ship_data['lat']
