@@ -5,7 +5,3 @@
   <%= label_tag "kml_#{kml.id}", kml.label %>
   <br />
 <% end %>
-
-<%= javascript_tag :defer => 'defer' do -%>
-  add_kml( new Kml('<%= layer.name %>') );
-<% end -%>
