@@ -32,7 +32,7 @@ class AisFeed < ActiveRecord::Base
 
     def ais5=(post_data)  
       stored_data = StoredText.create(:text_data => post_data.to_json)
-      parse_ais5(stored_data)
+      parse_ais5(post_data, stored_data)
       #AisFeed.send_later(:parse_ais5, stored_data)
     end
 
@@ -45,11 +45,11 @@ class AisFeed < ActiveRecord::Base
 
       data = ActiveSupport::JSON.decode(post_data)
       logger.info "AIS 1 Feed: " + data.length.to_s if DEBUG
-      data["ais1"].each do |ship_data|
+      data['ais1'].each do |ship_data|
         mmsi = ship_data[0].to_i
         ship_data[1]['mmsi'] = mmsi
         ship_data = ship_data[1]
-        device = Device.where(:serial_number => mmsi)
+        device = Device.where(:serial_number => mmsi).first
         if device
           # Handle case where user creates AIS device but doesn't tether to a ship?
           #asset = device.assets.first
@@ -84,28 +84,31 @@ class AisFeed < ActiveRecord::Base
       stored_data.destroy
     end
 
-    def parse_ais5(feed)
+    def parse_ais5(post_data, stored_data)
       # AIS 5: 'mmsi' 'name' 'type' 'bow' 'stern' 'port' 'starboard' 'draught' 'destination' 'eta'
-      data = ActiveSupport::JSON.decode(feed.text_data)
+      data = ActiveSupport::JSON.decode(post_data)
       logger.info "AIS 5 Feed: " + data.length.to_s if DEBUG
-      data.each do |mmsi, ship_data|
+      data['ais5'].each do |ship_data|
+        mmsi = ship_data[0].to_i
+        ship_data[1]['mmsi'] = mmsi
+        ship_data = ship_data[1]
         if ship_data['name'] == nil
-          ship_data['name'] = "N/A"
+          ship_data['name'] = "Anonymous"
         end
         if ship_data['destination'] == nil
-          ship_data['destination'] = "N/A"
+          ship_data['destination'] = "Not specified"
         end
         ship_data['mmsi'] = mmsi
         logger.info ship_data['name'] + " Destination: " + ship_data['destination']
         device = Device.where(:serial_number => mmsi).first
         # We only fill in AIS 5 data if a ship already exists via its AIS 1 feed.
         if device # Use caution with this boolean comparison. It should compare a Device model object, not an ActiveRecord::Relation
-          asset = device.assets.first # AIS ships will have one and only device
+          asset = device.assets.first # AIS ships will have one and only one device
           asset && self.record_ship_specs(asset, ship_data)
         end
       end
 
-      feed.destroy
+      stored_data.destroy
     end
 
     def record_ship_specs(asset, ship_data)
@@ -125,7 +128,7 @@ class AisFeed < ActiveRecord::Base
           value = ship_data['mmsi'].to_s if value.blank?
           asset.update_attribute(:common_name, value)
         else
-          asset.ship[key] = ship_data[key]
+          asset.ship[key] = ship_data[key] unless key == 'mmsi'
         end
       end
       asset.ship.save

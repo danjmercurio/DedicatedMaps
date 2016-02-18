@@ -27,8 +27,21 @@ class AisFeedsController < ApplicationController
   end
   
   def ais5
-    AisFeed.ais5 = params[:ais5]
-    render :text => "OK"
+    ais5 = params[:ais5]
+    if ais5.present? && ais5.class.name == "ActionDispatch::Http::UploadedFile" && !ais5.blank?
+      if ais5.content_type == "application/json"
+        aisData = ais5.tempfile.read
+        aisData.squish!
+        aisData.delete("\\")
+
+        AisFeed.ais5 = aisData
+        render :text => "OK"
+      else
+        render :text => "Error: file received was not of type 'application/json'"
+      end
+    else
+      render :text => "Error: file was not received, or was empty."
+    end
   end
 
 end
