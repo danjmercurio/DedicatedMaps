@@ -1,7 +1,5 @@
 <h1><%= @user.first_name + ' ' +  @user.last_name%></h1>
 
-<div>
-
 <ul data-tabs="tabs" class="nav nav-tabs" id="usertabs">  
   <li class="active" role="presentation"><a href="#account" data-toggle="tab">Account</a></li>  
   <li role="presentation"><a href="#layers" data-toggle="tab">Layers</a></li>  
@@ -9,6 +7,7 @@
 
 <div class="tab-content">
   <div class="tab-pane fade in active" id="account">
+    <h4>Administrator Options</h4>
     <% if @privileges %>
       <% # If privileges are enabled, then this is an admin or super user.  %>
 
@@ -78,8 +77,8 @@
       <% # Reset password. Supers/admins can do an email reset for others. All can set their own password %>
           
       <% if @loggedin_user.is?(@user) %>
-      
-        Change Password
+
+          <h3>Change Password</h3>
         
         <%= form_for @user do |f| %>
         
@@ -130,9 +129,9 @@
 </div>
 
 <script type="text/javascript">
-  //switch user in view when select element changes
-  jQuery('select#user_client_id').change(function() {
-    var opt = jQuery(this).val();
+  // Switch user in view when select element changes
+  $('select#user_client_id').change(function () {
+    var opt = $(this).val();
     document.location = '/users/' + opt + '/edit'
   });
-</script> 
+</script>

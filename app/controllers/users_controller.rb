@@ -117,14 +117,14 @@ class UsersController < ApplicationController
       # if the password was changed, make sure it matched in the confirmation field
       if params[:user][:password] && (params[:user][:password] != params[:user][:password_confirmation])
       	format.html {
-          flash[:notice] = 'Error: Make sure both fields match when changing password.'
+          flash[:error] = 'Error: Make sure both fields match when changing password.'
           redirect_to :back 
         }
         format.js { render :text =>  "Error: Make sure both fields match when changing password." }
       # if the password was changed, check the size
       elsif params[:user][:password] && params[:user][:password].size < 6
       	format.html {
-          flash[:notice] = 'Error: Password must be at least 6 characters.'
+          flash[:error] = 'Error: Password must be at least 6 characters.'
           redirect_to :back 
         }
         format.js { render :text =>  "Error: Password must be at least 6 characters." }
@@ -137,7 +137,7 @@ class UsersController < ApplicationController
 	        format.js { render :text =>  "User account successfully updated." }
 	    else
 	        format.html {
-	          flash[:notice] = 'Error: User account was not successfully updated.'
+            flash[:error] = 'Error: User account was not successfully updated.'
 	          redirect_to :back 
 	        }
 	        format.js { render :text =>  "Error: User account not updated." }
