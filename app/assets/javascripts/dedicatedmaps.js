@@ -491,6 +491,15 @@ var dedicatedmaps = (function() {
         }
     };
 
+    // Container for the infoBubble. Since we want only one infoBubble open at a time ever,
+    // we set it as a property on the global app object
+    // When an infoBubble is instantiated this object is overwritten by infobubble.js's InfoBubble class (below)
+    app.balloons.infoBubble = {
+        isOpen: function () {
+            return false;
+        }
+    };
+
     // Convenience methods for displaying PDFs and PDF thumb images in balloons
     app.balloons.pdf = {
         pdfPath: "pdf",
@@ -504,16 +513,18 @@ var dedicatedmaps = (function() {
 
     // The infoBubble is triggered by assigning a click handler on a marker
     app.balloons.addBubble = function(marker, layerName) {
-        var clickListener = google.maps.event.addListener(marker, 'click', function() { // When marker is clicked...
+        marker['clickListener'] = google.maps.event.addListener(marker, 'click', function () { // When marker is clicked...
+
             // Make sure infoBubble library is loaded
             if (!InfoBubble) throw new Error('infoBubble class not loaded. Check existence of infoBubble.js in assets and proper instantiation');
+
             // If there is an infoBubble already open, close it
-            if (infoBubble && infoBubble.isOpen()) {
-                infoBubble.close();
+            if (app.balloons.infoBubble.isOpen()) {
+                app.balloons.infoBubble.close();
             }
 
             // Initialize the infoBubble for each new marker
-            var infoBubble = new InfoBubble({
+            app.balloons.infoBubble = new InfoBubble({
                 maxHeight: 250,
                 minHeight: 250,
                 maxWidth: 500,
@@ -523,35 +534,34 @@ var dedicatedmaps = (function() {
                 position: marker.position
             });
 
-            // Close the bubble if user clicks outside the bubble
+            // Close the bubble if user clicks on the map outside of it
             google.maps.event.addListener(app.ui.getMap(), 'click', function() {
-                if (infoBubble && infoBubble.isOpen()) {
-                    infoBubble.close();
+                if (app.balloons.infoBubble.isOpen()) {
+                    app.balloons.infoBubble.close();
                 }
             });
 
             // Open the bubble
-            if (infoBubble && !infoBubble.isOpen()) {
-                infoBubble.open();
-            }
+            app.balloons.infoBubble.open();
+
             // Set up an Ajax request object
             var req = {
                 beforeSend: function() {
-                    infoBubble.addTab('Loading...', app.ui.loader());
+                    app.balloons.infoBubble.addTab('Loading...', app.ui.loader());
                 },
                 url: ["/marker/", layerName, "/", marker.id, ".json"].join(''),
                 success: function(json) {
                     // If the bubble is for public ships layer, use a different balloon loader
                     if (layerName == 'public_ships') {
-                        infoBubble.updateTab('0', 'Info', app.balloons.shipInfo(json, 'public_ships'));
+                        app.balloons.infoBubble.updateTab('0', 'Info', app.balloons.shipInfo(json, 'public_ships'));
                     } else {
                         // Build the info tab
-                        infoBubble.updateTab('0', 'Info', app.balloons.buildInfoTabContainer(json));
+                        app.balloons.infoBubble.updateTab('0', 'Info', app.balloons.buildInfoTabContainer(json));
 
                         // Build equipment tab
                         // If there is equipment in the json, tell us about it
                         if (json.staging_area_assets && json.staging_area_assets.length > 0) {
-                            infoBubble.addTab('Equip', app.balloons.buildEquipmentContainer(json, infoBubble));
+                            app.balloons.infoBubble.addTab('Equip', app.balloons.buildEquipmentContainer(json, app.balloons.infoBubble));
                         }
                     }
                 }
