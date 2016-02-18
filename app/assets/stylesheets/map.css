@@ -83,6 +83,10 @@ body {
     flex-direction: row;
 }
 
+#forgot {
+    margin: 2px;
+}
+
 #footer {
     -ms-flex-direction: row;
     flex-direction: row;

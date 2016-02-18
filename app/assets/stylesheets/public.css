@@ -131,6 +131,10 @@ a:hover
 	background: #fff;
 }
 
+#forgot {
+    margin: 2px;
+}
+
 .menu li 
 {
 	padding: 0;
