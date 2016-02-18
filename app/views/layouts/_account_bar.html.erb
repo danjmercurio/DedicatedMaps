@@ -23,7 +23,7 @@
     <div id="login">
       <% logout_user if @anonymous_user && !(controller.controller_name == 'maps' && controller.action_name == 'show') %>
 
-      <%= form_for @session, html: {:class => "accountinfo form-inline"} do |f| %>
+      <%= form_for @session, html: {:class => 'accountinfo form-inline', :id => 'new_session'} do |f| %>
           <div class="form-group">
             <%= f.text_field :username,
                              :value => 'username',

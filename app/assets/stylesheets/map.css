@@ -25,6 +25,16 @@ body {
     float: right;
 }
 
+.accountinfo {
+    display: flex;
+    -ms-flex-direction: row;
+    margin: 10px;
+}
+
+.accountinfo input {
+    margin-right: 2px;
+    margin-left: 2px;
+}
 #layers {
     width: 20%;
     -webkit-box-ordinal-group: 1;
@@ -120,8 +130,9 @@ div#message {
     background-image: linear-gradient(top, #eee, #ccc);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndColorStr='#cccccc');
     border: 1px solid #777;
-    padding: 0 1.5em;
-    margin: 0.5em;
+    padding: 0 0.75em;
+    margin-top: 5px;
+    margin-right: 5px;
     font: bold 1em/2em Arial, Helvetica;
     text-decoration: none;
     color: #333;
