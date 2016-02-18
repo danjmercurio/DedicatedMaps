@@ -1,6 +1,6 @@
 class AisFeed < ActiveRecord::Base
-  
-  DEBUG = true # toggle to control information messages this Controller puts out
+
+  DEBUG = true # toggle to control log information messages this Controller emits
 
   # Should this just be a table in the DB?
   STATUS_STRING = {
@@ -87,16 +87,17 @@ class AisFeed < ActiveRecord::Base
       data = ActiveSupport::JSON.decode(feed.text_data)
       logger.info "AIS 5 Feed: " + data.length.to_s if DEBUG
       data.each do |mmsi, ship_data|
-        if ship_data["name"] == nil
-          ship_data["name"] = "N/A"
+        if ship_data['name'] == nil
+          ship_data['name'] = "N/A"
         end
-        if ship_data["destination"] == nil
-          ship_data["destination"] = "N/A"
+        if ship_data['destination'] == nil
+          ship_data['destination'] = "N/A"
         end
         ship_data['mmsi'] = mmsi
-        logger.info ship_data["name"] + " Destination: " + ship_data["destination"]
-        device = Device.where(:serial_number => mmsi)
-        if device # we only fill in AIS 5 data if a ship alread exists via its AIS 1 feed.
+        logger.info ship_data['name'] + " Destination: " + ship_data['destination']
+        device = Device.where(:serial_number => mmsi).first
+        # We only fill in AIS 5 data if a ship already exists via its AIS 1 feed.
+        if device # Use caution with this boolean comparison. It should compare a Device model object, not an ActiveRecord::Relation
           asset = device.assets.first # AIS ships will have one and only device
           asset && self.record_ship_specs(asset, ship_data)
         end
