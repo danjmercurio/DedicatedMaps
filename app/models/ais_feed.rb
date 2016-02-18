@@ -26,7 +26,7 @@ class AisFeed < ActiveRecord::Base
   
     def ais1=(post_data)
       stored_data = StoredText.create(:text_data => post_data.to_json)
-      parse_ais1(stored_data)
+      parse_ais1(post_data, stored_data)
       #AisFeed.send_later(:parse_ais1, stored_data)
     end
 
@@ -36,18 +36,19 @@ class AisFeed < ActiveRecord::Base
       #AisFeed.send_later(:parse_ais5, stored_data)
     end
 
-    def parse_ais1(feed)
+    def parse_ais1(post_data, stored_data)
       # AIS 1: 'mmsi' 'lat' 'lon' 'cog' 'speed' 'status' 'time'
       
       ais_type   = DeviceType.find_by_name("ais").id
       visibility = Visibility.find_by_name("Public").id
       asset_type = AssetType.find_by_name('ship').id
-         
-      data = ActiveSupport::JSON.decode(feed.text_data)
+
+      data = ActiveSupport::JSON.decode(post_data)
       logger.info "AIS 1 Feed: " + data.length.to_s if DEBUG
-      data.each do |mmsi, ship_data|
-        mmsi = mmsi.to_i
-        ship_data['mmsi'] = mmsi
+      data["ais1"].each do |ship_data|
+        mmsi = ship_data[0].to_i
+        ship_data[1]['mmsi'] = mmsi
+        ship_data = ship_data[1]
         device = Device.where(:serial_number => mmsi)
         if device
           # Handle case where user creates AIS device but doesn't tether to a ship?
@@ -80,7 +81,7 @@ class AisFeed < ActiveRecord::Base
       assets_to_delete.each do |x|
         x.delete
       end
-      feed.destroy
+      stored_data.destroy
     end
 
     def parse_ais5(feed)
