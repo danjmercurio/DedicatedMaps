@@ -358,6 +358,10 @@ var dedicatedmaps = (function() {
 
     // Called when checkbox in map view for respective layer is unchecked
     app.layer.Layer.prototype.off = function() {
+        // If there is an info bubble open and it is open on this layer, close it
+        if (app.balloons.infoBubble.isOpen() && app.balloons.infoBubble.layer == this.name) {
+            app.balloons.infoBubble.close();
+        }
         this.clearMarkers();
         this.isOn = false;
         this.loaded = false;
@@ -543,6 +547,9 @@ var dedicatedmaps = (function() {
 
             // Open the bubble
             app.balloons.infoBubble.open();
+
+            // Add a reference to the layer that this bubble is open on
+            app.balloons.infoBubble['layer'] = layerName;
 
             // Set up an Ajax request object
             var req = {
