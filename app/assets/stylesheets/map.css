@@ -1,58 +1,80 @@
 /* Style for main map interface page */
 @import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 
-html, body {
-    height: 100%;
-    width: 100%;
-    font-family: 'Droid Sans', sans-serif;
-    margin: 0;
-}
 body {
-    display: table;
+    font-family: 'Droid Sans', sans-serif;
 }
 
-div.row {
+#container {
+    height: 100%;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+#column {
     width: 100%;
+    -ms-flex-direction: column;
+    flex-direction: column;
 }
 
-div.account {
+#accountBar {
     float: right;
 }
 
-form.accountinfo {
-    padding: 10px;
+#layers {
+    width: 20%;
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
 }
 
-#forgot, #cancel {
-    padding: 5px;
+#map_div {
+    -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1; /* OLD - Firefox 19- */
+    -webkit-flex: 1; /* Chrome */
+    -ms-flex: 1; /* IE 10 */
+    flex: 1; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-box-ordinal-group: 2; /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-ordinal-group: 2; /* OLD - Firefox 19- */
+    -ms-flex-order: 2; /* TWEENER - IE 10 */
+    -webkit-order: 2; /* NEW - Chrome */
+    order: 2;
+    height: 100%;
 }
 
-div.logo {
+#mainRow {
+    display: flex;
+    height: 100%;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+#logo {
     font-size: 10px;
 }
-div.header {
+
+#header {
     width: 100%;
     box-shadow:0 0 5px rgba(57,70,78,.2);
     margin-top: 0;
     margin-right: 0;
     margin-left: 0;
     height: 50px;
-}
-div.container {
-    height: 100%;
-}
-div.menuTray {
-    float:right;
+    -ms-flex-direction: row;
+    flex-direction: row;
 }
 
-#map_div {
-    position: absolute;
-    top: 50px;
-    left: 225px;
-    bottom: 0;
-    right: 0;
+#footer {
+    -ms-flex-direction: row;
+    flex-direction: row;
 }
-div#footer {
+
+#footerMessage {
     clear:both;
     width:100%;
     background:white;
@@ -61,14 +83,7 @@ div#footer {
     padding:4px 0;
     margin: 10px 10px;
 }
-div.layerPanel {
-    padding: 15px;
-}
-.layer{
-    background: #fff;
-    border-bottom-style:hidden;
-    font-size: 12px;
-}
+
 .layer_checkbox{
     float:left;
 }
@@ -86,7 +101,8 @@ div.layerPanel {
     font-weight:bold;
     padding: 10px;
 }
-.logo{
+
+#logo {
     float:left;
     padding-top: 10px;
 }
