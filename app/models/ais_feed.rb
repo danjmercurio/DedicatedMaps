@@ -43,17 +43,15 @@ class AisFeed < ActiveRecord::Base
       visibility = Visibility.find_by_name("Public").id
       asset_type = AssetType.find_by_name('ship').id
 
-      data = ActiveSupport::JSON.decode(post_data)
-      logger.info "AIS 1 Feed: " + data.length.to_s if DEBUG
-      data['ais1'].each do |ship_data|
+      logger.info "AIS 1 Feed: " + post_data.to_s.length.to_s if DEBUG
+      post_data.each do |ship_data|
         mmsi = ship_data[0].to_i
         ship_data[1]['mmsi'] = mmsi
         ship_data = ship_data[1]
         device = Device.where(:serial_number => mmsi).first
         if device
           # Handle case where user creates AIS device but doesn't tether to a ship?
-          #asset = device.assets.first
-          asset = device.first.assets.first
+          asset = device.assets.first
           # If there's an asset on the device, and it's tagged or owned by a client, and not at port, then we record its history
           if asset && (asset.tag || asset.client) && !is_at_port?(ship_data) 
             logger.info 'Saving history: ' + mmsi if DEBUG
@@ -86,9 +84,8 @@ class AisFeed < ActiveRecord::Base
 
     def parse_ais5(post_data, stored_data)
       # AIS 5: 'mmsi' 'name' 'type' 'bow' 'stern' 'port' 'starboard' 'draught' 'destination' 'eta'
-      data = ActiveSupport::JSON.decode(post_data)
-      logger.info "AIS 5 Feed: " + data.length.to_s if DEBUG
-      data['ais5'].each do |ship_data|
+      logger.info "AIS 5 Feed: " + post_data.to_s.length.to_s if DEBUG
+      post_data.each do |ship_data|
         mmsi = ship_data[0].to_i
         ship_data[1]['mmsi'] = mmsi
         ship_data = ship_data[1]
@@ -107,7 +104,6 @@ class AisFeed < ActiveRecord::Base
           asset && self.record_ship_specs(asset, ship_data)
         end
       end
-
       stored_data.destroy
     end
 

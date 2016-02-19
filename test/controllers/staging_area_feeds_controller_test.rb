@@ -16,8 +16,8 @@ class StagingAreaFeedsControllerTest < ActionController::TestCase
      :map_asset_types => fixture_file_upload('../files/crc/Map_Asset_Types.xml', 'text/xml'),
      :map_assets      => fixture_file_upload('../files/crc/Map_Assets.xml', 'text/xml'),
      :map_locations   => fixture_file_upload('../files/crc/Map_Locations.xml', 'text/xml')
-   
-   assert_equal "Staging area assets posted sucessfully.", @response.body
+
+   assert_equal "Staging area assets for Clean Rivers Cooperative posted successfully.", @response.body
 
   end
   

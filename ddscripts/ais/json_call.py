@@ -2,7 +2,7 @@ import json
 import urllib2
 from time import time, asctime, localtime
 
-postUrl = "http://dedicatedmaps.com/ais_feeds/"
+postUrl = "http://0.0.0.0:3000/ais_feeds/"
 headers = {'Content-type': 'application/json'}
 
 class Store(object):

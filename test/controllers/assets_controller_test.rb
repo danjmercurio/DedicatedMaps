@@ -31,7 +31,8 @@ class AssetsControllerTest < ActionController::TestCase
   end
 
   test "should update asset" do
-    put :update, :id => assets(:one).to_param, :asset => { }
+    #put :update, :id => assets(:one).to_param, :asset => { }
+    put :update, :id => Asset.first.to_param, :asset => {}
     assert_redirected_to asset_path(assigns(:asset))
   end
 

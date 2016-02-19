@@ -57,7 +57,7 @@ class StagingAreaFeedsController < ApplicationController
         if result == "ok"
           title = StagingAreaCompany.find(params[:company_id]).title
           format.html {
-            render :text => "Staging area assets for #{title} posted sucessfully. Data will be available on maps momentarily."
+            render :text => "Staging area assets for #{title} posted successfully. Data will be available on maps momentarily."
           }
         else
           format.html {

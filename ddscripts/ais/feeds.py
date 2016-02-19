@@ -10,7 +10,7 @@ import json_call
 
 store = json_call.Store()
 
-debug = True    # Log debugging messages?
+debug = False    # Log debugging messages?
 def dlog(msg):  
     print(msg)  #Cheezy simple "log" for now
 
@@ -28,6 +28,7 @@ def sockify(addr):   # Takes an addres, port pair, returns a network socket conn
 #sources = [('216.177.253.143', 3131), ('208.79.150.114', 1001)]
 
 sources = [('216.177.253.143', 3131)]
+new = ('206.72.107.155', 1007)
 
 
 #,  # bar pilots
