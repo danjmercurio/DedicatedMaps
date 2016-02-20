@@ -15,7 +15,7 @@ var dedicatedmaps = (function() {
         // A helper sub-module for loading in icons
         icons: {
             // http://dedicatedmaps.com/images/<name>.<suffix>
-            image_directory:"http://www.dedicatedmaps.com/images",
+            image_directory: "/images",
             getIconPath: function (name, suffix) {
                 switch (arguments.length) {
                     case 1: // Called without a file type
@@ -482,7 +482,8 @@ var dedicatedmaps = (function() {
         });
         marker.id = current.id;
         app.balloons.addBubble(marker, this.name);
-        console.log('Marker: ' + marker);
+        console.log('Marker:');
+        console.log(marker);
         return marker;
     };
 
@@ -518,18 +519,22 @@ var dedicatedmaps = (function() {
             return a;
         },
         createNameValueDiv: function (name, value) {
-            var div = document.createElement('div');
-            var label_span = app.balloons.dom.createElement('span', name);
-            label_span.setAttribute('class', 'label');
-            div.appendChild(label_span);
-            var value_span = app.balloons.dom.createElement('span', value);
-            value_span.setAttribute('class', 'value');
-            div.appendChild(value_span);
+            var div, labelSpan, valueSpan;
+            div = document.createElement('div');
+            $(div).addClass('nameValueDiv');
+            labelSpan = this.createElement('span', name);
+            $(labelSpan).addClass('label');
+            valueSpan = this.createElement('span', value);
+            $(valueSpan).addClass('value');
+
+            div.appendChild(labelSpan);
+            $(div).append('&nbsp;'); // Add a non-breaking space between elements
+            div.appendChild(valueSpan);
             return div;
         },
         // Convenience methods for displaying PDFs and PDF thumbnail images in balloons
         pdf: {
-            pdfPath: 'http://dedicatedmaps.com/pdf',
+            pdfPath: 'pdf',
             getPDFPath: function (name) {
                 return encodeURI(['/', app.balloons.dom.pdf.pdfPath, '/', name, ".pdf"].join(''));
             },
@@ -540,7 +545,7 @@ var dedicatedmaps = (function() {
         image: {
             // http://dedicatedmaps.com/images/asset_photos/<layer name>/<filename>.<format>
             // Example path: http://dedicatedmaps.com/images/asset_photos/crc/002.JPG
-            assetImagePath: 'http://dedicatedmaps.com/images/asset_photos',
+            assetImagePath: 'images/asset_photos',
             getAssetImagePath: function (name, layer) {
                 return encodeURI([app.balloons.dom.image.assetImagePath, layer, name].join('/'));
             }
@@ -604,7 +609,7 @@ var dedicatedmaps = (function() {
                         app.balloons.infoBubble.updateTab('0', 'Info', app.balloons.shipInfo(json, 'public_ships'));
                     } else {
                         // Build the info tab
-                        app.balloons.infoBubble.updateTab('0', 'Info', app.balloons.buildInfoTabContainer(json));
+                        app.balloons.infoBubble.updateTab('0', 'Info', app.balloons.getInfoTabContainer(json));
 
                         // Build equipment tab
                         // If there is equipment in the json, tell us about it
@@ -620,25 +625,25 @@ var dedicatedmaps = (function() {
     };
 
     // Generic marker info container
-    app.balloons.buildInfoTabContainer = function(json) {
+    app.balloons.getInfoTabContainer = function (json) {
         // TODO: Refactor this
         var div = document.createElement('div');
         if (json.staging_area_company) {
-            $(div).append(app.balloons.set_staging_area_container(json));
+            div.appendChild(app.balloons.set_staging_area_container(json));
         }
-        //$(div).append("<br /><br />");
         if (json.contact) div.appendChild(app.balloons.dom.createElement('div', json.contact));
         if (json.address) div.appendChild(app.balloons.dom.createElement('div', json.address));
         if (json.city )   div.appendChild(app.balloons.dom.createElement('span', json.city + ', '));
         if (json.state)   div.appendChild(app.balloons.dom.createElement('span', json.state + ' '));
         if (json.zip)     div.appendChild(app.balloons.dom.createElement('span', json.zip));
-        if (json.phone)   div.appendChild(app.balloons.dom.createNameValueDiv('Phone: ', json.phone));
-        if (json.fax)     div.appendChild(app.balloons.dom.createNameValueDiv('Fax: ', json.fax));
-        if (json.email && json.email != "N/A")   {
-            $(div).append("<span class='label'>Email: <a href='" + app.balloons.dom.linkify(json.email) + "'>" + json.email + "</a></span>");
+        if (json.phone)   div.appendChild(app.balloons.dom.createNameValueDiv('Phone:', json.phone));
+        if (json.fax)     div.appendChild(app.balloons.dom.createNameValueDiv('Fax:', json.fax));
+        // If we have a valid email...
+        if (json.email && json.email != "N/A" && json.email.length > 4 && json.email.indexOf('@') != -1) {
+            var email = app.balloons.dom.createNameValueDiv('Email: ', app.balloons.dom.linkify(json.email));
+            div.appendChild(email);
         }
         if (json.staging_area_details && json.staging_area_details.length > 0) {
-
             // The span that will hold GRP pdfs
             var pdfspan = document.createElement('span');
 
@@ -656,31 +661,36 @@ var dedicatedmaps = (function() {
             };
             var filtered = json.staging_area_details.filter(predicate);
 
-            $.each(json.staging_area_details, function(index, element) {
-                if (element.value.charAt(0) == '#') {
-                    //jQuery(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> <a target='_blank' href='" + element.value.substr(1, element.value.length - 2) + "'>" + element.value.substr(1, element.value.length - 2) + "</a></span>");
+            //$.each(json.staging_area_details, function(index, element) {
+            //    if (element.value.charAt(0) == '#') {
+            //
+            //    }
+            //    else { // # This is super sloppy! Refactor!
+            //        if (filtered.indexOf(element) == "-1") $(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> " + element.value + "</span>");
+            //    }
+            //
+            //});
 
-                }
-                else { // # This is super sloppy! Refactor!
-                    if (filtered.indexOf(element) == "-1") $(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> " + element.value + "</span>");
-                }
-
+            $.each(json.staging_area_details, function (index, element) {
+                div.appendChild(app.balloons.dom.createNameValueDiv(element.name, element.value));
             });
 
             // The span that will hold GRP pdfs
             var pdfspan = document.createElement('span');
 
+            var that = this;
+
             $.each(filtered, function(index, element) {
                 var label = element.value.substr(0, element.value.lastIndexOf('.')).toUpperCase();
 
                 // Create a link and make it open in a new tab
-                var pdf2 = app.balloons.dom.createElement('a', element.value);
-                var path = app.balloons.pdf.getPDFPath(label);
+                var pdf2 = that.dom.createElement('a', element.value);
+                var path = that.dom.pdf.getPDFPath(label);
                 pdf2.setAttribute('href', path);
                 pdf2.setAttribute('target', '_new');
 
                 // Build thumbnail URL from PDF file path
-                var thumb = app.balloons.pdf.getPDFThumbPath(label);
+                var thumb = that.dom.pdf.getPDFThumbPath(label);
 
                 // Use document's createElement here since our createElement expects a text node
                 var pdfThumb2 = document.createElement('img');
