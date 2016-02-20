@@ -51,6 +51,18 @@ module Ddmap
 
     # Disable Rails 4 strong_parameters
     config.action_controller.permit_all_parameters = true
+
+    #email stuff
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+        address: 'smtp.gmail.com',
+        port: 587,
+        domain: 'dedicatedmaps.com',
+        user_name: 'no-reply@dedicatedmaps.com',
+        password: 'dmaps_email',
+        authentication: 'plain',
+        enable_starttls_auto: true}
   end
     Backburner.configure do |config|
         config.beanstalk_url       = ["beanstalk://127.0.0.1"]

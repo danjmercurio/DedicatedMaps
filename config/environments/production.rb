@@ -77,25 +77,18 @@ Ddmap::Application.configure do
   # Raise exception on mass assignment protection for Active Record models
   config.active_record.mass_assignment_sanitizer = :strict
 
-  # Deprecated in Rails 4
-  # Log the query plan for queries taking more than this (works
-  # with SQLite, MySQL, and PostgreSQL)
-  #config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  # Do not compress assets
   config.assets.js_compressor = :uglifier
 
   # Choose the compressors to use (if any) config.assets.js_compressor  =
-  # :uglifier config.assets.css_compressor = :yui
-   
-  # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false
-   
+  # :uglifier
+  config.assets.css_compressor = :sass
+
+  # Compress assets
+  config.assets.compress = true
+
   # Generate digests for assets URLs. This is planned for deprecation.
   config.assets.digest = true
-   
-  # Precompile additional assets (application.js, application.css, and all
-  # non-JS/CSS are already added) config.assets.precompile += %w( search.js )
 
   # Expands the lines which load the assets
   config.assets.debug = false
@@ -104,16 +97,4 @@ Ddmap::Application.configure do
   #config.action_view.debug_rjs = true
 
   config.eager_load = true
-
-  #email stuff
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'dedicatedmaps.com',
-    user_name:            'no-reply@dedicatedmaps.com',
-    password:             'dmaps_email',
-    authentication:       'plain',
-    enable_starttls_auto: true  }
 end

@@ -22,8 +22,8 @@ gem 'responders'
 
 # Gems used only for assets and not required
 # in production environments by default.
-# gem 'sass-rails' Not using sass
-gem 'coffee-rails'
+gem 'sass-rails'
+
 
 gem 'execjs'
 
@@ -55,7 +55,7 @@ end
 # Backburner for asychronous job processing (XML POST to /staging_area_feeds)
 gem 'backburner'
 
-# Javascript (no longer used, loaded in with MaxCDN, but keep it for jquery_ujs
+# Javascript (no longer used, loaded in with MaxCDN, but keep it for jquery_ujs.js)
 gem 'jquery-rails'
 
 # gem 'prototype-rails', github: 'rails/prototype-rails', branch: '4.2' # Not using prototype anymore
