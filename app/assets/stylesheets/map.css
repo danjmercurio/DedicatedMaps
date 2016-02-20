@@ -6,6 +6,9 @@ body {
     margin: 0;
 }
 
+#mainRow a:visited {
+    color: #2C89F0;
+}
 #container {
     height: 100%;
     display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
@@ -34,6 +37,20 @@ body {
 .accountinfo input {
     margin-right: 2px;
     margin-left: 2px;
+}
+
+/* Styles for the loading indicator above layers list */
+.loading {
+    color: #5a0000;
+}
+
+.done {
+    color: #2C89F0;
+}
+
+.error {
+    color: red;
+    text-decoration: blink;
 }
 #layers {
     font-size: small;

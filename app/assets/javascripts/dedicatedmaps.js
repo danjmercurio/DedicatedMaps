@@ -14,34 +14,71 @@ var dedicatedmaps = (function() {
     app.ui = {
         // A helper sub-module for loading in icons
         icons: {
+            // http://dedicatedmaps.com/images/<name>.<suffix>
             image_directory:"http://www.dedicatedmaps.com/images",
-            getIconPath: function(name) {return [this.image_directory, name + '.png'].join('/')},
-            getIcon: function(name) {return app.ui.ajaxLoad({url: app.ui.icons.getIconPath(name)})}
+            getIconPath: function (name, suffix) {
+                switch (arguments.length) {
+                    case 1: // Called without a file type
+                        return encodeURI([app.ui.icons.image_directory, name + '.png'].join('/'));
+                        break;
+                    case 2:
+                        return encodeURI([app.ui.icons.image_directory, name + '.' + suffix].join('/'));
+                        break;
+                }
+            },
+            getIcon: function (name) {
+                var params = {
+                    url: app.ui.icons.getIconPath(name)
+                };
+                return app.ui.ajaxLoad(params);
+            }
+        },
+        // Methods for the loading indicator
+        messageSpan: {
+            getMessageSpan: function () {
+                // Careful! This returns a DOM node, hot a jQuery DOM element
+                // To access jQuery methods, use $() notation of the return value
+                return document.getElementById('message');
+            },
+            clear: function () {
+                var messageSpan = this.getMessageSpan();
+                $(messageSpan).text('').hide();
+            },
+            setDone: function () {
+                var messageSpan = this.getMessageSpan();
+                $(messageSpan).text('Done').addClass('done').fadeOut(1000);
+            },
+            setLoading: function () {
+                var messageSpan = this.getMessageSpan();
+                $(messageSpan).text('Loading...').addClass('loading').show();
+            },
+            setError: function () {
+                var messageSpan = this.getMessageSpan();
+                $(messageSpan).text('Connection Error').addClass('error').show();
+            }
         },
         // Route all AJAX requests through this function to link them to the loading indicator
         ajaxLoad: function(ajaxRequestObject) {
-            var message_div = app.ui.getMessageDiv();
-            $(message_div).html("<span style=\"color:red;\">loading...</span>");
-            $(message_div).show();
-            console.log("ajaxLoad(" + ajaxRequestObject.url + ")");
-             return $.ajax(ajaxRequestObject)
+            app.ui.messageSpan.setLoading();
+            console.log("Loading: " + ajaxRequestObject.url);
+            return $.ajax(ajaxRequestObject)
                 .fail(function(error) {
-                    $(message_div).html("<span style=\"color:red;\">Connection Error!</span>");
+                    app.ui.messageSpan.setError();
                     console.log(error)
                 })
                 .done(function(response) {
-                    $(message_div).text('Done');
-                    $(message_div).fadeOut(1000);
+                    app.ui.messageSpan.setDone();
                     console.log(response);
+                    console.log('Done');
                 });
         },
         // Spinning wheel loader indicator
         loader: function() {
             var div = document.createElement('div');
             div.id = "loading";
-            div.setAttribute("style","margin-top:10px; text-align: center;");
+            $(div).addClass('loader');
             var spinner = document.createElement('img');
-            spinner.setAttribute("src","/images/ajax-loader.gif");
+            spinner.setAttribute('src', app.ui.icons.getIconPath('ajax-loader', 'gif'));
             div.appendChild(spinner);
             return div;
         },
@@ -52,9 +89,6 @@ var dedicatedmaps = (function() {
         },
         getMapDiv: function() {
             return document.getElementById('map_div');
-        },
-        getMessageDiv: function() {
-            return document.getElementById('message');
         },
         getMap: function() {
             return app.map;
@@ -448,7 +482,7 @@ var dedicatedmaps = (function() {
         });
         marker.id = current.id;
         app.balloons.addBubble(marker, this.name);
-        console.log(marker);
+        console.log('Marker: ' + marker);
         return marker;
     };
 
@@ -492,26 +526,33 @@ var dedicatedmaps = (function() {
             value_span.setAttribute('class', 'value');
             div.appendChild(value_span);
             return div;
+        },
+        // Convenience methods for displaying PDFs and PDF thumbnail images in balloons
+        pdf: {
+            pdfPath: 'http://dedicatedmaps.com/pdf',
+            getPDFPath: function (name) {
+                return encodeURI(['/', app.balloons.dom.pdf.pdfPath, '/', name, ".pdf"].join(''));
+            },
+            getPDFThumbPath: function (name) {
+                return encodeURI(['/', app.balloons.dom.pdf.pdfPath, '/thumbs/', name, ".png"].join(''));
+            }
+        },
+        image: {
+            // http://dedicatedmaps.com/images/asset_photos/<layer name>/<filename>.<format>
+            // Example path: http://dedicatedmaps.com/images/asset_photos/crc/002.JPG
+            assetImagePath: 'http://dedicatedmaps.com/images/asset_photos',
+            getAssetImagePath: function (name, layer) {
+                return encodeURI([app.balloons.dom.image.assetImagePath, layer, name].join('/'));
+            }
         }
     };
 
-    // Container for the infoBubble. Since we want only one infoBubble open at a time ever,
-    // we set it as a property on the global app object
+    // Container for the infoBubble.
+    // Since we want only one infoBubble open at a time ever, we set it as a property on the global app object
     // When an infoBubble is instantiated this object is overwritten by infobubble.js's InfoBubble class (below)
     app.balloons.infoBubble = {
         isOpen: function () {
             return false;
-        }
-    };
-
-    // Convenience methods for displaying PDFs and PDF thumb images in balloons
-    app.balloons.pdf = {
-        pdfPath: "pdf",
-        getPDFPath: function(name) {
-            return ['/', app.balloons.pdf.pdfPath, '/', name, ".pdf"].join('');
-        },
-        getPDFThumbPath: function(name) {
-            return ['/', app.balloons.pdf.pdfPath, '/thumbs/', name, ".png"].join('');
         }
     };
 
@@ -568,7 +609,7 @@ var dedicatedmaps = (function() {
                         // Build equipment tab
                         // If there is equipment in the json, tell us about it
                         if (json.staging_area_assets && json.staging_area_assets.length > 0) {
-                            app.balloons.infoBubble.addTab('Equip', app.balloons.buildEquipmentContainer(json, app.balloons.infoBubble));
+                            app.balloons.infoBubble.addTab('Equip', app.balloons.getEquipmentContainer(json, app.balloons.infoBubble));
                         }
                     }
                 }
@@ -659,35 +700,37 @@ var dedicatedmaps = (function() {
     };
 
     // Equipment info container renderer
-    app.balloons.buildEquipmentContainer = function(json, infoBubble) {
+    app.balloons.getEquipmentContainer = function (json, infoBubble) {
         if (json.staging_area_assets && json.staging_area_assets.length > 0) {
             var div = document.createElement('div');
-            $(div).append(app.balloons.set_staging_area_container(json));
-            //$(div).append("<br /><br />");
+            div.appendChild(this.set_staging_area_container(json));
             $.each(json.staging_area_assets, function(name, el) {
                 // For each piece of equipment...
                 var link = document.createElement('a');
-                link.setAttribute('style', 'display:block;');
+                $(link).addClass('equipmentList');
                 link.innerHTML = el.description;
-                $(div).append(link);
+                link.setAttribute('href', '#');
                 $(link).click(function() {
                     var id = el.id;
                     app.ui.ajaxLoad({
-                        url: ["/staging_area_assets/", id, ".json"].join(''),
-                        success: function(response, status, reqObject) {
-                            var json = reqObject.responseJSON;
+                        url: ['/staging_area_assets', id + ".json"].join('/'),
+                        success: function (response) {
                             //if infoBubble.tabs_ contains a 'Detail' tab, update it, else, add a new tab
                             if (infoBubble.tabs_.length >= 3) {
-                                infoBubble.updateTab('2', 'Detail', app.balloons.getAssetDetailsContainer(reqObject.responseJSON));
+                                infoBubble.updateTab('2', 'Detail', app.balloons.getAssetDetailsContainer(response));
                                 infoBubble.setTabActive_(infoBubble.tabs_[2].tab);
                             } else {
-                                infoBubble.addTab('Detail', app.balloons.getAssetDetailsContainer(reqObject.responseJSON));
+                                infoBubble.addTab('Detail', app.balloons.getAssetDetailsContainer(response));
                                 infoBubble.setTabActive_(infoBubble.tabs_[2].tab);
                             }
                         }
                     });
                 });
+                div.appendChild(link);
             });
+        } else {
+            app.ui.messageSpan.setError();
+            throw new Error('Attempted to build marker equipment tab but response from server was empty or malformed.');
         }
         return div;
     };
@@ -723,68 +766,73 @@ var dedicatedmaps = (function() {
 
     app.balloons.getAssetDetailsContainer = function(json) {
         var div = document.createElement('div');
-        jQuery(div).append("<b><span style='color:#2C89F0;'>" + json.description + "</b>");
-        jQuery(div).append('<br />');
-        jQuery.each(json.staging_area_asset_details, function(index, element) {
-            if (element.name == "Specification") {
-                jQuery(div).append("<ul><span style='color:#2C87F0;'>" + element.name + ": </span>" + element.value + "</ul>");
-            }
-            else if (element.name == "Serial_Number") {
-                jQuery(div).append("<ul><span style='color:#2C87F0;'>" + "Serial Number" + ": </span>" + element.value + "</ul>");
-            }
-            else if (element.name == "Manufacture") {
-                jQuery(div).append("<ul><span style='color:#2C87F0;'>" + element.name + ": </span>" + element.value + "</ul>");
-            }
-            else if (element.name == "Model") {
-                jQuery(div).append("<ul><span style='color:#2C87F0;'>" + element.name + ": </span>" + element.value + "</ul>");
-            }
-            else if (element.name == "Manufacture_Year") {
-                jQuery(div).append("<ul><span style='color:#2C87F0;'>" + "Manufacture Year" + ": </span>" + element.value + "</ul>");
-            }
-        });
-        jQuery.each(json.staging_area_asset_details, function(index, element) {
-            if (["Specification", "Serial_Number", "Manufacture", "Model", "Manufacture_Year"].indexOf(element.name) == -1) {
-                jQuery(div).append("<ul><span style='color:#2C87F0;'>" + element.name + ":</span> " + element.value + "</ul>");
-            }
-        });
-        jQuery.each(json, function(index, element){
-            if (index == 'image' && element != null && element != "null" && json.staging_area_asset_type.staging_area_company.layer.name) {
-                jQuery(div).append("<br />");
-                var url = "http://dedicatedmaps.com/images/asset_photos/" + json.staging_area_asset_type.staging_area_company.layer.name.toLowerCase() + '/' + encodeURIComponent(element);
-                console.log(url);
-                var imglink = document.createElement('a');
-                imglink.setAttribute('href', '#');
-                var img = document.createElement('img');
-                img.setAttribute('height', '75px');
-                img.setAttribute('src', url);
-                img.setAttribute('target', '_blank');
-                jQuery(imglink).click(function() {
-                    var strWindowFeatures = "location=yes,height=570,width=520,scrollbars=yes,status=yes";
-                    var win = window.open(url, "_blank", strWindowFeatures);
-                });
-                jQuery(imglink).append(img);
-                jQuery(div).append(imglink);
-                jQuery(div).append("<br /><br />");
-            }
-        });
-        var children = json.staging_area_assets;
-        if (children.length > 0) {
-            jQuery(div).append("<span style='display:block;'>Attached Assets</span>");
-            jQuery.each(children, function(index, element) {
-                var newelem = document.createElement('span');
-                newelem.innerHTML = element.description;
-                jQuery(div).append(newelem);
-                jQuery(div).append("<br />");
+        var title = app.balloons.dom.createElement('span', json.description);
+        $(title).addClass('assetTitle');
+        div.appendChild(title);
+
+        if (json.staging_area_asset_details && json.staging_area_asset_details.length > 0) {
+            $.each(json.staging_area_asset_details, function (index, element) {
+                switch (element.name) {
+                    case 'Serial_Number':
+                        var serial = app.balloons.dom.createNameValueDiv('Serial Number', element.value);
+                        div.appendChild(serial);
+                        break;
+                    case 'Manufacture_Year':
+                        var manufactureYear = app.balloons.dom.createNameValueDiv('Year Manufactured', element.value);
+                        div.appendChild(manufactureYear);
+                        break;
+                    default:
+                        var detail = app.balloons.dom.createNameValueDiv(element.name, element.value);
+                        div.appendChild(detail);
+                        break;
+                }
             });
         }
 
+        // Detect an image reference in the JSON response
+        if (json.hasOwnProperty('image') && json['image'] != null) {
+            var name = json.image;
+            if (!!name && name != '' && name != 'undefined' && name != 'nil' && name.length > 1) {
+                // This image reference is valid. Construct a URL to begin loading.
+                var url = app.balloons.dom.image.getAssetImagePath(name, json.staging_area_asset_type.staging_area_company.layer.name.toLowerCase());
+                var imgLink = document.createElement('a');
+                imgLink.setAttribute('href', '#');
+                var img = document.createElement('img');
+                $(img).addClass('assetPhoto');
+                img.setAttribute('src', url);
+                imgLink.appendChild(img);
+                $(imgLink).click(function () {
+                    // TODO: Make asset image display window mobile-friendly
+                    var strWindowFeatures = "location=yes,scrollbars=yes,status=yes";
+                    window.open(url, "_blank", strWindowFeatures);
+                });
+                div.appendChild(imgLink);
+            } else {
+                app.ui.messageSpan.setError();
+                throw new Error('Attempted to render Asset Details Container, but Asset details either failed to load or are empty.');
+            }
+        }
+
+        // Display assets attached to this asset
+        if (json.staging_area_assets && json.staging_area_assets.length > 0) {
+            var attached = document.createElement('div');
+            attached.appendChild(app.balloons.dom.createElement('span', 'Attached Assets'));
+            $.each(json.staging_area_assets, function (index, element) {
+                var asset = app.balloons.dom.createElement('span', element.description);
+                $(asset).addClass('block');
+                attached.appendChild(asset);
+            });
+            div.appendChild(attached);
+        }
+
+        // Apply styles for the entire container here
+        $(div).addClass('assetDetailsContainer');
         return div;
     };
 
     // Renders DOM to display Public Ship info
     app.balloons.shipInfo = function(ship, layer_name) {
         var div = document.createElement('div');
-        //div.setAttribute('class', 'info_window');
         var title = app.balloons.dom.createElement('div', ship.name);
         title.className = 'balloon_title';
         // Center here image
@@ -819,6 +867,8 @@ var dedicatedmaps = (function() {
 
     // Public Ships namespace
     app.publicShips = {};
+
+    // TODO: Public Ships sublayer JS
 
     app.publicShips.shipIcons = {};
 

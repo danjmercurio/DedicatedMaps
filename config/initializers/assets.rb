@@ -1,10 +1,10 @@
 Rails.application.config.assets.precompile += [
-    'infobubble.js',
+    'application.css',
+    'map.css',
     'public.css',
     'admin.css',
-    'application.css',
-    'info_window.css',
+    'balloons.css',
     'private.css',
     'bootstrap_and_overrides.css',
-    'dedicatedmaps.js',
-    'map.css']
+    'infobubble.js',
+    'dedicatedmaps.js']
