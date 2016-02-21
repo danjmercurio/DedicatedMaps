@@ -5,6 +5,7 @@ development:
   username: root
   password: mapapp
   host: localhost
+  reconnect: true
   #socket: /var/run/mysqld/mysqld.sock
 
 production:
@@ -14,6 +15,7 @@ production:
   username: root
   password: mapapp
   host: localhost
+  reconnect: true
   #socket: /var/run/mysqld/mysqld.sock
 
 test:
@@ -23,4 +25,5 @@ test:
   username: root
   password: mapapp
   host: localhost
+  reconnect: true
   #socket: /var/run/mysqld/mysqld.sock

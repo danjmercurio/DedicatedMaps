@@ -614,7 +614,7 @@ var dedicatedmaps = (function() {
                         // Build equipment tab
                         // If there is equipment in the json, tell us about it
                         if (json.staging_area_assets && json.staging_area_assets.length > 0) {
-                            app.balloons.infoBubble.addTab('Equip', app.balloons.getEquipmentContainer(json, app.balloons.infoBubble));
+                            app.balloons.infoBubble.addTab('Equipment', app.balloons.getEquipmentContainer(json, app.balloons.infoBubble));
                         }
                     }
                 }

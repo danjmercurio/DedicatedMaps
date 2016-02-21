@@ -34,8 +34,30 @@ class StagingArea < ActiveRecord::Base
     sa = StagingAreaCompany.find_by_id(params[:company_id])
     sa.update_attribute(:title, params[:company_title]) if params[:company_title] 
     sa.layer.update_attribute(:title, params[:layer_title]) if params[:layer_title]
-    sa.layer.update_attribute(:icon, params[:layer_icon]) if params[:layer_icon] 
-    
+    sa.layer.update_attribute(:icon, params[:layer_icon]) if params[:layer_icon]
+
+    locationsFile = File.read(params[:map_locations].path)
+
+    begin
+      # Get the contents and construct Nokogiri instance
+      locations = Nokogiri::XML(locationsFile) do |config|
+        config.noblanks
+      end
+
+      # Verify contents
+      required_fields = ['LocationCode', 'LocationName', 'Latitude', 'Longitude']
+      self.check_existence_of(required_fields, locations, locationsFile.original_filename)
+
+      # Apply an XML transformation
+      xslt = Nokogiri::XSLT(File.read('ddscripts/staging_areas/Map_Locations.xsl'))
+      locations = xslt.transform(locations)
+    rescue Nokogiri::XML::SyntaxError => e
+      return e.message
+    rescue Exception => e
+      return e.message
+    end
+
+
     # Parse XML and apply transformations
     begin   
       # Note: Nokogiri returns a parse error for XML with non-unicode characters when in strict mode. Strict mode temporarily turned off.
@@ -56,8 +78,6 @@ class StagingArea < ActiveRecord::Base
       doc  = Nokogiri::XML(File.read(params[:map_locations].path).encode!('UTF-8', 'UTF-8', :invalid => :replace)) { |config| config.noblanks }
 
       self.check_existence_of(["LocationCode", "LocationName", "Latitude", "Longitude"], doc, "Map Locations")
-      xslt          = Nokogiri::XSLT(File.read("ddscripts/staging_areas/Map_Locations.xsl"))
-      locations_doc = xslt.transform(doc)
 
     rescue Nokogiri::XML::SyntaxError => e
       return e.message
@@ -78,7 +98,7 @@ class StagingArea < ActiveRecord::Base
       delete_former_records(params[:company_id])
       
       # hand off this task to delayed_job
-      self.async.insert_locations(locations_doc.serialize, params[:company_id]) # pass the XML document as a serialized string so it plays nice with backburner
+      insert_locations(locations_doc.serialize, params[:company_id]) # pass the XML document as a serialized string so it plays nice with backburner
     end
     "ok"
   end
@@ -105,6 +125,8 @@ class StagingArea < ActiveRecord::Base
     types.destroy
     locations.destroy
   end
+
+  handle_static_asynchronously :prune_and_insert_uploads
 
   private
 
@@ -162,6 +184,8 @@ class StagingArea < ActiveRecord::Base
     location_ids
   end
 
+  handle_static_asynchronously :insert_locations
+
   def self.insert_types (types, company_id)
     types = Nokogiri::XML(types) { |cfg| cfg.noblanks }
     type_ids = {}
@@ -172,8 +196,9 @@ class StagingArea < ActiveRecord::Base
       type_ids[node.css('access_id').text.to_i] = s.id
     end
     type_ids
-
   end
+
+  handle_static_asynchronously :insert_types
 
   def self.prepare(data)
     (data.class == String && data.to_i.to_s == data) ? data.to_i : data

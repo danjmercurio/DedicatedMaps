@@ -33,21 +33,14 @@ class StagingAreaFeedsController < ApplicationController
         # Check for a present and readable file
         elsif params[:map_locations].class.name.demodulize != "UploadedFile"
           format.html {
-            render :text => "Error: No map locations file supplied or file is unreadable.", :status => 422
+            render :text => 'Error: No map locations file supplied or file is unreadable.', :status => 422
           }
 
-        # begin
-        #   params[:map_locations].read
-        # rescue NoMethodError
-        #   format.html {
-        #     render :text => "Error: No map locations file supplied or file is unreadable.", :status => 422
-        #   }
-        # end
 
         # Check that the file is non-empty
         elsif params[:map_locations].read.length == 0
           format.html {
-            render :text => "Error: Map locations file present, but empty.", :status => 422
+            render :text => 'Error: Map locations file present, but empty.', :status => 422
           }
         # Start parsing
         else
