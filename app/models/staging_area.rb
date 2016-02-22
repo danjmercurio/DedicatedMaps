@@ -38,6 +38,8 @@ class StagingArea < ActiveRecord::Base
 
     locationsFile = File.read(params[:map_locations].path)
 
+    raise Exception('Attempted to parse an empty string') unless locationsFile.length > 0
+
     begin
       # Get the contents and construct Nokogiri instance
       locations = Nokogiri::XML(locationsFile) do |config|

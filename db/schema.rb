@@ -21,32 +21,9 @@ ActiveRecord::Schema.define(version: 20151226235323) do
     t.datetime "updated_at"
   end
 
-  create_table "aircrafts", force: :cascade do |t|
-    t.integer  "asset_id",   limit: 4
-    t.integer  "altitude",   limit: 4
-    t.integer  "icon_id",    limit: 4
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "ais_ship_type_icons", force: :cascade do |t|
     t.integer "ship_type_code", limit: 4
     t.integer "icon_id",        limit: 4
-  end
-
-  create_table "area_categories", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "description", limit: 65535
-  end
-
-  create_table "asset_details", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.text     "value",      limit: 65535
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "asset_id",   limit: 4
   end
 
   create_table "asset_types", force: :cascade do |t|
@@ -88,11 +65,6 @@ ActiveRecord::Schema.define(version: 20151226235323) do
     t.string   "state",         limit: 255
   end
 
-  create_table "clients_layers", id: false, force: :cascade do |t|
-    t.integer "client_id", limit: 4
-    t.integer "layer_id",  limit: 4
-  end
-
   create_table "clients_layers_privileges", id: false, force: :cascade do |t|
     t.integer "client_id", limit: 4
     t.integer "layer_id",  limit: 4
@@ -132,9 +104,9 @@ ActiveRecord::Schema.define(version: 20151226235323) do
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
   create_table "device_types", force: :cascade do |t|
-    t.string "name",        limit: 255,   null: false
-    t.string "title",       limit: 255
+    t.string "name", limit: 255
     t.text   "description", limit: 65535
+    t.string "title", limit: 255
   end
 
   create_table "devices", force: :cascade do |t|
@@ -147,6 +119,8 @@ ActiveRecord::Schema.define(version: 20151226235323) do
     t.string   "common_name",    limit: 255
     t.boolean  "is_active",                  default: true
   end
+
+  add_index "devices", ["serial_number"], name: "index_devices_on_serial_number", unique: true, using: :btree
 
   create_table "faria_feeds", force: :cascade do |t|
     t.datetime "created_at"
@@ -166,19 +140,22 @@ ActiveRecord::Schema.define(version: 20151226235323) do
     t.string  "duties",     limit: 255
   end
 
-  create_table "fishing_area_points", force: :cascade do |t|
+  create_table "fishing_area_points", id: false, force: :cascade do |t|
+    t.integer "id", limit: 4
     t.integer "fishing_area_id", limit: 4
     t.float   "lat",             limit: 24
     t.float   "lon",             limit: 24
   end
 
-  create_table "fishing_area_types", force: :cascade do |t|
+  create_table "fishing_area_types", id: false, force: :cascade do |t|
+    t.integer "id", limit: 4
     t.string   "name",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "fishing_areas", force: :cascade do |t|
+  create_table "fishing_areas", id: false, force: :cascade do |t|
+    t.integer "id", limit: 4
     t.string   "name",                 limit: 255
     t.integer  "fishing_area_type_id", limit: 4
     t.string   "line_type",            limit: 255
@@ -266,16 +243,17 @@ ActiveRecord::Schema.define(version: 20151226235323) do
   create_table "grp_booms", force: :cascade do |t|
     t.integer  "grp_id",           limit: 4
     t.integer  "grp_boom_type_id", limit: 4
-    t.decimal  "start_lat",                    precision: 10
-    t.decimal  "start_lon",                    precision: 10
-    t.decimal  "end_lat",                      precision: 10
-    t.decimal  "end_lon",                      precision: 10
+    t.decimal "start_lat", precision: 9, scale: 7
+    t.decimal "start_lon", precision: 10, scale: 7
+    t.decimal "end_lat", precision: 9, scale: 7
+    t.decimal "end_lon", precision: 10, scale: 7
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "description",      limit: 255
   end
 
-  create_table "grp_plans", force: :cascade do |t|
+  create_table "grp_plans", id: false, force: :cascade do |t|
+    t.integer "id", limit: 4
     t.string   "name",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -341,16 +319,6 @@ ActiveRecord::Schema.define(version: 20151226235323) do
     t.string   "category",    limit: 255
   end
 
-  create_table "layers_maps", id: false, force: :cascade do |t|
-    t.integer "layer_id", limit: 4
-    t.integer "map_id",   limit: 4
-  end
-
-  create_table "layers_users", id: false, force: :cascade do |t|
-    t.integer "layer_id", limit: 4
-    t.integer "user_id",  limit: 4
-  end
-
   create_table "layers_users_privileges", id: false, force: :cascade do |t|
     t.integer "layer_id", limit: 4
     t.integer "user_id",  limit: 4
@@ -370,25 +338,14 @@ ActiveRecord::Schema.define(version: 20151226235323) do
     t.datetime "created_at"
   end
 
-  create_table "map_areas", force: :cascade do |t|
-    t.string   "name",             limit: 255
-    t.integer  "area_category_id", limit: 4
-    t.string   "line_type",        limit: 255
-    t.float    "lat",              limit: 24
-    t.float    "lon",              limit: 24
-    t.string   "color",            limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "maps", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
     t.integer  "zoom",       limit: 4,   default: 10
-    t.float    "lon",        limit: 24
+    t.float "lon", limit: 24, default: -123.436
     t.float    "lat",        limit: 24,  default: 46.753
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "map_type",   limit: 255, default: "Map",  null: false
+    t.string "map_type", limit: 255, default: "Map"
   end
 
   create_table "others", force: :cascade do |t|
@@ -404,14 +361,6 @@ ActiveRecord::Schema.define(version: 20151226235323) do
     t.float    "lon",       limit: 24
     t.datetime "timestamp"
     t.integer  "client_id", limit: 4
-  end
-
-  create_table "points", force: :cascade do |t|
-    t.integer  "map_area_id", limit: 4
-    t.float    "lat",         limit: 24
-    t.float    "lon",         limit: 24
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "privileges", force: :cascade do |t|
@@ -458,11 +407,11 @@ ActiveRecord::Schema.define(version: 20151226235323) do
 
   create_table "ships", force: :cascade do |t|
     t.integer  "asset_id",      limit: 4
-    t.decimal  "dim_bow",                   precision: 10
-    t.decimal  "dim_stern",                 precision: 10
-    t.decimal  "dim_starboard",             precision: 10
-    t.decimal  "dim_port",                  precision: 10
-    t.decimal  "draught",                   precision: 10
+    t.decimal "dim_bow", precision: 5, scale: 1
+    t.decimal "dim_stern", precision: 5, scale: 1
+    t.decimal "dim_starboard", precision: 5, scale: 1
+    t.decimal "dim_port", precision: 5, scale: 1
+    t.decimal "draught", precision: 5, scale: 1
     t.string   "destination",   limit: 255
     t.datetime "eta"
     t.datetime "created_at"
@@ -474,13 +423,18 @@ ActiveRecord::Schema.define(version: 20151226235323) do
     t.integer  "icon_id",       limit: 4
   end
 
+  add_index "ships", ["asset_id"], name: "unique_asset", unique: true, using: :btree
+
   create_table "staging_area_asset_details", force: :cascade do |t|
     t.integer "staging_area_asset_id", limit: 4
     t.string  "name",                  limit: 255
     t.string  "value",                 limit: 255
   end
 
-  create_table "staging_area_asset_types", force: :cascade do |t|
+  add_index "staging_area_asset_details", ["staging_area_asset_id"], name: "index_staging_area_asset_details_on_staging_area_asset_id", using: :btree
+
+  create_table "staging_area_asset_types", id: false, force: :cascade do |t|
+    t.integer "id", limit: 4
     t.integer  "staging_area_company_id", limit: 4
     t.string   "name",                    limit: 255
     t.datetime "created_at"
@@ -488,14 +442,30 @@ ActiveRecord::Schema.define(version: 20151226235323) do
     t.integer  "access_id",               limit: 4
   end
 
-  create_table "staging_area_assets", force: :cascade do |t|
-    t.integer "staging_area_id",            limit: 4
+  add_index "staging_area_asset_types", ["staging_area_company_id"], name: "index_staging_area_asset_types_on_staging_area_company_id", using: :btree
+
+  create_table "staging_area_assets", id: false, force: :cascade do |t|
+    t.integer "id", limit: 4
+    t.integer "staging_area_id", limit: 4
     t.integer "staging_area_asset_type_id", limit: 4
-    t.text    "description",                limit: 65535
-    t.string  "access_id",                  limit: 255
-    t.string  "parent_access_id",           limit: 255
-    t.string  "image",                      limit: 255
+    t.text "description", limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string "boom_length", limit: 255
+    t.string "recovery", limit: 255
+    t.string "liquid_storage", limit: 255
+    t.string "access_id", limit: 255
+    t.string "parent_access_id", limit: 255
+    t.string "requirements", limit: 255
+    t.string "serial_number", limit: 255
+    t.string "model_name", limit: 255
+    t.string "manufacture_year", limit: 255
+    t.string "image", limit: 255
+    t.string "specification", limit: 255
   end
+
+  add_index "staging_area_assets", ["staging_area_asset_type_id"], name: "index_staging_area_assets_on_staging_area_asset_type_id", using: :btree
+  add_index "staging_area_assets", ["staging_area_id"], name: "index_staging_area_assets_on_staging_area_id", using: :btree
 
   create_table "staging_area_companies", force: :cascade do |t|
     t.datetime "created_at"
@@ -510,22 +480,30 @@ ActiveRecord::Schema.define(version: 20151226235323) do
     t.string  "value",           limit: 255
   end
 
-  create_table "staging_areas", force: :cascade do |t|
-    t.string  "name",                    limit: 255,                          default: "unknown", null: false
+  add_index "staging_area_details", ["staging_area_id"], name: "index_staging_area_details_on_staging_area_id", using: :btree
+
+  create_table "staging_areas", id: false, force: :cascade do |t|
+    t.integer "id", limit: 4
+    t.string "name", limit: 255, default: "unknown", null: false
     t.integer "staging_area_company_id", limit: 4
-    t.string  "contact",                 limit: 255
-    t.string  "address",                 limit: 255
-    t.string  "city",                    limit: 255
-    t.string  "phone",                   limit: 255
-    t.string  "fax",                     limit: 255
-    t.string  "state",                   limit: 255
-    t.string  "zip",                     limit: 255
-    t.string  "email",                   limit: 255
-    t.decimal "lat",                                 precision: 10, scale: 7
-    t.decimal "lon",                                 precision: 10, scale: 7
-    t.integer "access_id",               limit: 4
-    t.string  "icon",                    limit: 255
+    t.string "contact", limit: 255
+    t.string "address", limit: 255
+    t.string "city", limit: 255
+    t.string "phone", limit: 255
+    t.string "fax", limit: 255
+    t.string "state", limit: 255
+    t.string "zip", limit: 255
+    t.string "email", limit: 255
+    t.decimal "lat", precision: 9, scale: 7
+    t.decimal "lon", precision: 10, scale: 7
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string "specifications", limit: 255
+    t.integer "access_id", limit: 4
+    t.string "icon", limit: 255
   end
+
+  add_index "staging_areas", ["staging_area_company_id"], name: "index_staging_areas_on_staging_area_company_id", using: :btree
 
   create_table "stored_files", force: :cascade do |t|
     t.string  "description",  limit: 255
