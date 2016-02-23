@@ -42,7 +42,7 @@ class StagingArea < ActiveRecord::Base
     # Get the contents and construct Nokogiri instance
     locationsNoko = Nokogiri::XML(File.open(locationsFile.path)) do |config|
       config.strict.noblanks
-      end
+    end
 
     # Name of parent XML element of all map locations (if the XML is valid!)
     # This is a constant
@@ -63,60 +63,55 @@ class StagingArea < ActiveRecord::Base
 
     # Do the same for map asset and asset type files if we have them
     # Note: Nokogiri returns a parse error for XML with non-unicode characters when in strict mode. Strict mode temporarily turned off.
-    # mapAssets = nil
-    # if params.has_key? :map_assets
-    #   mapAssetsOriginalFileName = params[:map_assets].original_filename
-    #   mapAssetsFile = File.read(params[:map_assets].path)
-    #
-    #   # Remove all \n characters from XML string
-    #   mapAssetsFile = self.stripNewLines(mapAssetsFile)
-    #
-    #   raise Exception("Map assets file #{mapAssetsOriginalFileName} is empty or was not completely received.") unless mapAssetsFile.length > 4 # Compare against 4 rather than zero to disqualify one-word or one-letter files
-    #   mapAssets = Nokogiri::XML(mapAssetsFile) do |config|
-    #     config.strict
-    #   end
-    #
-    #   self.check_existence_of(["Ident", "LocationCode", "AssetTypeCode", "MapAsset"], mapAssets, "Map Assets file: #{mapAssetsOriginalFileName}")
-    #   xslt = Nokogiri::XSLT(File.read("ddscripts/staging_areas/Map_Assets.xsl"))
-    #   mapAssets = xslt.transform(mapAssets)
-    #
-    #   mapAssetsText = StoredText.create(:text_data => mapAssets.serialize {|config| config.format.as_xml})
-    # end
-    #
-    # mapAssetTypes = nil
-    # if params.has_key? :map_asset_types
-    #   mapAssetTypesOriginalFileName = params[:map_asset_types].original_filename
-    #   mapAssetTypesFile = File.read(params[:map_asset_types].path)
-    #
-    #   # Remove all \n characters from XML string
-    #   mapAssetTypesFile = self.stripNewLines(mapAssetTypesFile)
-    #
-    #   raise Exception("Map asset types file #{mapAssetTypesOriginalFileName} is empty or was not completely received.") unless mapAssetTypesFile.length > 4
-    #   mapAssetTypes = Nokogiri::XML(mapAssetTypesFile) do |config|
-    #     config.strict
-    #   end
-    #
-    #   self.check_existence_of(["AssetTypeCode", "AssetTypeName"], mapAssetTypes, "Map Asset Types file: #{mapAssetTypesOriginalFileName}")
-    #   xslt = Nokogiri::XSLT(File.read("ddscripts/staging_areas/Map_Asset_Types.xsl"))
-    #   mapAssetTypes = xslt.transform(mapAssetTypes)
-    #
-    #   mapAssetTypesText = StoredText.create(:text_data => mapAssetTypes.serialize {|config| config.format.as_xml})
-    # end
+    if params.has_key? :map_assets
+      assetsFile = params[:map_assets]
+
+      assetsNoko = Nokogiri::XML(File.open(assetsFile.path)) do |config|
+        config.strict.noblanks
+      end
+
+      $ASSETS_XML_IDENTIFIER = 'qry_Map_Assets'
+
+      raise Exception("XML Parser received no assets. Check file #{assetsFile.original_filename} for formatting errors.") unless assetsNoko.search($ASSETS_XML_IDENTIFIER).count > 0
+
+      self.check_existence_of(["Ident", "LocationCode", "AssetTypeCode", "MapAsset"], assetsNoko, "Map Assets file: #{assetsFile.original_filename}")
+      xslt = Nokogiri::XSLT(File.read("ddscripts/staging_areas/Map_Assets.xsl"))
+      assetsNoko = xslt.transform(assetsNoko)
+
+      assetsText = StoredText.create(:text_data => assetsNoko.serialize { |config| config.format.as_xml })
+    end
+
+    if params.has_key? :map_asset_types
+      assetTypesFile = params[:map_asset_types]
+
+      assetTypesNoko = Nokogiri::XML(File.open(assetTypesFile.path)) do |config|
+        config.strict.noblanks
+      end
+
+      $ASSET_TYPES_XML_IDENTIFIER = 'qry_Map_Asset_Types'
+
+      raise Exception("Map asset types file #{assetTypesFile.original_filename} is empty or was not completely received.") unless assetTypesNoko.search($ASSET_TYPES_XML_IDENTIFIER).count > 4
+
+      self.check_existence_of(["AssetTypeCode", "AssetTypeName"], assetTypesNoko, "Map Asset Types file: #{assetTypesFile.original_filename}")
+      xslt = Nokogiri::XSLT(File.read("ddscripts/staging_areas/Map_Asset_Types.xsl"))
+      assetTypesNoko = xslt.transform(assetTypesNoko)
+
+      assetTypesText = StoredText.create(:text_data => assetTypesNoko.serialize { |config| config.format.as_xml })
+    end
 
     # We have our validated XML, so start inserting
     delete_former_records(params[:company_id])
-    if locationsNoko
       location_ids = insert_locations(locationsNoko, params[:company_id])
       # We need these location IDs to continue. If we don't have them, something went wrong
       raise Exception('Attempted to insert locations but routine to do so returned no location IDs') unless location_ids.count > 0
-      end
 
-    # if mapAssetTypes
-    #   type_ids = insert_types(mapAssetTypesFile, params[:company_id])
+
+    # if assetTypesNoko
+    type_ids = insert_types(assetTypesNoko, params[:company_id])
     # end
-    #
-    # if mapAssets
-    #   insert_assets(mapAssetsFile, type_ids, location_ids)
+
+    # if assetsNoko
+    insert_assets(assetsNoko, type_ids, location_ids)
     # end
 
     # rescue Nokogiri::XML::SyntaxError => e
@@ -168,13 +163,12 @@ class StagingArea < ActiveRecord::Base
   end
 
   def self.insert_assets(assets, type_ids, location_ids)
-    assets = Nokogiri::XML(assets) { |cfg| cfg.noblanks }
+    raise Exception('Routine to insert Staging Area Assets called, but XML object has no assets.') unless assets.css('row').count > 0
     assets.css('row').each do |node|
+      logger.info node.inspect
       asset = {}
       node.children.each do |child|
-        if child.name != "detail"
-          asset[child.name.downcase.to_sym] = self.prepare(child.content.to_s) 
-        end
+        asset[child.name.downcase.to_sym] = self.prepare(child.content.to_s) unless child.name == 'detail'
       end
       asset[:staging_area_id] = location_ids[node.css('staging_area_id').text.to_i]
       asset[:staging_area_asset_type_id] = type_ids[node.css('staging_area_asset_type_id').text.to_i]
@@ -208,7 +202,6 @@ class StagingArea < ActiveRecord::Base
   end
 
   def self.insert_types (types, company_id)
-    types = Nokogiri::XML(types) { |cfg| cfg.noblanks }
     type_ids = {}
     types.css('row').each do |node|
       s = StagingAreaAssetType.create(
