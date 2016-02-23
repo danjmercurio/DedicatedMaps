@@ -15,7 +15,7 @@ var dedicatedmaps = (function() {
         // A helper sub-module for loading in icons
         icons: {
             // http://dedicatedmaps.com/images/<name>.<suffix>
-            image_directory: "/images",
+            image_directory: "images",
             getIconPath: function (name, suffix) {
                 switch (arguments.length) {
                     case 1: // Called without a file type
