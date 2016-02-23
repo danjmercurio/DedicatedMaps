@@ -15,7 +15,7 @@ var dedicatedmaps = (function() {
         // A helper sub-module for loading in icons
         icons: {
             // http://dedicatedmaps.com/images/<name>.<suffix>
-            image_directory: "images",
+            image_directory: "../images",
             getIconPath: function (name, suffix) {
                 switch (arguments.length) {
                     case 1: // Called without a file type
@@ -545,7 +545,7 @@ var dedicatedmaps = (function() {
         image: {
             // http://dedicatedmaps.com/images/asset_photos/<layer name>/<filename>.<format>
             // Example path: http://dedicatedmaps.com/images/asset_photos/crc/002.JPG
-            assetImagePath: 'images/asset_photos',
+            assetImagePath: '../images/asset_photos',
             getAssetImagePath: function (name, layer) {
                 return encodeURI([app.balloons.dom.image.assetImagePath, layer, name].join('/'));
             }
