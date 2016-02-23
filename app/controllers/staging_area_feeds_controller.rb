@@ -19,11 +19,9 @@ class StagingAreaFeedsController < ApplicationController
   # curl -u staging_areas:tE5bllwas01Gcwi http://localhost:3000/staging_area_feeds -F "company_id=1" -F "map_locations=@test/files/poi/tbl_POI_MileMarkers.xml"     
   #
   def create
-      
     respond_to do |format|
       #Check for HTTP basic authentication
       if @is_authenticated
-
         # Check for a valid company id
         if !params.has_key?(:company_id) || params[:company_id].blank? || params[:company_id].to_i.class.name != "Fixnum" || params[:company_id].to_i == 0          
           format.html {
@@ -47,7 +45,7 @@ class StagingAreaFeedsController < ApplicationController
           result = StagingArea.parse_uploads(params)
         end
 
-        if result == "ok"
+        if result == 'OK'
           title = StagingAreaCompany.find(params[:company_id]).title
           format.html {
             render :text => "Staging area assets for #{title} posted successfully. Data will be available on maps momentarily."
