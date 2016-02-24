@@ -1,30 +1,33 @@
- <% @icons = AssetType.find_by_name('ship').icons %>
-     
- <table>
-  <tr>
-    <th>Ship Type</th>
-    <th>Off</th>
-    <th>Dim</th>
-  </tr>
-  
-<% @icons.each do |icon| %>
-  <tr>
-    <td>
-      <%= image_tag("markers/ships/#{icon.suffix}/#{icon.suffix}_50.png", :size=>"16x16") %> 
-      <%= icon.name %>
-    </td>
-    
-    <td>
-        <%= check_box_tag(icon.id, icon.id, false, :id=>"hide_icon#{icon.id}") %>
+<!--
+<% @icons = AssetType.find_by_name('ship').icons %>-->
+<!---->
+<!--<table>-->
+<!--<tr>-->
+<!--<th>Ship Type</th>-->
+<!--<th>Off</th>-->
+<!--<th>Dim</th>-->
+<!--</tr>-->
+<!---->
+<!--
+<% @icons.each do |icon| %>-->
+    <!--<tr>-->
+    <!--<td>-->
+    <!--<%= image_tag("markers/ships/#{icon.suffix}/#{icon.suffix}_50.png", :size => "16x16") %> -->
+    <!--<%= icon.name %>-->
+    <!--</td>-->
+    <!---->
+    <!--<td>-->
+    <!--<%= check_box_tag(icon.id, icon.id, false, :id => "hide_icon#{icon.id}") %>-->
 
-      <!-- field: hide_icon#{icon.id} function layer.public_ships.set('#{icon.suffix}', 'hidden', element.checked); -->
+    <!--&lt;!&ndash; field: hide_icon#{icon.id} function layer.public_ships.set('#{icon.suffix}', 'hidden', element.checked); &ndash;&gt;-->
 
-    </td>
-  
-    <td>
-        <%= check_box_tag(icon.id, icon.id, false, :id=>"dim_icon#{icon.id}") %>
-      <!-- field: dim_icon#{icon.id} function: layer.public_ships.set('#{icon.suffix}', 'dim', element.checked); -->
-    </td>
-  </tr>
-<% end %>
-</table>
+    <!--</td>-->
+    <!---->
+    <!--<td>-->
+    <!--<%= check_box_tag(icon.id, icon.id, false, :id => "dim_icon#{icon.id}") %>-->
+    <!--&lt;!&ndash; field: dim_icon#{icon.id} function: layer.public_ships.set('#{icon.suffix}', 'dim', element.checked); &ndash;&gt;-->
+    <!--</td>-->
+    <!--</tr>-->
+    <!--
+<% end %>-->
+<!--</table>-->
