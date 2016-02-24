@@ -48,7 +48,7 @@ class AisFeed < ActiveRecord::Base
         mmsi = ship_data[0].to_i
         ship_data[1]['mmsi'] = mmsi
         ship_data = ship_data[1]
-        device = Device.includes(:assets).where(:serial_number => mmsi)
+        device = Device.joins(:assets).where(:serial_number => mmsi)
         if device.count == 1 && device.first.assets.count > 0
           # Handle case where user creates AIS device but doesn't tether to a ship?
           asset = device.first.assets.first
@@ -89,15 +89,11 @@ class AisFeed < ActiveRecord::Base
         mmsi = ship_data[0].to_i
         ship_data[1]['mmsi'] = mmsi
         ship_data = ship_data[1]
-        if ship_data['name'] == nil
-          ship_data['name'] = "Anonymous"
-        end
-        if ship_data['destination'] == nil
-          ship_data['destination'] = "Not specified"
-        end
+        ship_data['name'] = 'Anonymous' unless !!ship_data['name']
+        ship_data['destination'] = 'Not specified' unless !!ship_data['destination']
         ship_data['mmsi'] = mmsi
         logger.info ship_data['name'] + " Destination: " + ship_data['destination']
-        device = Device.where(:serial_number => mmsi).first
+        device = Device.joins(:assets).where(:serial_number => mmsi).first
         # We only fill in AIS 5 data if a ship already exists via its AIS 1 feed.
         if device # Use caution with this boolean comparison. It should compare a Device model object, not an ActiveRecord::Relation
           asset = device.assets.first # AIS ships will have one and only one device
