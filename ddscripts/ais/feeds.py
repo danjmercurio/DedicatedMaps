@@ -10,7 +10,7 @@ import json_call
 
 store = json_call.Store()
 
-debug = False    # Log debugging messages?
+debug = True    # Log debugging messages?
 def dlog(msg):  
     print(msg)  #Cheezy simple "log" for now
 

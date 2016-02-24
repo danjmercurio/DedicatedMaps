@@ -48,10 +48,10 @@ class AisFeed < ActiveRecord::Base
         mmsi = ship_data[0].to_i
         ship_data[1]['mmsi'] = mmsi
         ship_data = ship_data[1]
-        device = Device.where(:serial_number => mmsi).first
-        if device
+        device = Device.includes(:assets).where(:serial_number => mmsi)
+        if device.count == 1 && device.first.assets.count > 0
           # Handle case where user creates AIS device but doesn't tether to a ship?
-          asset = device.assets.first
+          asset = device.first.assets.first
           # If there's an asset on the device, and it's tagged or owned by a client, and not at port, then we record its history
           if asset && (asset.tag || asset.client) && !is_at_port?(ship_data) 
             logger.info 'Saving history: ' + mmsi if DEBUG
@@ -62,7 +62,7 @@ class AisFeed < ActiveRecord::Base
           asset = self.init_ship(ship_data, ais_type, visibility, asset_type)
           logger.info "New ship: " + asset.id.to_s if DEBUG
         end
-        self.update_ship_location(asset, ship_data) if asset
+        raise Exception('Unable to update ship location') unless self.update_ship_location(asset, ship_data) #if asset
         logger.info 'Updated: ' + mmsi.to_s if DEBUG
       end
 
@@ -73,7 +73,7 @@ class AisFeed < ActiveRecord::Base
       #    a.tag.nil? && !a.current_location.timestamp.nil? && (a.current_location.timestamp < Time.zone.now - 1.day)
       # }
       assets_to_delete = Asset.includes(:current_location).where(:asset_type_id => 1).select { |a|
-        !a.current_location.timestamp.nil? && a.current_location.timestamp.hour > Time.now.hour - 1 }
+        !a.current_location.timestamp.nil? && time_diff(a.current_location.timestamp, Time.now) > 0 }
       logger.info ["Deleting ships: "] + assets_to_delete
       #assets_to_delete.each {|asset| asset.devices.each(&:destroy); asset.destroy}
       assets_to_delete.each do |x|
@@ -105,6 +105,21 @@ class AisFeed < ActiveRecord::Base
         end
       end
       stored_data.destroy
+    end
+
+    def time_diff(start_time, end_time)
+      seconds_diff = (start_time - end_time).to_i.abs
+
+      hours = seconds_diff / 3600
+      seconds_diff -= hours * 3600
+
+      minutes = seconds_diff / 60
+      seconds_diff -= minutes * 60
+
+      seconds = seconds_diff
+
+      #"#{hours.to_s.rjust(2, '0')}:#{minutes.to_s.rjust(2, '0')}:#{seconds.to_s.rjust(2, '0')}"
+      hours
     end
 
     def record_ship_specs(asset, ship_data)
