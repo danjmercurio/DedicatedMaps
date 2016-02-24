@@ -69,11 +69,11 @@ class AisFeed < ActiveRecord::Base
       # Clear old ships:
       # If a ship is public, not tagged, and hasn't updated in 24 hours, remove it from the database.
       # i.e. Ships.public.not_tagged.not_at_port.last_update > 24 hours
-      # assets_to_delete = Asset.joins(:current_location).all.map {|a|
+      # assets_to_delete = Asset.joins(:current_location).all.map {|a|asse
       #    a.tag.nil? && !a.current_location.timestamp.nil? && (a.current_location.timestamp < Time.zone.now - 1.day)
       # }
-      assets_to_delete = Asset.joins(:current_location).where(:asset_type_id => 1).select { |a|
-        a.tag.nil? && !a.current_location.timestamp.nil? && (a.current_location.timestamp < Time.zone.now - 1.day) }
+      assets_to_delete = Asset.includes(:current_location).where(:asset_type_id => 1).select { |a|
+        !a.current_location.timestamp.nil? && a.current_location.timestamp.hour > Time.now.hour - 1 }
       logger.info ["Deleting ships: "] + assets_to_delete
       #assets_to_delete.each {|asset| asset.devices.each(&:destroy); asset.destroy}
       assets_to_delete.each do |x|

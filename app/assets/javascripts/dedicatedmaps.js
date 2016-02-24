@@ -20,10 +20,8 @@ var dedicatedmaps = (function() {
                 switch (arguments.length) {
                     case 1: // Called without a file type
                         return encodeURI([app.ui.icons.image_directory, name + '.png'].join('/'));
-                        break;
                     case 2:
                         return encodeURI([app.ui.icons.image_directory, name + '.' + suffix].join('/'));
-                        break;
                 }
             },
             getIcon: function (name) {
@@ -64,7 +62,7 @@ var dedicatedmaps = (function() {
             return $.ajax(ajaxRequestObject)
                 .fail(function(error) {
                     app.ui.messageSpan.setError();
-                    console.log(error)
+                    console.log(error);
                 })
                 .done(function(response) {
                     app.ui.messageSpan.setDone();
@@ -800,9 +798,9 @@ var dedicatedmaps = (function() {
         }
 
         // Detect an image reference in the JSON response
-        if (json.hasOwnProperty('image') && json['image'] != null) {
+        if (json.hasOwnProperty('image') && json.image !== null) {
             var name = json.image;
-            if (!!name && name != '' && name != 'undefined' && name != 'nil' && name.length > 1) {
+            if (!!name && name !== '' && name != 'undefined' && name !== 'nil' && name.length > 1) {
                 // This image reference is valid. Construct a URL to begin loading.
                 var url = app.balloons.dom.image.getAssetImagePath(name, json.staging_area_asset_type.staging_area_company.layer.name.toLowerCase());
                 var imgLink = document.createElement('a');
