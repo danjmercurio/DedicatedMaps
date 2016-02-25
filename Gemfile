@@ -94,4 +94,9 @@ gem 'delayed_job'
 
 gem 'god' # Used to daemonize Backburner process
 
+# This gem is necessary for the development environment on windows
+group :development do
+  gem 'tzinfo-data'
+end
+
 

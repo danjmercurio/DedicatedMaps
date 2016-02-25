@@ -151,3 +151,4 @@ public/.htaccess
 *.so
 *.swp
 .idea
+.idea/*
