@@ -597,10 +597,10 @@ var dedicatedmaps = (function() {
 
             // Initialize the infoBubble for each new marker
             app.balloons.infoBubble = new InfoBubble({
-                maxHeight: 250,
                 minHeight: 250,
-                maxWidth: 500,
+                maxHeight: 500,
                 minWidth: 500,
+                maxWidth: 600,
                 marker: marker,
                 map: app.ui.getMap(),
                 position: marker.position
@@ -696,7 +696,7 @@ var dedicatedmaps = (function() {
                 var label = element.value.substr(0, element.value.lastIndexOf('.')).toUpperCase();
 
                 // Create a link and make it open in a new tab
-                var pdf2 = that.dom.createElement('a', element.value);
+                var pdf2 = document.createElement('a');
                 var path = that.dom.pdf.getPDFPath(label);
                 pdf2.setAttribute('href', path);
                 pdf2.setAttribute('target', '_new');
@@ -810,7 +810,7 @@ var dedicatedmaps = (function() {
             });
         }
 
-        // Detect an image reference in the JSON response
+        // Detect an image reference in the JSON response.
         if (json.hasOwnProperty('image') && json.image !== null) {
             var name = json.image;
             if (!!name && name !== '' && name != 'undefined' && name !== 'nil' && name.length > 1) {
@@ -834,7 +834,7 @@ var dedicatedmaps = (function() {
             }
         }
 
-        // Display assets attached to this asset
+        // Display assets attached to this asset.
         if (json.staging_area_assets && json.staging_area_assets.length > 0) {
             var attached = document.createElement('div');
             attached.appendChild(app.balloons.dom.createElement('span', 'Attached Assets'));
@@ -846,12 +846,12 @@ var dedicatedmaps = (function() {
             div.appendChild(attached);
         }
 
-        // Apply styles for the entire container here
+        // Apply styles for the entire container here.
         $(div).addClass('assetDetailsContainer');
         return div;
     };
 
-    // Renders DOM to display Public Ship info
+    // Renders DOM fragment to display Public Ship info.
     app.balloons.shipInfo = function(ship, layer_name) {
         var div = document.createElement('div');
         var title = app.balloons.dom.createElement('div', ship.name);
@@ -970,7 +970,7 @@ var dedicatedmaps = (function() {
         return marker;
     };
 
-    // Start everything
+    // This is the main call that starts everything.
     app.onPageReady();
     return app
 })();
