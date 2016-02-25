@@ -107,10 +107,39 @@ var dedicatedmaps = (function() {
             });
         }
     };
+    app.onPageReady = function () {
+        // Check that jQuery has loaded
+        if (typeof(jQuery) === 'undefined') {
+            throw new Error('jQuery failed to load. Cannot continue.');
+        }
+        // Check that infoBubble.js has loaded
+        if (typeof(InfoBubble) === 'undefined') {
+            throw new Error('infoBubble.js failed to load. Cannot continue');
+        }
+        $(document).ready(function () {
+            // Detect if the Google Maps JS has loaded yet
+            if (window.google && google.maps) {
+                // Map script is already loaded
+                alert("Map script is already loaded. Initialising...");
+            } else {
+                console.log('Loading Google Maps API...');
+                var url = 'https://maps.googleapis.com/maps/api/js?v=3.22&key=AIzaSyCXWCJQoRqKt74nUWgvJBmk_naVR-TbeBg';
+                $.getScript(url, function () {
+                    console.log('Done.');
+                    app.initializeMap();
+                });
+            }
+        });
+    };
 
     // Set options on the map and display it after page load. The main init function.
     app.initializeMap = function() {
-        google.maps.event.addDomListener(window, "load", function () {
+        google.maps.event.addDomListener(window, 'load', function () {
+            // Make sure we have an element to use for the map. This should only raise an error if the page does not load completely
+            if (!app.ui.getMapDiv()) {
+                throw new Error('Cannot load Google Maps because element div#map_div was not found in the DOM');
+            }
+            console.log('Initializing map...');
             var map_state = {
                 "zoom": 7,
                 "lon": -123.391,
@@ -142,7 +171,6 @@ var dedicatedmaps = (function() {
             });
             // Set event handlers on left-hand checkboxes so layers appear when we check them
             app.ui.setCheckboxHandlers();
-
         });
     };
 
@@ -382,10 +410,6 @@ var dedicatedmaps = (function() {
                     throw new Error("Unrecognized layer type when instantiating new layer!");
                     break;
             }
-
-
-                //"/" + name + ".json", function(data){this.name.load(data);});
-
     };
 
     // Called when checkbox in map view for respective layer is unchecked
@@ -659,16 +683,6 @@ var dedicatedmaps = (function() {
             };
             var filtered = json.staging_area_details.filter(predicate);
 
-            //$.each(json.staging_area_details, function(index, element) {
-            //    if (element.value.charAt(0) == '#') {
-            //
-            //    }
-            //    else { // # This is super sloppy! Refactor!
-            //        if (filtered.indexOf(element) == "-1") $(div).append("<span class='itemprop'>" + "<span style='color:#2C87F0;'>" + element.name + ":</span> " + element.value + "</span>");
-            //    }
-            //
-            //});
-
             $.each(json.staging_area_details, function (index, element) {
                 div.appendChild(app.balloons.dom.createNameValueDiv(element.name, element.value));
             });
@@ -700,7 +714,6 @@ var dedicatedmaps = (function() {
                 pdfspan.appendChild(pdf2);
 
                 // Finally, append the PDF span to the div
-
                 div.appendChild(pdfspan);
             });
         }
@@ -958,6 +971,6 @@ var dedicatedmaps = (function() {
     };
 
     // Start everything
-    app.initializeMap();
+    app.onPageReady();
     return app
 })();
