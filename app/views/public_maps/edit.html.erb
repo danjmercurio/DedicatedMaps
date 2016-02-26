@@ -8,7 +8,9 @@
           :remote => true,
           :params => {:id => @public_map.id}
       }, {
-                        :class => 'btn'} %>
+                        :class => 'btn'
+                    }
+      %>
   <% else %>
       <span id="disable_message">This map is currently disabled.</span>
       <%= button_to 'Enable Map', {
@@ -17,7 +19,9 @@
           :remote => true,
           :params => {:id => @public_map.id}
       }, {
-                        :class => 'btn'} %>
+                        :class => 'btn'
+                    }
+      %>
   <% end %>
 </p>
 <hr />
