@@ -8,16 +8,22 @@ class PublicMapsController < ApplicationController
 
     if user.update_attribute(:active, !user.active)
       if user.active
-        message = "This map is currently enabled."
+        message = 'Map enabled successfully.'
       else
-        message = "This map is currently disabled."
+        message = 'Map disabled successfully.'
+      end
+      respond_to do |format|
+        format.html do
+          flash[:notice] = message
+          redirect_to :back
+        end
       end
     else
-      message = "Error: Map activation not changed"
-    end
-
-    respond_to do |format|
-      format.js { render :text =>  message }
+      respond_to do |format|
+        format.html do
+          flash[:error] = 'Error: Unable to change map status. If this persists, please file a bug report.'
+        end
+      end
     end
   end
 

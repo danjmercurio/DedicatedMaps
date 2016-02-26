@@ -1,19 +1,23 @@
 <h1>Public Map Settings: http://<%= @public_map.username %>.dedicatedmaps.com</h1>
-
-<br />
-
-<% url = url_for(:controller => 'maps', :action => 'show', :id => @public_map.map.id, :only_path => false) %>
-
 <p>
-  <%= button_to 'Enable/Disable Public Map',
-                :url      => { :action => 'activate', :id => @public_map.id },
-                :update => 'disable_message'
-  %>
-
   <% if @public_map.active %>
       <span id="disable_message">This map is currently enabled.</span>
+      <%= button_to 'Disable Map', {
+          :method => :post,
+          :action => :activate,
+          :remote => true,
+          :params => {:id => @public_map.id}
+      }, {
+                        :class => 'btn'} %>
   <% else %>
       <span id="disable_message">This map is currently disabled.</span>
+      <%= button_to 'Enable Map', {
+          :method => :post,
+          :action => :activate,
+          :remote => true,
+          :params => {:id => @public_map.id}
+      }, {
+                        :class => 'btn'} %>
   <% end %>
 </p>
 <hr />

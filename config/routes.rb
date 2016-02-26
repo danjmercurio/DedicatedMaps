@@ -45,6 +45,8 @@ Ddmap::Application.routes.draw do
     end
   end
 
+  post '/public_maps/activate/:id' => 'public_maps#activate'
+
   resources :licenses
   resources :ships
   resources :fishing_vessels
