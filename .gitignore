@@ -143,12 +143,9 @@ docs/_build/
 # PyBuilder
 target/
 
-log/*.log
-tmp/**/*
+
+
 script
 public/.htaccess
-/**/*.pyc
-*.so
 *.swp
 .idea
-.idea/*

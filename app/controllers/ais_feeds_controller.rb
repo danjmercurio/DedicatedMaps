@@ -26,5 +26,4 @@ class AisFeedsController < ApplicationController
       render :text => 'Error: file was not received, was malformed, or was empty.', :status => 500
     end
   end
-
 end
