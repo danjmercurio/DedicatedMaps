@@ -7,10 +7,7 @@
           :action => :activate,
           :remote => true,
           :params => {:id => @public_map.id}
-      }, {
-                        :class => 'btn'
-                    }
-      %>
+      }, {:class => 'btn'} %>
   <% else %>
       <span id="disable_message">This map is currently disabled.</span>
       <%= button_to 'Enable Map', {
@@ -18,26 +15,14 @@
           :action => :activate,
           :remote => true,
           :params => {:id => @public_map.id}
-      }, {
-                        :class => 'btn'
-                    }
-      %>
+      }, {:class => 'btn'} %>
   <% end %>
 </p>
 <hr />
-     
-<%= form_for(@public_map, :url => {:controller => "public_maps", :action => "update"},
-  :loading => "Element.show('layer_loading')",
-  :complete => "Element.hide('layer_loading')"
-  ) do |f| -%>
-
-  
-  
+<%= form_for(@public_map, :url => {:controller => "public_maps", :action => "update"}) do |f| -%>
   <%= render :partial => 'form' , :locals => {:f => f}%>
   <hr />
   <%= render :partial => 'layers' , :locals => {:f => f, :user => @public_map} %>
   <br />
   <%= f.submit 'Update', class: "btn" %>
-  <div id="layer_message"></div>
-
-  <% end %>
+<% end %>
