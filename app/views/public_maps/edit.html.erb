@@ -5,23 +5,17 @@
 <% url = url_for(:controller => 'maps', :action => 'show', :id => @public_map.map.id, :only_path => false) %>
 
 <p>
-      
-  <%= button_to_remote 'Enable/Disable Public Map', 
-  :url      => { :action => 'activate', :id => @public_map.id },
-  :update   => 'disable_message',
-  :loading  => "Element.show('active_loading')",
-  :complete => "Element.hide('active_loading')"
+  <%= button_to 'Enable/Disable Public Map',
+                :url      => { :action => 'activate', :id => @public_map.id },
+                :update => 'disable_message'
   %>
 
   <% if @public_map.active %>
-  <span id  = "disable_message">This map is currently enabled.</span>
+      <span id="disable_message">This map is currently enabled.</span>
   <% else %>
-  <span id  = "disable_message">This map is currently disabled.</span>
+      <span id="disable_message">This map is currently disabled.</span>
   <% end %>
-  
-
 </p>
-
 <hr />
      
 <%= form_for(@public_map, :url => {:controller => "public_maps", :action => "update"},

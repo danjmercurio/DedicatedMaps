@@ -27,3 +27,8 @@ div.col-md-10 {
     background-color: white;
     padding: 10px;
 }
+
+/* Padding for table headers and cells */
+th, td {
+    padding: 5px;
+}
