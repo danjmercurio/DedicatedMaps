@@ -5,7 +5,7 @@ class LayersController < ApplicationController
   # GET /layers
   # GET /layers.xml
   def index
-    @layers = Layer.all.order('created_at DESC')
+    @layers = Layer.all.order(:title)
 
     respond_to do |format|
       format.html # index.html.erb

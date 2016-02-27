@@ -7,4 +7,5 @@ Rails.application.config.assets.precompile += [
     'private.css',
     'bootstrap_and_overrides.css',
     'infobubble.js',
-    'dedicatedmaps.js']
+    'dedicatedmaps.js',
+    'jquery.tablesorter.min.js']

@@ -33,7 +33,7 @@ if (!String.prototype.startsWith) {
 // JS Stuff for the login form (Public#index)
 function clearText(field) {
   if (field.defaultValue == field.value) field.value = '';
-  else if (field.value == '') field.value = field.defaultValue;
+  else if (field.value === '') field.value = field.defaultValue;
 }
 $(document).ready(function() {
   $('#forgot').click(function (){
@@ -44,4 +44,5 @@ $(document).ready(function() {
     $('#recover').hide();
     $('form#new_session').show();
   });
+    $('.sortable').tablesorter();
 });
