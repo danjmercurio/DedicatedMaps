@@ -25,7 +25,7 @@ class StagingAreaFeedsController < ApplicationController
         # Check for a valid company id
         if !params.has_key?(:company_id) || params[:company_id].blank? || params[:company_id].to_i.class.name != "Fixnum" || params[:company_id].to_i == 0          
           format.html {
-            render :text => "Error: A company_id parameter is required. (Must be a nonzero integer.)", :status => 422
+            render :text => 'Error: A company_id parameter is required. (Must be a nonzero integer)', :status => 422
           }
         
         # Check for a present and readable file

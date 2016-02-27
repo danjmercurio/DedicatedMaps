@@ -35,14 +35,11 @@ class StagingArea < ActiveRecord::Base
     sa.layer.update_attribute(:title, params[:layer_title]) if params[:layer_title]
     sa.layer.update_attribute(:icon, params[:layer_icon]) if params[:layer_icon]
 
-    # Error flag for this entire function.
-    error = false
-    # Container for the eventual return message.
-    message = "";
+    message = ""
 
     begin
       locationsFile = params[:map_locations]
-      # Get the contents and construct Nokogiri instance
+      # Get the contents and construct Nokogiri parser instance
       locationsNoko = Nokogiri::XML(File.open(locationsFile.path)) do |config|
         config.strict.noblanks
       end
@@ -54,9 +51,8 @@ class StagingArea < ActiveRecord::Base
       # Name of parent XML element of all map locations (if the XML is valid!)
       # This is a constant
       $LOCATIONS_XML_IDENTIFIER = 'qry_Map_Locations'
-      if locationsNoko.search($LOCATIONS_XML_IDENTIFIER).count > 0
-        error = true
-        message += "XML Parser found no locations. Check file #{locationsFile.original_filename} for formatting errors."
+      if locationsNoko.search($LOCATIONS_XML_IDENTIFIER).count <= 0
+        message += 'XML Parser found no locations.'
         raise Nokogiri::XML::SyntaxError
       end
 
@@ -64,13 +60,14 @@ class StagingArea < ActiveRecord::Base
       xslt = Nokogiri::XSLT(File.read('ddscripts/staging_areas/Map_Locations.xsl'))
       locationsNoko = xslt.transform(locationsNoko)
 
-      locationsText = StoredText.create(:text_data => locationsNoko.serialize { |config| config.format.as_xml })
+        # Optionally create a StoredText
+        #locationsText = StoredText.create(:text_data => locationsNoko.serialize { |config| config.format.as_xml })
     rescue Nokogiri::XML::SyntaxError => e
-      error = true
       message += e.to_s + " in " + locationsFile.original_filename
+      return message
     rescue Exception => e
-      error = true
       message += e.to_s + " in " + locationsFile.original_filename
+      return message
     end
 
     if params.has_key? :map_asset_types
@@ -86,58 +83,72 @@ class StagingArea < ActiveRecord::Base
         $ASSET_TYPES_XML_IDENTIFIER = 'qry_Map_Asset_Types'
 
         if assetTypesNoko.search($ASSET_TYPES_XML_IDENTIFIER).count <= 0
+          message += 'XML Parser found no map asset types'
           raise Nokogiri::XML::SyntaxError
         end
 
         xslt = Nokogiri::XSLT(File.read("ddscripts/staging_areas/Map_Asset_Types.xsl"))
         assetTypesNoko = xslt.transform(assetTypesNoko)
 
-        assetTypesText = StoredText.create(:text_data => assetTypesNoko.serialize { |config| config.format.as_xml })
+          #assetTypesText = StoredText.create(:text_data => assetTypesNoko.serialize { |config| config.format.as_xml })
+      rescue Nokogiri::XML::SyntaxError => e
+        message += e.to_s + " in " + assetTypesFile.original_filename
+        return message
+      rescue Exception => e
+        message += e.to_s + " in " + assetTypesFile.original_filename
+        return message
       end
     end
     # Do the same for map asset and asset type files if we have them
     # Note: Nokogiri returns a parse error for XML with non-unicode characters when in strict mode. Strict mode temporarily turned off.
     if params.has_key? :map_assets
-      assetsFile = params[:map_assets]
+      begin
+        assetsFile = params[:map_assets]
 
-      assetsNoko = Nokogiri::XML(File.open(assetsFile.path)) do |config|
-        config.strict.noblanks
+        assetsNoko = Nokogiri::XML(File.open(assetsFile.path)) do |config|
+          config.strict.noblanks
+        end
+
+        $ASSETS_XML_IDENTIFIER = 'qry_Map_Assets'
+
+        if assetsNoko.search($ASSETS_XML_IDENTIFIER).count <= 0
+          message += 'XML Parser found no map assets. '
+          raise Nokogiri::XML::SyntaxError
+        end
+
+        self.check_existence_of(["Ident", "LocationCode", "AssetTypeCode", "MapAsset"], assetsNoko, "Map Assets file: #{assetsFile.original_filename}")
+        xslt = Nokogiri::XSLT(File.read('ddscripts/staging_areas/Map_Assets.xsl'))
+        assetsNoko = xslt.transform(assetsNoko)
+
+          #assetsText = StoredText.create(:text_data => assetsNoko.serialize { |config| config.format.as_xml })
+      rescue Nokogiri::XML::SyntaxError => e
+        message += e.to_s + " in " + assetsFile.original_filename
+        return message
+      rescue Exception => e
+        message += e.to_s + " in " + assetsFile.original_filename
+        return message
       end
-
-      $ASSETS_XML_IDENTIFIER = 'qry_Map_Assets'
-
-      raise "XML Parser received no assets. Check file #{assetsFile.original_filename} for formatting errors." unless assetsNoko.search($ASSETS_XML_IDENTIFIER).count > 0
-
-      self.check_existence_of(["Ident", "LocationCode", "AssetTypeCode", "MapAsset"], assetsNoko, "Map Assets file: #{assetsFile.original_filename}")
-      xslt = Nokogiri::XSLT(File.read("ddscripts/staging_areas/Map_Assets.xsl"))
-      assetsNoko = xslt.transform(assetsNoko)
-
-      assetsText = StoredText.create(:text_data => assetsNoko.serialize { |config| config.format.as_xml })
     end
-
-
 
     # We have our validated XML, so start inserting
     delete_former_records(params[:company_id])
-      location_ids = insert_locations(locationsNoko, params[:company_id])
+    location_ids = insert_locations(locationsNoko, params[:company_id])
     # We need these location IDs to continue. If we don't have them, something went wrong
-    raise 'Attempted to insert locations but routine to do so returned no location IDs' unless location_ids.count > 0
+    return 'Error: Attempted to insert locations but routine to do so returned no location IDs' unless location_ids.count > 0
 
+    if assetTypesNoko
+      type_ids = insert_types(assetTypesNoko, params[:company_id])
+    end
 
-    # if assetTypesNoko
-    type_ids = insert_types(assetTypesNoko, params[:company_id])
-    # end
-
-    # if assetsNoko
-    insert_assets(assetsNoko, type_ids, location_ids)
-    # end
-
+    if assetsNoko && assetTypesNoko
+      insert_assets(assetsNoko, type_ids, location_ids)
+    end
     # rescue Nokogiri::XML::SyntaxError => e
     #   return "XML Syntax Error: #{e.message}"
     # rescue Exception => e
     #   return e.message
     # end
-
+    return 'OK'
   end
 
   def self.prune_and_insert_uploads(company_id, assets, locations, types)
