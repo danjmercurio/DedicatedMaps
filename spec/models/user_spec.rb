@@ -53,9 +53,9 @@ describe User do
 	end
 
   it 'Does not accept email addresses that are not unique to the database' do
-    build(:user, :email => 'somebody@somewhere.com')
-    expect(build(:user, :email => 'somebody@somewhere.com')).to_not be_valid
-	end
+    create(:user, :email => 'somebody@somewhere.com')
+    expect(build(:user, :email => 'somebody@somewhere.com').valid?).to eq(false)
+  end
 
 	# it 'can remove all layers' do
 	# 	@u = build(:user)

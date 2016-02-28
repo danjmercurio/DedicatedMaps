@@ -2,10 +2,11 @@ require 'rails_helper'
 
 feature 'User signs in' do
 	scenario 'with valid credentials' do
+    testUser = create(:user)
 		visit '/'
     expect(page.status_code) == '200'
-		fill_in 'session_username', with: 'dhollerich'
-		fill_in 'session_password', with: "DDhh2008"
+    fill_in 'session_username', with: testUser.username
+    fill_in 'session_password', with: 'password123456'
 		click_on 'Log In'
 		expect(page).to have_content('My Map')
   end
