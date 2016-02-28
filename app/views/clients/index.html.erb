@@ -1,44 +1,41 @@
 <fieldset>
-
-<legend>Clients</legend>
-
-  <p><button class="btn"><%= link_to 'Add new client', new_client_path %></button></p>
-
-
+  <legend>Clients</legend>
+  <p>
+    <button class="btn"><%= link_to 'Add new client', new_client_path %></button>
+  </p>
   <% if @clients.nil? %>
-
     <br />You have no clients configured.
-
   <% else %>
-
-    <table class="index">
-      <tr>
-        <th>Company</th>
-        <th>Contact</th>
-        <th>Active</th>
-      </tr>
-
-      <% @clients.each do |client| %>
-        <tr bgcolor="<%= cycle("#dddddd", "#ffffff") %>">
-          <td>
-            <b><%=h client.company_name %></b><br />
-            <%=h client.address1 %><br />
-            <%=h client.address2 %><% if client.address2.to_s.length != 0 %><br /><% end %>
-            <%=h client.city %>, <%=h client.state %> <%=h client.zip %><br />
-            <%=h client.company_url %>
-          </td>
-          <td>
-            <%=h client.contact_name %><br />
-            <%=h client.contact_phone %><br />
-            <%=h client.contact_email %>
-          </td>
-          <td><%=h client.active %></td>
-          <td><%= link_to 'Edit', edit_client_path(client) %></td>
+      <table class="index sortable">
+        <thead>
+        <tr>
+          <th>Company</th>
+          <th>Contact</th>
+          <th>Active</th>
         </tr>
-      <% end %>
-      
+        </thead>
+        <tbody>
+        <% @clients.each do |client| %>
+            <tr bgcolor="<%= cycle("#dddddd", "#ffffff") %>">
+              <td>
+                <b><%= h client.company_name %></b><br/>
+                <%= h client.address1 %><br/>
+                <%= h client.address2 %>
+                <% if client.address2.to_s.length != 0 %><br/>
+                <% end %>
+                <%= h client.city %>, <%= h client.state %> <%= h client.zip %><br/>
+                <%= h client.company_url %>
+              </td>
+              <td>
+                <%= h client.contact_name %><br/>
+                <%= h client.contact_phone %><br/>
+                <%= h client.contact_email %>
+              </td>
+              <td><%= h client.active %></td>
+              <td><%= link_to 'Edit', edit_client_path(client) %></td>
+            </tr>
+        <% end %>
+        </tbody>
     </table>
-
   <% end %>
-  
 </fieldset>

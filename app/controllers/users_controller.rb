@@ -56,7 +56,7 @@ class UsersController < ApplicationController
     pub = Privilege.find_by_name('public')
     if @loggedin_user.super?
       # RAILS 3 @users = User.all(:order => "client_id, last_name", :conditions => ['privilege_id <> ?', pub.id])
-      @users = User.where("privilege_id <> ?", pub.id)
+      @users = User.joins(:client).where("privilege_id <> ?", pub.id).order('clients.company_name')
     elsif @loggedin_user.admin?
       # Can only list users with the same client
       # @users = User.find(:all, (rails 2 deprecated  finder)

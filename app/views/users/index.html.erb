@@ -1,50 +1,49 @@
 <fieldset>
-
-<legend>Users</legend>
-
+  <legend>Users</legend>
   <p><button class="btn"><%= link_to 'Add new user', new_user_path %></button></p>
-
   <% if @users.length == 0 %>
-
     <br />You have no user accounts configured.
-
   <% else %>
-
-  <table class="index">
-    <tr>
-      <% if @loggedin_user.super? %><th>Client</th><% end %>
-      <th>Privilege</th>
-      <th>Username</th>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Email</th>
-      <th>Active</th>
-      <th>Last login</th>
-    </tr>
-
-    <% @users.each do |user| %>
-      <tr bgcolor="<%= cycle("#dddddd", "#ffffff") %>">
-        <% if @loggedin_user.super? %><td><%=h user.client.company_name %></td><% end %>
-        <td><%=h user.privilege.name %></td>
-        <% if user.privilege.name== "public" %>
-          <td><%=h user.map.id %></td>
-          <td>--</td>
-          <td>--</td>
-          <td>--</td>
-        <% else %>
-          <td><%=h user.username %></td>
-          <td><%=h user.first_name %></td>
-          <td><%=h user.last_name %></td>
-          <td><%=h user.email %></td>
-        <% end %>
-        <td><%=h user.active %></td>
-        <td><%=h user.last_login %></td>        
-        <td><%= link_to 'Edit Account', edit_user_path(user) %></td>
-        <td><%= link_to 'View Map', map_path(user.map) %></td>
+      <table class="index sortable">
+        <thead>
+        <tr>
+          <% if @loggedin_user.super? %>
+              <th>Client</th>
+          <% end %>
+          <th>Privilege</th>
+          <th>Username</th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Email</th>
+          <th>Active</th>
+          <th>Last login</th>
       </tr>
-    <% end %>
+        </thead>
+        <tbody>
+        <% @users.each do |user| %>
+            <tr bgcolor="<%= cycle("#dddddd", "#ffffff") %>">
+              <% if @loggedin_user.super? %>
+                  <td><%= h user.client.company_name %></td>
+              <% end %>
+              <td><%= h user.privilege.name %></td>
+              <% if user.privilege.name== "public" %>
+                  <td><%= h user.map.id %></td>
+                  <td>--</td>
+                  <td>--</td>
+                  <td>--</td>
+              <% else %>
+                  <td><%= h user.username %></td>
+                  <td><%= h user.first_name %></td>
+                  <td><%= h user.last_name %></td>
+                  <td><%= h user.email %></td>
+              <% end %>
+              <td><%= h user.active %></td>
+              <td><%= h user.last_login %></td>
+              <td><%= link_to 'Edit Account', edit_user_path(user) %></td>
+              <td><%= link_to 'View Map', map_path(user.map) %></td>
+            </tr>
+        <% end %>
+        </tbody>
   </table>
-
-<% end %>
-  
+  <% end %>
 </fieldset>

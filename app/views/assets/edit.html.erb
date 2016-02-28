@@ -67,8 +67,6 @@
       Share this asset with:<br />
 
       <%= form_for @asset, {
-            :loading => "Element.show('share_loading')",
-            :complete => "Element.hide('share_loading')"
             } do |f| -%>
         <% @client.clients.each do |client| -%>
           <br />

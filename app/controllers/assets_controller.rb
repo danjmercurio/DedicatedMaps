@@ -1,5 +1,5 @@
 class AssetsController < ApplicationController
-  layout "private" 
+  layout 'private'
   before_filter :ensure_login
   
   # GET /assets
@@ -81,7 +81,6 @@ class AssetsController < ApplicationController
     
     respond_to do |format|
       if @asset.save
-   
         case @asset.asset_type.name
           when 'ship'
             @ship = Ship.create(:asset_id => @asset.id)
@@ -92,9 +91,7 @@ class AssetsController < ApplicationController
           when 'other'
             @other = Other.create(:asset_id => @asset.id)
           else
-
         end
-        
         flash[:notice] = 'Asset was successfully created.'
         format.html { redirect_to(edit_asset_path(@asset)) }
       else
