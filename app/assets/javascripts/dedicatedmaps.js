@@ -372,10 +372,10 @@ var dedicatedmaps = (function() {
                         case 'public_ships':
                             layer.render = app.publicShips.render;
                             if (!layer.loaded) {
-                                var url = ['/', 'public_ships', '.json'].join('');
+                                var publicShipsListURL = ['/', 'public_ships', '.json'].join('');
                                 // Load JSON marker list
                                 app.ui.ajaxLoad({
-                                    url: url,
+                                    url: publicShipsListURL,
                                     success: function(data) {
                                         $.each(data, function(key, value){
                                             layer.load(value);
@@ -446,7 +446,6 @@ var dedicatedmaps = (function() {
                     break;
                 default:
                     throw new Error("Unrecognized layer type when instantiating new layer!");
-                    break;
             }
     };
 
@@ -996,7 +995,7 @@ var dedicatedmaps = (function() {
 
     app.publicShips.image = function(ship) {
         var roundedCog = Math.round(ship.cog/10)*10;
-        return ship.suffix + "/" + ship.suffix + "_" + ((roundedCog === 0 || roundedCog === 360) ? "00" : roundedCog);
+        return ship.suffix + "/" + ship.suffix + "_" + ((roundedCog == 0 || roundedCog == 360) ? "00" : roundedCog);
     };
 
     app.publicShips.ship_icon = function(item) {
@@ -1004,7 +1003,7 @@ var dedicatedmaps = (function() {
         var image = app.publicShips.image(item);
 
         // If we don't have an icon for this particular ship type + angle yet, make one.
-        if ((app.publicShips.shipIcons[image]) === null) {
+        if ((app.publicShips.shipIcons[image]) == null) {
             var url = app.ui.icons.getIconPath("markers/ships/" + image);
             var icon = {url: url,
                 name: image};
