@@ -306,8 +306,8 @@ var dedicatedmaps = (function() {
                                 layer.layerLocatorElement.change(function () {
                                     var target = layer.layerLocatorElement.val();
                                     $('#' + layer.name)[0].checked ? layer.getMarkerByID(target).centerOpen() : layer.load_callback = function () {
-                                        layer.getMarkerByID(target).centerOpen()
-                                    }
+                                        layer.getMarkerByID(target).centerOpen();
+                                    };
                                 });
 
                                 // Staging areas also have a similar equipment search function
@@ -391,8 +391,6 @@ var dedicatedmaps = (function() {
                             } else {
                                 layer.show();
                             }
-                            break;
-
                             break;
                         case 'my_ships':
                             break;
@@ -556,8 +554,10 @@ var dedicatedmaps = (function() {
     app.balloons.dom = {
         createElement: function (elemName, text) {
             var element = document.createElement(elemName);
-            if (typeof(text) == 'string') {
-                if (text !== '') element.appendChild(document.createTextNode(text));
+            if (typeof(text) === 'string') {
+                if (text !== '') {
+                    element.appendChild(document.createTextNode(text));
+                }
             } else {
                 element.appendChild(text);
             }
@@ -571,7 +571,7 @@ var dedicatedmaps = (function() {
             if (email_regex.test(email_or_hlink)) {
                 a.setAttribute("href", "mailto:" + email_or_hlink);
             } else if (link_regex.test(email_or_hlink)) {
-                if (email_or_hlink.substring(0, 3) == 'www') email_or_hlink = 'http://' + email_or_hlink;
+                if (email_or_hlink.substring(0, 3) === 'www') email_or_hlink = 'http://' + email_or_hlink;
                 email_or_hlink = email_or_hlink.replace(/^#?(.*)#?$/, '$1');
                 a.setAttribute("href", email_or_hlink);
             } else {
@@ -667,7 +667,7 @@ var dedicatedmaps = (function() {
                 url: ["/marker/", layerName, "/", marker.id, ".json"].join(''),
                 success: function(json) {
                     // If the bubble is for public ships layer, use a different balloon loader
-                    if (layerName == 'public_ships') {
+                    if (layerName === 'public_ships') {
                         app.balloons.infoBubble.updateTab('0', 'Info', app.balloons.shipInfo(json, 'public_ships'));
                     } else {
                         // Build the info tab
@@ -907,21 +907,41 @@ var dedicatedmaps = (function() {
         a.appendChild(image);
         title.appendChild(a);
         div.appendChild(title);
-        if (ship.owner)       div.appendChild(app.balloons.dom.createNameValueDiv('Owner: ', ship.owner));
-        if (ship.icon && ship.icon.name)   div.appendChild(app.balloons.dom.createNameValueDiv('Type: ', ship.icon.name));
-        if (ship.dim_bow)     div.appendChild(app.balloons.dom.createNameValueDiv('Size: ', (
-            ship.dim_bow + ship.dim_stern) + 'm x ' + (ship.dim_port + ship.dim_starboard) + 'm')
-        );
-        if (ship.speed)       div.appendChild(app.balloons.dom.createNameValueDiv('Speed/Course: ', ship.speed + ' nm / ' + ship.cog + ' deg'));
-        if (ship.draught)     div.appendChild(app.balloons.dom.createNameValueDiv('Draught: ', ship.draught / 10 + ' m'));
-        if (ship.status)      div.appendChild(app.balloons.dom.createNameValueDiv('Status: ', ship.status));
-        if (ship.destination) div.appendChild(app.balloons.dom.createNameValueDiv('Destination: ', ship.destination));
-        if (ship.age) {
-            div.appendChild(app.balloons.dom.createNameValueDiv('Received: ', ship.age))
+        if (ship.owner) {
+            div.appendChild(app.balloons.dom.createNameValueDiv('Owner: ', ship.owner));
         }
-        if (ship.MMSI)  div.appendChild(app.balloons.dom.createNameValueDiv('MMSI: ', ship.MMSI));
-        if (ship.lon)  div.appendChild(app.balloons.dom.createNameValueDiv('Long: ', ship.lon.toString()));
-        if (ship.lat)  div.appendChild(app.balloons.dom.createNameValueDiv('Lat: ', ship.lat.toString()));
+        if (ship.icon && ship.icon.name) {
+            div.appendChild(app.balloons.dom.createNameValueDiv('Type: ', ship.icon.name));
+        }
+        if (ship.dim_bow) {
+            div.appendChild(app.balloons.dom.createNameValueDiv('Size: ', (
+                ship.dim_bow + ship.dim_stern) + 'm x ' + (ship.dim_port + ship.dim_starboard) + 'm')
+            );
+        }
+        if (ship.speed) {
+            div.appendChild(app.balloons.dom.createNameValueDiv('Speed/Course: ', ship.speed + ' nm / ' + ship.cog + ' deg'));
+        }
+        if (ship.draught) {
+            div.appendChild(app.balloons.dom.createNameValueDiv('Draught: ', ship.draught / 10 + ' m'));
+        }
+        if (ship.status) {
+            div.appendChild(app.balloons.dom.createNameValueDiv('Status: ', ship.status));
+        }
+        if (ship.destination) {
+            div.appendChild(app.balloons.dom.createNameValueDiv('Destination: ', ship.destination));
+        }
+        if (ship.age) {
+            div.appendChild(app.balloons.dom.createNameValueDiv('Received: ', ship.age));
+        }
+        if (ship.MMSI) {
+            div.appendChild(app.balloons.dom.createNameValueDiv('MMSI: ', ship.MMSI));
+        }
+        if (ship.lon) {
+            div.appendChild(app.balloons.dom.createNameValueDiv('Long: ', ship.lon.toString()));
+        }
+        if (ship.lat) {
+            div.appendChild(app.balloons.dom.createNameValueDiv('Lat: ', ship.lat.toString()));
+        }
         return div;
     };
 
@@ -976,7 +996,7 @@ var dedicatedmaps = (function() {
 
     app.publicShips.image = function(ship) {
         var roundedCog = Math.round(ship.cog/10)*10;
-        return ship.suffix + "/" + ship.suffix + "_" + ((roundedCog == 0 || roundedCog == 360) ? "00" : roundedCog);
+        return ship.suffix + "/" + ship.suffix + "_" + ((roundedCog === 0 || roundedCog === 360) ? "00" : roundedCog);
     };
 
     app.publicShips.ship_icon = function(item) {
@@ -984,7 +1004,7 @@ var dedicatedmaps = (function() {
         var image = app.publicShips.image(item);
 
         // If we don't have an icon for this particular ship type + angle yet, make one.
-        if ((app.publicShips.shipIcons[image]) == null ) {
+        if ((app.publicShips.shipIcons[image]) === null) {
             var url = app.ui.icons.getIconPath("markers/ships/" + image);
             var icon = {url: url,
                 name: image};
@@ -1012,5 +1032,5 @@ var dedicatedmaps = (function() {
 
     // This is the main call that starts everything.
     app.onPageReady();
-    return app
+    return app;
 })();
