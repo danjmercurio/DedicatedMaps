@@ -17,10 +17,10 @@ var dedicatedmaps = (function() {
     app.getServerURL = function () {
         var environment = app.getRailsEnvironment();
         if (environment === 'development' || environment === 'test') {
-            return 'http://0.0.0.0:3000/';
+            return 'http://0.0.0.0:3000';
         }
         if (environment === 'production') {
-            return 'http://dedicatedmaps.com/';
+            return 'http://dedicatedmaps.com';
         }
         // If we get this far, something is wrong
         throw new Error('Environment unknown.');
