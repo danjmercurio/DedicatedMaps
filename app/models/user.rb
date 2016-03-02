@@ -82,7 +82,7 @@ class User < ActiveRecord::Base
 
     def temp_password
       #generate temp password for new users and resets, Only use 0-9 a-z A-Z
-      return Array.new(9){[48+rand(10), 65+rand(26), 97+rand(26)][rand(3)].chr}.join     
+      Array.new(9) { [48+rand(10), 65+rand(26), 97+rand(26)][rand(3)].chr }.join
     end
     
     def password=(password)

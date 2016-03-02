@@ -1,5 +1,7 @@
 <script type="text/javascript">
   var layer_config = <%= @layer_config.to_json.to_s.html_safe %>;
+  var mapState =;
+  <%= @mapState.to_json.to_s.html_safe %>
 </script>
 <div id="layers">
   <!-- TODO: implement refresh -->

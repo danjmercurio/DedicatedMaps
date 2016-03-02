@@ -82,8 +82,8 @@ var dedicatedmaps = (function() {
         },
         // Save the map zoom, center, and map_type 2 seconds after the user has stopped moving it.
         cue_save_map: function() {
-            console.log("caught signal to save map");
-            // TODO: Implement saving state when we get a cue to save the map
+            console.log("Caught signal to save map...");
+            app.ui.pushMapState();
         },
         getMapDiv: function() {
             return document.getElementById('map_div');
@@ -105,6 +105,31 @@ var dedicatedmaps = (function() {
                     this.checked ? function() { dedicatedmaps.layer.layers[layerName].on(); console.log("turned on " + layerName);}() : function () {dedicatedmaps.layer.layers[layerName].off(); console.log("turned off " + layerName)}()
                 });
             });
+        },
+        getMapState: function () {
+            var id = mapState.id;
+            var map = app.ui.getMap();
+            var zoom = map.getZoom();
+            var map_type = map.getMapTypeId();
+            var center = map.getCenter();
+            var lat = center.lat();
+            var lon = center.lng();
+            return {
+                id: id,
+                zoom: zoom,
+                map_type: map_type,
+                lat: lat,
+                lon: lon
+            };
+        },
+        pushMapState: function () {
+            var mapState = app.ui.getMapState();
+            var ajaxParameters = {
+                url: 'http://0.0.0.0:3000/maps/' + mapState.id,
+                data: mapState,
+                method: 'PUT'
+            };
+            app.ui.ajaxLoad(ajaxParameters);
         }
     };
     app.onPageReady = function () {
@@ -140,14 +165,12 @@ var dedicatedmaps = (function() {
                 throw new Error('Cannot load Google Maps because element div#map_div was not found in the DOM');
             }
             console.log('Initializing map...');
-            var map_state = {
-                "zoom": 7,
-                "lon": -123.391,
-                "lat": 47.8933,
-                "map_type": "roadmap"
-            }; //TODO: Load this in via Ajax
-
-            var center = new google.maps.LatLng(map_state.lat, map_state.lon);
+            if (!mapState) {
+                console.log('Warning: unable to load previous map state.');
+            } else {
+                console.log('Previous map state found. Loading...');
+            }
+            var center = new google.maps.LatLng(mapState.lat, mapState.lon);
             var map_types = {
                 "hybrid": google.maps.MapTypeId.HYBRID,
                 "satellite": google.maps.MapTypeId.SATELLITE,
@@ -156,8 +179,8 @@ var dedicatedmaps = (function() {
             };
             var mapOptions = {
                 center: center,
-                zoom: map_state.zoom,
-                mapTypeId: map_types[map_state.map_type.toLowerCase()]
+                zoom: mapState.zoom,
+                mapTypeId: map_types[mapState.map_type.toLowerCase()]
             };
             var map = new google.maps.Map(app.ui.getMapDiv(), mapOptions);
             app.ui.setMap(map);

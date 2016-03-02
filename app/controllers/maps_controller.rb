@@ -1,7 +1,9 @@
 class MapsController < ApplicationController
   # skip_before_filter :subdomain_redirect
+  skip_before_filter :verify_authenticity_token, :only => [:update]
   before_filter :handle_public_map, :only => [:show, :update]
   before_filter :ensure_login, :only => [:show, :update, :currentlayers]
+
 
 
   # GET /maps/1
@@ -39,6 +41,13 @@ class MapsController < ApplicationController
         :icon => y.icon,
       }
     end
+    @mapState = {
+        :id => @map.id,
+        :zoom => @map.zoom,
+        :lat => @map.lat,
+        :lon => @map.lon,
+        :map_type => @map.map_type
+    }
 
     respond_to do |format|
       format.html
@@ -48,24 +57,33 @@ class MapsController < ApplicationController
 
   # PUT /maps/1
   def update
-    err = "Error saving map."
-    
-    if !@map
-      render :text => err + ' 1'
-      return
-    end 
+    @map = Map.find(params[:id])
+    @user = @map.user
 
     #map edit privileges
-    unless @owner_viewing || @admin_viewing
-      render :text => err + ' 2'
-      return
-    end
+    # unless @owner_viewing || @admin_viewing
+    #   render :text => err + ' 2'
+    #   return
+    # end
+    # "#{@map.updated_at.strftime("Saved: %I:%M:%S %p %Z")}" }
 
     respond_to do |format|
-      if @map.update_attributes(params[:map])
-        format.js { render :text =>  "#{@map.updated_at.strftime("Saved: %I:%M:%S %p %Z")}" }
+      if @map.update_attributes({
+                                    :zoom => params[:zoom],
+                                    :lat => params[:lat],
+                                    :lon => params[:lon],
+                                    :map_type => params[:map_type]})
+
+        response = {:status => 'OK', :timestamp => @map.updated_at}
+
+        format.json do
+          render :json => response.to_json
+        end
       else
-        format.js { render :text =>  err }
+        response = {:status => 'ERROR'}
+        format.json do
+          render :json => response.to_json
+        end
       end
     end
   end
