@@ -1,5 +1,6 @@
 // Our one global app object
-var dedicatedmaps = (function() {
+var dedicatedmaps;
+dedicatedmaps = (function () {
     var app = {};
     app.version = 1.0;
     app.icons = {};
@@ -624,10 +625,12 @@ var dedicatedmaps = (function() {
 
     // The infoBubble is triggered by assigning a click handler on a marker
     app.balloons.addBubble = function(marker, layerName) {
-        marker['clickListener'] = google.maps.event.addListener(marker, 'click', function () { // When marker is clicked...
+        marker.clickListener = google.maps.event.addListener(marker, 'click', function () { // When marker is clicked...
 
             // Make sure infoBubble library is loaded
-            if (!InfoBubble) throw new Error('infoBubble class not loaded. Check existence of infoBubble.js in assets and proper instantiation');
+            if (!InfoBubble) {
+                throw new Error('infoBubble class not loaded. Check existence of infoBubble.js in assets and proper instantiation');
+            }
 
             // If there is an infoBubble already open, close it
             if (app.balloons.infoBubble.isOpen()) {
