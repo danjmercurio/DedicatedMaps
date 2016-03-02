@@ -10,6 +10,22 @@ var dedicatedmaps = (function() {
         console.log(this.version);
     };
 
+    app.getRailsEnvironment = function () {
+        return $('body').data('env');
+    };
+
+    app.getServerURL = function () {
+        var environment = app.getRailsEnvironment();
+        if (environment === 'development' || environment === 'test') {
+            return 'http://0.0.0.0:3000/';
+        }
+        if (environment === 'production') {
+            return 'http://dedicatedmaps.com/';
+        }
+        // If we get this far, something is wrong
+        throw new Error('Environment unknown.');
+    };
+
     // Functions related to manipulating the user interface
     app.ui = {
         // A helper sub-module for loading in icons
@@ -124,8 +140,9 @@ var dedicatedmaps = (function() {
         },
         pushMapState: function () {
             var mapState = app.ui.getMapState();
+            var url = encodeURI([app.getServerURL(), 'maps', mapState.id].join('/'));
             var ajaxParameters = {
-                url: 'http://0.0.0.0:3000/maps/' + mapState.id,
+                url: url,
                 data: mapState,
                 method: 'PUT'
             };
