@@ -1,8 +1,10 @@
+
 #!/usr/bin/python
 
 """ Read AIS data from a list of TCP/IP ports.
 """
-from socket import socket, AF_INET, SOCK_STREAM
+#from socket import socket, AF_INET, SOCK_STREAM
+import socket
 from select import poll, POLLIN
 import sys
 import ais_parse
@@ -16,19 +18,33 @@ def dlog(msg):
 
 
 def sockify(addr):   # Takes an addres, port pair, returns a network socket connected to that.
-    sock = socket(AF_INET, SOCK_STREAM)
-    try:
-        sock.connect(addr)
-    except:
-        sys.stderr.write("Error connecting to %s:%d\n" % addr)
-        raise
-#    sock.setblocking(0)
-    return sock
+    HOST, PORT = addr
+    for res in socket.getaddrinfo(HOST, PORT, socket.AF_UNSPEC, socket.SOCK_STREAM):
+        af, socktype, proto, canonname, sa = res
+        try:
+            s = socket.socket(af, socktype, proto)
+        except socket.error as msg:
+            print "Failed to create socket for" + str(addr)
+            s = None
+            continue
+        try:
+            s.connect(sa)
+        except socket.error as msg:
+            s.close()
+            s = None
+            print "Failed to connect to " + str(addr)
+            continue
+        break
+    if s is None:
+        return
+    else:
+        return s
 
 #sources = [('216.177.253.143', 3131), ('208.79.150.114', 1001)]
 
-sources = [('216.177.253.143', 3131), ('206.72.107.155', 1007)]
+#sources = [('216.177.253.143', 3131), ('206.72.107.155', 1007)]
 
+sources = [('216.177.253.143', 3131)]
 
 
 #,  # bar pilots
@@ -36,6 +52,7 @@ sources = [('216.177.253.143', 3131), ('206.72.107.155', 1007)]
                # puget sound
            #('vts2.concentriamaritime.com', 12009)]  # Mississippi River Maritime Assoc
 sockets = map(sockify, sources)  # Yield a list of sockets
+print "Sockets: " + str(sockets)
 
 # A dictionary of file wrappers around the sockets, keyed by file descriptor.
 handles = dict((sock.fileno(), sock.makefile('r')) for sock in sockets)  
