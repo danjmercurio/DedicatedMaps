@@ -4,24 +4,31 @@
   </script>
   <div class="menu-wrap">
     <nav class="menu">
+      <!--<div class="profile"><span>Layers</span></div>-->
       <% if @layers.empty? %>
         <div class="link-list">
           <ul><li><a href="#"><span>You have no layers enabled.</span></a></li></ul>
         </div>
       <% else %>
         <div class="link-list">
-          <ul>
-          <% @layers.each do |layer| %>
-            <li><span class="floatLeft"><%= layer.title %></span>
-              <%= check_box_tag layer.name, 1, false, data: {:layer => layer.name, :id => layer.id} %></li>
-          <% end %>
-          </ul>
+            <!-- Beginning of Layer blocks -->
+            <% @layers.each do |layer| %>
+                <div class="layerBlock" data-layer="<%= layer.title =%>" data-id="<%= layer.id %>">
+                    <div class="layerBlockHeader">
+                        <div class="layerBlockHeaderLabel"><%= layer.title %></div>
+                        <div>
+                            <input type="checkbox" value="None" id="squaredFour" name="check" checked data-layer="<%= layer.name %>" data-id="<%= layer.id %>"/>
+                        </div>
+                    </div>
+                    <div class="layerBlockContent"></div>
+                </div>
+            <% end %>
         </div>
       <% end %>
       <div class="icon-list">
-        <a href="#"><i class="fa fa-fw fa-home"></i></a>
-        <a href="#"><i class="fa fa-fw fa-question-circle"></i></a>
-        <a href="#"><i class="fa fa-fw fa-power-off"></i></a>
+        <i class="fa fa-spinner" id="loadIndicator"></i>
+        <a href="<%= url_for edit_user_path(@loggedin_user.id) %>"><i class="fa fa-fw fa-home"></i></a>
+        <a href="http://dedicatedmaps.com/help"><i class="fa fa-fw fa-question-circle"></i></a>
       </div>
     </nav>
   </div>

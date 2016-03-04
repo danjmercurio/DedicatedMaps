@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAKA,KAAM;EACF,OAAO,EAAE,KAAK;EACd,QAAQ,EAAE,KAAK;EACf,GAAG,EAAE,CAAC;EACN,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,MAAM;EACf,KAAK,EATO,KAAK;EAUjB,UAAU,EAAE,MAAM;EAClB,UAAU,EAAE,IAAI;;;AAEhB,WAAQ;EACJ,IAAI,EAAE,IAAI;EACV,KAAK,EAdO,MAAM;;;AAiBtB,UAAO;EACH,IAAI,EAlBQ,MAAM;EAmBlB,KAAK,EAAE,IAAI",
+"sources": ["../../src/scss/jquery.sidr.bare.scss"],
+"names": [],
+"file": "jquery.sidr.bare.css"
+}

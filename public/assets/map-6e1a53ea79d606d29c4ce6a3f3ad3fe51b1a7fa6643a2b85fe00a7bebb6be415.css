@@ -1,0 +1,342 @@
+/* Style for main map interface page */
+
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
+body {
+    font-family: 'Droid Sans', sans-serif;
+    margin: 0;
+}
+#mainRow a:visited {
+    color: #2C89F0;
+}
+#container {
+    height: 100%;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+#column {
+    width: 100%;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+#accountBar {
+    float: right;
+}
+
+.accountinfo {
+    display: flex;
+    -ms-flex-direction: row;
+    margin: 10px;
+}
+
+.accountinfo input {
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+/* Styles for the loading indicator above layers list */
+.loading {
+    color: #5a0000;
+}
+
+.done {
+    color: #2C89F0;
+}
+
+.error {
+    color: red;
+    text-decoration: blink;
+}
+#layers {
+    font-size: small;
+    margin: 5px;
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+}
+
+#map_div {
+    -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1; /* OLD - Firefox 19- */
+    -webkit-flex: 1; /* Chrome */
+    -ms-flex: 1; /* IE 10 */
+    flex: 1; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-box-ordinal-group: 2; /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-ordinal-group: 2; /* OLD - Firefox 19- */
+    -ms-flex-order: 2; /* TWEENER - IE 10 */
+    -webkit-order: 2; /* NEW - Chrome */
+    order: 2;
+    width: 100%;
+    height: 800px;
+}
+
+#mainRow {
+    display: flex;
+    height: 100%;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+#logo {
+    font-size: 10px;
+}
+
+#adminMenu {
+    display: none;
+}
+#header {
+    width: 100%;
+    box-shadow:0 0 5px rgba(57,70,78,.2);
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+    height: 50px;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+#forgot {
+    margin: 2px;
+}
+
+#footer {
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+#footerMessage {
+    clear:both;
+    width:100%;
+    background:white;
+    color:black;
+    text-align:right;
+    padding:4px 0;
+    margin: 10px 10px;
+}
+
+.layer {
+    border: 2px;
+    border-style: groove;
+    margin: 2px;
+}
+
+.layer img {
+    margin: 2px;
+}
+.layer_checkbox{
+    float:left;
+}
+.layer_checkbox img{
+    height:10px; width:auto;
+}
+.layer_expand{
+    margin:3px 0 0 178px; height:24px;
+}
+.sublayer{
+    padding:4px 0 4px 6px;
+}
+.client{
+    font-size:28px;
+    font-weight:bold;
+    padding: 10px;
+}
+
+#logo {
+    float:left;
+    padding-top: 10px;
+}
+div#message {
+    float: right;
+}
+.button {
+    display: inline-block;
+    white-space: nowrap;
+    background-color: #ccc;
+    background-image: linear-gradient(top, #eee, #ccc);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndColorStr='#cccccc');
+    border: 1px solid #777;
+    padding: 0 0.75em;
+    margin-top: 5px;
+    margin-right: 5px;
+    font: bold 1em/2em Arial, Helvetica;
+    text-decoration: none;
+    color: #333;
+    text-shadow: 0 1px 0 rgba(255,255,255,.8);
+    border-radius: .2em;
+    box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
+}
+
+.button:hover {
+    background-color: #ddd;
+    background-image: linear-gradient(top, #fafafa, #ddd);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#dddddd');
+}
+
+.button:active {
+    box-shadow: 0 0 4px 2px rgba(0,0,0,.3) inset;
+    position: relative;
+    top: 1px;
+}
+
+.button:focus {
+    outline: 0;
+    background: #fafafa;
+}
+
+.button:before {
+    background: #ccc;
+    background: rgba(0,0,0,.1);
+    float: left;
+    width: 1em;
+    text-align: center;
+    font-size: 1.5em;
+    margin: 0 1em 0 -1em;
+    padding: 0 .2em;
+    box-shadow: 1px 0 0 rgba(0,0,0,.5), 2px 0 0 rgba(255,255,255,.5);
+    border-radius: .15em 0 0 .15em;
+    pointer-events: none;
+}
+
+/* Hexadecimal entities for the icons */
+
+.add:before {
+    content: "\271A";
+}
+
+.edit:before {
+    content: "\270E";
+}
+
+.delete:before {
+    content: "\2718";
+}
+
+.save:before {
+    content: "\2714";
+}
+
+.email:before {
+    content: "\2709";
+}
+
+.like:before {
+    content: "\2764";
+}
+
+.next:before {
+    content: "\279C";
+}
+
+.star:before {
+    content: "\2605";
+}
+
+.spark:before {
+    content: "\2737";
+}
+
+.play:before {
+    content: "\25B6";
+}
+/*
+Info window styles
+*/
+
+.balloon {
+    /*height:95%;*/
+    /*height:350px;*/
+    /*width:450px;*/
+    margin-bottom:5px;
+}
+
+.info_window {
+    background-color: #FFF;
+    overflow:auto;
+    height:100%;
+    min-width:300px;
+    margin-right:16px;
+}
+
+.info_window table th{
+    font-weight: bold;
+    padding-right: 6px;
+}
+
+.info_window table td{
+    padding-right: 4px;
+}
+
+.info_window .label{
+    font-weight: bold;
+}
+
+.balloon_title{
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    background-image: url(../images/info_window/top_gradient.gif);
+    background-repeat: repeat-x;
+    padding: 2px;
+    margin-right:16px;
+}
+
+.balloon_company{
+    font-size: .9em;
+    color: #333;
+    float:right;
+    margin-right: 10px;
+}
+
+.crosshairs{
+    float:left;
+}
+
+.info_window .pic{
+    color:#FF0000;
+    width: 159px;
+    float:left;
+    padding-top: 5px;
+}
+
+/*
+.info_window .backgroundPic{
+	width:inherit;
+	background-image: url(../images/info_window/shadow.png);
+	background-repeat: repeat;
+	height: 150px;
+}
+*/
+
+.info_window .text{
+    color:#000000;
+    float:left;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+.infoRedText {color: #FF0000}
+
+#controls {
+    margin-top:30px;
+    color: #0000FF;
+}
+
+.children-heading {
+    margin: 10px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.image-thumb {
+    width: 100px;
+}
+span.itemprop {
+    display: block;
+}

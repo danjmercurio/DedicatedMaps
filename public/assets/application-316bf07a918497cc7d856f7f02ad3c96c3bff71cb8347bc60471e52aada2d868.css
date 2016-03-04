@@ -1,0 +1,2548 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+
+
+*/
+/* Info window styles */
+
+
+.balloon {
+    width: 450px;
+    margin-bottom: 10px;
+}
+
+.info_window {
+    background-color: #FFF;
+    overflow: auto;
+    height: 100%;
+    min-width: 300px;
+    margin-right: 16px;
+}
+
+.info_window table th {
+    font-weight: bold;
+    padding-right: 6px;
+}
+
+.info_window table td {
+    padding-right: 4px;
+}
+
+.info_window .label {
+    font-weight: bold;
+}
+
+/*.balloon_title{*/
+/*font-size: 14px;*/
+/*font-weight: bold;*/
+/*color: #000;*/
+/*background-image: url(../images/info_window/top_gradient.gif);*/
+/*background-repeat: repeat-x;*/
+/*padding: 2px;*/
+/*margin-right:16px;*/
+/*}*/
+.balloon_title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    padding: 2px;
+    background: rgb(228, 245, 252);
+    background: -moz-linear-gradient(top, rgba(228, 245, 252, 1) 0%, rgba(191, 232, 249, 1) 50%, rgba(159, 216, 239, 1) 51%, rgba(42, 176, 237, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(228, 245, 252, 1) 0%, rgba(191, 232, 249, 1) 50%, rgba(159, 216, 239, 1) 51%, rgba(42, 176, 237, 1) 100%);
+    background: linear-gradient(to bottom, rgba(228, 245, 252, 1) 0%, rgba(191, 232, 249, 1) 50%, rgba(159, 216, 239, 1) 51%, rgba(42, 176, 237, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4f5fc', endColorstr='#2ab0ed', GradientType=0);
+}
+
+.balloon_company {
+    font-size: .9em;
+    color: #333;
+    float: right;
+    margin-right: 10px;
+}
+
+.crosshairs {
+    float: left;
+}
+
+.info_window .pic {
+    color: #FF0000;
+    width: 159px;
+    float: left;
+    padding-top: 5px;
+}
+
+/*
+.info_window .backgroundPic{
+	width:inherit;
+	background-image: url(../images/info_window/shadow.png);
+	background-repeat: repeat;
+	height: 150px;
+}
+*/
+
+.info_window .text {
+    color: #000000;
+    float: left;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.infoRedText {
+    color: #FF0000
+}
+
+#controls {
+    margin-top: 30px;
+    color: #0000FF;
+}
+
+.children-heading {
+    margin: 10px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.image-thumb {
+    width: 100px;
+}
+
+span.itemprop {
+    display: block;
+}
+
+.assetTitle {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    padding: 2px;
+}
+
+span.label {
+    color: #2C89F0;
+    font-size: small;
+}
+
+span.value {
+    font-size: small;
+}
+
+div.loader {
+    margin-top: 10px;
+}
+
+img.assetPhoto {
+    height: 75px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.assetDetailsContainer * {
+    padding: 2px;
+}
+
+.block {
+    display: block;
+}
+
+.equipmentList {
+    display: block;
+    font-size: small;
+}
+.calendar_date_select {
+  color:white;
+  border:#777 1px solid;
+  display:block;
+  width:195px;
+  z-index: 1000;
+}
+/* this is a fun ie6 hack to get drop downs to stay behind the popup window.  This should always be just underneath .calendar_date_select */
+iframe.ie6_blocker {
+  position: absolute;
+  z-index: 999;
+}
+
+.calendar_date_select  thead th {
+  font-weight:bold;
+  background-color: #000;
+  border-top:1px solid #777;
+  border-bottom:2px solid #334;
+  color: white !important;
+}
+
+.calendar_date_select .cds_buttons {
+  text-align:center;
+    padding: 5px 0;
+  background-color: #000055;
+}
+
+.calendar_date_select .cds_footer {
+  background-color: black;
+  padding:3px;
+  font-size:12px;
+  text-align:center;
+}
+
+.calendar_date_select table {
+    margin: 0;
+    padding: 0;
+}
+
+
+.calendar_date_select .cds_header {
+  background-color: #ccc;
+  border-bottom: 2px solid #aaa;
+  text-align:center;
+}
+
+.calendar_date_select .cds_header span {
+  font-size:15px;
+  color: black;
+  font-weight: bold;
+}
+
+.calendar_date_select select { font-size:11px;}
+
+.calendar_date_select .cds_header a:hover {
+  color: white;
+}
+.calendar_date_select .cds_header a {
+  width:22px;
+  height:20px;
+  text-decoration: none;
+  font-size:14px;
+  color:black !important;
+}
+
+.calendar_date_select .cds_header a.prev {
+  float:left;
+}
+
+.calendar_date_select .cds_header a.next {
+  float:right;
+}
+
+.calendar_date_select .cds_header a.close {
+  float:right;
+  display:none;
+}
+
+
+.calendar_date_select .cds_header select.month {
+  width:90px;
+}
+
+.calendar_date_select .cds_header select.year {
+  width:61px;
+}
+
+.calendar_date_select .cds_buttons a {
+  color: white;
+  font-size: 9px;
+}
+
+.calendar_date_select td {
+  background-color: #000066;
+  font-size:12px;
+  width: 24px;
+  height: 21px;
+  text-align:center;
+  vertical-align: middle;
+}
+.calendar_date_select td.weekend {
+  background-color: #00005a;
+}
+
+.calendar_date_select td div.other {
+  color: #4C5593;
+}
+
+.calendar_date_select tbody td {
+  border-bottom: 1px solid #000044;
+}
+.calendar_date_select td.selected {
+  background-color:white;
+  color:black;
+}
+
+.calendar_date_select td:hover {
+  background-color:#ccc;
+}
+
+.calendar_date_select td.disabled div {
+  color: #000044;
+}
+.calendar_date_select td.today {
+  border: 1px dashed blue;
+}
+
+.fieldWithErrors .calendar_date_select {
+  border: 2px solid red;
+}
+.calendar_date_select {
+  color:white;
+  border:#777 1px solid;
+  display:block;
+  width:195px;
+  z-index: 1000;
+}
+/* this is a fun ie6 hack to get drop downs to stay behind the popup window.  This should always be just underneath .calendar_date_select */
+iframe.ie6_blocker {
+  position: absolute;
+  z-index: 999;
+}
+
+.calendar_date_select thead th {
+  font-weight:bold;
+  background-color: #aaa;
+  border-top:1px solid #777;
+  border-bottom:1px solid #777;
+  color: white !important;
+}
+
+.calendar_date_select .cds_buttons {
+  text-align:center;
+    padding: 5px 0;
+  background-color: #555;
+}
+
+.calendar_date_select .cds_footer {
+  background-color: black;
+  padding:3px;
+  font-size:12px;
+  text-align:center;
+}
+
+.calendar_date_select table {
+    margin: 0;
+    padding: 0;
+}
+
+
+.calendar_date_select .cds_header {
+  background-color: #ccc;
+  border-bottom: 2px solid #aaa;
+  text-align:center;
+}
+
+.calendar_date_select .cds_header span {
+  font-size:15px;
+  color: black;
+  font-weight: bold;
+}
+
+.calendar_date_select select { font-size:11px;}
+
+.calendar_date_select .cds_header a:hover {
+  color: white;
+}
+.calendar_date_select .cds_header a {
+  width:22px;
+  height:20px;
+  text-decoration: none;
+  font-size:14px;
+  color:black !important;
+}
+
+.calendar_date_select .cds_header a.prev {
+  float:left;
+}
+.calendar_date_select .cds_header a.next {
+  float:right;
+}
+
+.calendar_date_select .cds_header a.close {
+  float:right;
+  display:none;
+}
+
+.calendar_date_select .cds_header select.month {
+  width:90px;
+}
+
+.calendar_date_select .cds_header select.year {
+  width:61px;
+}
+.calendar_date_select .cds_buttons a {
+  color: white;
+  font-size: 9px;
+}
+
+.calendar_date_select td {
+  font-size:12px;
+  width: 24px;
+  height: 21px;
+  text-align:center;
+  vertical-align: middle;
+  background-color: #fff;
+}
+.calendar_date_select td.weekend {
+  background-color: #eee;
+  border-left:1px solid #ddd;
+  border-right:1px solid #ddd;
+}
+
+.calendar_date_select td div {
+  color: #000;
+}
+.calendar_date_select td div.other {
+  color: #ccc;
+}
+.calendar_date_select td.selected div {
+  color:white;
+}
+
+.calendar_date_select tbody td {
+  border-bottom: 1px solid #ddd;
+}
+.calendar_date_select td.selected {
+  background-color:#777;
+}
+
+.calendar_date_select td:hover {
+  background-color:#ccc;
+}
+
+.calendar_date_select td.today {
+  border: 1px dashed #999;
+}
+
+.calendar_date_select td.disabled div {
+  color: #e6e6e6;
+}
+
+.fieldWithErrors .calendar_date_select {
+  border: 2px solid red;
+}
+.calendar_date_select {
+  border:#777 1px solid;
+  display:block;
+  width:195px;
+  z-index: 1000;
+  background-color:white;
+}
+/* this is a fun ie6 hack to get drop downs to stay behind the popup window.  This should always be just underneath .calendar_date_select */
+iframe.ie6_blocker {
+  position: absolute;
+  z-index: 999;
+}
+
+.calendar_date_select thead th {
+  color: black !important;
+  font-weight:bold;
+}
+
+.calendar_date_select .cds_buttons {
+  text-align:center;
+    padding: 5px 0;
+}
+
+.calendar_date_select .cds_footer {
+  padding:3px;
+  font-size:10px;
+  text-align:center;
+}
+
+.calendar_date_select table {
+    margin: 0;
+    padding: 0;
+}
+
+
+.calendar_date_select .cds_header {
+  text-align:center;
+}
+
+.calendar_date_select .cds_header * {
+    border: 0;
+  background-color:white;  
+}
+
+.calendar_date_select .cds_header span {
+  font-size:15px;
+  color: black;
+  font-weight: bold;
+}
+
+.calendar_date_select select { font-size:11px;}
+
+.calendar_date_select .cds_header a:hover {
+  color: white;
+}
+.calendar_date_select .cds_header a {
+  width:22px;
+  height:20px;
+  text-decoration: none;
+  font-size:14px;
+  color:black !important;
+}
+
+.calendar_date_select .cds_header a.prev {
+  float:left;
+}
+.calendar_date_select .cds_header a.next {
+  float:right;
+}
+.calendar_date_select .cds_header a.close {
+  float:right;
+  display:none;
+}
+
+.calendar_date_select .cds_header select.month {
+  width:90px;
+}
+
+.calendar_date_select .cds_header select.year {
+  width:61px;
+}
+
+.calendar_date_select .cds_buttons a {
+  color: black;
+  font-size: 9px;
+}
+.calendar_date_select td {
+  font-size:12px;
+  width: 24px;
+  height: 21px;
+  text-align:center;
+  vertical-align: middle;
+  background-color: #fff;
+}
+.calendar_date_select td.weekend {
+}
+
+.calendar_date_select td div {
+  color: #000;
+}
+.calendar_date_select td div.other {
+  color: #ccc;
+}
+.calendar_date_select td.selected div {
+  color:white;
+}
+
+.calendar_date_select tbody td {
+}
+.calendar_date_select td.selected {
+  background-color:#777;
+}
+
+.calendar_date_select td:hover {
+  background-color:#ccc;
+}
+
+.calendar_date_select td.today {
+  border: 1px dashed #999;
+}
+
+.calendar_date_select td.disabled div {
+  color: #e6e6e6;
+}
+
+.fieldWithErrors .calendar_date_select {
+  border: 2px solid red;
+}
+.calendar_date_select {
+  color:white;
+  border:#777 1px solid;
+  display:block;
+  width:195px;
+  z-index: 1000;
+}
+/* this is a fun ie6 hack to get drop downs to stay behind the popup window.  This should always be just underneath .calendar_date_select */
+iframe.ie6_blocker {
+  position: absolute;
+  z-index: 999;
+}
+
+.calendar_date_select thead th {
+  font-weight:bold;
+  background-color: #E7E8E8;
+  border-bottom:2px solid black;
+  color: black !important;
+}
+
+.calendar_date_select .cds_buttons {
+  text-align:center;
+    padding: 5px 0;
+  background-color: #5f0000;
+}
+
+.calendar_date_select .cds_footer {
+  background-color: black;
+  padding:3px;
+  text-align:center;
+}
+
+.calendar_date_select table {
+    margin: 0;
+    padding: 0;
+}
+
+
+.calendar_date_select .cds_header {
+  background-color: #ccc;
+  border-bottom: 2px solid #aaa;
+  text-align:center;
+}
+
+.calendar_date_select .cds_header span {
+  font-size:15px;
+  color: black;
+  font-weight: bold;
+}
+
+.calendar_date_select select { font-size:11px;}
+
+.calendar_date_select .cds_header a:hover {
+  color: white;
+}
+.calendar_date_select .cds_header a {
+  width:22px;
+  height:20px;
+  text-decoration: none;
+  font-size:14px;
+  color:black !important;
+}
+
+.calendar_date_select .cds_header a.prev {
+  float:left;
+}
+.calendar_date_select .cds_header a.next {
+  float:right;
+}
+
+.calendar_date_select .cds_header a.close {
+  float:right;
+  display:none;
+}
+
+.calendar_date_select .cds_header select.month {
+  width:90px;
+}
+
+.calendar_date_select .cds_header select.year {
+  width:61px;
+}
+
+.calendar_date_select .cds_buttons a {
+  color: white;
+  font-size: 9px;
+}
+
+
+.calendar_date_select td {
+  background-color: #660000;
+  font-size:12px;
+  width: 24px;
+  height: 21px;
+  text-align:center;
+  vertical-align: middle;
+}
+.calendar_date_select td.weekend {
+  background-color: #5a0000;
+}
+
+.calendar_date_select td div {
+  color:#fff;
+}
+.calendar_date_select td div.other {
+  color: #93554C;
+}
+.calendar_date_select td.selected div {
+  color:black;
+}
+
+
+.calendar_date_select tbody td {
+  border-bottom: 1px solid #550000;
+}
+.calendar_date_select tbody td.selected {
+  background-color:white;
+  color:black;
+}
+
+.calendar_date_select tbody td:hover {
+  background-color:#ccc;
+} 
+
+.calendar_date_select tbody td.today {
+  border: 1px dashed red;
+}
+
+.calendar_date_select td.disabled div {
+  color: #440000;
+}
+
+.fieldWithErrors .calendar_date_select {
+  border: 2px solid red;
+}
+.calendar_date_select {
+  color:white;
+  border:#777 1px solid;
+  display:block;
+  width:195px;
+  z-index: 1000;
+}
+/* this is a fun ie6 hack to get drop downs to stay behind the popup window.  This should always be just underneath .calendar_date_select */
+iframe.ie6_blocker {
+  position: absolute;
+  z-index: 999;
+}
+
+.calendar_date_select thead th {
+  font-weight:bold;
+  background-color: #000;
+  border-top:1px solid #777;
+  border-bottom:2px solid #333;
+  color: white !important;
+}
+
+.calendar_date_select .cds_buttons {
+  text-align:center;
+    padding: 5px 0;
+  background-color: #555;
+}
+
+.calendar_date_select .cds_footer {
+  background-color: black;
+  padding:3px;
+  font-size:12px;
+  text-align:center;
+}
+
+.calendar_date_select table {
+    margin: 0;
+    padding: 0;
+}
+
+
+.calendar_date_select .cds_header {
+  background-color: #ccc;
+  border-bottom: 2px solid #aaa;
+  text-align:center;
+}
+
+.calendar_date_select .cds_header span {
+  font-size:15px;
+  color: black;
+  font-weight: bold;
+}
+
+.calendar_date_select select { font-size:11px;}
+
+.calendar_date_select .cds_header a:hover {
+  color: white;
+}
+.calendar_date_select .cds_header a {
+  width:22px;
+  height:20px;
+  text-decoration: none;
+  font-size:14px;
+  color:black !important;
+}
+
+.calendar_date_select .cds_header a.prev {
+  float:left;
+}
+.calendar_date_select .cds_header a.next {
+  float:right;
+}
+.calendar_date_select .cds_header a.close {
+  float:right;
+  display:none;
+}
+
+.calendar_date_select .cds_header select.month {
+  width:90px;
+}
+
+.calendar_date_select .cds_header select.year {
+  width:61px;
+}
+
+.calendar_date_select .cds_buttons a {
+  color: white;
+  font-size: 9px;
+}
+.calendar_date_select td {
+  font-size:12px;
+  width: 24px;
+  height: 21px;
+  text-align:center;
+  vertical-align: middle;
+  background-color: #666666;
+}
+.calendar_date_select td.weekend {
+  background-color: #606060;
+}
+
+.calendar_date_select td div {
+  color: #fff;
+}
+.calendar_date_select td div.other {
+  color: #888;
+}
+.calendar_date_select td.selected div {
+  color:black;
+}
+
+.calendar_date_select tbody td {
+  border-bottom: 1px solid #555;
+}
+.calendar_date_select td.selected {
+  background-color:white;
+}
+
+.calendar_date_select td:hover {
+  background-color:#ccc;
+}
+
+.calendar_date_select td.today {
+  border: 1px dashed #999;
+}
+
+.calendar_date_select td.disabled div {
+  color: #454545;
+}
+
+
+.fieldWithErrors .calendar_date_select {
+  border: 2px solid red;
+}
+/* Style for main map interface page */
+
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
+body {
+    font-family: 'Droid Sans', sans-serif;
+    margin: 0;
+}
+#mainRow a:visited {
+    color: #2C89F0;
+}
+#container {
+    height: 100%;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+#column {
+    width: 100%;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+#accountBar {
+    float: right;
+}
+
+.accountinfo {
+    display: flex;
+    -ms-flex-direction: row;
+    margin: 10px;
+}
+
+.accountinfo input {
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+/* Styles for the loading indicator above layers list */
+.loading {
+    color: #5a0000;
+}
+
+.done {
+    color: #2C89F0;
+}
+
+.error {
+    color: red;
+    text-decoration: blink;
+}
+#layers {
+    font-size: small;
+    margin: 5px;
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+}
+
+#map_div {
+    -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1; /* OLD - Firefox 19- */
+    -webkit-flex: 1; /* Chrome */
+    -ms-flex: 1; /* IE 10 */
+    flex: 1; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-box-ordinal-group: 2; /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-ordinal-group: 2; /* OLD - Firefox 19- */
+    -ms-flex-order: 2; /* TWEENER - IE 10 */
+    -webkit-order: 2; /* NEW - Chrome */
+    order: 2;
+    width: 100%;
+    height: 800px;
+}
+
+#mainRow {
+    display: flex;
+    height: 100%;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+#logo {
+    font-size: 10px;
+}
+
+#adminMenu {
+    display: none;
+}
+#header {
+    width: 100%;
+    box-shadow:0 0 5px rgba(57,70,78,.2);
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+    height: 50px;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+#forgot {
+    margin: 2px;
+}
+
+#footer {
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+#footerMessage {
+    clear:both;
+    width:100%;
+    background:white;
+    color:black;
+    text-align:right;
+    padding:4px 0;
+    margin: 10px 10px;
+}
+
+.layer {
+    border: 2px;
+    border-style: groove;
+    margin: 2px;
+}
+
+.layer img {
+    margin: 2px;
+}
+.layer_checkbox{
+    float:left;
+}
+.layer_checkbox img{
+    height:10px; width:auto;
+}
+.layer_expand{
+    margin:3px 0 0 178px; height:24px;
+}
+.sublayer{
+    padding:4px 0 4px 6px;
+}
+.client{
+    font-size:28px;
+    font-weight:bold;
+    padding: 10px;
+}
+
+#logo {
+    float:left;
+    padding-top: 10px;
+}
+div#message {
+    float: right;
+}
+.button {
+    display: inline-block;
+    white-space: nowrap;
+    background-color: #ccc;
+    background-image: linear-gradient(top, #eee, #ccc);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndColorStr='#cccccc');
+    border: 1px solid #777;
+    padding: 0 0.75em;
+    margin-top: 5px;
+    margin-right: 5px;
+    font: bold 1em/2em Arial, Helvetica;
+    text-decoration: none;
+    color: #333;
+    text-shadow: 0 1px 0 rgba(255,255,255,.8);
+    border-radius: .2em;
+    box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
+}
+
+.button:hover {
+    background-color: #ddd;
+    background-image: linear-gradient(top, #fafafa, #ddd);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#dddddd');
+}
+
+.button:active {
+    box-shadow: 0 0 4px 2px rgba(0,0,0,.3) inset;
+    position: relative;
+    top: 1px;
+}
+
+.button:focus {
+    outline: 0;
+    background: #fafafa;
+}
+
+.button:before {
+    background: #ccc;
+    background: rgba(0,0,0,.1);
+    float: left;
+    width: 1em;
+    text-align: center;
+    font-size: 1.5em;
+    margin: 0 1em 0 -1em;
+    padding: 0 .2em;
+    box-shadow: 1px 0 0 rgba(0,0,0,.5), 2px 0 0 rgba(255,255,255,.5);
+    border-radius: .15em 0 0 .15em;
+    pointer-events: none;
+}
+
+/* Hexadecimal entities for the icons */
+
+.add:before {
+    content: "\271A";
+}
+
+.edit:before {
+    content: "\270E";
+}
+
+.delete:before {
+    content: "\2718";
+}
+
+.save:before {
+    content: "\2714";
+}
+
+.email:before {
+    content: "\2709";
+}
+
+.like:before {
+    content: "\2764";
+}
+
+.next:before {
+    content: "\279C";
+}
+
+.star:before {
+    content: "\2605";
+}
+
+.spark:before {
+    content: "\2737";
+}
+
+.play:before {
+    content: "\25B6";
+}
+/*
+Info window styles
+*/
+
+.balloon {
+    /*height:95%;*/
+    /*height:350px;*/
+    /*width:450px;*/
+    margin-bottom:5px;
+}
+
+.info_window {
+    background-color: #FFF;
+    overflow:auto;
+    height:100%;
+    min-width:300px;
+    margin-right:16px;
+}
+
+.info_window table th{
+    font-weight: bold;
+    padding-right: 6px;
+}
+
+.info_window table td{
+    padding-right: 4px;
+}
+
+.info_window .label{
+    font-weight: bold;
+}
+
+.balloon_title{
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    background-image: url(../images/info_window/top_gradient.gif);
+    background-repeat: repeat-x;
+    padding: 2px;
+    margin-right:16px;
+}
+
+.balloon_company{
+    font-size: .9em;
+    color: #333;
+    float:right;
+    margin-right: 10px;
+}
+
+.crosshairs{
+    float:left;
+}
+
+.info_window .pic{
+    color:#FF0000;
+    width: 159px;
+    float:left;
+    padding-top: 5px;
+}
+
+/*
+.info_window .backgroundPic{
+	width:inherit;
+	background-image: url(../images/info_window/shadow.png);
+	background-repeat: repeat;
+	height: 150px;
+}
+*/
+
+.info_window .text{
+    color:#000000;
+    float:left;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+.infoRedText {color: #FF0000}
+
+#controls {
+    margin-top:30px;
+    color: #0000FF;
+}
+
+.children-heading {
+    margin: 10px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.image-thumb {
+    width: 100px;
+}
+span.itemprop {
+    display: block;
+}
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+    background: url(http://dedicatedmaps.com/images/bg-body.jpg);
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+div#main {
+    margin: 10px;
+    width: 80%;
+    float: right;
+}
+div#footer {
+	float:right;
+}
+/* Padding for the inside of tab panes on edit actions */
+div.tab-pane {
+	padding: 10px;
+}
+div.col-md-10 {
+    background-color: white;
+    padding: 10px;
+}
+/* Padding for table headers and cells */
+th, td {
+    padding: 5px;
+}
+
+/* Set the cursor to a pointer when the user hovers over table headers so it's clear that they are clickable */
+thead tr * {
+    cursor: pointer;
+}
+/* Global rules */
+
+
+body
+{
+	color: #666666;
+	font-family: calibri, helvetica, tahoma, trebuchet ms, geneva, arial sans-serif;
+ 	text-align: center; /* This centers the wrapper in IE5.5 */
+}
+
+a
+{
+	color: #494646;
+	text-decoration: none;
+	font-family: calibri, helvetica, tahoma, trebuchet ms, geneva, arial sans-serif;
+  font-size: 1.2em;
+}
+
+a:hover
+{
+	color: #494646;
+  text-decoration: underline;
+}
+
+.wrapper
+{
+	height: 100%;
+}
+
+/* Header rules */
+.header
+{
+	width: 789px;
+	height: 100px;
+  background-image: url(/images/theme/masthead_logo.gif);
+  background-repeat: no-repeat;
+	margin: 0 auto;
+	margin-left: auto;	
+	margin-right: auto;
+	/*text-align: left;*/
+	position: relative;
+    padding: 0 0 0 0
+}
+
+
+.accountinfo
+{
+  float: right;
+  width: 501px;
+  padding-top: 7px;
+  text-align: right;
+}
+
+.accountuser, .accountpass
+{
+  font-style: italic;
+  color: grey;
+  display: inline;
+  width: 108px;
+}
+.accountuser:focus, .accountpass:focus
+{
+  font-style: normal;
+  color: black;
+}
+.signout
+{
+	float: left;
+	width: 330px;
+	padding-top: 7px;
+	font-size: 0.8em;
+	font-weight: bold;
+	color: #000;
+}
+
+.signout a
+{
+	text-decoration: underline;
+	font-size: 0.9em;
+	font-weight: bold;
+	color: #000;
+}
+
+.signout a:hover
+{
+	text-decoration:underline;
+}
+.signin
+{
+	float: right;
+	width: 71px;
+	padding-top: 7px;
+}
+
+.signinlink 
+{ 
+	float: right;
+	display:block; 
+	width:71px; 
+	height:21px; 
+	background:url(/images/theme/button_signin_off.gif) no-repeat 0 0; 
+}
+
+.signinlink:hover 
+{ 
+	background:url(/images/theme/button_signin_hover.gif) no-repeat 0 0; 
+}
+
+.subheader
+{
+	width: 100%;
+	height: 34px;	
+	background-image: url(/images/theme/nav_bar_tile_vert.gif);
+	background-repeat: repeat-x;
+	margin: 0 auto;
+}
+
+.topnav
+{
+	width: 798px;
+	margin: 0 auto;
+	text-align: left;
+	position: relative;
+    padding: 0 0 0 0;
+}
+
+.menu 
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	background: #fff;
+}
+
+#forgot {
+    margin: 2px;
+}
+
+.menu li 
+{
+	padding: 0;
+	margin: 0;
+	height: 34px;
+	margin-right: 1em;
+	list-style: none;
+	background-repeat: no-repeat;
+}
+
+.menu li a, .menu li a:visited 
+{
+	display: block;
+	text-decoration: none;
+	text-indent: -99999px;
+	height: 39px;
+	background-repeat: no-repeat;
+}
+
+.index, .indexselected
+{
+	background-image: url(/images/theme/nav_home_hover.gif); 
+	width: 88px;
+}
+
+.index a 
+{
+	background-image: url(/images/theme/nav_home_off.gif);
+}
+
+.indexselected
+{
+	background-image: url(/images/theme/nav_home_selected.gif);
+	width: 88px;
+}
+
+.products, .productsselected
+{
+	background-image: url(/images/theme/nav_products_hover.gif); 
+	width: 103px;
+}
+
+.products a 
+{
+	background-image: url(/images/theme/nav_products_off.gif);
+}
+
+.productsselected
+{
+	background-image: url(/images/theme/nav_products_selected.gif); 
+	width: 103px;
+}
+
+.services, .servicesselected
+{
+	background-image: url(/images/theme/nav_services_hover.gif); 
+	width: 103px;
+}
+
+.services a 
+{
+	background-image: url(/images/theme/nav_services_off.gif);
+}
+
+.servicesselected
+{
+	background-image: url(/images/theme/nav_services_selected.gif);
+	width: 103px;
+}
+
+.about, .aboutselected
+{
+	background-image: url(/images/theme/nav_about_us_hover.gif); 
+	width: 104px;
+}
+
+.about a 
+{
+	background-image: url(/images/theme/nav_about_us_off.gif);
+}
+
+.aboutselected
+{
+	background-image: url(/images/theme/nav_about_us_selected.gif); 
+	width: 104px;
+}
+
+.contact
+{
+	background-image: url(/images/theme/nav_contact_us_hover.gif); 
+	width: 109px;
+}
+
+.contact a 
+{
+	background-image: url(/images/theme/nav_contact_us_off.gif);
+}
+
+.contactselected
+{
+	background-image: url(/images/theme/nav_contact_us_selected.gif);
+	width: 109px;
+}
+
+.map_div, .mapselected
+{
+	background-image: url(/images/theme/nav_map_hover.gif); 
+	width: 109px;
+}
+
+.map_div a 
+{
+	background-image: url(/images/theme/nav_map_off.gif);
+}
+
+.mapselected
+{
+	background-image: url(/images/theme/nav_map_selected.gif);
+	width: 109px;
+}
+
+.user, .userselected
+{
+	background-image: url(/images/theme/nav_user_managment_hover.gif); 
+	width: 109px;
+}
+
+.user a 
+{
+	background-image: url(/images/theme/nav_user_managment_off.gif);
+}
+
+.userselected
+{
+	background-image: url(/images/theme/nav_user_managment_selected.gif); 
+	width: 109px;
+}
+
+.help, .helpselected
+{
+	background-image: url(/images/theme/nav_help_hover.gif); 
+	width: 109px;
+}
+
+.help a 
+{
+	background-image: url(/images/theme/nav_help_off.gif);
+}
+
+.helpselected
+{
+	background-image: url(/images/theme/nav_help_selected.gif);
+	width: 109px;
+}
+
+ul.menu li a:hover 
+{
+	background: none;
+}
+
+.menu li 
+{	
+	float: left;
+}
+
+.watermarktextbox
+{
+	background-image: url(/images/theme/field_user_name.gif);
+	background-repeat: no-repeat;
+	border-style: hidden;
+	height: 21px;
+	width: 108px;
+}
+
+.watermarkpassword
+{
+	background-image: url(/images/theme/field_password.gif);
+	background-repeat: no-repeat;
+	border-style: hidden;
+	height: 21px;
+	width: 108px;
+}
+
+.normaltextbox
+{
+	height: 18px;
+	width: 108px;
+}
+
+
+/* Content rules */
+.content
+{
+	width: 789px;
+	margin: 0 auto;
+	text-align: left;
+	position: relative;
+    padding: 20px 0 0 0;
+}
+
+.homecontentheader
+{
+	height: 251px;
+    background-image: url(/images/theme/hero_home.jpg);
+    background-repeat: no-repeat;	
+}
+
+.contentheader
+{
+	height: 149px;	
+}
+
+.contentpressrelease
+{
+	position: absolute;
+    padding: 190px 0 0 276px;
+}
+
+.contentdemo
+{
+	position: absolute;
+    padding: 190px 0 0 531px;
+}
+
+
+.demolink 
+{ 
+	display: block; 
+	width: 255px; 
+	height: 61px; 
+	background:url(/images/theme/button_live_demo_off.gif) no-repeat 0 0; 
+}
+
+.demolink:hover 
+{ 
+	background:url(/images/theme/button_live_demo_hover.gif) no-repeat 0 0; 
+}
+
+.presslink 
+{ 
+	display: block; 
+	width: 255px; 
+	height: 61px; 
+	background:url(/images/theme/button_press_release_off.gif) no-repeat 0 0; 
+}
+
+.presslink:hover 
+{ 
+	background:url(/images/theme/button_press_release_hover.gif) no-repeat 0 0; 
+}
+
+.contentbody
+{
+	width: 789px;
+	margin: 0 auto;
+	text-align: left;
+	position: relative;
+    padding: 20px 0 0 0;
+}
+
+.contentbody a
+{
+	color: #0074c5; 
+}
+
+.contentbody h2
+{
+	text-align: center;
+	color: #0074c5;
+	font-weight: bold;	
+	font-size: 1.2em;
+	padding: 8px 0 10px 0;
+}
+
+.contentbody h3
+{
+	text-align: left;
+	color: #0074c5;
+	font-weight: bold;	
+	font-size: 1.1em;
+	padding: 0 0 4px 0;
+}
+
+.contentbody h4
+{
+	text-align: left;
+	color: #0074c5;
+	font-weight: bold;	
+	font-size: 1.0em;
+	padding: 0 0 2px 0;
+}
+
+.contentdivider
+{
+	height: 2px;
+	color: #d9d4d4;
+	background-color: #d9d4d4;
+	width: 789px;
+	font-size: 6px;
+}
+
+.threecolleft
+{
+	float: left;
+	width: 190px;
+	text-align: left;
+}
+
+.threecolmiddle
+{
+	float: left;
+	width: 190px;
+	text-align: left;
+}
+
+.threecolright
+{
+	float: left;
+	width: 190px;
+	text-align: left;
+}
+
+.threecolspacer
+{
+	float: left;
+	width: 108px;
+}
+
+.twocolleft
+{
+	float: left;
+	width: 500px;
+}
+
+.twocolright
+{
+	float: left;
+	width: 252px;
+}
+
+.twocolspacer
+{
+	float: left;
+	width: 34px;
+}
+
+.twocolindent
+{
+	width: 470px;
+	padding: 20px 0 4px 10px;
+}
+
+.onecol
+{
+	width: 740px;
+}
+
+.oencolcenter
+{
+	padding: 20px 0 20px 138px;	 
+}
+
+
+.leftcol
+{	
+	float: left;
+	width: 150px;
+	height: 679px;
+	background-color: #0e3e7c;
+	color: #ffffff;
+}
+
+.maincol
+{	
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 936px;
+}
+
+.testimonial
+{
+	background-color: #ececec;
+	color: #464646;
+	border: 1px solid #d9d4d4;
+	padding: 15px 10px 10px 10px; 
+	font-size: 1.2em;
+	
+}
+
+.testimonialname
+{
+	padding: 0 0 0 30px; 
+	text-align: right;
+	color: #828282;
+	font-weight: bold;
+	font-size: .9em;
+}
+
+
+.sidenav
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.sidenav li
+{	
+	margin: 0; 
+	padding: 0;
+	display: inline;
+}
+
+.sidenav li a
+{
+	display: block;
+	margin: 0;
+	padding:  5px 0 5px 15px;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.sidenav li a:hover 
+{
+	color: #ffffff;
+	background-color: #0074c5;	
+}
+
+ul {
+	list-style: circle;
+}
+
+li {
+	margin: 10px 0 10px 10px;
+}
+
+
+/* Footer rules */
+.bottomnav 
+{
+	font-weight: bold;
+	text-align: center;
+}
+
+.bottomnav a 
+{
+	text-decoration: none;
+}
+
+.bottomnav a:hover 
+{
+}
+
+.bottomnav li 
+{
+	display: inline;
+}
+
+.footer 
+{
+	width: 789px;
+	margin: 0 auto;
+	text-align: left;
+	position: relative;
+    padding: 22px 0 0 0;
+	font-size: 0.8em;
+}
+
+.footerleft
+{
+	font-size: 0.8em;
+	float: left;
+}
+
+footerleft.a 
+{
+	font-size: 0.8em;
+}
+
+.footerright 
+{
+	font-size: 0.9em;
+	float: right;
+	text-align: center;
+}
+/* Global rules */
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+a:hover
+{
+	color: #494646;
+}
+
+.wrapper
+{
+	height: 100%;
+}
+
+/* Header rules */
+.header
+{
+	width: 789px;
+	height: 100px;
+    background-image: url(/images/theme/masthead_logo.gif);
+    background-repeat: no-repeat;
+	margin: 0 auto;
+	margin-left: auto;	
+	margin-right: auto;
+	/*text-align: left;*/
+	position: relative;
+    padding: 0 0 0 0
+}
+
+
+.accountinfo
+{
+	float: right;
+	width: 501px;
+	padding-top: 7px;
+    text-align: right;
+}
+
+.accountuser:focus, .accountpass:focus
+{
+    font-style: normal;
+    color: black;
+}
+.signout
+{
+	float: left;
+	width: 330px;
+	padding-top: 7px;
+	font-size: 0.8em;
+	font-weight: bold;
+	color: #000;
+}
+
+.signout a
+{
+	text-decoration: underline;
+	font-size: 0.9em;
+	font-weight: bold;
+	color: #000;
+}
+
+.signout a:hover
+{
+	text-decoration:underline;
+}
+.signin
+{
+	float: right;
+	width: 71px;
+	padding-top: 7px;
+}
+
+.signinlink 
+{ 
+	float: right;
+	display:block; 
+	width:71px; 
+	height:21px; 
+	background:url(/images/theme/button_signin_off.gif) no-repeat 0 0; 
+}
+
+.signinlink:hover 
+{ 
+	background:url(/images/theme/button_signin_hover.gif) no-repeat 0 0; 
+}
+
+.subheader
+{
+	width: 100%;
+	height: 34px;	
+	background-image: url(/images/theme/nav_bar_tile_vert.gif);
+	background-repeat: repeat-x;
+	margin: 0 auto;
+}
+
+.topnav
+{
+	width: 798px;
+	margin: 0 auto;
+	text-align: left;
+	position: relative;
+    padding: 0 0 0 0;
+}
+
+.menu 
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	background: #fff;
+}
+
+.menu li 
+{
+	padding: 0;
+	margin: 0;
+	height: 34px;
+	margin-right: 1em;
+	list-style: none;
+	background-repeat: no-repeat;
+}
+
+.menu li a, .menu li a:visited 
+{
+	display: block;
+	text-decoration: none;
+	text-indent: -99999px;
+	height: 39px;
+	background-repeat: no-repeat;
+}
+
+.index, .indexselected
+{
+	background-image: url(/images/theme/nav_home_hover.gif); 
+	width: 88px;
+}
+
+.index a 
+{
+	background-image: url(/images/theme/nav_home_off.gif);
+}
+
+.indexselected
+{
+	background-image: url(/images/theme/nav_home_selected.gif);
+	width: 88px;
+}
+
+.products, .productsselected
+{
+	background-image: url(/images/theme/nav_products_hover.gif); 
+	width: 103px;
+}
+
+.products a 
+{
+	background-image: url(/images/theme/nav_products_off.gif);
+}
+
+.productsselected
+{
+	background-image: url(/images/theme/nav_products_selected.gif); 
+	width: 103px;
+}
+
+.services, .servicesselected
+{
+	background-image: url(/images/theme/nav_services_hover.gif); 
+	width: 103px;
+}
+
+.services a 
+{
+	background-image: url(/images/theme/nav_services_off.gif);
+}
+
+.servicesselected
+{
+	background-image: url(/images/theme/nav_services_selected.gif);
+	width: 103px;
+}
+
+.about, .aboutselected
+{
+	background-image: url(/images/theme/nav_about_us_hover.gif); 
+	width: 104px;
+}
+
+.about a 
+{
+	background-image: url(/images/theme/nav_about_us_off.gif);
+}
+
+.aboutselected
+{
+	background-image: url(/images/theme/nav_about_us_selected.gif); 
+	width: 104px;
+}
+
+.contact
+{
+	background-image: url(/images/theme/nav_contact_us_hover.gif); 
+	width: 109px;
+}
+
+.contact a 
+{
+	background-image: url(/images/theme/nav_contact_us_off.gif);
+}
+
+.contactselected
+{
+	background-image: url(/images/theme/nav_contact_us_selected.gif);
+	width: 109px;
+}
+
+.map_div, .mapselected
+{
+	background-image: url(/images/theme/nav_map_hover.gif); 
+	width: 109px;
+}
+
+.map_div a 
+{
+	background-image: url(/images/theme/nav_map_off.gif);
+}
+
+.mapselected
+{
+	background-image: url(/images/theme/nav_map_selected.gif);
+	width: 109px;
+}
+
+.user, .userselected
+{
+	background-image: url(/images/theme/nav_user_managment_hover.gif); 
+	width: 109px;
+}
+
+.user a 
+{
+	background-image: url(/images/theme/nav_user_managment_off.gif);
+}
+
+.userselected
+{
+	background-image: url(/images/theme/nav_user_managment_selected.gif); 
+	width: 109px;
+}
+
+.help, .helpselected
+{
+	background-image: url(/images/theme/nav_help_hover.gif); 
+	width: 109px;
+}
+
+.help a 
+{
+	background-image: url(/images/theme/nav_help_off.gif);
+}
+
+.helpselected
+{
+	background-image: url(/images/theme/nav_help_selected.gif);
+	width: 109px;
+}
+
+ul.menu li a:hover 
+{
+	background: none;
+}
+
+.menu li 
+{	
+	float: left;
+}
+
+.watermarktextbox
+{
+	background-image: url(/images/theme/field_user_name.gif);
+	background-repeat: no-repeat;
+	border-style: hidden;
+	height: 21px;
+	width: 108px;
+}
+
+.watermarkpassword
+{
+	background-image: url(/images/theme/field_password.gif);
+	background-repeat: no-repeat;
+	border-style: hidden;
+	height: 21px;
+	width: 108px;
+}
+
+.normaltextbox
+{
+	height: 18px;
+	width: 108px;
+}
+
+
+/* Content rules */
+.content
+{
+	width: 789px;
+	margin: 0 auto;
+	text-align: left;
+	position: relative;
+    padding: 20px 0 0 0;
+}
+
+.homecontentheader
+{
+	height: 251px;
+    background-image: url(/images/theme/hero_home.jpg);
+    background-repeat: no-repeat;	
+}
+
+.contentheader
+{
+	height: 149px;	
+}
+
+.contentpressrelease
+{
+	position: absolute;
+    padding: 190px 0 0 276px;
+}
+
+.contentdemo
+{
+	position: absolute;
+    padding: 190px 0 0 531px;
+}
+
+
+.demolink 
+{ 
+	display: block; 
+	width: 255px; 
+	height: 61px; 
+	background:url(/images/theme/button_live_demo_off.gif) no-repeat 0 0; 
+}
+
+.demolink:hover 
+{ 
+	background:url(/images/theme/button_live_demo_hover.gif) no-repeat 0 0; 
+}
+
+.presslink 
+{ 
+	display: block; 
+	width: 255px; 
+	height: 61px; 
+	background:url(/images/theme/button_press_release_off.gif) no-repeat 0 0; 
+}
+
+.presslink:hover 
+{ 
+	background:url(/images/theme/button_press_release_hover.gif) no-repeat 0 0; 
+}
+
+.contentbody
+{
+	width: 789px;
+	margin: 0 auto;
+	text-align: left;
+	position: relative;
+    padding: 20px 0 0 0;
+}
+
+.contentbody a
+{
+	color: #0074c5; 
+}
+
+.contentbody h2
+{
+	text-align: center;
+	color: #0074c5;
+	font-weight: bold;	
+	font-size: 1.2em;
+	padding: 8px 0 10px 0;
+}
+
+.contentbody h3
+{
+	text-align: left;
+	color: #0074c5;
+	font-weight: bold;	
+	font-size: 1.1em;
+	padding: 0 0 4px 0;
+}
+
+.contentbody h4
+{
+	text-align: left;
+	color: #0074c5;
+	font-weight: bold;	
+	font-size: 1.0em;
+	padding: 0 0 2px 0;
+}
+
+.contentdivider
+{
+	height: 2px;
+	color: #d9d4d4;
+	background-color: #d9d4d4;
+	width: 789px;
+	font-size: 6px;
+}
+
+.threecolleft
+{
+	float: left;
+	width: 190px;
+	text-align: left;
+}
+
+.threecolmiddle
+{
+	float: left;
+	width: 190px;
+	text-align: left;
+}
+
+.threecolright
+{
+	float: left;
+	width: 190px;
+	text-align: left;
+}
+
+.threecolspacer
+{
+	float: left;
+	width: 108px;
+}
+
+.twocolleft
+{
+	float: left;
+	width: 500px;
+}
+
+.twocolright
+{
+	float: left;
+	width: 252px;
+}
+
+.twocolspacer
+{
+	float: left;
+	width: 34px;
+}
+
+.twocolindent
+{
+	width: 470px;
+	padding: 20px 0 4px 10px;
+}
+
+.onecol
+{
+	width: 740px;
+}
+
+.oencolcenter
+{
+	padding: 20px 0 20px 138px;	 
+}
+
+
+.leftcol
+{	
+	float: left;
+	width: 150px;
+	height: 679px;
+	background-color: #0e3e7c;
+	color: #ffffff;
+}
+
+.maincol
+{	
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 936px;
+}
+
+.testimonial
+{
+	background-color: #ececec;
+	color: #464646;
+	border: 1px solid #d9d4d4;
+	padding: 15px 10px 10px 10px; 
+	font-size: 1.2em;
+	
+}
+
+.testimonialname
+{
+	padding: 0 0 0 30px; 
+	text-align: right;
+	color: #828282;
+	font-weight: bold;
+	font-size: .9em;
+}
+
+
+.sidenav
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.sidenav li
+{	
+	margin: 0; 
+	padding: 0;
+	display: inline;
+}
+
+.sidenav li a
+{
+	display: block;
+	margin: 0;
+	padding:  5px 0 5px 15px;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.sidenav li a:hover 
+{
+	color: #ffffff;
+	background-color: #0074c5;	
+}
+
+
+
+/* Footer rules */
+.bottomnav 
+{
+	font-weight: bold;
+	text-align: center;
+}
+
+.bottomnav a 
+{
+	text-decoration: none;
+}
+
+.bottomnav a:hover 
+{
+}
+
+.bottomnav li 
+{
+	display: inline;
+}
+
+.footer 
+{
+	width: 789px;
+	margin: 0 auto;
+	text-align: left;
+	position: relative;
+    padding: 22px 0 0 0;
+	font-size: 0.8em;
+}
+
+.footerleft
+{
+	font-size: 0.8em;
+	float: left;
+}
+
+footerleft.a 
+{
+	font-size: 0.8em;
+}
+
+.footerright 
+{
+	font-size: 0.9em;
+	float: right;
+	text-align: center;
+}
+
+.brclear 
+{
+	clear:both;
+	height:0;
+	margin:0;
+	font-size: 1px;
+	line-height: 0;
+}
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+#control_overlay {  
+    background-color:#000;  
+} 
+ 
+.modal {  
+    background-color:#fff;  
+    padding:10px;  
+    border:1px solid #333;  
+} 
+ 
+.tooltip {  
+    border:1px solid #000;  
+    background-color:#fff;  
+    height:25px;  
+    width:200px;  
+    font-family:"Lucida Grande",Verdana;  
+    font-size:10px;  
+    color:#333;  
+} 
+ 
+.simple_window {  
+    width:250px;  
+    height:50px;  
+    border:1px solid #000;  
+    background-color:#fff;  
+    padding:10px;  
+    text-align:left;  
+    font-family:"Lucida Grande",Verdana;  
+    font-size:12px;  
+    color:#333;  
+} 
+ 
+.window {  
+    background-image:url("/images/window_background.png");  
+    background-position:top left;  
+    -moz-border-radius: 10px;  
+    -webkit-border-radius: 10px;  
+    padding:10px;  
+    font-family:"Lucida Grande",Verdana;  
+    font-size:13px;  
+    font-weight:bold;  
+    color:#fff;  
+    text-align:center;  
+    min-width:150px;  
+    min-height:100px;  
+} 
+ 
+.window .window_contents {  
+    margin-top:10px;  
+    width:100%;
+    height:100%;      
+} 
+ 
+.window .window_header {  
+    text-align:center;  
+} 
+
+.window .window_title {
+    text-align: center;
+    margin-top:-7px;  
+    margin-bottom:7px;  
+    font-size:11px;  
+    cursor:move; 
+} 
+ 
+.window .window_close {  
+    display:block;  
+    position:absolute;  
+    top:4px;  
+    left:5px;  
+    height:13px;  
+    width:13px;  
+    background-image:url("/images/window_close.gif");  
+    cursor:pointer;  
+    cursor:hand;  
+}  

@@ -1,0 +1,34 @@
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+    background: url(http://dedicatedmaps.com/images/bg-body.jpg);
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+div#main {
+    margin: 10px;
+    width: 80%;
+    float: right;
+}
+div#footer {
+	float:right;
+}
+/* Padding for the inside of tab panes on edit actions */
+div.tab-pane {
+	padding: 10px;
+}
+div.col-md-10 {
+    background-color: white;
+    padding: 10px;
+}
+/* Padding for table headers and cells */
+th, td {
+    padding: 5px;
+}
+
+/* Set the cursor to a pointer when the user hovers over table headers so it's clear that they are clickable */
+thead tr * {
+    cursor: pointer;
+}

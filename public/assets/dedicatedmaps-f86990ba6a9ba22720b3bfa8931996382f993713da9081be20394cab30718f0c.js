@@ -85,40 +85,40 @@ dedicatedmaps = (function () {
             }
         },
         // Methods for the loading indicator
-        loadIndicator: {
-            getIndicatorElement: function () {
+        messageSpan: {
+            getMessageSpan: function () {
                 // Careful! This returns a DOM node, hot a jQuery DOM element
                 // To access jQuery methods, use $() notation of the return value
-                return document.getElementById('loadIndicator');
+                return document.getElementById('message');
             },
             clear: function () {
-                var loadIndicator = this.getIndicatorElement();
-                $(loadIndicator).hide();
+                var messageSpan = this.getMessageSpan();
+                $(messageSpan).text('').hide();
             },
             setDone: function () {
-                var loadIndicator = this.getIndicatorElement();
-                $(loadIndicator).removeClass('fa-spin').hide();
+                var messageSpan = this.getMessageSpan();
+                $(messageSpan).text('Done').addClass('done').fadeOut(1000);
             },
             setLoading: function () {
-                var loadIndicator = this.getIndicatorElement();
-                $(loadIndicator).addClass('fa-spin').show();
+                var messageSpan = this.getMessageSpan();
+                $(messageSpan).text('Loading...').addClass('loading').show();
             },
             setError: function () {
-                var loadIndicator = this.getIndicatorElement();
-                loadIndicator.innerHTML = 'Connection Error';
+                var messageSpan = this.getMessageSpan();
+                $(messageSpan).text('Connection Error').addClass('error').show();
             }
         },
         // Route all AJAX requests through this function to link them to the loading indicator
         ajaxLoad: function(ajaxRequestObject) {
-            app.ui.loadIndicator.setLoading();
+            app.ui.messageSpan.setLoading();
             console.log("Loading: " + ajaxRequestObject.url);
             return $.ajax(ajaxRequestObject)
                 .fail(function(error) {
-                    app.ui.loadIndicator.setError();
+                    app.ui.messageSpan.setError();
                     console.log(error);
                 })
                 .done(function(response) {
-                    app.ui.loadIndicator.setDone();
+                    app.ui.messageSpan.setDone();
                     console.log(response);
                     console.log('Done');
                 });
@@ -196,7 +196,8 @@ dedicatedmaps = (function () {
             throw new Error('infoBubble.js failed to load. Cannot continue');
         }
         $(document).ready(function () {
-            // Initialize
+            // Initialize the side menu
+            $('#menuSlide').sidr();
             // Detect if the Google Maps JS has loaded yet
             if (window.google && google.maps) {
                 // Map script is already loaded
@@ -832,7 +833,7 @@ dedicatedmaps = (function () {
                 div.appendChild(link);
             });
         } else {
-            app.ui.loadIndicator.setError();
+            app.ui.messageSpan.setError();
             throw new Error('Attempted to build marker equipment tab but response from server was empty or malformed.');
         }
         return div;
@@ -911,7 +912,7 @@ dedicatedmaps = (function () {
                 });
                 div.appendChild(imgLink);
             } else {
-                app.ui.loadIndicator.setError();
+                app.ui.messageSpan.setError();
                 throw new Error('Attempted to render Asset Details Container, but Asset details either failed to load or are empty.');
             }
         }

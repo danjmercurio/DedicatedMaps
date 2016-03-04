@@ -1,0 +1,147 @@
+/* Info window styles */
+
+
+.balloon {
+    width: 450px;
+    margin-bottom: 10px;
+}
+
+.info_window {
+    background-color: #FFF;
+    overflow: auto;
+    height: 100%;
+    min-width: 300px;
+    margin-right: 16px;
+}
+
+.info_window table th {
+    font-weight: bold;
+    padding-right: 6px;
+}
+
+.info_window table td {
+    padding-right: 4px;
+}
+
+.info_window .label {
+    font-weight: bold;
+}
+
+/*.balloon_title{*/
+/*font-size: 14px;*/
+/*font-weight: bold;*/
+/*color: #000;*/
+/*background-image: url(../images/info_window/top_gradient.gif);*/
+/*background-repeat: repeat-x;*/
+/*padding: 2px;*/
+/*margin-right:16px;*/
+/*}*/
+.balloon_title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    padding: 2px;
+    background: rgb(228, 245, 252);
+    background: -moz-linear-gradient(top, rgba(228, 245, 252, 1) 0%, rgba(191, 232, 249, 1) 50%, rgba(159, 216, 239, 1) 51%, rgba(42, 176, 237, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(228, 245, 252, 1) 0%, rgba(191, 232, 249, 1) 50%, rgba(159, 216, 239, 1) 51%, rgba(42, 176, 237, 1) 100%);
+    background: linear-gradient(to bottom, rgba(228, 245, 252, 1) 0%, rgba(191, 232, 249, 1) 50%, rgba(159, 216, 239, 1) 51%, rgba(42, 176, 237, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4f5fc', endColorstr='#2ab0ed', GradientType=0);
+}
+
+.balloon_company {
+    font-size: .9em;
+    color: #333;
+    float: right;
+    margin-right: 10px;
+}
+
+.crosshairs {
+    float: left;
+}
+
+.info_window .pic {
+    color: #FF0000;
+    width: 159px;
+    float: left;
+    padding-top: 5px;
+}
+
+/*
+.info_window .backgroundPic{
+	width:inherit;
+	background-image: url(../images/info_window/shadow.png);
+	background-repeat: repeat;
+	height: 150px;
+}
+*/
+
+.info_window .text {
+    color: #000000;
+    float: left;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.infoRedText {
+    color: #FF0000
+}
+
+#controls {
+    margin-top: 30px;
+    color: #0000FF;
+}
+
+.children-heading {
+    margin: 10px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.image-thumb {
+    width: 100px;
+}
+
+span.itemprop {
+    display: block;
+}
+
+.assetTitle {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    padding: 2px;
+}
+
+span.label {
+    color: #2C89F0;
+    font-size: small;
+}
+
+span.value {
+    font-size: small;
+}
+
+div.loader {
+    margin-top: 10px;
+}
+
+img.assetPhoto {
+    height: 75px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.assetDetailsContainer * {
+    padding: 2px;
+}
+
+.block {
+    display: block;
+}
+
+.equipmentList {
+    display: block;
+    font-size: small;
+}

@@ -13,5 +13,6 @@ Rails.application.config.assets.precompile += [
     'demo.css',
     'menu_cornermorph.css',
     'classie.js',
-    'main.js'
+    'main.js',
+    'checkboxes.css'
 ]
