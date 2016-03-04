@@ -8,4 +8,10 @@ Rails.application.config.assets.precompile += [
     'bootstrap_and_overrides.css',
     'infobubble.js',
     'dedicatedmaps.js',
-    'jquery.tablesorter.min.js']
+    'jquery.tablesorter.min.js',
+    'normalize.css',
+    'demo.css',
+    'menu_cornermorph.css',
+    'classie.js',
+    'main.js'
+]

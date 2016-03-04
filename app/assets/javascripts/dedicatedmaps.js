@@ -29,6 +29,42 @@ dedicatedmaps = (function () {
 
     // Functions related to manipulating the user interface
     app.ui = {
+        sidebar: {
+            collapsed: false,
+            getCollapseButton: function() {
+                return document.getElementById('collapseToggle');
+            },
+            getSidebarDiv: function() {
+                return document.getElementById('layers');
+            },
+            toggleSidebarCollapse: function() {
+                var layerPanel = app.ui.sidebar.getSidebarDiv();
+
+                if (!app.ui.sidebar.collapsed) {
+                    // Collapse sidebar element
+                    $(layerPanel).effect( "size", {
+                        to: { width: 50}
+                    }, 1000 );
+                    $(layerPanel).removeClass('expanded');
+                    $(layerPanel).addClass('collapsed');
+                    app.ui.sidebar.collapsed = true;
+                    console.log(app.ui.sidebar.collapsed);
+                } else {
+                    // Extend sidebar
+                    $(layerPanel).effect('size', {to: {width: 250}}, 1000);
+                    $(layerPanel).removeClass('collapsed');
+                    $(layerPanel).addClass('expanded');
+                    app.ui.sidebar.collapsed = false;
+                    console.log(app.ui.sidebar.collapsed);
+                }
+            },
+            addSidebarEventListener: function() {
+                var button = app.ui.sidebar.getCollapseButton();
+                $(button).click(function() {
+                    app.ui.sidebar.toggleSidebarCollapse();
+                });
+            }
+        },
         // A helper sub-module for loading in icons
         icons: {
             // http://dedicatedmaps.com/images/<name>.<suffix>
@@ -160,6 +196,7 @@ dedicatedmaps = (function () {
             throw new Error('infoBubble.js failed to load. Cannot continue');
         }
         $(document).ready(function () {
+            // Initialize
             // Detect if the Google Maps JS has loaded yet
             if (window.google && google.maps) {
                 // Map script is already loaded
@@ -212,6 +249,9 @@ dedicatedmaps = (function () {
             });
             // Set event handlers on left-hand checkboxes so layers appear when we check them
             app.ui.setCheckboxHandlers();
+
+            // Set the event listener on the side bar's collapse button that waits for clicks
+            app.ui.sidebar.addSidebarEventListener();
         });
     };
 

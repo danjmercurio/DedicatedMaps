@@ -1,45 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="Dedicated Maps Mapping Platform">
     <meta name="author" content="Dan Mercurio">
     <title>Dedicated Maps - Map</title>
 
-    <%= stylesheet_link_tag "map" %> <!-- app/assets/stylesheets/map.css -->
-    <%= stylesheet_link_tag 'balloons' %> <!-- app/assets/stylesheets/balloons.css -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <%= stylesheet_link_tag 'normalize' %>
+    <%= stylesheet_link_tag 'demo' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <style type="text/css">
+      #map_div {
+        height:800px;
+        width: 100%;
 
+      }
+      .link-list {
+        overflow: auto;
+        position: absolute;
+        bottom: 0px;
+        top: 10px;
+        left: 0px;
+        right: 0px;
+      }
+      .menu-wrap {
+          height: 90%;
+        }
+      .layerLabel {
+        float:left;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding-top: 5px;
+        padding-left: 0px;
+      }
+        .floatLeft {
+          float: left;
+        }
+
+    </style>
+    <%= stylesheet_link_tag 'menu_cornermorph' %>
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <%= javascript_include_tag 'infobubble' %>
-    <%= javascript_include_tag 'dedicatedmaps' %> <!-- app/assets/javascripts/dedicatedmaps.js -->
+    <%= javascript_include_tag 'dedicatedmaps' %>
+
 
     <%= csrf_meta_tag %>
   </head>
   <body data-env="<%= Rails.env %>">
-  <div id="container">
-    <div id="column">
-      <div id="header">
-        <div id="logo"><span class="client"><%= @map.user.client.company_name %></span></div>
-          <% if @admin_viewing %>
-            <div id="adminMenu">
-              <%= link_to_function 'Save Current View', 'save_map();',
-                                   {:title => 'This will save the current map location and setting for the next viewer.'} %>
-              <%= 'Map owner: ' + @map.user.first_name + ' ' + @map.user.last_name %>
-            </div>
-          <% end %>
-        <div id="accountBar">
-          <%= render :partial => "layouts/account_bar" %>
-        </div>
-        </div>
-
-      <div id="mainRow">
-        <%= yield %>
-      </div>
-
+    <div class="container">
+      <%= yield %>
     </div>
-    </div>
+    <%= javascript_include_tag 'classie' %>
+    <%= javascript_include_tag 'main' %>
   </body>
 </html>

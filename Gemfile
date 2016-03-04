@@ -24,7 +24,6 @@ gem 'responders'
 # in production environments by default.
 gem 'sass-rails'
 
-
 gem 'execjs'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -99,4 +98,5 @@ group :development do
   gem 'tzinfo-data'
 end
 
+gem 'font-awesome-rails'
 
