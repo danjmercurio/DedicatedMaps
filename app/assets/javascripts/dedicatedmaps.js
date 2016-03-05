@@ -251,6 +251,12 @@ dedicatedmaps = (function () {
             if (!app.ui.getMapDiv()) {
                 throw new Error('Cannot load Google Maps because element div#map_div was not found in the DOM');
             }
+            
+            // Get the height of the browser window and set map_div's height to that value
+            var viewportHeight = $(window).height();
+            
+            $(app.ui.getMapDiv()).css('height', viewportHeight);
+            
             console.log('Initializing map...');
             if (!mapState) {
                 console.log('Warning: unable to load previous map state.');
@@ -272,7 +278,7 @@ dedicatedmaps = (function () {
             var map = new google.maps.Map(app.ui.getMapDiv(), mapOptions);
             app.ui.setMap(map);
 
-            // Not implemented yet
+            // Save map on drag and and map type change
             google.maps.event.addDomListener(app.map, "dragend", function () {
                 app.ui.cue_save_map();
             });
