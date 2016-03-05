@@ -15,12 +15,22 @@
             <% @layers.each do |layer| %>
                 <div class="layerBlock" data-layer="<%= layer.title =%>" data-id="<%= layer.id %>">
                     <div class="layerBlockHeader">
-                        <div class="layerBlockHeaderLabel"><%= layer.title %></div>
-                        <div>
-                            <input type="checkbox" value="None" id="squaredFour" name="check" checked data-layer="<%= layer.name %>" data-id="<%= layer.id %>"/>
+                        <div class="layerBlockHeaderLabel"><a class="expandLayerToggle" data-layer="<%= layer.title =%>" data-id="<%= layer.id %>"><%= layer.title %></a></div>
+                        <div class="layerBlockCheckboxContainer">
+                            <input type="checkbox" value="None" id="squaredFour" name="check" data-layer="<%= layer.name %>" data-id="<%= layer.id %>"/>
                         </div>
                     </div>
-                    <div class="layerBlockContent"></div>
+                    <div class="layerBlockContent" data-layer="<%= layer.title =%>" data-id="<%= layer.id %>">
+                    
+                        <% if layer.category == "StagingArea" %>
+                            <%= render :partial => 'staging_area', :locals => {:layer => layer, :icon => layer.icon} %>
+                        <% elsif layer.category == "KML" %>
+                            <%= render :partial => 'kml', :locals => {:layer => layer} %>
+                        <% else %>
+                            <%= render :partial => layer.name, :locals => {:layer => layer} %>
+                        <% end %>
+                    
+                    </div>
                 </div>
             <% end %>
         </div>

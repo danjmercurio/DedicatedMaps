@@ -89,22 +89,32 @@ dedicatedmaps = (function () {
             getIndicatorElement: function () {
                 // Careful! This returns a DOM node, hot a jQuery DOM element
                 // To access jQuery methods, use $() notation of the return value
+                return document.getElementById('open-button');
+            },
+            getMenuIndicatorElement: function() {
                 return document.getElementById('loadIndicator');
             },
             clear: function () {
-                var loadIndicator = this.getIndicatorElement();
+                var loadIndicator = this.getMenuIndicatorElement();
                 $(loadIndicator).hide();
             },
             setDone: function () {
                 var loadIndicator = this.getIndicatorElement();
-                $(loadIndicator).removeClass('fa-spin').hide();
+                $(loadIndicator).removeClass('fa-spin');
+                var menuLoadIndicator = this.getMenuIndicatorElement();
+                $(menuLoadIndicator).fadeOut(1000);
             },
             setLoading: function () {
+                console.log('loading...');
                 var loadIndicator = this.getIndicatorElement();
-                $(loadIndicator).addClass('fa-spin').show();
+                $(loadIndicator).addClass('fa-spin');
+                var menuLoadIndicator = this.getMenuIndicatorElement();
+                $(menuLoadIndicator).show();
+                $(menuLoadIndicator).addClass('fa-spin');
             },
             setError: function () {
                 var loadIndicator = this.getIndicatorElement();
+                $(loadIndicator).removeClass('fa-spin');
                 loadIndicator.innerHTML = 'Connection Error';
             }
         },
@@ -148,6 +158,7 @@ dedicatedmaps = (function () {
             app.map = map;
         },
         setCheckboxHandlers: function() {
+            // Layer title dropdowns are also handled here, not just checkboxes
             // Select all checkboxes with property data-layer
             var layerCheckboxes = $("input[data-layer]");
             layerCheckboxes.each(function(index, element) {
@@ -156,6 +167,24 @@ dedicatedmaps = (function () {
                 newLayer = new app.layer.Layer(layerName, app.ui.getMap(), id, layer_config[layerName].type, layer_config[layerName].icon);
                 $(element).click(function() {
                     this.checked ? function() { dedicatedmaps.layer.layers[layerName].on(); console.log("turned on " + layerName);}() : function () {dedicatedmaps.layer.layers[layerName].off(); console.log("turned off " + layerName)}()
+                });
+            });
+            var layerLabels = $('a.expandLayerToggle');
+            layerLabels.each(function(index, element) {
+                $(element).click(function() {
+                    // For each layer block, if its link is clicked, get its extra content div
+                    var layerName = $(this).data('layer');
+                    var layerId = $(this).data('id');
+                    var container = $("div.layerBlockContent[data-id=" + layerId + "]")
+                    // Toggle the display status of this container
+                    if (container.css('display') === "none") {
+                        container.height('100px');
+                        container.fadeIn(500, function() {
+                            console.log(container);   
+                        });
+                    } else {
+                        container.fadeOut(500);
+                    }     
                 });
             });
         },
@@ -196,7 +225,10 @@ dedicatedmaps = (function () {
             throw new Error('infoBubble.js failed to load. Cannot continue');
         }
         $(document).ready(function () {
-            // Initialize
+            // Uncheck all layer checkboxes
+            $('input[data-layer]').each(function (index, element) {
+                element.checked = 0;
+            });
             // Detect if the Google Maps JS has loaded yet
             if (window.google && google.maps) {
                 // Map script is already loaded
@@ -345,8 +377,11 @@ dedicatedmaps = (function () {
                                 // Staging areas have locator select tags that need a jquery change event handler assigned to them
                                 layer.layerLocatorElement = $('#' + layer.name + "_locate");
                                 layer.layerLocatorElement.change(function () {
+                                    console.log('Caught change event');
                                     var target = layer.layerLocatorElement.val();
-                                    $('#' + layer.name)[0].checked ? layer.getMarkerByID(target).centerOpen() : layer.load_callback = function () {
+                                    var selector = ['input', "[data-layer='", layer.name, "']"].join('');
+                                    console.log(selector);
+                                    $(selector)[0].checked ? layer.getMarkerByID(target).centerOpen() : layer.load_callback = function () {
                                         layer.getMarkerByID(target).centerOpen();
                                     };
                                 });
