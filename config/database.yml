@@ -12,9 +12,9 @@ production:
   adapter: mysql2
   encoding: utf8
   database: ddmaps
-  username: root
-  password: mapapp
-  host: localhost
+  username: dhollerich
+  password: HorseTarantulaSkeletonOxen
+  host: 0b0df98a0907c7be0b3f642cac708e64f103ace8.rackspaceclouddb.com
   reconnect: true
   #socket: /var/run/mysqld/mysqld.sock
 

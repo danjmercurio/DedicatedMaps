@@ -13,14 +13,14 @@
         <div class="link-list">
             <!-- Beginning of Layer blocks -->
             <% @layers.each do |layer| %>
-                <div class="layerBlock" data-layer="<%= layer.title =%>" data-id="<%= layer.id %>">
+                <div class="layerBlock" data-layer="<%= layer.title %>" data-id="<%= layer.id %>">
                     <div class="layerBlockHeader">
-                        <div class="layerBlockHeaderLabel"><a class="expandLayerToggle" data-layer="<%= layer.title =%>" data-id="<%= layer.id %>"><%= layer.title %></a></div>
+                        <div class="layerBlockHeaderLabel"><a class="expandLayerToggle" data-layer="<%= layer.title %>" data-id="<%= layer.id %>"><%= layer.title %></a></div>
                         <div class="layerBlockCheckboxContainer">
                             <input type="checkbox" value="None" id="squaredFour" name="check" data-layer="<%= layer.name %>" data-id="<%= layer.id %>"/>
                         </div>
                     </div>
-                    <div class="layerBlockContent" data-layer="<%= layer.title =%>" data-id="<%= layer.id %>">
+                    <div class="layerBlockContent" data-layer="<%= layer.title %>" data-id="<%= layer.id %>">
                     
                         <% if layer.category == "StagingArea" %>
                             <%= render :partial => 'staging_area', :locals => {:layer => layer, :icon => layer.icon} %>
