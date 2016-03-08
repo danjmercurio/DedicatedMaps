@@ -436,16 +436,26 @@ dedicatedmaps = (function () {
                 case 'Custom':  // Overrides for special layers like pinpoint are defined here
                     switch (layer.name.toLowerCase()) {
                         case 'pinpoint':
+                            // Select DOM element which will receive pinpoint data
                             layer.textArea = $('#pinpoint_data');
+                            // Select button which will trigger pinpoint data clipboard copy dialog
                             layer.copyButton = $("a[data-role='pinpoint_data']");
                             layer.copyButton.bind('click', function () {
                                     window.prompt("Copy to clipboard: Ctrl+C, Enter", layer.textArea.text());
                             });
+
                             layer.listener = google.maps.event.addDomListener(app.ui.getMap(), "click", function (e) {
-                                layer.textArea.text(e.latLng.lat() + "," + e.latLng.lng());
+                                layer.textArea.text(e.latLng.lat() + ", " + e.latLng.lng());
                             });
+
+                            // While the Pinpoint layer is on, set PARENT OF map_div element's cursor css value to cross
+                            // Only works in some browsers
+                            var map = app.ui.getMap();
+                            map.setOptions({draggableCursor:'crosshair'});
                             layer.off = function () {
                                 google.maps.event.removeListener(layer.listener);
+                                // Return the cursor css value to its original setting
+                                map.setOptions({draggableCursor: ''});
                                 layer.isOn = false;
                             };
                             layer.isOn = true;
