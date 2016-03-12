@@ -328,7 +328,7 @@ dedicatedmaps = (function () {
             app.ui.setMap(map);
 
             // Save map on drag and and map type change
-            google.maps.event.addDomListener(app.map, "dragend", function () {
+            google.maps.event.addDomListener(app.map, "idle", function () {
                 app.ui.cue_save_map();
             });
             google.maps.event.addDomListener(app.map, "maptypeid_changed", function () {
