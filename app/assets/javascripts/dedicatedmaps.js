@@ -28,8 +28,45 @@ dedicatedmaps = (function () {
     };
 
     // Functions related to manipulating the user interface
-    app.ui = {
-        tooltips: true, // Show helpful tooltips with Tipped.js
+    app.ui = {browser: {
+            getUnsupportedBrowserNotiElement: function() {
+                // This element is hidden by default
+                // When shown, a toast notification appears about the user's browser
+                return $('.browser-error')[0];
+            },
+            getBrowser: function() {
+                // Magic. Do not touch.
+                return navigator.sayswho= (function(){
+                    var ua= navigator.userAgent, tem,
+                        M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+                    if(/trident/i.test(M[1])){
+                        tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
+                        return 'IE '+(tem[1] || '');
+                    }
+                    if(M[1]=== 'Chrome'){
+                        tem= ua.match(/\b(OPR|Edge)\/(\d+)/);
+                        if(tem!= null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+                    }
+                    M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+                    if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
+                    return M.join(' ');
+                })();
+            },
+            isSupported: function() {
+                var temp = this.getBrowser();
+                var browser = temp.split(' ')[0];
+                var version = parseInt(temp.split(' ')[1]);
+                if (browser === 'IE' && version > 10) {
+                    return false
+                }
+                return true;
+            },
+            raiseUnsupportedNoti: function() {
+                var noti = this.getUnsupportedBrowserNotiElement();
+                $(noti).show();
+            }
+        },
+        tooltips: true, // Show helpful tooltips
         sidebar: {
             collapsed: false,
             getCollapseButton: function() {
@@ -255,7 +292,6 @@ dedicatedmaps = (function () {
         }
         
         $(document).ready(function () {
-            
             // Uncheck all layer checkboxes
             $('input[data-layer]').each(function (index, element) {
                 element.checked = 0;
@@ -273,7 +309,13 @@ dedicatedmaps = (function () {
                     app.initializeMap();
                 });
             }
+            // Detect the user's browser and if it is supported.
+            if (!app.ui.browser.isSupported()) {
+                app.ui.browser.raiseUnsupportedNoti();
+            }
+
         });
+
         // Here is where we set the event handler for the browser window resize event
         $(window).resize(function() {
             console.log('Caught window resize event. Re-initializing...');
@@ -306,7 +348,7 @@ dedicatedmaps = (function () {
             };
             
             if (!mapState) {
-                console.log('Warning: unable to load previous map state.');
+                console.warn('Warning: unable to load previous map state.');
                 // Fallback map state
                 mapState = {
                     lat: 45.5301544,
