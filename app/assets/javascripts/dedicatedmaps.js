@@ -334,6 +334,11 @@ dedicatedmaps = (function () {
             google.maps.event.addDomListener(app.map, "maptypeid_changed", function () {
                 app.ui.cue_save_map();
             });
+
+            google.maps.event.addDomListener(app.map, "zoom_changed", function () {
+                app.ui.cue_save_map();
+            });
+
             // Set event handlers on left-hand checkboxes so layers appear when we check them
             app.ui.setCheckboxHandlers();
 
