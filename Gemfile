@@ -3,32 +3,16 @@ source 'https://rubygems.org'
 # Rails 4 stable
 gem 'rails' #, :git => 'git://github.com/rails/rails.git'
 
-# Rails 3.2 branch
-# gem 'rails', :github => 'rails/rails', :branch => '3-2-stable'
-
 gem 'mysql2'
-# Important! mysql2 gem version must be 0.3.x && < 0.4 to work with rails 3.2!
-#gem 'mysql2', '~> 0.3.18' #:git => 'git://github.com/brianmario/mysql2.git'
-
-# Backwards compatibility with older Prototype functions
-gem 'responders'
-
-
-# gem 'bootstrap'
-# source 'https://rails-assets.org' do
-#   gem 'rails-assets-tether', '>= 1.1.0'
-# end
-#gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git' (no longer used, loaded in with MaxCDN)
+# gem 'mysql2', :git => 'git://github.com/brianmario/mysql2.git'
 
 # Gems used only for assets and not required
 # in production environments by default.
-gem 'sass-rails'
-
-gem 'execjs'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer'
-gem 'uglifier'
+group :assets do
+  gem 'sass-rails'
+  gem 'execjs' # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  gem 'uglifier'
+end
 
 # Gems for backward compatibility with rails 3
 gem 'protected_attributes'
@@ -36,6 +20,7 @@ gem 'rails-observers'
 gem 'actionpack-page_caching'
 gem 'actionpack-action_caching'
 gem 'activerecord-deprecated_finders'
+gem 'responders'
 
 
 group :development, :test do
@@ -54,7 +39,9 @@ end
 # Backburner for asychronous job processing (XML POST to /staging_area_feeds)
 gem 'backburner'
 
-# Javascript (no longer used, loaded in with MaxCDN, but keep it for jquery_ujs.js)
+# Javascript
+# Note: Not using the asset pipeline for jQuery in views. It's loaded in with MaxCDN.
+# Keep this gem for Rails' jQuery_ujs
 gem 'jquery-rails'
 
 # gem 'prototype-rails', github: 'rails/prototype-rails', branch: '4.2' # Not using prototype anymore
@@ -69,7 +56,7 @@ gem 'nokogiri'
 gem 'test-unit'
 
 # Paperclip for KML/XML file uploads
-gem 'paperclip', git: "git://github.com/thoughtbot/paperclip.git"
+gem 'paperclip', git: 'git://github.com/thoughtbot/paperclip.git'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -97,6 +84,3 @@ gem 'god' # Used to daemonize Backburner process
 group :development do
   gem 'tzinfo-data'
 end
-
-gem 'font-awesome-rails'
-

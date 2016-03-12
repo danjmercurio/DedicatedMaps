@@ -8,123 +8,26 @@
     <meta name="description" content="Dedicated Maps Mapping Platform">
     <meta name="author" content="Dan Mercurio">
     <title>Dedicated Maps - Map</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <%= stylesheet_link_tag 'application' %>
     <%= stylesheet_link_tag 'normalize' %>
     <%= stylesheet_link_tag 'demo' %>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag 'checkboxes' %>
     <%= stylesheet_link_tag 'balloons' %>
-    <style type="text/css">
-    html{
-        overflow: hidden;
-    }
-        body {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        }
-      #map_div {
-        height:0px;
-        width: 100%;
-
-      }
-      
-      .link-list {
-        overflow: auto;
-        position: absolute;
-        bottom: 0px;
-        top: 10px;
-        left: 0px;
-        right: 0px;
-      }
-      .menu-wrap {
-          height: 90%;
-        }
-      .layerLabel {
-        float:left;
-      }
-      #pinpoint_data {
-        width: 100%;
-        height:70%;
-        float:left;
-      }
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding-top: 5px;
-        padding-left: 0px;
-      }
-        .floatLeft {
-          float: left;
-        }
-        .squaredFour {
-              position: relative;
-left: 100px;
-        }
-        li {
-            padding:5px;
-        }
-        .layerBlock {
-            border-radius: 5px;
-            width: 95%;
-            margin: 5px;
-        }
-        .layerBlockHeader {
-            width: 100%;
-	        background-color: rgba(125, 146, 178, 0.2);
-            height: 50px;
-            padding-top: 15px;
-            padding-right: 5px;
-            padding-left: 5px;
-            display: flex;
-            border-radius: 10px;
-        }
-        .layerBlockHeaderLabel {
-            text-align: left;
-            width: 75%;
-        }
-        .layerBlockCheckboxContainer {
-            position: absolute;
-            right: 15px;
-        }
-        .layerBlockContent {
-            border-radius: 10px;
-            display: none;
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 5px;
-            background-color: rgba(125, 146, 178, 0.2);
-        }
-        .layerBlockContent * {
-            float: left;
-        }
-        #loadIndicator {
-            display: none;
-            font-size: smaller;
-        }
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-            border-radius: 10px;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            border-radius: 10px;
-            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-        }
-        .expandLayerToggle {
-            text-decoration: underline;
-            cursor: context-menu;
-            white-space: nowrap;
-        }
-    </style>
+    <%= stylesheet_link_tag 'map' %>
     <%= stylesheet_link_tag 'menu_cornermorph' %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-sham.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/json3/3.3.2/json3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-sham.min.js"></script>
+    <script src="https://wzrd.in/standalone/es7-shim@latest"></script>
     <!--[if IE]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <%= javascript_include_tag 'infobubble' %>
     <%= javascript_include_tag 'dedicatedmaps' %>
 

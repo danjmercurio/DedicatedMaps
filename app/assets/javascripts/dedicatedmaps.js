@@ -29,6 +29,7 @@ dedicatedmaps = (function () {
 
     // Functions related to manipulating the user interface
     app.ui = {
+        tooltips: true, // Show helpful tooltips with Tipped.js
         sidebar: {
             collapsed: false,
             getCollapseButton: function() {
@@ -57,6 +58,17 @@ dedicatedmaps = (function () {
                     app.ui.sidebar.collapsed = false;
                     console.log(app.ui.sidebar.collapsed);
                 }
+            },
+            getActivatedLayers: function() {
+                var layerCheckboxes = $('input[data-layer]');
+                var activatedLayerElements = layerCheckboxes.filter(function() {
+                   return this.checked;
+                });
+                var list = [];
+                activatedLayerElements.each(function() {
+                    list.push($(this).data('id'));
+                });
+                return list;
             },
             addSidebarEventListener: function() {
                 var button = app.ui.sidebar.getCollapseButton();
@@ -110,12 +122,11 @@ dedicatedmaps = (function () {
                 $(loadIndicator).addClass('fa-spin');
                 var menuLoadIndicator = this.getMenuIndicatorElement();
                 $(menuLoadIndicator).show();
-                $(menuLoadIndicator).addClass('fa-spin');
             },
             setError: function () {
-                var loadIndicator = this.getIndicatorElement();
-                $(loadIndicator).removeClass('fa-spin');
-                loadIndicator.innerHTML = 'Connection Error';
+                var menuLoadIndicator = this.getMenuIndicatorElement();
+                menuLoadIndicator.innerHTML = 'Connection interrupted.';
+                $(menuLoadIndicator).css('color','red');
             }
         },
         // Route all AJAX requests through this function to link them to the loading indicator
@@ -196,12 +207,14 @@ dedicatedmaps = (function () {
             var center = map.getCenter();
             var lat = center.lat();
             var lon = center.lng();
+            var activatedLayers = app.ui.sidebar.getActivatedLayers();
             return {
                 id: id,
                 zoom: zoom,
                 map_type: map_type,
                 lat: lat,
-                lon: lon
+                lon: lon,
+                activatedLayers: activatedLayers
             };
         },
         pushMapState: function () {
@@ -224,7 +237,9 @@ dedicatedmaps = (function () {
         if (typeof(InfoBubble) === 'undefined') {
             throw new Error('infoBubble.js failed to load. Cannot continue');
         }
+        
         $(document).ready(function () {
+            
             // Uncheck all layer checkboxes
             $('input[data-layer]').each(function (index, element) {
                 element.checked = 0;
@@ -235,41 +250,59 @@ dedicatedmaps = (function () {
                 alert("Map script is already loaded. Initialising...");
             } else {
                 console.log('Loading Google Maps API...');
-                var url = 'https://maps.googleapis.com/maps/api/js?v=3.22&key=AIzaSyCXWCJQoRqKt74nUWgvJBmk_naVR-TbeBg';
+                var key = 'AIzaSyCXWCJQoRqKt74nUWgvJBmk_naVR-TbeBg';
+                var url = 'https://maps.googleapis.com/maps/api/js?v=3.22&key=' + key;
                 $.getScript(url, function () {
                     console.log('Done.');
                     app.initializeMap();
                 });
             }
         });
+        // Here is where we set the event handler for the browser window resize event
+        $(window).resize(function() {
+            console.log('Caught window resize event. Re-initializing...');
+            //location.reload();
+            app.initializeMap();
+        });
     };
 
     // Set options on the map and display it after page load. The main init function.
     app.initializeMap = function() {
-        google.maps.event.addDomListener(window, 'load', function () {
             // Make sure we have an element to use for the map. This should only raise an error if the page does not load completely
             if (!app.ui.getMapDiv()) {
                 throw new Error('Cannot load Google Maps because element div#map_div was not found in the DOM');
             }
             
+            // There might already be a map object. If so, we are re-initializing. Throw it out.
+            app.ui.setMap(null);
+            
             // Get the height of the browser window and set map_div's height to that value
             var viewportHeight = $(window).height();
-            
             $(app.ui.getMapDiv()).css('height', viewportHeight);
             
             console.log('Initializing map...');
+            
+            var map_types = {
+                'hybrid': google.maps.MapTypeId.HYBRID,
+                'satellite': google.maps.MapTypeId.SATELLITE,
+                'roadmap': google.maps.MapTypeId.ROADMAP,
+                'terrain': google.maps.MapTypeId.TERRAIN
+            };
+            
             if (!mapState) {
                 console.log('Warning: unable to load previous map state.');
+                // Fallback map state
+                mapState = {
+                    lat: 45.5301544,
+                    lon: -122.65983,
+                    zoom: 4,
+                    map_type: 'hybrid'
+                };
             } else {
                 console.log('Previous map state found. Loading...');
             }
             var center = new google.maps.LatLng(mapState.lat, mapState.lon);
-            var map_types = {
-                "hybrid": google.maps.MapTypeId.HYBRID,
-                "satellite": google.maps.MapTypeId.SATELLITE,
-                "roadmap": google.maps.MapTypeId.ROADMAP,
-                "terrain": google.maps.MapTypeId.TERRAIN
-            };
+            
             var mapOptions = {
                 center: center,
                 zoom: mapState.zoom,
@@ -290,7 +323,6 @@ dedicatedmaps = (function () {
 
             // Set the event listener on the side bar's collapse button that waits for clicks
             app.ui.sidebar.addSidebarEventListener();
-        });
     };
 
     // Top of the app.layer namespace
