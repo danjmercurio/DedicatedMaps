@@ -99,11 +99,19 @@ dedicatedmaps = (function () {
         // Methods for the loading indicator
         loadIndicator: {
             getIndicatorElement: function () {
-                // Careful! This returns a DOM node, hot a jQuery DOM element
+                // Careful! This returns a DOM node, not a jQuery DOM element
                 // To access jQuery methods, use $() notation of the return value
+                // This is only shown when the menu is not open
                 return document.getElementById('open-button');
             },
+            getIndicatorIcon: function() {
+                // Return the icon displayed in the menu open button div element
+                // This should be a FontAwesome icon as an <i> tag
+                // Uses a jQuery selector but returns plain DOM element
+                return $('i#cog')[0];
+            },
             getMenuIndicatorElement: function() {
+                // Returns the HTML element that indicates a load state while the menu
                 return document.getElementById('loadIndicator');
             },
             clear: function () {
@@ -111,15 +119,23 @@ dedicatedmaps = (function () {
                 $(loadIndicator).hide();
             },
             setDone: function () {
-                var loadIndicator = this.getIndicatorElement();
-                $(loadIndicator).removeClass('fa-spin');
+                var icon = this.getIndicatorIcon();
+                $(icon).removeClass('fa-spin');
+                $(icon).removeClass('fa-gear');
+                $(icon).addClass('fa-bars');
                 var menuLoadIndicator = this.getMenuIndicatorElement();
+                $(menuLoadIndicator).text('Done.');
                 $(menuLoadIndicator).fadeOut(1000);
             },
             setLoading: function () {
                 console.log('loading...');
-                var loadIndicator = this.getIndicatorElement();
-                $(loadIndicator).addClass('fa-spin');
+                // Get the menu open icon
+                var icon = this.getIndicatorIcon();
+                // Swap out FontAwesome classes
+                $(icon).removeClass('fa-bars');
+                $(icon).addClass('fa-gear');
+                // You spin me right round baby
+                $(icon).addClass('fa-spin');
                 var menuLoadIndicator = this.getMenuIndicatorElement();
                 $(menuLoadIndicator).show();
             },
