@@ -37,8 +37,11 @@
       <% end %>
       <div class="icon-list">
         <span id="loadIndicator">Loading...</span>
-        <a href="<%= url_for edit_user_path(@loggedin_user.id) %>"><i class="fa fa-fw fa-home"></i></a>
-        <a href="http://dedicatedmaps.com/help"><i class="fa fa-fw fa-question-circle"></i></a>
+        <% if @admin_viewing %>
+            <a href="#" id="adminSaveMap" title="Save Map"><i class="fa fa-fw fa-save"></i></a>
+        <% end %>
+        <a href="<%= url_for edit_user_path(@loggedin_user.id) %>" title="Home"><i class="fa fa-fw fa-home"></i></a>
+        <a href="/help" title="Help"><i class="fa fa-fw fa-question-circle"></i></a>
       </div>
     </nav>
   </div>

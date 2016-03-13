@@ -222,7 +222,9 @@ dedicatedmaps = (function () {
             app.map = map;
         },
         setCheckboxHandlers: function() {
-            // Layer title dropdowns are also handled here, not just checkboxes
+            // This function also sets a bunch of other event handlers, not just checkboxes
+            // Layer title dropdowns are also handled here
+
             // Select all checkboxes with property data-layer
             var layerCheckboxes = $("input[data-layer]");
             layerCheckboxes.each(function(index, element) {
@@ -251,6 +253,10 @@ dedicatedmaps = (function () {
                     }     
                 });
             });
+
+            // Push the map state when we click the save button
+            var saveButton = $('#adminSaveMap');
+            saveButton.click(app.ui.cue_save_map);
         },
         getMapState: function () {
             var id = mapState.id;
@@ -314,6 +320,10 @@ dedicatedmaps = (function () {
                 app.ui.browser.raiseUnsupportedNoti();
             }
 
+            // Initialize jQuery UI tooltips
+            if (app.ui.tooltips) {
+                $(document).tooltip({track: true});
+            }
         });
 
         // Here is where we set the event handler for the browser window resize event
