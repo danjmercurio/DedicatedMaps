@@ -322,7 +322,7 @@ dedicatedmaps = (function () {
 
             // Initialize jQuery UI tooltips
             if (app.ui.tooltips) {
-                $(document).tooltips();
+                $(document).tooltip();
             }
         });
 
