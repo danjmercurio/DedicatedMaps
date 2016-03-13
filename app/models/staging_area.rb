@@ -180,6 +180,7 @@ class StagingArea < ActiveRecord::Base
     StagingArea.destroy_all(:staging_area_company_id => company_id)
     StagingAreaAssetType.destroy_all(:staging_area_company_id => company_id)    
   end
+  handle_static_asynchronously :delete_former_records
 
   def self.check_existence_of(required_fields, xml, filename)
     required_fields.each do |field|
