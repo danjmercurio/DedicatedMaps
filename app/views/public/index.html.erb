@@ -1,7 +1,7 @@
 			<div class="homecontentheader">
 				<div class="contentheaderbuttons">
 					<div class="contentdemo">
-						<a href="http://demo.dedicatedmaps.com/" class="demolink"></a>
+						<a href="<%= Rails.env == 'production' ? 'http://demo.dedicatedmaps.com' : 'http://0.0.0.0:3000/maps/74' %>" class="demolink"></a>
 					</div>
 					<div class="contentpressrelease">
 						<a href="/images/Dedicated_Maps_Press_Release.pdf" class="presslink"></a>
