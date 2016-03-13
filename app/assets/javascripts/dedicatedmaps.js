@@ -322,23 +322,7 @@ dedicatedmaps = (function () {
 
             // Initialize jQuery UI tooltips
             if (app.ui.tooltips) {
-                var button = app.ui.loadIndicator.getIndicatorElement();
-                $( button ).tooltip(
-                    {
-                        content: function() {
-                            var element = $( this );
-                            var s = element.attr('title');
-                            if ('' == s)
-                                return null;
-                            if (Modernizr.touch) // using Modernizr to detect touch devices.
-                                s += "&lt;div align=right'>&lt;a href=\"javascript:$('#open-button').tooltip('close');\" class='touchTooltipHack'>close&lt;/a>&lt;/div>";
-                            return s;
-                        }
-                    });
-                $(document).tooltip({track: true});
-                $(button).click(function() {
-                    $(button).tooltip("close");
-                })
+                $(document).tooltips();
             }
         });
 
