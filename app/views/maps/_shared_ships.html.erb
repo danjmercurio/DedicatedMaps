@@ -1,22 +1,24 @@
 <%
     @asset_type_id = AssetType.find_by_name('ship').id
-       
-    @min_visibility = Visibility.find_by_name("Shared")
-    @shared_ships = Asset.find_all_by_asset_type_id(
-      @asset_type_id,
-      :joins => :shared_assets,
-      :conditions => ["visibility_id >= ? AND shared_assets.client_id = ?", @min_visibility.id, @map.user.client.id],
-      :include => [:current_location, {:ship => :icon}]
-    )
+
+    @min_visibility = Visibility.find_by_name('Shared')
+    # @shared_ships = Asset.find_all_by_asset_type_id(
+    #   @asset_type_id,
+    #   :joins => :shared_assets,
+    #   :conditions => ["visibility_id >= ? AND shared_assets.client_id = ?", @min_visibility.id, @map.user.client.id],
+    #   :include => [:current_location, {:ship => :icon}]
+    # )
+    @shared_ships = Asset.joins(:shared_assets).where("asset_type_id = ? AND shared_assets.client_id = ? AND visibility_id >= ?", @asset_type_id, @min_visibility.id, @map.user.client.id)
 
     # add fishing_vessels
-    @fishing_type_id = AssetType.find_by_name('fishing_vessel').id
-    @shared_ships = @shared_ships | Asset.find_all_by_asset_type_id(
-      @fishing_type_id,
-      :joins => :shared_assets,
-      :conditions => ["visibility_id >= ? AND shared_assets.client_id = ?", @min_visibility.id, @map.user.client.id],
-      :include => [:current_location, {:fishing_vessel => :icon}]
-    )
+    # @fishing_type_id = AssetType.find_by_name('fishing_vessel').id
+    # @shared_ships = @shared_ships | Asset.find_all_by_asset_type_id(
+    #   @fishing_type_id,
+    #   :joins => :shared_assets,
+    #   :conditions => ["visibility_id >= ? AND shared_assets.client_id = ?", @min_visibility.id, @map.user.client.id],
+    #   :include => [:current_location, {:fishing_vessel => :icon}]
+    # )
+    @shared_ships = @shared_ships | Asset.joins(:shared_assets).includes(:current_location, {:fishing_vessel => :icon}).where("asset_type_id = ? AND visibility_id >= ? AND shared_assets.client_id = ?", @fishing_type_id, @min_visibility.id, @map.user.client.id)
 %>
 
 <% if @shared_ships.length == 0 %>
