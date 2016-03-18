@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   #helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
-  before_filter :maintain_session_and_user
   before_filter :subdomain_redirect
 
   # See ActionController::RequestForgeryProtection for details
@@ -15,11 +14,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # :secret => '3ef815416f775098fe977004015c6193'
 
   def ensure_login
-    unless @loggedin_user
-      session[:target] = params
-      flash[:notice] = "Please login to continue."
-      redirect_to('/')
-    end
+    @loggedin_user
   end
 
   def ensure_logout
@@ -38,9 +33,9 @@ class ApplicationController < ActionController::Base
   end
   
   def logout_user
-    Session.destroy(@application_session.id)
+    Session.destroy(@session.id)
     #Session.destroy(params[:id]) if params[:id]
-    session[:id] = @loggedin_user = @anonymous_user = @application_session = nil
+    session[:id] = @loggedin_user = @anonymous_user = @application_session = @session = nil
   end
   helper_method :logout_user
 
@@ -66,25 +61,6 @@ class ApplicationController < ActionController::Base
       end
     elsif request.path == '/'
       render '/public/index', :layout => 'public'
-    end
-  end
-
-  def maintain_session_and_user
-    if session[:id]
-      if (@application_session = Session.find_by_id(session[:id])) #Session.find_by_id returns nil if nothing found, Session.find raises exception
-        @application_session.update_attributes(:ip_address => request.remote_addr, :path => request.path_info)
-        @loggedin_user = @application_session.user
-        Time.zone = @loggedin_user.time_zone
-        if @loggedin_user.privilege.name == 'public'
-           @anonymous_user = true
-           @session = Session.new
-        end
-      else
-        session[:id] = nil
-        redirect_to('/')
-      end
-    else
-      @session = Session.new
     end
   end
 end

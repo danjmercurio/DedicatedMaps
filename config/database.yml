@@ -5,7 +5,7 @@ development:
   username: root
   password: mapapp
   host: localhost
-  reconnect: true
+  reconnect: false
   #socket: /var/run/mysqld/mysqld.sock
 
 production:

@@ -31,7 +31,7 @@ class StagingAreaFeedsController < ApplicationController
         # Check for a present and readable file
         elsif params[:map_locations].class.name.demodulize != "UploadedFile"
           format.html {
-            render :text => 'Error: No map locations file supplied or file is unreadable.', :status => 422
+            render :text => "Error: No map locations file supplied or file is unreadable. Add a Dedicated Maps Map Locations XML file to the request with the parameter name 'map_locations'", :status => 422
           }
 
 

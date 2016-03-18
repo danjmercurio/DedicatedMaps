@@ -51,35 +51,5 @@ module Ddmap
 
     # Disable Rails 4 strong_parameters
     config.action_controller.permit_all_parameters = true
-
-    #email stuff
-    config.action_mailer.perform_deliveries = true
-    config.action_mailer.delivery_method = :smtp
-    config.action_mailer.smtp_settings = {
-        address: 'smtp.gmail.com',
-        port: 587,
-        domain: 'dedicatedmaps.com',
-        user_name: 'no-reply@dedicatedmaps.com',
-        password: 'dmaps_email',
-        authentication: 'plain',
-        enable_starttls_auto: true}
   end
-    Backburner.configure do |config|
-        config.beanstalk_url       = ["beanstalk://127.0.0.1"]
-        config.tube_namespace      = "ddmaps.app.production"
-        config.namespace_separator = "."
-        config.on_error            = lambda { |e| puts e }
-        config.max_job_retries     = 3 # default 0 retries
-        config.retry_delay         = 5 # default 5 seconds
-        config.retry_delay_proc    = lambda { |min_retry_delay, num_retries| min_retry_delay + (num_retries ** 3) }
-        config.default_priority    = 65536
-        config.respond_timeout = 99999999
-        config.default_worker      = Backburner::Workers::ThreadsOnFork
-        config.logger              = Logger.new(STDOUT)
-        config.primary_queue       = "backburner-jobs"
-        config.priority_labels     = { :custom => 50, :useless => 1000 }
-        config.reserve_timeout     = nil
-    end
-
-
 end

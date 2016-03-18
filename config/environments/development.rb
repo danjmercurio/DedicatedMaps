@@ -41,6 +41,9 @@ Ddmap::Application.configure do
   # Raise an exception on all callbacks
   config.active_record.raise_in_transactional_callbacks = true
 
+  # Default url options
+  config.action_mailer.default_url_options = {host: 'localhost', port: 3000}
+
   # Eager loading
   config.eager_load = false
 end

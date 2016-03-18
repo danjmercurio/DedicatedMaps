@@ -2,22 +2,20 @@ class MapsController < ApplicationController
   # skip_before_filter :subdomain_redirect
   skip_before_filter :verify_authenticity_token, :only => [:update]
   before_filter :handle_public_map, :only => [:show, :update]
-  before_filter :ensure_login, :only => [:show, :update, :currentlayers]
-
+  # before_filter :ensure_login, :only => [:show, :update, :currentlayers]
+  before_action authenticate_user!
 
 
   # GET /maps/1
   def show
-    if !@map
+    unless @map
       error_404
-      return
     end
 
     # If the public map user is deactivated, go to a 404.
     # Deactivated private map user accounts won't get this far as they are not allowed to log in.
-    if !@map.user.active
+    unless @map.user.active
       error_404
-      return
     end
 
     # Only show private maps to owners and admins/supers.

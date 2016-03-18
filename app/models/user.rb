@@ -1,9 +1,9 @@
-require 'digest/sha2'
-
 class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
     attr_reader :password
-    
-    ENCRYPT = Digest::SHA256
 
     has_many :sessions, :dependent => :destroy
     has_many :logins, :dependent => :destroy
@@ -18,29 +18,23 @@ class User < ActiveRecord::Base
     belongs_to :client
     belongs_to :privilege
     
-    validates_presence_of :username
-    validates_length_of :username, :minimum => 4, :maximum => 40, :allow_blank => false
-    validates_presence_of :first_name, :last_name, :username, :email
-    validates_presence_of :password, :salt, :on => :create
-  
-    validates_uniqueness_of :username, :message => "or subdomain is already in use by another person"
-    validates_uniqueness_of :email, :message => 'is already in use by another user'
-    
-    validates_format_of :username, :with => /\A([a-z0-9_]{2,26})\z/i, :message => "must be 4 to 26 letters, numbers, or underscores and have no spaces"
-  
-    validates_format_of :password, :with => /\A([\x20-\x7E]){4,26}\z/,
-                        :message => "must be 4 to 26 characters",
-                        :unless => :password_is_not_being_updated?
-    validates_format_of :password, :with => /\A\S*\z/, :message => 'must not contain spaces'
-    validates_format_of :email, :with => /\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\z/i,
-                        :message => "must be a valid email address."
-    
-    validates_confirmation_of :password, :on => :create
+    # validates_presence_of :first_name, :last_name, :email
+    #
+    # validates_uniqueness_of :email, :message => 'is already in use by another user'
+    #
+    # validates_format_of :username, :with => /\A([a-z0-9_]{2,26})\z/i, :message => "must be 4 to 26 letters, numbers, or underscores and have no spaces"
+    #
+    # validates_format_of :password, :with => /\A([\x20-\x7E]){4,26}\z/,
+    #                     :message => "must be 4 to 26 characters"
+    #
+    # validates_format_of :password, :with => /\A\S*\z/, :message => 'must not contain spaces'
+    # validates_format_of :email, :with => /\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\z/i,
+    #                     :message => "must be a valid email address."
+    #
+    #
+    # validates_exclusion_of :username, :in => %w( support blog www billing help api ), :message => "The subdomain <strong>{{value}}</strong> is reserved and unavailable."
+    #
 
-    validates_exclusion_of :username, :in => %w( support blog www billing help api ), :message => "The subdomain <strong>{{value}}</strong> is reserved and unavailable."
-      
-    before_save :scrub_username
-    after_save :flush_passwords
 
     def super?
       priv = Privilege.find(self.privilege_id)
@@ -84,14 +78,7 @@ class User < ActiveRecord::Base
       #generate temp password for new users and resets, Only use 0-9 a-z A-Z
       Array.new(9) { [48+rand(10), 65+rand(26), 97+rand(26)][rand(3)].chr }.join
     end
-    
-    def password=(password)
-      @password = password
-      unless password_is_not_being_updated?
-        self.salt = [Array.new(9){rand(256).chr}.join].pack('m').chomp
-        self.hashed_password = ENCRYPT.hexdigest(password + self.salt)
-      end
-    end
+
     
     def remove_all_layers
       connection.delete("DELETE FROM layers_users_privileges WHERE user_id = #{id}")

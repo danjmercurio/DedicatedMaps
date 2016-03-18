@@ -15,4 +15,8 @@ module ApplicationHelper
     partial_paths.select {|p| !p.match('shadow')}
   end
 
+  def user_is_logged_in
+
+  end
+
 end

@@ -1,5 +1,6 @@
 #require 'subdomain'
 Ddmap::Application.routes.draw do
+  devise_for :users
   get 'job_viewer' => 'job_viewer#index', :as => :job_viewer
   resources :fishing_areas
   resources :staging_areas
@@ -27,23 +28,6 @@ Ddmap::Application.routes.draw do
   resources :area_categories
 
   #post 'ais_feeds/ais1' => 'aisFeeds#ais1'
-
-  patch '/sessions' => 'sessions#update'
-
-  resources :sessions do
-
-    member do
-  get :recovery
-  end
-
-  end
-
-  resources :users do
-    collection do
-      post :recover
-      get :reset
-    end
-  end
 
   post '/public_maps/activate/:id' => 'public_maps#activate'
 
@@ -86,5 +70,7 @@ Ddmap::Application.routes.draw do
   get ':page' => 'public#show', :as => :public, :page => /about|contact|products|services|contact|success|ie8/
   get '/' => 'private#index'
   get ':page' => 'private#show', :as => :private, :page => /map|help|admin/
+
+  root 'public#index'
 
 end

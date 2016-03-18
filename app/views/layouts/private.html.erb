@@ -37,7 +37,6 @@
     <%#= calendar_date_select_includes %>
     <%# "blue" or "red", or "silver", or nil for the default %>   
   </head>
-    
   <body>
     <div class="container">
       <nav class="navbar navbar-default">
@@ -55,7 +54,7 @@
             <ul class="nav navbar-nav">
               <li><%= link_to "My Map", map_path(@loggedin_user.map) %></li>
               <li><%= link_to "My Account", edit_user_path(@loggedin_user.id) %></li>
-              <% if @loggedin_user.super? || @loggedin_user.admin? %>
+              <% if @loggedin_user%>
                   <li><%= link_to "Admin", private_path('admin') %></li>
               <% end %>
               <li><%= link_to "Help", private_path('help') %></li>

@@ -6,6 +6,8 @@ gem 'rails' #, :git => 'git://github.com/rails/rails.git'
 gem 'mysql2'
 # gem 'mysql2', :git => 'git://github.com/brianmario/mysql2.git'
 
+gem 'devise'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -34,6 +36,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'yaml_db'
 end
 
 # Backburner for asychronous job processing (XML POST to /staging_area_feeds)

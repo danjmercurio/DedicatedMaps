@@ -9,7 +9,6 @@ class StagingAreasController < ApplicationController
     end
 
     respond_to do |format|
-      format.html # index.html.erb
       format.xml  { render :xml => @staging_areas }
       format.json  { render :json => @staging_areas }
     end

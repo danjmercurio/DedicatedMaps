@@ -12,27 +12,27 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @session = Session.new(user_params)
+    @session || @session = Session.new(user_params)
     if @session.save
       if !@session.user.has_license?
-       flash[:notice] = "User license is expired."
-       redirect_to :back
+        redirect_to :back
+        flash[:notice] = "User license has expired."
       elsif !@session.user.account_active?
-       flash[:notice] = "This user account is currently disabled."
-       redirect_to :back
+        redirect_to :back
+        flash[:notice] = "This user account is currently disabled."
+      end
+      session = @session
+      session[:id] = @session.id
+      @session.user.update_attribute(:last_login, Time.now)
+      if @session[:target]
+        redirect_to @session[:target]
+        @session[:target] = nil
       else
-       session[:id] = @session.id
-       @session.user.update_attribute(:last_login, Time.now)
-       if false #session[:target]
-         redirect_to session[:target]
-         session[:target] = nil
-       else
-         redirect_to(map_path(@session.user.map))
-       end      
+        redirect_to(map_path(@session.user.map))
       end
     else
-      flash[:notice] = "Login failed. Please try again."
       redirect_to :back
+      flash[:notice] = "Login failed. Please try again."
     end
   end
   
