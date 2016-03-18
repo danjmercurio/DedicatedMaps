@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  layout "private" 
-  before_filter :ensure_login, :only => [:activate, :index, :new, :edit, :update, :create]
-  before_filter :ensure_logout, :only => []
+  layout "private"
+  # before_filter :ensure_login, :only => [:activate, :index, :new, :edit, :update, :create]
+  # before_filter :ensure_logout, :only => []
 
   # AJAX POST /users/recover
   def recover

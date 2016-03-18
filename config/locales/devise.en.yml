@@ -18,9 +18,9 @@ en:
       unconfirmed: "You have to confirm your email address before continuing."
     mailer:
       confirmation_instructions:
-        subject: "Confirmation instructions"
+        subject: "Confirm your account for Dedicated Maps"
       reset_password_instructions:
-        subject: "Reset password instructions"
+        subject: "Reset password instructions - DedicatedMaps.com"
       unlock_instructions:
         subject: "Unlock instructions"
       password_change:

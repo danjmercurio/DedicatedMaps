@@ -7,14 +7,14 @@ gem 'mysql2'
 # gem 'mysql2', :git => 'git://github.com/brianmario/mysql2.git'
 
 gem 'devise'
+gem 'devise-bootstrap-views'
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
-  gem 'sass-rails'
-  gem 'execjs' # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'uglifier'
-end
+gem 'bootstrap-sass'
+gem 'sass-rails'
+gem 'execjs' # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+gem 'uglifier'
 
 # Gems for backward compatibility with rails 3
 gem 'protected_attributes'

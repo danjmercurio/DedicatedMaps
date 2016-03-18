@@ -62,8 +62,7 @@ $('#noticeModal').modal(options);</script>
 
 <div class="wrapper">
  <div class="header">
-    <a href="<%= url_for(new_user_session_url) %>">Log In</a>
-  </div>
+ </div>
 </div>
 
 <% # prototype for a menu helper. this data should go in the controller -- eric
@@ -76,16 +75,20 @@ menu = [
 ]
 menu.each do |item|
     item['class'] = item['action'] + ( controller.action_name == item['action']? 'selected' : '')
-end 
+end
 %>
 
 <div class="subheader">
     <div class="topnav">
         <ul class="menu">
             <li><img src="/images/theme/nav_bar_button_divider.gif"/></li>
-            <% menu.each do |item| %>
-                <li class="<%= item['class'] %>"><%= link_to item['text'], url_for(:controller => 'public', :action => item['action']) %></li>
-                <li><img src="/images/theme/nav_bar_button_divider.gif"/></li>
+          <% %w(index about products services contact ).each do |item| %>
+              <% if item != 'index' %>
+                  <li class="<%= item %>"><a href="<%= "/#{item}" %>"><%= item %></a></li>
+              <% else %>
+                  <li class="index"><a href="/">Home</a></li>
+              <% end %>
+              <li><img src="/images/theme/nav_bar_button_divider.gif"/></li>
             <% end %>
         </ul>
     </div>

@@ -55,22 +55,22 @@ Ddmap::Application.routes.draw do
   # get 'shared_items/:id.:format' => 'assets#show', :as => :shared_items
   # get 'public_items/:id.:format' => 'assets#show', :as => :public_items
   resources :maps
- 
-  get '/:controller(/:action(/:id))'
 
-  post '/:controller(/:action(/:id))'
+  # get '/:controller(/:action(/:id))'
+  #
+  # post '/:controller(/:action(/:id))'
 
 
   #post '/ais_feeds/ais5', to: 'AisFeeds#ais5'
 
   post '/license/activate' => 'licenses#activate'
 
-  #match '/' => 'maps#show'
-  get '/' => 'public#index'
-  get ':page' => 'public#show', :as => :public, :page => /about|contact|products|services|contact|success|ie8/
-  get '/' => 'private#index'
-  get ':page' => 'private#show', :as => :private, :page => /map|help|admin/
-
   root 'public#index'
+  get '/' => 'public#index'
+
+  %w(about products services contact success ).each do |page|
+    get "/#{page}" => 'public#show', :page => page
+  end
+  get ':page' => 'private#show', :as => :private, :page => /map|help|admin/
 
 end
