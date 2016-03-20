@@ -37,13 +37,11 @@ class User < ActiveRecord::Base
 
 
     def super?
-      priv = Privilege.find(self.privilege_id)
-      priv.name == 'super'
+      false
     end
 
     def admin?
-      priv = Privilege.find(self.privilege_id)
-      priv.name == 'admin'
+      false
     end
     
     def is?(user)
@@ -74,15 +72,11 @@ class User < ActiveRecord::Base
       end
     end
 
-    def temp_password
-      #generate temp password for new users and resets, Only use 0-9 a-z A-Z
-      Array.new(9) { [48+rand(10), 65+rand(26), 97+rand(26)][rand(3)].chr }.join
-    end
-
-    
-    def remove_all_layers
-      connection.delete("DELETE FROM layers_users_privileges WHERE user_id = #{id}")
-    end
+    # Devise handles this now
+    # def temp_password
+    #   #generate temp password for new users and resets, Only use 0-9 a-z A-Z
+    #   Array.new(9) { [48+rand(10), 65+rand(26), 97+rand(26)][rand(3)].chr }.join
+    # end
   
   private
   

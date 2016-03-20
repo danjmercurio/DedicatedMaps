@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   before_filter :subdomain_redirect
-  before_action :authenticate_user!
 
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store

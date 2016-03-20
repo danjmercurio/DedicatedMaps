@@ -43,8 +43,6 @@ end
 gem 'backburner'
 
 # Javascript
-# Note: Not using the asset pipeline for jQuery in views. It's loaded in with MaxCDN.
-# Keep this gem for Rails' jQuery_ujs
 gem 'jquery-rails'
 
 # gem 'prototype-rails', github: 'rails/prototype-rails', branch: '4.2' # Not using prototype anymore

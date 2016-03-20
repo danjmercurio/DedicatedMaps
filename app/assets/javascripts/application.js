@@ -11,7 +11,9 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 // Don't include regular jQuery as we are loading it in the view from MaxCDN. Just include jquery_ujs library after.
+//= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
 
 // JS Stuff for the login form (Public#index)
 function clearText(field) {

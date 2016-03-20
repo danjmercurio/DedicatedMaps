@@ -1,7 +1,7 @@
 class ClientsController < ApplicationController
   layout "private" 
-  before_filter :ensure_login, :ensure_super
-  
+
+
   # GET /clients
   def index
     @clients = Client.all

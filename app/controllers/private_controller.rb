@@ -1,6 +1,8 @@
 class PrivateController < ApplicationController
-  before_filter :ensure_login #, :only => [:stats, :show]
-  before_filter :ensure_logout, :only => []
+  # before_filter :ensure_login #, :only => [:stats, :show]
+  # before_filter :ensure_logout, :only => []
+  before_action :authenticate_user!
+
 
   def index
     # render the landing page

@@ -1,6 +1,6 @@
 class LayersController < ApplicationController
   layout "private"
-  before_filter :ensure_super
+  before_action :authenticate_user!
 
   # GET /layers
   # GET /layers.xml

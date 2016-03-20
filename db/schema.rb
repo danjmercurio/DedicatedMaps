@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318033816) do
+ActiveRecord::Schema.define(version: 20160320211320) do
 
   create_table "aircraft", force: :cascade do |t|
     t.integer  "asset_id",   limit: 4
@@ -570,6 +570,9 @@ ActiveRecord::Schema.define(version: 20160318033816) do
     t.string   "unconfirmed_email",      limit: 255
     t.string   "first_name",             limit: 255
     t.string   "last_name",              limit: 255
+    t.boolean  "admin"
+    t.boolean  "owner"
+    t.integer  "privilege_id",           limit: 4
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
